@@ -7,6 +7,7 @@ from torch.autograd import Variable
 from collections import OrderedDict
 from torch.nn import init
 import numpy as np
+import os
 
 
 def conv3x3(in_channels, out_channels, stride=1,
@@ -172,7 +173,7 @@ class FCN(nn.Module):
         x = self.conv_final(x)
         return x
 
-class UnaryNet(nn.Module):
+class UNet(nn.Module):
     '''
     This class implements a Unet with global and local residual connections. The input construction arguments: num_classes, 
     in_channels, depth (down sampling number is depth-1), start_filter number, upsampling mode.
@@ -180,7 +181,7 @@ class UnaryNet(nn.Module):
 
     def __init__(self, num_classes, in_channels=3, depth=5,
                  start_filts=64, up_mode='transpose'):
-        super(UnaryNet, self).__init__()
+        super(UNet, self).__init__()
 
         self.down_convs = []
         self.up_convs = []
@@ -230,9 +231,9 @@ class PairNet(nn.Module):
     Do not support mutliple surfaces yet.
     """
     def __init__(self, num_classes, in_channels=3, depth=5,
-                 start_filts=64, up_mode='transpose', col_len=512, fc_inter=128, left_nbs=3, **kwargs):
+                 start_filts=64, up_mode='transpose', col_len=512, fc_inter=128, left_nbs=3):
         super(PairNet, self).__init__()
-        self.Unet = UnaryNet(num_classes, in_channels, depth,
+        self.Unet = UNet(num_classes, in_channels, depth,
                  start_filts, up_mode)
         self.FC_D1 = conv1(col_len*(left_nbs+1)*2, fc_inter)
         self.FC_D2 = conv1(fc_inter, 1)
@@ -353,11 +354,37 @@ class SurfSegNet(torch.nn.Module):
     """
     ONly GPU version has been implemented!!!
     """
-    def __init__(self, unary_model, wt_init=1e-5,  pair_model=None):
+    def __init__(self, unary_model, hps, wt_init=1e-5,  pair_model=None):
         super(SurfSegNet, self).__init__()
         self.unary = unary_model
         self.pair = pair_model
+        self.hps = hps
         self.w_comp = torch.nn.Parameter(torch.ones(1)*wt_init)
+    def load_wt(self):
+        if os.path.isfile(self.hps['surf_net']['resume_path']):
+            print('loading surfnet checkpoint: {}'.format(self.hps['surf_net']['resume_path']))
+            checkpoint = torch.load(self.hps['surf_net']['resume_path'])
+            self.load_state_dict(checkpoint['state_dict'])
+            print("=> loaded surfnet checkpoint (epoch {})"
+                .format(checkpoint['epoch']))
+        else:
+            if os.path.isfile(self.hps['surf_net']['unary_pretrain_path']):
+                print('loading unary network pretrain checkpoint: {}'.format(self.hps['surf_net']['unary_pretrain_path']))
+                checkpoint = torch.load(self.hps['surf_net']['unary_pretrain_path'])
+                self.unary.load_state_dict(checkpoint['state_dict'])
+                print("=> loaded unary network pretrain checkpoint (epoch {})"
+                    .format(checkpoint['epoch']))
+            if self.pair is None:
+                print("Zero prior is used.")
+            elif os.path.isfile(self.hps['surf_net']['pair_pretrain_path']):
+                print('loading pair network pretrain checkpoint: {}'.format(self.hps['surf_net']['pair_pretrain_path']))
+                checkpoint = torch.load(self.hps['surf_net']['pair_pretrain_path'])
+                self.pair.load_state_dict(checkpoint['state_dict'])
+                print("=> loaded pair network pretrain checkpoint (epoch {})"
+                    .format(checkpoint['epoch']))
+            else:
+                raise Exception("Pair network can not be restored.")
+        
     def forward(self, x, tr_flag=False):
         logits = self.unary(x).squeeze(1).permute(0, 2, 1)  
         logits = torch.nn.functional.softmax(logits, dim=-1)
@@ -381,7 +408,7 @@ if __name__ == "__main__":
     y = surfnet(x)
     print(y.size())
 
-    module = UnaryNet(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
+    module = UNet(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
     x = torch.FloatTensor(np.random.random((2,1,512,400)))
     y = module(x)
     print(module)
