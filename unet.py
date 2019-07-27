@@ -55,6 +55,29 @@ class DsBlock(nn.Module):
 
         return out, before_pool
 
+class DsBlockNoSkip(nn.Module):
+
+    def __init__(self, in_channels, out_channels, pooling):
+        super(DsBlockNoSkip, self).__init__()
+        self.conv = conv3x3(in_channels, out_channels)
+        # self.bn1 = nn.BatchNorm3d(planes)
+        self.relu = nn.ReLU(inplace=True)
+        self.pooling = pooling
+        if pooling:
+            self.mp = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
+        # self.conv2 = conv3x3x3(planes, planes)
+        # self.bn2 = nn.BatchNorm3d(planes)
+        # self.stride = stride
+
+    def forward(self, x):
+
+        out = self.conv(x)
+        out = self.relu(out)
+        if self.pooling:
+            out = self.mp(out)
+
+        return out
+
 
 def upconv2x2(in_channels, out_channels, mode='transpose'):
     if mode == 'transpose':
@@ -85,6 +108,69 @@ class UsBlock(nn.Module):
         x = self.relu(x)
         return x
 
+class UsBlockNoSkip(nn.Module):
+
+    def __init__(self, in_channels, out_channels, up_mode='transpose'):
+        super(UsBlockNoSkip, self).__init__()
+
+        self.upconv = upconv2x2(in_channels, out_channels, mode=up_mode)
+        self.conv = conv3x3(out_channels, out_channels)
+
+    def forward(self, x):
+
+        x = self.upconv(x)
+        x = self.conv(x)
+        return x
+
+
+class FCN(nn.Module):
+    '''
+    This class implements a FCN, WITHOUT including skipping connections. The input construction arguments: num_classes, 
+    in_channels, depth (down sampling number is depth-1), start_filter number, upsampling mode.
+    '''
+
+    def __init__(self, num_classes, in_channels=3, depth=5,
+                 start_filts=64, up_mode='transpose'):
+        super(FCN, self).__init__()
+
+        self.down_convs = []
+        self.up_convs = []
+
+        # put one conv  at the beginning
+        self.conv_start = conv3x3(in_channels, start_filts, stride=1)
+        # create the encoder pathway and add to a list
+        for i in range(depth):
+            ins = start_filts * (2 ** i)
+            outs = start_filts * (2 ** (i + 1)) if i < depth - \
+                1 else start_filts * (2 ** i)
+            pooling = True if i < depth - 1 else False
+
+            down_conv = DsBlockNoSkip(ins, outs, pooling=pooling)
+            self.down_convs.append(down_conv)
+
+        for i in range(depth - 1):
+            ins = outs
+            outs = ins // 2
+            up_conv = UsBlockNoSkip(ins, outs, up_mode=up_mode)
+            self.up_convs.append(up_conv)
+
+        self.conv_final = conv1x1(outs, num_classes)
+
+        # add the list of modules to current module
+        self.down_convs = nn.ModuleList(self.down_convs)
+        self.up_convs = nn.ModuleList(self.up_convs)
+
+    def forward(self, x):
+        x = self.conv_start(x)
+
+        for i, module in enumerate(self.down_convs):
+            x = module(x)
+
+        for i, module in enumerate(self.up_convs):
+            x = module(x)
+
+        x = self.conv_final(x)
+        return x
 
 class UnaryNet(nn.Module):
     '''

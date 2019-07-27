@@ -1,7 +1,7 @@
 from __future__ import print_function
 import torch
 import numpy as np
-from unet import UnaryNet, PairNet
+from unet import UnaryNet, PairNet, FCN
 
 # define the clapping threshold for probability normalization.
 STAB_NB = 1e-15
@@ -121,7 +121,7 @@ class SurfSegNet(torch.nn.Module):
         return output
 
 if __name__ == "__main__":
-    unary_model = UnaryNet(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
+    unary_model = FCN(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
     pair_model = PairNet(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
     surfnet = SurfSegNet(unary_model=unary_model).cuda()
     x = torch.FloatTensor(np.random.random((2,1,512,400))).cuda()
