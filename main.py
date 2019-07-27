@@ -11,7 +11,7 @@ from torch import nn
 import shutil
 import os
 import matplotlib.pyplot as plt
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
+# os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 
 
 def save_checkpoint(states,  path, filename='model_best.pth.tar'):
@@ -30,7 +30,7 @@ def train(model, criterion, optimizer, input_img_gt, hps):
     criterion_l1 = nn.L1Loss()
     # print(output.size(), input_img_gt['gaus_gt'].size())
     if hps['learning']['loss'] == "KLDivLoss":
-        loss = criterion(output, input_img_gt['gaus_gt'])
+        loss = criterion(output, input_img_gt['gt_g'])
     elif hps['learning']['loss'] == "MSELoss" or hps['learning']['loss'] == "L1Loss":
         loss =  criterion(D, input_img_gt['gt_d'])
         # loss_l1_g = criterion_l1(G, input_img_gt['gt'])

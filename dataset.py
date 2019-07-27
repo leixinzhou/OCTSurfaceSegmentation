@@ -6,8 +6,10 @@ import matplotlib.pyplot as plt
 import sys
 sys.path.append('../')
 from AugSurfSeg import *
+from smooth1D import smooth
 
 SLICE_per_vol = 60
+WINDOW_size = 101
 
 class OCTDataset(Dataset):
     """convert 3d dataset to Dataset."""
@@ -47,10 +49,14 @@ class OCTDataset(Dataset):
             img_gt = self.trans(img_gt)
         gt_g = self.LT[img_gt["gt"].astype(np.int32)]
         gt_g = np.transpose(gt_g, (2, 0, 1))
+        # ONLY WORK ON 1D
+        # print("image_gt shape: ", img_gt["gt"].shape)
+        gt_d = smooth(img_gt["gt"][:-1, 0] - img_gt["gt"][1:, 0], WINDOW_size, 'flat')
         # print(image.shape, gt_g.shape)
         image_gt_ts = {"img": torch.from_numpy(img_gt["img"].astype(np.float32)).unsqueeze(0),
                         "gt": torch.from_numpy(img_gt["gt"].astype(np.float32).reshape(-1, order='F')),
-                        "gt_g": torch.from_numpy(gt_g.astype(np.float32))}
+                        "gt_g": torch.from_numpy(gt_g.astype(np.float32)),
+                        "gt_d": torch.from_numpy(gt_d.astype(np.float32))}
         
         return image_gt_ts
        
@@ -93,31 +99,26 @@ if __name__ == "__main__":
     slice_index = 1
     patch_dir = "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/test/patch.npy"
     truth_dir = "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/test/truth.npy"
-    dataset = OCTDataset(img_np=patch_dir, label_np=truth_dir, surf=[0,1,2], vol_list=vol_list, transforms=rand_aug)
+    dataset = OCTDataset(img_np=patch_dir, label_np=truth_dir, surf=[0], vol_list=vol_list, transforms=rand_aug)
     loader = DataLoader(dataset, shuffle=False, batch_size=1)
     test_patch = np.load(patch_dir, mmap_mode='r')
     test_truth = np.load(truth_dir, mmap_mode='r')
-    _, axes = plt.subplots(1,5)
+    _, axes = plt.subplots(1,4)
     axes[0].imshow(np.transpose(test_patch[vol_list[vol_index]*SLICE_per_vol+slice_index,].astype(np.float32)), cmap='gray')
     axes[0].plot(test_truth[vol_list[vol_index]*SLICE_per_vol+slice_index,:,0])
-    axes[0].plot(test_truth[vol_list[vol_index]*SLICE_per_vol+slice_index,:,1])
-    axes[0].plot(test_truth[vol_list[vol_index]*SLICE_per_vol+slice_index,:,2])
     for i, batch in enumerate(loader):
         if i == vol_index*SLICE_per_vol+slice_index:
             img = batch['img'].squeeze().numpy()
-            gt = batch['gt'].squeeze().numpy()
-            gt_g = batch['gt_g'].squeeze().numpy()
+            gt = batch['gt'].squeeze(0).numpy()
+            gt_g = batch['gt_g'].squeeze(0).numpy()
+            gt_d = batch['gt_d'].squeeze(0).numpy()
+            print(gt_g.shape)
             break
     axes[1].imshow(img, cmap='gray')
     axes[1].plot(gt[:400])
-    axes[1].plot(gt[400:800])
-    axes[1].plot(gt[800:1200])
     axes[2].imshow(gt_g[:,:,0])
     axes[2].plot(gt[:400])
-    axes[3].imshow(gt_g[:,:,1])
-    axes[3].plot(gt[400:800])
-    axes[4].imshow(gt_g[:,:,2])
-    axes[4].plot(gt[800:1200])
+    axes[3].plot(gt_d)
     
     plt.show()
     
