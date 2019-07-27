@@ -1,6 +1,5 @@
 from torch.utils.data import DataLoader
 from dataset import *
-import unet
 import yaml
 import argparse
 import time
@@ -11,7 +10,7 @@ from torch import nn
 import shutil
 import os
 import matplotlib.pyplot as plt
-from network import *
+import network
 import sys
 sys.path.append('../')
 from AugSurfSeg import *
@@ -34,10 +33,10 @@ def save_checkpoint(states,  path, filename='model_best.pth.tar'):
 def train(model, criterion, optimizer, input_img_gt, hps):
     model.train()
     D = model(input_img_gt['img'])
-    D = D.squeeze(1)
-    # print(output.size(), input_img_gt['gaus_gt'].size())
+    
+    # print(D.size(), input_img_gt['gt_g'].size())
     if hps['network'] == "UNet" or hps['network'] == "FCN":
-        loss = criterion(D, input_img_gt['gt_g'])
+        loss = criterion(D, input_img_gt['gt_g'].squeeze(-1))
     elif hps['network']=="PairNet":
         loss =  criterion(D, input_img_gt['gt_d'])
     elif hps['network']=="SurfNet":
@@ -56,10 +55,9 @@ def train(model, criterion, optimizer, input_img_gt, hps):
 def val(model, criterion, input_img_gt, hps):
     model.eval()
     D = model(input_img_gt['img'])
-    D = D.squeeze(1)
     # print(output.size(), input_img_gt['gaus_gt'].size())
     if hps['network'] == "UNet" or hps['network'] == "FCN":
-        loss = criterion(D, input_img_gt['gt_g'])
+        loss = criterion(D, input_img_gt['gt_g'].squeeze(-1))
     elif hps['network']=="PairNet":
         loss =  criterion(D, input_img_gt['gt_d'])
     elif hps['network']=="SurfNet":
@@ -305,7 +303,7 @@ def main():
     elif hps['network']=="SurfSegNet":
         model_u = getattr(network, hps['network'])(num_classes=1, in_channels=1, depth=hps['unary_network']['depth'],
                  start_filts=hps['unary_network']['start_filters'], up_mode=hps['unary_network']['up_mode'])
-        if os.path.isfile(hps['surf_net'][pair_pretrain_path]):
+        if os.path.isfile(hps['surf_net']["pair_pretrain_path"]):
             model_p = PairNet(num_classes=1, in_channels=1, depth=hps['pair_network']['depth'],
                             start_filts=hps['pair_network']['start_filters'], up_mode=hps['pair_network']['up_mode'], 
                             col_len=hps['pair_network']['col_len'], fc_inter=hps['pair_network']['fc_inter'], 

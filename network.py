@@ -161,7 +161,7 @@ class FCN(nn.Module):
         self.down_convs = nn.ModuleList(self.down_convs)
         self.up_convs = nn.ModuleList(self.up_convs)
 
-    def forward(self, x):
+    def forward(self, x, logSoftmax=True):
         x = self.conv_start(x)
 
         for i, module in enumerate(self.down_convs):
@@ -171,6 +171,11 @@ class FCN(nn.Module):
             x = module(x)
 
         x = self.conv_final(x)
+        x = x.squeeze(1)
+        if logSoftmax:
+            x = torch.nn.functional.log_softmax(x, dim=1)
+        else:
+            x = torch.nn.functional.softmax(x, dim=1)
         return x
 
 class UNet(nn.Module):
@@ -209,7 +214,7 @@ class UNet(nn.Module):
         self.down_convs = nn.ModuleList(self.down_convs)
         self.up_convs = nn.ModuleList(self.up_convs)
 
-    def forward(self, x):
+    def forward(self, x, logSoftmax=True):
         x = self.conv_start(x)
         encoder_outs = []
 
@@ -222,6 +227,11 @@ class UNet(nn.Module):
             x = module(before_pool, x)
 
         x = self.conv_final(x)
+        x = x.squeeze(1)
+        if logSoftmax:
+            x = torch.nn.functional.log_softmax(x, dim=1)
+        else:
+            x = torch.nn.functional.softmax(x, dim=1)
         return x
 
 
@@ -386,8 +396,7 @@ class SurfSegNet(torch.nn.Module):
                 raise Exception("Pair network can not be restored.")
         
     def forward(self, x, tr_flag=False):
-        logits = self.unary(x).squeeze(1).permute(0, 2, 1)  
-        logits = torch.nn.functional.softmax(logits, dim=-1)
+        logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)  
         logits = normalize_prob(logits)
         if self.pair is None:
             d_p = torch.zeros((x.size(0), x.size(-1)-1), dtype=torch.float32, requires_grad=False).cuda()
@@ -403,7 +412,7 @@ class SurfSegNet(torch.nn.Module):
 if __name__ == "__main__":
     unary_model = FCN(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
     pair_model = PairNet(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
-    surfnet = SurfSegNet(unary_model=unary_model).cuda()
+    surfnet = SurfSegNet(unary_model=unary_model, hps=None).cuda()
     x = torch.FloatTensor(np.random.random((2,1,512,400))).cuda()
     y = surfnet(x)
     print(y.size())
