@@ -208,20 +208,22 @@ def infer(model, hps):
                             batch_size=hps['test']['batch_size'], num_workers=0)
     
     model.eval()
-    # pred_l1 = []
+    pred_list = []
+    gt_list = []
     # pred_dummy = []
-    # for step, batch in enumerate(test_loader):
+    for step, batch in enumerate(test_loader):
     #     pred = np.zeros(399, dtype=np.float32)
     #     batch_gt_d = batch['gt_d'].squeeze().detach().cpu().numpy()
     #     batch_gt_d_nsm = batch['gt_d_nsm'].squeeze().detach().cpu().numpy()
-    #     batch_gt = batch['gt'].squeeze().detach().cpu().numpy()
+        batch_gt = batch['gt'].squeeze().detach().cpu().numpy()
     #     # print(batch_gt_d)
     #     # print(batch_gt)
     #     # break
-    #     batch_img = batch['img'].float().cuda()
-    #     pred_tmp = model(batch_img)
-    #     pred = pred_tmp.squeeze().detach().cpu().numpy()
-
+        batch_img = batch['img'].float().cuda()
+        pred_tmp = model(batch_img)
+        pred = pred_tmp.squeeze().detach().cpu().numpy()
+        pred_list.append(pred)
+        gt_list.append(batch_gt)
     #     fig, axes = plt.subplots(4,1)
     #     axes[0].imshow(batch_img.squeeze().detach().cpu().numpy().transpose(), cmap="gray", aspect='auto')
     #     axes[0].plot(batch_gt, 'r', label='gt')
@@ -233,15 +235,19 @@ def infer(model, hps):
     #     axes[3].plot(batch_gt_d, 'b', label='diff gt smooth')
     #     axes[3].legend()
     #     # pred = cartpolar.gt2cart(pred)
-    #     if not os.path.isdir(hps['test']['pred_dir']):
-    #         os.mkdir(hps['test']['pred_dir'])
-    #     pred_dir = os.path.join(hps['test']['pred_dir'],"_%d.png" % step)
+        
     #     fig.savefig(pred_dir)
     #     plt.close()
-    #     pred_l1.append(np.mean(np.abs(batch_gt_d-pred)))
+        # pred_l1.append(np.mean(np.abs(batch_gt-pred)))
     #     pred_dummy.append(np.mean(np.abs(batch_gt_d)))
-    #     # pred = np.transpose(np.stack(pred, axis=0))
-       
+    pred = np.concatenate(pred_list)
+    gt = np.concatenate(gt_list)
+    if not os.path.isdir(hps['test']['pred_dir']):
+        os.mkdir(hps['test']['pred_dir'])
+    pred_dir = os.path.join(hps['test']['pred_dir'],"pred.npy")
+    np.save(pred_dir, pred)
+    error = np.abs(pred - gt)
+    print(np.mean(error), np.std(error))
     #     # np.savetxt(pred_dir, pred, delimiter=',')
     # print("Test done!")
     # pred_l1_mean = np.mean(np.array(pred_l1))
