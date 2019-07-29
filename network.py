@@ -409,6 +409,38 @@ class SurfSegNet(torch.nn.Module):
 
         return output
 
+class SurfSegNSBNet(torch.nn.Module):
+    """
+    ONly GPU version has been implemented!!!
+    """
+    def __init__(self, unary_model, hps):
+        super(SurfSegNSBNet, self).__init__()
+        self.unary = unary_model
+        self.hps = hps
+    def load_wt(self):
+        if os.path.isfile(self.hps['surf_nsb_net']['resume_path']):
+            print('loading surfNSBnet checkpoint: {}'.format(self.hps['surf_nsb_net']['resume_path']))
+            checkpoint = torch.load(self.hps['surf_nsb_net']['resume_path'])
+            self.load_state_dict(checkpoint['state_dict'])
+            print("=> loaded surfnet checkpoint (epoch {})"
+                .format(checkpoint['epoch']))
+        else:
+            if os.path.isfile(self.hps['surf_nsb_net']['unary_pretrain_path']):
+                print('loading unary network pretrain checkpoint: {}'.format(self.hps['surf_nsb_net']['unary_pretrain_path']))
+                checkpoint = torch.load(self.hps['surf_nsb_net']['unary_pretrain_path'])
+                self.unary.load_state_dict(checkpoint['state_dict'])
+                print("=> loaded unary network pretrain checkpoint (epoch {})"
+                    .format(checkpoint['epoch']))
+            else:
+                raise Exception("surf nsb network is not pretrained.")
+        
+    def forward(self, x, tr_flag=False):
+        logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)  
+        logits = normalize_prob(logits)
+     
+        mean, _ = gaus_fit(logits, tr_flag=tr_flag)
+        return mean
+
 if __name__ == "__main__":
     unary_model = FCN(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
     pair_model = PairNet(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
