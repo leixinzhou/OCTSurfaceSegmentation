@@ -312,6 +312,11 @@ def main():
             model_p = None
         model = SurfSegNet(unary_model=model_u, hps=hps, pair_model=model_p)
         model.load_wt()
+    elif hps['network']=="SurfSegNSBNet":
+        model_u = getattr(network, hps['network'])(num_classes=1, in_channels=1, depth=hps['unary_network']['depth'],
+                 start_filts=hps['unary_network']['start_filters'], up_mode=hps['unary_network']['up_mode'])
+        model = SurfSegNSBNet(unary_model=model_u, hps=hps)
+        model.load_wt()
     else:
         raise AttributeError('Network not implemented!')
 
