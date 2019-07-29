@@ -20,6 +20,10 @@ from AugSurfSeg import *
 TR_AMD_NB = 187
 TR_Control_NB = 79
 TR_CASE_NB = TR_AMD_NB + TR_Control_NB
+TEST_AMD_NB = 41
+TEST_Control_NB = 18
+SLICE_per_vol = 60
+
 
 def save_checkpoint(states,  path, filename='model_best.pth.tar'):
     if not os.path.exists(path):
@@ -39,7 +43,7 @@ def train(model, criterion, optimizer, input_img_gt, hps):
         loss = criterion(D, input_img_gt['gt_g'].squeeze(-1))
     elif hps['network']=="PairNet":
         loss =  criterion(D, input_img_gt['gt_d'])
-    elif hps['network']=="SurfNet":
+    elif hps['network']=="SurfNet" or hps['network']=="SurfSegNSBNet":
         loss =  criterion(D, input_img_gt['gt'])
     else:
         raise AttributeError('Network not implemented!')
@@ -60,7 +64,7 @@ def val(model, criterion, input_img_gt, hps):
         loss = criterion(D, input_img_gt['gt_g'].squeeze(-1))
     elif hps['network']=="PairNet":
         loss =  criterion(D, input_img_gt['gt_d'])
-    elif hps['network']=="SurfNet":
+    elif hps['network']=="SurfNet" or hps['network']=="SurfSegNSBNet":
         loss =  criterion(D, input_img_gt['gt'])
     else:
         raise AttributeError('Network not implemented!')
@@ -103,13 +107,14 @@ def learn(model, hps):
 
     tr_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['tr_img'],
                             label_np=hps['learning']['data']['tr_gt'],
-                            vol_list=vol_list
+                            vol_list=vol_list, transforms=rand_aug
                             )
     print(tr_dataset.__len__())
     tr_loader = DataLoader(tr_dataset, shuffle=True,
                            batch_size=hps['learning']['batch_size'], num_workers=0)
     val_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['val_img'],
                             label_np=hps['learning']['data']['val_gt'],
+                            transforms=val_aug
                             )
     val_loader = DataLoader(val_dataset, shuffle=False,
                             batch_size=hps['learning']['batch_size'], num_workers=0)
@@ -201,8 +206,12 @@ def infer(model, hps):
         raise NotImplementedError("CPU version is not implemented!")
         # print("run in cpu.")
         # model = nn.DataParallel(model)
+    
+    test_aug = RandomApplyTrans(trans_seq=[],
+                                trans_seq_post=[NormalizeSTD()],
+                                trans_seq_pre=[NormalizeSTD()])
     test_dataset = OCTDataset(surf=hps['surf'], img_np=hps['test']['data']['img'],
-                            label_np=hps['test']['data']['gt']
+                            label_np=hps['test']['data']['gt'], transforms=test_aug
                             )
     test_loader = DataLoader(test_dataset, shuffle=False,
                             batch_size=hps['test']['batch_size'], num_workers=0)
@@ -220,7 +229,7 @@ def infer(model, hps):
     #     # print(batch_gt)
     #     # break
         batch_img = batch['img'].float().cuda()
-        pred_tmp = model(batch_img, tr)
+        pred_tmp = model(batch_img)
         pred = pred_tmp.squeeze().detach().cpu().numpy()
         pred_list.append(pred)
         gt_list.append(batch_gt)
@@ -248,8 +257,14 @@ def infer(model, hps):
     pred_stat_dir = os.path.join(hps['test']['pred_dir'],"pred_stat.txt")
     np.save(pred_dir, pred)
     error = np.abs(pred - gt)
-    print(np.mean(error), np.std(error))
-    np.savetxt(pred_stat_dir, [np.mean(error), np.std(error)])
+    error_mean = [np.mean(error[i*SLICE_per_vol:(i+1):SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
+    amd_mean = np.mean(error[:TEST_AMD_NB,])
+    amd_std = np.std(error[:TEST_AMD_NB, ])
+    control_mean = np.mean(error[TEST_AMD_NB:,])
+    control_std = np.std(error[TEST_AMD_NB:, ])
+    print("AMD", amd_mean, amd_std)
+    print("Control", control_mean, control_std)
+    np.savetxt(pred_stat_dir, [amd_mean, amd_std, control_mean, control_std])
     #     # np.savetxt(pred_dir, pred, delimiter=',')
     # print("Test done!")
     # pred_l1_mean = np.mean(np.array(pred_l1))

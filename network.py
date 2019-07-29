@@ -434,11 +434,11 @@ class SurfSegNSBNet(torch.nn.Module):
             else:
                 raise Exception("surf nsb network is not pretrained.")
         
-    def forward(self, x, tr_flag=False):
+    def forward(self, x):
         logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)  
         logits = normalize_prob(logits)
      
-        mean, _ = gaus_fit(logits, tr_flag=tr_flag)
+        mean, _ = gaus_fit(logits, tr_flag=self.training)
         return mean
 
 if __name__ == "__main__":
