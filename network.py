@@ -418,16 +418,16 @@ class SurfSegNSBNet(torch.nn.Module):
         self.unary = unary_model
         self.hps = hps
     def load_wt(self):
-        if os.path.isfile(self.hps['surf_nsb_net']['resume_path']):
-            print('loading surfNSBnet checkpoint: {}'.format(self.hps['surf_nsb_net']['resume_path']))
-            checkpoint = torch.load(self.hps['surf_nsb_net']['resume_path'])
+        if os.path.isfile(self.hps['surf_net']['resume_path']):
+            print('loading surfNSBnet checkpoint: {}'.format(self.hps['surf_net']['resume_path']))
+            checkpoint = torch.load(self.hps['surf_net']['resume_path'])
             self.load_state_dict(checkpoint['state_dict'])
             print("=> loaded surfnet checkpoint (epoch {})"
                 .format(checkpoint['epoch']))
         else:
-            if os.path.isfile(self.hps['surf_nsb_net']['unary_pretrain_path']):
-                print('loading unary network pretrain checkpoint: {}'.format(self.hps['surf_nsb_net']['unary_pretrain_path']))
-                checkpoint = torch.load(self.hps['surf_nsb_net']['unary_pretrain_path'])
+            if os.path.isfile(self.hps['surf_net']['unary_pretrain_path']):
+                print('loading unary network pretrain checkpoint: {}'.format(self.hps['surf_net']['unary_pretrain_path']))
+                checkpoint = torch.load(self.hps['surf_net']['unary_pretrain_path'])
                 self.unary.load_state_dict(checkpoint['state_dict'])
                 print("=> loaded unary network pretrain checkpoint (epoch {})"
                     .format(checkpoint['epoch']))

@@ -220,7 +220,7 @@ def infer(model, hps):
     #     # print(batch_gt)
     #     # break
         batch_img = batch['img'].float().cuda()
-        pred_tmp = model(batch_img)
+        pred_tmp = model(batch_img, tr)
         pred = pred_tmp.squeeze().detach().cpu().numpy()
         pred_list.append(pred)
         gt_list.append(batch_gt)
@@ -245,9 +245,11 @@ def infer(model, hps):
     if not os.path.isdir(hps['test']['pred_dir']):
         os.mkdir(hps['test']['pred_dir'])
     pred_dir = os.path.join(hps['test']['pred_dir'],"pred.npy")
+    pred_stat_dir = os.path.join(hps['test']['pred_dir'],"pred_stat.txt")
     np.save(pred_dir, pred)
     error = np.abs(pred - gt)
     print(np.mean(error), np.std(error))
+    np.savetxt(pred_stat_dir, [np.mean(error), np.std(error)])
     #     # np.savetxt(pred_dir, pred, delimiter=',')
     # print("Test done!")
     # pred_l1_mean = np.mean(np.array(pred_l1))
@@ -319,9 +321,9 @@ def main():
         model = SurfSegNet(unary_model=model_u, hps=hps, pair_model=model_p)
         model.load_wt()
     elif hps['network']=="SurfSegNSBNet":
-        model_u = getattr(network, hps['network'])(num_classes=1, in_channels=1, depth=hps['unary_network']['depth'],
+        model_u = getattr(network, hps['surf_net']['unary_network'])(num_classes=1, in_channels=1, depth=hps['unary_network']['depth'],
                  start_filts=hps['unary_network']['start_filters'], up_mode=hps['unary_network']['up_mode'])
-        model = SurfSegNSBNet(unary_model=model_u, hps=hps)
+        model = getattr(network, hps['network'])(unary_model=model_u, hps=hps)
         model.load_wt()
     else:
         raise AttributeError('Network not implemented!')
