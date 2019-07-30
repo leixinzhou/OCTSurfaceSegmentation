@@ -257,11 +257,11 @@ def infer(model, hps):
     pred_stat_dir = os.path.join(hps['test']['pred_dir'],"pred_stat.txt")
     np.save(pred_dir, pred)
     error = np.abs(pred - gt)
-    error_mean = [np.mean(error[i*SLICE_per_vol:(i+1):SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
-    amd_mean = np.mean(error[:TEST_AMD_NB,])
-    amd_std = np.std(error[:TEST_AMD_NB, ])
-    control_mean = np.mean(error[TEST_AMD_NB:,])
-    control_std = np.std(error[TEST_AMD_NB:, ])
+    error_mean = [np.mean(error[i*SLICE_per_vol:(i+1)*SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
+    amd_mean = np.mean(error_mean[:TEST_AMD_NB])
+    amd_std = np.std(error_mean[:TEST_AMD_NB])
+    control_mean = np.mean(error_mean[TEST_AMD_NB:])
+    control_std = np.std(error_mean[TEST_AMD_NB:])
     print("AMD", amd_mean, amd_std)
     print("Control", control_mean, control_std)
     np.savetxt(pred_stat_dir, [amd_mean, amd_std, control_mean, control_std])
