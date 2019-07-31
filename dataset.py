@@ -9,12 +9,11 @@ from AugSurfSeg import *
 from smooth1D import smooth
 
 SLICE_per_vol = 60
-WINDOW_size = 101
 
 class OCTDataset(Dataset):
     """convert 3d dataset to Dataset."""
 
-    def __init__(self, img_np, label_np, surf, vol_list=None, transforms=None, col_len=512, sigma=50):
+    def __init__(self, img_np, label_np, surf, vol_list=None, transforms=None, col_len=512, sigma=50, Window_size=101):
         """
         Args:
             img_np (string): Path to the image numpy file.
@@ -29,6 +28,7 @@ class OCTDataset(Dataset):
         self.vol_list = vol_list
         self.trans = transforms
         self.LT = OCTDataset.LT_gen(col_len, sigma)
+        self.window_size = Window_size
 
     def __len__(self):
         if self.vol_list is None:
@@ -51,7 +51,7 @@ class OCTDataset(Dataset):
         gt_g = np.transpose(gt_g, (2, 0, 1))
         # ONLY WORK ON 1D
         # print("image_gt shape: ", img_gt["gt"].shape)
-        gt_d = smooth(img_gt["gt"][:-1, 0] - img_gt["gt"][1:, 0], WINDOW_size, 'flat')
+        gt_d = smooth(img_gt["gt"][:-1, 0] - img_gt["gt"][1:, 0], self.window_size, 'flat')
         # print(image.shape, gt_g.shape)
         image_gt_ts = {"img": torch.from_numpy(img_gt["img"].astype(np.float32)).unsqueeze(0),
                         "gt": torch.from_numpy(img_gt["gt"].astype(np.float32).reshape(-1, order='F')),

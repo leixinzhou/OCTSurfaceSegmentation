@@ -107,14 +107,16 @@ def learn(model, hps):
 
     tr_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['tr_img'],
                             label_np=hps['learning']['data']['tr_gt'],
-                            vol_list=vol_list, transforms=rand_aug
+                            vol_list=vol_list, transforms=rand_aug,
+                            Window_size = hps['pair_network']['window_size']
                             )
     print(tr_dataset.__len__())
     tr_loader = DataLoader(tr_dataset, shuffle=True,
                            batch_size=hps['learning']['batch_size'], num_workers=0)
     val_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['val_img'],
                             label_np=hps['learning']['data']['val_gt'],
-                            transforms=val_aug
+                            transforms=val_aug,
+                            Window_size = hps['pair_network']['window_size']
                             )
     val_loader = DataLoader(val_dataset, shuffle=False,
                             batch_size=hps['learning']['batch_size'], num_workers=0)
@@ -224,7 +226,10 @@ def infer(model, hps):
     #     pred = np.zeros(399, dtype=np.float32)
     #     batch_gt_d = batch['gt_d'].squeeze().detach().cpu().numpy()
     #     batch_gt_d_nsm = batch['gt_d_nsm'].squeeze().detach().cpu().numpy()
-        batch_gt = batch['gt'].squeeze().detach().cpu().numpy()
+        if hps['network'] == "PairNet":
+            batch_gt = batch['gt_d'].squeeze().detach().cpu().numpy()
+        else:
+            batch_gt = batch['gt'].squeeze().detach().cpu().numpy()
     #     # print(batch_gt_d)
     #     # print(batch_gt)
     #     # break
@@ -264,6 +269,7 @@ def infer(model, hps):
     control_std = np.std(error_mean[TEST_AMD_NB:])
     print("AMD", amd_mean, amd_std)
     print("Control", control_mean, control_std)
+    print("dummy_mean: ", np.mean(np.abs(gt)), "pred_mean: ", np.mean(error))
     np.savetxt(pred_stat_dir, [amd_mean, amd_std, control_mean, control_std])
     #     # np.savetxt(pred_dir, pred, delimiter=',')
     # print("Test done!")
@@ -310,7 +316,7 @@ def main():
             print("=> no unary network checkpoint found at '{}'".format(hps['unary_network']['resume_path']))
 
     elif hps['network']=="PairNet":
-        model = PairNet(num_classes=1, in_channels=1, depth=hps['pair_network']['depth'],
+        model = getattr(network, hps['network'])(num_classes=1, in_channels=1, depth=hps['pair_network']['depth'],
                             start_filts=hps['pair_network']['start_filters'], up_mode=hps['pair_network']['up_mode'], 
                             col_len=hps['pair_network']['col_len'], fc_inter=hps['pair_network']['fc_inter'], 
                             left_nbs=hps['pair_network']['left_nbs'])
