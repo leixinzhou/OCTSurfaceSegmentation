@@ -381,7 +381,11 @@ class SurfSegNet(torch.nn.Module):
             if os.path.isfile(self.hps['surf_net']['unary_pretrain_path']):
                 print('loading unary network pretrain checkpoint: {}'.format(self.hps['surf_net']['unary_pretrain_path']))
                 checkpoint = torch.load(self.hps['surf_net']['unary_pretrain_path'])
-                self.unary.load_state_dict(checkpoint['state_dict'])
+                # stripe the unary prefix of pretrained model state dict
+                new_stat_dict = {}
+                for key, value in checkpoint['state_dict'].items():
+                    new_stat_dict[key[6:]] = value
+                self.unary.load_state_dict(new_stat_dict)
                 print("=> loaded unary network pretrain checkpoint (epoch {})"
                     .format(checkpoint['epoch']))
             if self.pair is None:
