@@ -182,11 +182,11 @@ def learn(model, hps):
                     'state_dict': model.state_dict(),
                     'best_loss': best_loss
                 },
-                path=hps.learning.checkpoint_path,
+                path=hps['learning']['checkpoint_path'],
             )
 
     writer.export_scalars_to_json(os.path.join(
-        hps.learning.checkpoint_path, "all_scalars.json"))
+        hps['learning']['checkpoint_path'], "all_scalars.json"))
     writer.close()
 
     time_elapsed = time.time() - since
@@ -307,7 +307,7 @@ def main():
                             left_nbs=hps['pair_network']['left_nbs'])
         else:
             model_p = None
-        model = getattr(network, hps['network'])(unary_model=model_u, hps=hps, pair_model=model_p)
+        model = getattr(network, hps['network'])(unary_model=model_u, hps=hps, pair_model=model_p, wt_init=hps['surf_net']['wt_init'])
         model.load_wt()
 
     else:
