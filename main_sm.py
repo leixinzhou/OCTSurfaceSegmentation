@@ -11,6 +11,7 @@ import shutil
 import os
 import matplotlib.pyplot as plt
 import network
+from network import PairNet
 import sys
 sys.path.append('../')
 from AugSurfSeg import *
@@ -100,14 +101,16 @@ def learn(model, hps):
 
     tr_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['tr_img'],
                             label_np=hps['learning']['data']['tr_gt'],
-                            vol_list=vol_list, transforms=rand_aug
+                            vol_list=vol_list, transforms=rand_aug,
+                            Window_size = hps['pair_network']['window_size']
                             )
     print(tr_dataset.__len__())
     tr_loader = DataLoader(tr_dataset, shuffle=True,
                            batch_size=hps['learning']['batch_size'], num_workers=0)
     val_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['val_img'],
                             label_np=hps['learning']['data']['val_gt'],
-                            transforms=val_aug
+                            transforms=val_aug,
+                            Window_size = hps['pair_network']['window_size']
                             )
     val_loader = DataLoader(val_dataset, shuffle=False,
                             batch_size=hps['learning']['batch_size'], num_workers=0)
@@ -209,7 +212,8 @@ def infer(model, hps):
                                 trans_seq_post=[NormalizeSTD()],
                                 trans_seq_pre=[NormalizeSTD()])
     test_dataset = OCTDataset(surf=hps['surf'], img_np=hps['test']['data']['img'],
-                            label_np=hps['test']['data']['gt'], transforms=test_aug
+                            label_np=hps['test']['data']['gt'], transforms=test_aug,
+                            Window_size = hps['pair_network']['window_size']
                             )
     test_loader = DataLoader(test_dataset, shuffle=False,
                             batch_size=hps['test']['batch_size'], num_workers=0)

@@ -52,11 +52,13 @@ class OCTDataset(Dataset):
         # ONLY WORK ON 1D
         # print("image_gt shape: ", img_gt["gt"].shape)
         gt_d = smooth(img_gt["gt"][:-1, 0] - img_gt["gt"][1:, 0], self.window_size, 'flat')
+        gt_d_ns = img_gt["gt"][:-1, 0] - img_gt["gt"][1:, 0]
         # print(image.shape, gt_g.shape)
         image_gt_ts = {"img": torch.from_numpy(img_gt["img"].astype(np.float32)).unsqueeze(0),
                         "gt": torch.from_numpy(img_gt["gt"].astype(np.float32).reshape(-1, order='F')),
                         "gt_g": torch.from_numpy(gt_g.astype(np.float32)),
-                        "gt_d": torch.from_numpy(gt_d.astype(np.float32))}
+                        "gt_d": torch.from_numpy(gt_d.astype(np.float32)),
+                        "gt_d_ns": torch.from_numpy(gt_d_ns.astype(np.float32))}
         
         return image_gt_ts
        

@@ -213,7 +213,8 @@ def infer(model, hps):
                                 trans_seq_post=[NormalizeSTD()],
                                 trans_seq_pre=[NormalizeSTD()])
     test_dataset = OCTDataset(surf=hps['surf'], img_np=hps['test']['data']['img'],
-                            label_np=hps['test']['data']['gt'], transforms=test_aug
+                            label_np=hps['test']['data']['gt'], transforms=test_aug,
+                            Window_size = hps['pair_network']['window_size']
                             )
     test_loader = DataLoader(test_dataset, shuffle=False,
                             batch_size=hps['test']['batch_size'], num_workers=0)
