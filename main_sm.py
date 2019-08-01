@@ -147,8 +147,27 @@ def learn(model, hps):
             epoch_tr_loss = tr_loss / tr_mb
             writer.add_scalar('data/train_loss', epoch_tr_loss, epoch)
             print("Epoch: " + str(epoch))
-            print("     tr_loss: " + "%.5e" % epoch_tr_loss)
+            print("     tr_loss unary: " + "%.5e" % epoch_tr_loss)
             epoch += 1
+            val_loss = 0
+            val_mb = 0
+            for step, batch in enumerate(val_loader):
+                batch = {key: value.float().cuda() for (key, value) in batch.items() }
+                m_batch_loss = val(model, loss_func,  batch, hps)
+                val_loss += m_batch_loss
+                val_mb += 1
+            epoch_val_loss = val_loss / val_mb
+            if epoch_val_loss < best_loss:
+                best_loss = epoch_val_loss
+                save_checkpoint(
+                    {
+                        'epoch': epoch,
+                        'state_dict': model.state_dict(),
+                        'best_loss': best_loss
+                    },
+                    path=hps['learning']['checkpoint_path'],
+                )
+
 
         for epoch_smoother_tmp in range(0, hps['learning']['pair_iterations']):
             tr_loss = 0
@@ -163,30 +182,19 @@ def learn(model, hps):
             w_comp = model.w_comp.detach().cpu().numpy()
             writer.add_scalar('data/w_comp', w_comp)
             print("Epoch: " + str(epoch))
-            print("     tr_loss: " + "%.5e" % epoch_tr_loss + " w_comp: " + "%.5e" % w_comp)
+            print("     tr_loss pair: " + "%.5e" % epoch_tr_loss + " w_comp: " + "%.5e" % w_comp)
             epoch += 1
 
-        val_loss = 0
-        val_mb = 0
-        for step, batch in enumerate(val_loader):
-            batch = {key: value.float().cuda() for (key, value) in batch.items() }
-            m_batch_loss = val(model, loss_func, batch, hps)
-            val_loss += m_batch_loss
-            val_mb += 1
-        epoch_val_loss = val_loss / val_mb
-        writer.add_scalar('data/val_loss', epoch_val_loss, epoch_tmp)
-        print("     val_loss: " + "%.5e" % epoch_val_loss)
-
-        if epoch_val_loss < best_loss:
-            best_loss = epoch_val_loss
-            save_checkpoint(
-                {
-                    'epoch': epoch,
-                    'state_dict': model.state_dict(),
-                    'best_loss': best_loss
-                },
-                path=hps['learning']['checkpoint_path'],
-            )
+            if epoch_tr_loss < best_loss:
+                best_loss = epoch_tr_loss
+                save_checkpoint(
+                    {
+                        'epoch': epoch,
+                        'state_dict': model.state_dict(),
+                        'best_loss': best_loss
+                    },
+                    path=hps['learning']['checkpoint_path'],
+                )
 
     writer.export_scalars_to_json(os.path.join(
         hps['learning']['checkpoint_path'], "all_scalars.json"))
