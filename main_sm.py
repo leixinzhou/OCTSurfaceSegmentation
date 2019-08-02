@@ -147,7 +147,7 @@ def learn(model, hps):
             epoch_tr_loss = tr_loss / tr_mb
             writer.add_scalar('data/train_loss', epoch_tr_loss, epoch)
             print("Epoch: " + str(epoch))
-            print("     tr_loss unary: " + "%.5e" % epoch_tr_loss)
+            print("     tr_loss: " + "%.5e" % epoch_tr_loss)
             epoch += 1
             val_loss = 0
             val_mb = 0
@@ -157,6 +157,8 @@ def learn(model, hps):
                 val_loss += m_batch_loss
                 val_mb += 1
             epoch_val_loss = val_loss / val_mb
+            writer.add_scalar('data/val_loss', epoch_val_loss, epoch)
+            print("     val_loss: " + "%.5e" % epoch_val_loss)
             if epoch_val_loss < best_loss:
                 best_loss = epoch_val_loss
                 save_checkpoint(
