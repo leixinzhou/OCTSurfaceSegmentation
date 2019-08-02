@@ -342,7 +342,7 @@ def main():
             model_p = None
         model = SurfSegNet(unary_model=model_u, hps=hps, pair_model=model_p)
         model.load_wt()
-    elif hps['network']=="SurfSegNSBNet":
+        elif hps['network']=="SurfSegNSBNet":
         model_u = getattr(network, hps['surf_net']['unary_network'])(num_classes=1, in_channels=1, depth=hps['unary_network']['depth'],
                  start_filts=hps['unary_network']['start_filters'], up_mode=hps['unary_network']['up_mode'])
         model = getattr(network, hps['network'])(unary_model=model_u, hps=hps)

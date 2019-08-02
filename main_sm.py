@@ -322,6 +322,7 @@ def main():
         model = getattr(network, hps['network'])(unary_model=model_u, hps=hps, pair_model=model_p, wt_init=hps['surf_net']['wt_init'])
         model.load_wt()
 
+
     else:
         raise AttributeError('Network not implemented!')
 
