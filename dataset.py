@@ -96,31 +96,34 @@ if __name__ == "__main__":
                                 trans_seq_post=[NormalizeSTD()],
                                 trans_seq_pre=[NormalizeSTD()])
 
-    vol_list = [10,3]
-    vol_index = 1
+    vol_list = [15,3]
+    vol_index = 0
     slice_index = 1
     patch_dir = "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/test/patch.npy"
     truth_dir = "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/test/truth.npy"
-    dataset = OCTDataset(img_np=patch_dir, label_np=truth_dir, surf=[0], vol_list=vol_list, transforms=rand_aug)
+    dataset = OCTDataset(img_np=patch_dir, label_np=truth_dir, surf=[1], vol_list=vol_list, transforms=rand_aug, Window_size=11)
     loader = DataLoader(dataset, shuffle=False, batch_size=1)
     test_patch = np.load(patch_dir, mmap_mode='r')
     test_truth = np.load(truth_dir, mmap_mode='r')
-    _, axes = plt.subplots(1,4)
-    axes[0].imshow(np.transpose(test_patch[vol_list[vol_index]*SLICE_per_vol+slice_index,].astype(np.float32)), cmap='gray')
-    axes[0].plot(test_truth[vol_list[vol_index]*SLICE_per_vol+slice_index,:,0])
+    _, axes = plt.subplots(5,1)
+    axes[0].imshow(np.transpose(test_patch[vol_list[vol_index]*SLICE_per_vol+slice_index,].astype(np.float32)), \
+        cmap='gray', aspect='auto')
+    axes[0].plot(test_truth[vol_list[vol_index]*SLICE_per_vol+slice_index,:,1])
     for i, batch in enumerate(loader):
         if i == vol_index*SLICE_per_vol+slice_index:
             img = batch['img'].squeeze().numpy()
             gt = batch['gt'].squeeze(0).numpy()
             gt_g = batch['gt_g'].squeeze(0).numpy()
             gt_d = batch['gt_d'].squeeze(0).numpy()
+            gt_d_ns = batch['gt_d_ns'].squeeze(0).numpy()
             print(gt_g.shape)
             break
-    axes[1].imshow(img, cmap='gray')
+    axes[1].imshow(img, cmap='gray', aspect='auto')
     axes[1].plot(gt[:400])
-    axes[2].imshow(gt_g[:,:,0])
+    axes[2].imshow(gt_g[:,:,0], aspect='auto')
     axes[2].plot(gt[:400])
     axes[3].plot(gt_d)
+    axes[4].plot(gt_d_ns)
     
     plt.show()
     

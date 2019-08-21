@@ -14,6 +14,7 @@ import network
 import sys
 sys.path.append('../')
 from AugSurfSeg import *
+from unet import FCN_D2
 # os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 
 # Sample training data. The npy starts with AMD and then Control.
@@ -43,6 +44,8 @@ def train(model, criterion, optimizer, input_img_gt, hps):
         loss = criterion(D, input_img_gt['gt_g'].squeeze(-1))
     elif hps['network']=="PairNet":
         loss =  criterion(D, input_img_gt['gt_d'])
+        criterion_l1 = nn.L1Loss()
+        loss_l1 = criterion_l1(D, input_img_gt['gt_d'])
     elif hps['network']=="SurfNet" or hps['network']=="SurfSegNSBNet":
         loss =  criterion(D, input_img_gt['gt'])
     else:
@@ -51,7 +54,8 @@ def train(model, criterion, optimizer, input_img_gt, hps):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-
+    if hps['network']=="PairNet":
+        return loss_l1.detach().cpu().numpy()
     return loss.detach().cpu().numpy()
 # val
 
@@ -64,11 +68,14 @@ def val(model, criterion, input_img_gt, hps):
         loss = criterion(D, input_img_gt['gt_g'].squeeze(-1))
     elif hps['network']=="PairNet":
         loss =  criterion(D, input_img_gt['gt_d'])
+        criterion_l1 = nn.L1Loss()
+        loss_l1 = criterion_l1(D, input_img_gt['gt_d'])
     elif hps['network']=="SurfNet" or hps['network']=="SurfSegNSBNet":
         loss =  criterion(D, input_img_gt['gt'])
     else:
         raise AttributeError('Network not implemented!')
-
+    if hps['network']=="PairNet":
+        return loss_l1.detach().cpu().numpy()
     return  loss.detach().cpu().numpy()
 # learn
 
@@ -323,6 +330,8 @@ def main():
                             start_filts=hps['pair_network']['start_filters'], up_mode=hps['pair_network']['up_mode'], 
                             col_len=hps['pair_network']['col_len'], fc_inter=hps['pair_network']['fc_inter'], 
                             left_nbs=hps['pair_network']['left_nbs'])
+        print(model)
+        # sys.exit(0)
         if os.path.isfile(hps['pair_network']['resume_path']):
             print('loading pair network checkpoint: {}'.format(hps['pair_network']['resume_path']))
             checkpoint = torch.load(hps['pair_network']['resume_path'])

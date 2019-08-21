@@ -28,7 +28,7 @@ def conv1x1(in_channels, out_channels):
         kernel_size=1
     )
 
-def conv1(in_channels, out_channels):
+def conv1(in_channels, out_channels, bias=True):
     return nn.Conv1d(
         in_channels,
         out_channels,
@@ -185,11 +185,12 @@ class UNet(nn.Module):
     '''
 
     def __init__(self, num_classes, in_channels=3, depth=5,
-                 start_filts=64, up_mode='transpose'):
+                 start_filts=64, up_mode='transpose', PairNet=False):
         super(UNet, self).__init__()
 
         self.down_convs = []
         self.up_convs = []
+        self.pn = PairNet
 
         # put one conv  at the beginning
         self.conv_start = conv3x3(in_channels, start_filts, stride=1)
@@ -227,6 +228,8 @@ class UNet(nn.Module):
             x = module(before_pool, x)
 
         x = self.conv_final(x)
+        if self.pn:
+            return x
         x = x.squeeze(1)
         if logSoftmax:
             x = torch.nn.functional.log_softmax(x, dim=1)
@@ -244,7 +247,7 @@ class PairNet(nn.Module):
                  start_filts=64, up_mode='transpose', col_len=512, fc_inter=128, left_nbs=3):
         super(PairNet, self).__init__()
         self.Unet = UNet(num_classes, in_channels, depth,
-                 start_filts, up_mode)
+                 start_filts, up_mode, PairNet=True)
         self.FC_D1 = conv1(col_len*(left_nbs+1)*2, fc_inter)
         self.FC_D2 = conv1(fc_inter, 1)
         self.half = left_nbs+1
