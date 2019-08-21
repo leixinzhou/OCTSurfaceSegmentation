@@ -260,8 +260,10 @@ def infer(model, hps):
     if not os.path.isdir(hps['test']['pred_dir']):
         os.mkdir(hps['test']['pred_dir'])
     pred_dir = os.path.join(hps['test']['pred_dir'],"pred.npy")
+    gt_dir = os.path.join(hps['test']['pred_dir'],"gt.npy")
     pred_stat_dir = os.path.join(hps['test']['pred_dir'],"pred_stat.txt")
     np.save(pred_dir, pred)
+    np.save(gt_dir, gt)
     error = np.abs(pred - gt)
     error_mean = [np.mean(error[i*SLICE_per_vol:(i+1)*SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
     amd_mean = np.mean(error_mean[:TEST_AMD_NB])
