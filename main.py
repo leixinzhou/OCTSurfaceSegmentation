@@ -14,7 +14,6 @@ import network
 import sys
 sys.path.append('../')
 from AugSurfSeg import *
-from unet import FCN_D2
 # os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 
 # Sample training data. The npy starts with AMD and then Control.
