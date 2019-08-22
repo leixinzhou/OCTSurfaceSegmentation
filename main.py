@@ -279,7 +279,7 @@ def infer(model, hps):
     print("AMD", amd_mean, amd_std)
     print("Control", control_mean, control_std)
     print("dummy_mean: ", np.mean(np.abs(gt)), "pred_mean: ", np.mean(error))
-    np.savetxt(pred_stat_dir, [amd_mean, amd_std, control_mean, control_std])
+    np.savetxt(pred_stat_dir, [amd_mean, amd_std, control_mean, control_std, np.mean(error), np.std(error), np.mean(np.abs(gt)), np.std(np.abs(gt))])
     #     # np.savetxt(pred_dir, pred, delimiter=',')
     # print("Test done!")
     # pred_l1_mean = np.mean(np.array(pred_l1))
