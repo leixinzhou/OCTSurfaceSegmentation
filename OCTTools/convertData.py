@@ -46,6 +46,11 @@ def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile):
         for z in range(0, Z):
             allPatientsImageArray[s,] = imread(imagesList[z])
             s +=1
+
+    # remove the leftmost and rightmost 128 columns for each B-scans as the segmentation is not accurate
+    allPatientsImageArray = allPatientsImageArray[:,:,128:640]
+    allPatientsSurfaceArray = allPatientsSurfaceArray[:,:,128:640]
+
     # save
     np.save(goalImageFile, allPatientsImageArray)
     np.save(goalSurfaceFile, allPatientsSurfaceArray)

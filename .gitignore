@@ -1,2 +1,5 @@
 .vscode/
 run/
+
+OCTTools/.idea/
+OCTTools/__pycache__/
