@@ -2,6 +2,7 @@
 import glob as glob
 import os
 import sys
+#  sys.path.append('.')
 from FileUtilities import *
 import random
 import numpy as np
@@ -23,6 +24,8 @@ outputDir = "/home/hxie1/data/OCT_Beijing/numpy"
 patientsListFile = os.path.join(outputDir, "patientsList.txt")
 
 def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile):
+    # image in slices, Heigh, Width axis order
+    # label in slices, NumSurfaces, Width axis order
     allPatientsImageArray = np.empty((len(volumesList)*NumSlices,H, W), dtype=np.float)
     allPatientsSurfaceArray = np.empty((len(volumesList)*NumSlices, NumSurfaces, W),dtype=np.int)
 
@@ -50,6 +53,10 @@ def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile):
     # remove the leftmost and rightmost 128 columns for each B-scans as the segmentation is not accurate
     allPatientsImageArray = allPatientsImageArray[:,:,128:640]
     allPatientsSurfaceArray = allPatientsSurfaceArray[:,:,128:640]
+
+    # flip axis order to fit with Leixin's network
+    allPatientsImageArray = np.swapaxes(allPatientsImageArray, 1,2)
+    allPatientsSurfaceArray = np.swapaxes(allPatientsSurfaceArray, 1,2)
 
     # save
     np.save(goalImageFile, allPatientsImageArray)

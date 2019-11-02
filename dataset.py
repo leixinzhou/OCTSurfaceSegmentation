@@ -4,11 +4,10 @@ import numpy as np
 import torch
 import matplotlib.pyplot as plt
 import sys
-sys.path.append('../')
 from AugSurfSeg import *
 from smooth1D import smooth
 
-SLICE_per_vol = 60
+SLICE_per_vol = 31 # 60 for leixin's data, 31 for Beijing OCT data.
 
 class OCTDataset(Dataset):
     """convert 3d dataset to Dataset."""
@@ -18,11 +17,11 @@ class OCTDataset(Dataset):
         Args:
             img_np (string): Path to the image numpy file.
                              in (slice, width, Hight) dimension for Leixin's data
-                             in (slice, Height, width) dimension for BeijingOCT data
+
 
             label_np (string): Path to the label numpy file,
                              in (slice, width, surface) dimension for Leixin's data
-                             in (Slice, surface, width) dimension for BeijingOCT data
+
             vol_list (list): sample list.
             transform (callable, optional): Optional transform to be applied
                 on a sample.
@@ -35,7 +34,7 @@ class OCTDataset(Dataset):
         self.trans = transforms
         self.LT = OCTDataset.LT_gen(col_len, sigma)
         self.window_size = Window_size
-        self.BeijingOCT = True
+
 
     def __len__(self):
         if self.vol_list is None:
@@ -48,12 +47,8 @@ class OCTDataset(Dataset):
             real_idx = idx
         else:
             real_idx = self.vol_list[int(idx/SLICE_per_vol)]*SLICE_per_vol + idx % SLICE_per_vol
-        if self.BeijingOCT:
-            image = self.image[real_idx,]
-            label = self.label[real_idx, self.sf, :]
-        else:
-            image = np.swapaxes(self.image[real_idx, ], 0, 1)
-            label = np.swapaxes(self.label[real_idx,:, self.sf], 0, 1)
+        image = np.swapaxes(self.image[real_idx, ], 0, 1)
+        label = np.swapaxes(self.label[real_idx,:, self.sf], 0, 1)
         # print(self.label.shape, label.shape)
         img_gt = {"img": image.astype(np.float64), "gt": label}
         if self.trans is not None:
@@ -62,8 +57,8 @@ class OCTDataset(Dataset):
         gt_g = np.transpose(gt_g, (2, 0, 1))
         # ONLY WORK ON 1D
         # print("image_gt shape: ", img_gt["gt"].shape)
-        gt_d = smooth(img_gt["gt"][0, :-1] - img_gt["gt"][0, 1:], self.window_size, 'flat')
-        gt_d_ns = img_gt["gt"][0, :-1] - img_gt["gt"][0, 1:]  # ns is not smooth
+        gt_d = smooth(img_gt["gt"][:-1, 0] - img_gt["gt"][1:, 0], self.window_size, 'flat')
+        gt_d_ns = img_gt["gt"][:-1, 0] - img_gt["gt"][1:, 0]  # ns means not smooth
         # print(image.shape, gt_g.shape)
         image_gt_ts = {"img": torch.from_numpy(img_gt["img"].astype(np.float32)).unsqueeze(0),
                         "gt": torch.from_numpy(img_gt["gt"].astype(np.float32).reshape(-1, order='F')),
@@ -103,39 +98,39 @@ if __name__ == "__main__":
                 "cropresize": RandomCropResize(crop_ratio=0.9), 
                 "circulateud": CirculateUD(),
                 "mirrorlr":MirrorLR()}
-    rand_aug = RandomApplyTrans(trans_seq=[],
+    rand_aug = RandomApplyTrans(trans_seq=[aug_dict[key] for key, _ in aug_dict.items()],
                                 trans_seq_post=[NormalizeSTD()],
                                 trans_seq_pre=[NormalizeSTD()])
 
-    # vol_list = [25]
-    # vol_index = 0
-    slice_index = 50
-    patch_dir = "/home/hxie1/data/OCT_Beijing/numpy/test/images_CV0.npy"
-    truth_dir = "/home/hxie1/data/OCT_Beijing/numpy/test/surfaces_CV0.npy"
-    dataset = OCTDataset(img_np=patch_dir, label_np=truth_dir, surf=[2], vol_list=None, transforms=rand_aug, Window_size=200, col_len=496, sigma=48)
+    vol_list = [15,3]
+    vol_index = 0
+    slice_index = 1
+    patch_dir = "/home/hxie1/data/OCT_Beijing/numpy/training/images_CV0.npy"
+    truth_dir = "/home/hxie1/data/OCT_Beijing/numpy/training/surfaces_CV0.npy"
+    dataset = OCTDataset(img_np=patch_dir, label_np=truth_dir, surf=[1], vol_list=vol_list, transforms=rand_aug, Window_size=11)
     loader = DataLoader(dataset, shuffle=False, batch_size=1)
     test_patch = np.load(patch_dir, mmap_mode='r')
     test_truth = np.load(truth_dir, mmap_mode='r')
     _, axes = plt.subplots(5,1)
-    axes[0].imshow(test_patch[slice_index,].astype(np.float32), cmap='gray', aspect='auto')
-    axes[0].plot(test_truth[slice_index,2,])
+    axes[0].imshow(np.transpose(test_patch[vol_list[vol_index]*SLICE_per_vol+slice_index,].astype(np.float32)), \
+        cmap='gray', aspect='auto')
+    axes[0].plot(test_truth[vol_list[vol_index]*SLICE_per_vol+slice_index,:,1])
     for i, batch in enumerate(loader):
-        if i == slice_index:
+        if i == vol_index*SLICE_per_vol+slice_index:
             img = batch['img'].squeeze().numpy()
-            gt = batch['gt'].squeeze().numpy()
-            gt_g = batch['gt_g'].squeeze().numpy()
-            gt_d = batch['gt_d'].squeeze().numpy()
-            gt_d_ns = batch['gt_d_ns'].squeeze().numpy()
+            gt = batch['gt'].squeeze(0).numpy()
+            gt_g = batch['gt_g'].squeeze(0).numpy()
+            gt_d = batch['gt_d'].squeeze(0).numpy()
+            gt_d_ns = batch['gt_d_ns'].squeeze(0).numpy()
             print(gt_g.shape)
             break
     axes[1].imshow(img, cmap='gray', aspect='auto')
-    axes[1].plot(gt)
-    axes[2].imshow(gt_g, aspect='auto')
-    axes[2].plot(gt)
+    axes[1].plot(gt[:512])
+    axes[2].imshow(gt_g[:,:,0], aspect='auto')
+    axes[2].plot(gt[:512])
     axes[3].plot(gt_d)
     axes[4].plot(gt_d_ns)
-    _, axes = plt.subplots(1,1)
-    axes.plot(gt_d)
+
     plt.show()
     
 
