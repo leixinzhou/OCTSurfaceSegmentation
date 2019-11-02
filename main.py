@@ -16,6 +16,8 @@ sys.path.append('../')
 from AugSurfSeg import *
 # os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 
+BeijingOCT =True
+
 # Sample training data. The npy starts with AMD and then Control.
 TR_AMD_NB = 187
 TR_Control_NB = 79
@@ -23,6 +25,9 @@ TR_CASE_NB = TR_AMD_NB + TR_Control_NB
 TEST_AMD_NB = 41
 TEST_Control_NB = 18
 SLICE_per_vol = 60
+
+if BeijingOCT:
+    SLICE_per_vol =31
 
 
 def save_checkpoint(states,  path, filename='model_best.pth.tar'):
@@ -97,7 +102,9 @@ def learn(model, hps):
     Control_vol_list = np.random.choice(range(TR_AMD_NB, TR_CASE_NB), 
                             int(TR_Control_NB*hps['learning']['data']['tr_ratio']), replace=False)
     vol_list = np.concatenate((AMD_vol_list, Control_vol_list))
-    print(vol_list)
+    if BeijingOCT:
+        vol_list = None
+    print(f"vol_list= {vol_list}")
     aug_dict = {"saltpepper": SaltPepperNoise(sp_ratio=0.05), 
                 "Gaussian": AddNoiseGaussian(loc=0, scale=0.1),
                 "cropresize": RandomCropResize(crop_ratio=0.9), 
@@ -114,14 +121,16 @@ def learn(model, hps):
     tr_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['tr_img'],
                             label_np=hps['learning']['data']['tr_gt'],
                             vol_list=vol_list, transforms=rand_aug,
+                            col_len=hps['pair_network']['col_len'],
                             Window_size = hps['pair_network']['window_size']
                             )
-    print(tr_dataset.__len__())
+    print(f"training dataset length:{tr_dataset.__len__()}")
     tr_loader = DataLoader(tr_dataset, shuffle=True,
                            batch_size=hps['learning']['batch_size'], num_workers=0)
     val_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['val_img'],
                             label_np=hps['learning']['data']['val_gt'],
                             transforms=val_aug,
+                            col_len=hps['pair_network']['col_len'],
                             Window_size = hps['pair_network']['window_size']
                             )
     val_loader = DataLoader(val_dataset, shuffle=False,
@@ -220,6 +229,7 @@ def infer(model, hps):
                                 trans_seq_pre=[NormalizeSTD()])
     test_dataset = OCTDataset(surf=hps['surf'], img_np=hps['test']['data']['img'],
                             label_np=hps['test']['data']['gt'], transforms=test_aug,
+                            col_len=hps['pair_network']['col_len'],
                             Window_size = hps['pair_network']['window_size']
                             )
     test_loader = DataLoader(test_dataset, shuffle=False,

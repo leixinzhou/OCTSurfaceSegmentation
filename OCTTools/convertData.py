@@ -2,7 +2,7 @@
 import glob as glob
 import os
 import sys
-#  sys.path.append('.')
+sys.path.append('../OCTTools/')
 from FileUtilities import *
 import random
 import numpy as np

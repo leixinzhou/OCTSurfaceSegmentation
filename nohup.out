@@ -1,0 +1,36 @@
+main.py:312: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  hps = yaml.load(config_file)
+=> no unary network checkpoint found at ''
+[107  45 159  63 122  83  18 110 156   7   5 116 154  71 108  98  37  94
+ 135  74  55 130  56  93 168 149 118 111 171  33   4 123 163  61  44  26
+ 173 137 144   8 150  89 177 186  66  24  30 101  60  86 166  19 143 146
+  54 152  16  51 112 129  40  80  22 170  90 134 131  96 125  27 153 106
+  46 183  95  62   2  59 182 109  43  10  92  73 180 167 136 113 139 164
+ 179  50 126  97  64 175  41  69  49  48  85  13 141  23 174 124  20  15
+  78 104  52 100  76   3 185 184   6  68  75  84 138 121  12 145 160  14
+   0  91 161  11 119 102  35  57  65   1 120 151  42 105 132 162  17  38
+ 133  53 157 128  34  28 114  31 155 127 169  32 142 158 147  29  99  82
+  79 115 148 181  72  77  25 165  81 176 178  39  58 140  88  70  87  36
+  21   9 103  67 117  47 172 239 251 200 193 245 257 205 236 202 209 225
+ 201 199 252 246 249 243 217 232 229 237 204 265 253 203 223 258 259 255
+ 187 191 195 192 263 221 220 208 194 247 262 250 218 264 213 242 244 228
+ 235 196 226 260 261 216 207 233 238 240 210 212 206 214 189 227 234 215
+ 224 241 197 198 219 230 256 248 222 190 254 211 231 188]
+8246
+Epoch: 0
+Traceback (most recent call last):
+  File "main.py", line 381, in <module>
+    main()
+  File "main.py", line 368, in main
+    learn(model, hps)
+  File "main.py", line 152, in learn
+    for step, batch in enumerate(tr_loader):
+  File "/home/hxie1/anaconda3/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 346, in __next__
+    data = self.dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/hxie1/anaconda3/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/hxie1/anaconda3/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/hxie1/Projects/OCTSurfaceSegmentation/dataset.py", line 50, in __getitem__
+    image = np.swapaxes(self.image[real_idx, ], 0, 1)
+IndexError: index 8005 is out of bounds for axis 0 with size 1085
