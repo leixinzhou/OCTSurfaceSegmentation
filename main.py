@@ -88,7 +88,7 @@ def learn(model, hps):
     since = time.time()
     writer = SummaryWriter(hps['learning']['checkpoint_path'])
     if torch.cuda.device_count() >= 1:
-        # os.environ["CUDA_VISIBLE_DEVICES"] = hps['gpu'])
+        # os.environ["CUDA_VISIBLE_DEVICES"] = hps['gpu']
         model.cuda()
         # model = nn.DataParallel(model)
 
@@ -150,13 +150,13 @@ def learn(model, hps):
         raise AttributeError(hps['learning']['loss']+" is not implemented!")
     # criterion_KLD = torch.nn.KLDivLoss()
 
-    epoch_start = 0
+    epoch_start =  hps['learning']['epoch_start']
     best_loss = hps['learning']['best_loss']
 
     for epoch in range(epoch_start, hps['learning']['total_iterations']):
         # tr_loss_g = 0
         tr_loss_d = 0
-        tr_mb = 0
+        tr_mb = 0 # count of minibatch
         print("Epoch: " + str(epoch))
         for step, batch in enumerate(tr_loader):
             batch = {key: value.cuda() for (key, value) in batch.items() }
@@ -281,6 +281,7 @@ def infer(model, hps):
     np.save(pred_dir, pred)
     np.save(gt_dir, gt)
     error = np.abs(pred - gt)
+    # todo: this needs modification
     error_mean = [np.mean(error[i*SLICE_per_vol:(i+1)*SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
     amd_mean = np.mean(error_mean[:TEST_AMD_NB])
     amd_std = np.std(error_mean[:TEST_AMD_NB])
@@ -329,6 +330,8 @@ def main():
             print('loading unary network checkpoint: {}'.format(hps['unary_network']['resume_path']))
             checkpoint = torch.load(hps['unary_network']['resume_path'])
             model.load_state_dict(checkpoint['state_dict'])
+            hps['learning']['epoch_start'] = checkpoint['epoch']+1
+
             print("=> loaded unary checkpoint (epoch {})"
                 .format(checkpoint['epoch']))
         else:

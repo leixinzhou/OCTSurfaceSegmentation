@@ -1,0 +1,197 @@
+loading unary network checkpoint: /home/hxie1/data/OCT_Beijing/netParameters/unet20191101/model_best.pth.tar
+=> loaded unary checkpoint (epoch 3114)
+vol_list= None
+training dataset length:1085
+Epoch: 3115
+         mini batch train loss: 3.03995e-07
+         mini batch train loss: 2.67921e-07
+         mini batch train loss: 2.39176e-07
+         mini batch train loss: 2.68367e-07
+         mini batch train loss: 2.49895e-07
+         mini batch train loss: 2.30866e-07
+         mini batch train loss: 2.61890e-07
+         mini batch train loss: 2.19773e-07
+         mini batch train loss: 3.39993e-07
+         mini batch train loss: 2.75121e-07
+         mini batch train loss: 3.12159e-07
+         mini batch train loss: 2.46204e-07
+         mini batch train loss: 3.25328e-07
+         mini batch train loss: 3.00377e-07
+         mini batch train loss: 3.52224e-07
+         mini batch train loss: 2.08729e-07
+         mini batch train loss: 2.35222e-07
+         mini batch train loss: 3.22349e-07
+         mini batch train loss: 2.76050e-07
+         mini batch train loss: 2.76224e-07
+         mini batch train loss: 3.52087e-07
+         mini batch train loss: 3.03176e-07
+         mini batch train loss: 2.85927e-07
+     tr_loss_d: 2.80568e-07
+         mini batch val loss: 6.04699e-07
+         mini batch val loss: 3.41140e-07
+         mini batch val loss: 6.57778e-07
+         mini batch val loss: 7.20177e-07
+         mini batch val loss: 2.52901e-07
+         mini batch val loss: 1.74077e-07
+     val_loss_d: 4.58462e-07
+Epoch: 3116
+         mini batch train loss: 2.48636e-07
+         mini batch train loss: 3.46945e-07
+         mini batch train loss: 3.32803e-07
+         mini batch train loss: 2.70081e-07
+         mini batch train loss: 2.52536e-07
+         mini batch train loss: 2.54628e-07
+         mini batch train loss: 2.39291e-07
+         mini batch train loss: 2.19637e-07
+         mini batch train loss: 2.85594e-07
+         mini batch train loss: 2.65996e-07
+         mini batch train loss: 2.79561e-07
+         mini batch train loss: 2.55011e-07
+         mini batch train loss: 2.57764e-07
+         mini batch train loss: 3.24419e-07
+         mini batch train loss: 2.82157e-07
+         mini batch train loss: 2.78094e-07
+         mini batch train loss: 2.80912e-07
+         mini batch train loss: 2.66349e-07
+         mini batch train loss: 3.05954e-07
+         mini batch train loss: 2.67792e-07
+         mini batch train loss: 2.33647e-07
+         mini batch train loss: 2.34852e-07
+         mini batch train loss: 2.36743e-07
+     tr_loss_d: 2.70409e-07
+         mini batch val loss: 6.33679e-07
+         mini batch val loss: 3.10151e-07
+         mini batch val loss: 6.55299e-07
+         mini batch val loss: 7.27404e-07
+         mini batch val loss: 2.64859e-07
+         mini batch val loss: 1.46646e-07
+     val_loss_d: 4.56340e-07
+Epoch: 3117
+         mini batch train loss: 2.70549e-07
+         mini batch train loss: 3.02461e-07
+         mini batch train loss: 1.85891e-07
+         mini batch train loss: 3.08867e-07
+         mini batch train loss: 2.64039e-07
+         mini batch train loss: 2.22804e-07
+         mini batch train loss: 3.56689e-07
+         mini batch train loss: 2.74041e-07
+         mini batch train loss: 3.11531e-07
+         mini batch train loss: 3.06706e-07
+         mini batch train loss: 2.69914e-07
+         mini batch train loss: 2.47667e-07
+         mini batch train loss: 2.75121e-07
+         mini batch train loss: 2.13292e-07
+         mini batch train loss: 3.13145e-07
+         mini batch train loss: 2.59562e-07
+         mini batch train loss: 2.53647e-07
+         mini batch train loss: 3.15055e-07
+         mini batch train loss: 2.73925e-07
+         mini batch train loss: 2.70358e-07
+         mini batch train loss: 2.13751e-07
+         mini batch train loss: 2.50035e-07
+         mini batch train loss: 3.06783e-07
+     tr_loss_d: 2.72428e-07
+         mini batch val loss: 6.20491e-07
+         mini batch val loss: 3.44295e-07
+         mini batch val loss: 6.55810e-07
+         mini batch val loss: 6.95183e-07
+         mini batch val loss: 2.43446e-07
+         mini batch val loss: 1.28467e-07
+     val_loss_d: 4.47949e-07
+Epoch: 3118
+         mini batch train loss: 3.46112e-07
+         mini batch train loss: 2.94332e-07
+         mini batch train loss: 2.77731e-07
+         mini batch train loss: 2.76461e-07
+         mini batch train loss: 2.39446e-07
+         mini batch train loss: 2.78153e-07
+         mini batch train loss: 2.21119e-07
+         mini batch train loss: 2.81551e-07
+         mini batch train loss: 2.53043e-07
+         mini batch train loss: 2.30255e-07
+         mini batch train loss: 2.78411e-07
+         mini batch train loss: 2.87393e-07
+         mini batch train loss: 2.18159e-07
+         mini batch train loss: 2.17684e-07
+         mini batch train loss: 2.47963e-07
+         mini batch train loss: 3.03227e-07
+         mini batch train loss: 2.75731e-07
+         mini batch train loss: 2.54850e-07
+         mini batch train loss: 2.79318e-07
+         mini batch train loss: 2.59166e-07
+         mini batch train loss: 3.20137e-07
+         mini batch train loss: 2.76059e-07
+         mini batch train loss: 3.86442e-07
+     tr_loss_d: 2.74032e-07
+         mini batch val loss: 6.30238e-07
+         mini batch val loss: 3.40511e-07
+         mini batch val loss: 6.72515e-07
+         mini batch val loss: 8.19571e-07
+         mini batch val loss: 2.73959e-07
+         mini batch val loss: 1.30380e-07
+     val_loss_d: 4.77863e-07
+Epoch: 3119
+         mini batch train loss: 2.63394e-07
+         mini batch train loss: 3.14475e-07
+         mini batch train loss: 2.59481e-07
+         mini batch train loss: 3.44301e-07
+         mini batch train loss: 2.90618e-07
+         mini batch train loss: 2.66644e-07
+         mini batch train loss: 3.27670e-07
+         mini batch train loss: 2.87265e-07
+         mini batch train loss: 2.82133e-07
+         mini batch train loss: 1.82805e-07
+         mini batch train loss: 2.28970e-07
+         mini batch train loss: 2.87677e-07
+         mini batch train loss: 2.59447e-07
+         mini batch train loss: 2.33302e-07
+         mini batch train loss: 3.01088e-07
+         mini batch train loss: 2.74524e-07
+         mini batch train loss: 2.97766e-07
+         mini batch train loss: 2.87569e-07
+         mini batch train loss: 3.07747e-07
+         mini batch train loss: 2.95449e-07
+         mini batch train loss: 2.77184e-07
+         mini batch train loss: 3.41544e-07
+         mini batch train loss: 2.28898e-07
+     tr_loss_d: 2.79998e-07
+         mini batch val loss: 7.92859e-07
+         mini batch val loss: 3.20565e-07
+         mini batch val loss: 7.94336e-07
+         mini batch val loss: 8.72111e-07
+         mini batch val loss: 3.08226e-07
+         mini batch val loss: 2.17310e-07
+     val_loss_d: 5.50901e-07
+Epoch: 3120
+         mini batch train loss: 2.10957e-07
+         mini batch train loss: 3.20133e-07
+         mini batch train loss: 3.21554e-07
+         mini batch train loss: 3.70540e-07
+         mini batch train loss: 2.65146e-07
+         mini batch train loss: 2.70133e-07
+         mini batch train loss: 3.09349e-07
+         mini batch train loss: 3.19747e-07
+         mini batch train loss: 2.54804e-07
+         mini batch train loss: 2.47535e-07
+         mini batch train loss: 2.71189e-07
+         mini batch train loss: 2.88706e-07
+         mini batch train loss: 2.00747e-07
+         mini batch train loss: 2.22168e-07
+         mini batch train loss: 3.17322e-07
+         mini batch train loss: 3.13436e-07
+         mini batch train loss: 2.95155e-07
+         mini batch train loss: 2.66914e-07
+         mini batch train loss: 1.45806e-07
+         mini batch train loss: 3.06879e-07
+         mini batch train loss: 2.19352e-07
+         mini batch train loss: 3.81192e-07
+         mini batch train loss: 3.01789e-07
+     tr_loss_d: 2.79154e-07
+         mini batch val loss: 6.53566e-07
+         mini batch val loss: 3.57677e-07
+         mini batch val loss: 6.77656e-07
+         mini batch val loss: 7.80200e-07
+         mini batch val loss: 2.88661e-07
+         mini batch val loss: 1.65940e-07
+     val_loss_d: 4.87283e-07
+Epoch: 3121

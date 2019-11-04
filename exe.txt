@@ -1,0 +1,4 @@
+CUDA_VISIBLE_DEVICES=3 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/UnetHPara_20191102.yml &
+
+
+
