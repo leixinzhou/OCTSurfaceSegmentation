@@ -19,7 +19,7 @@ from AugSurfSeg import *
 BeijingOCT =True
 
 # Sample training data. The npy starts with AMD and then Control.
-TR_AMD_NB = 187
+TR_AMD_NB = 187  # AMD: aged related eye disease.
 TR_Control_NB = 79
 TR_CASE_NB = TR_AMD_NB + TR_Control_NB
 TEST_AMD_NB = 41
@@ -251,6 +251,7 @@ def infer(model, hps):
     #     # print(batch_gt)
     #     # break
         batch_img = batch['img'].float().cuda()
+        (_,_,H,W) = batch_img.shape
         pred_tmp = model(batch_img)
         pred = pred_tmp.squeeze().detach().cpu().numpy()
         pred_list.append(pred)
@@ -273,6 +274,11 @@ def infer(model, hps):
     #     pred_dummy.append(np.mean(np.abs(batch_gt_d)))
     pred = np.concatenate(pred_list)
     gt = np.concatenate(gt_list)
+    if 'UNet'==hps['network']:
+        pred = np.reshape(pred, (-1,H,W)) # here pred is logsoftmax along height dimension
+        pred = np.argmin(pred, axis=1)
+        gt = np.reshape(gt, (-1,W))
+
     if not os.path.isdir(hps['test']['pred_dir']):
         os.mkdir(hps['test']['pred_dir'])
     pred_dir = os.path.join(hps['test']['pred_dir'],"pred.npy")
@@ -282,15 +288,28 @@ def infer(model, hps):
     np.save(gt_dir, gt)
     error = np.abs(pred - gt)
     # todo: this needs modification
-    error_mean = [np.mean(error[i*SLICE_per_vol:(i+1)*SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
-    amd_mean = np.mean(error_mean[:TEST_AMD_NB])
-    amd_std = np.std(error_mean[:TEST_AMD_NB])
-    control_mean = np.mean(error_mean[TEST_AMD_NB:])
-    control_std = np.std(error_mean[TEST_AMD_NB:])
-    print("AMD", amd_mean, amd_std)
-    print("Control", control_mean, control_std)
-    print("dummy_mean: ", np.mean(np.abs(gt)), "pred_mean: ", np.mean(error))
-    np.savetxt(pred_stat_dir, [amd_mean, amd_std, control_mean, control_std, np.mean(error), np.std(error), np.mean(np.abs(gt)), np.std(np.abs(gt))])
+    if BeijingOCT:
+        (N,_) = gt.shape
+        error_mean = [np.mean(error[i * SLICE_per_vol:(i + 1) * SLICE_per_vol, ]) for i in range(N//SLICE_per_vol)]
+        error_std =  np.std(error_mean)
+        print(f"total {N} slices for test:")
+        print(f"error_mean: {error_mean}")
+        print(f"error_std: {error_std}")
+
+
+    else:
+        error_mean = [np.mean(error[i*SLICE_per_vol:(i+1)*SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
+        amd_mean = np.mean(error_mean[:TEST_AMD_NB])
+        amd_std = np.std(error_mean[:TEST_AMD_NB])
+        control_mean = np.mean(error_mean[TEST_AMD_NB:])
+        control_std = np.std(error_mean[TEST_AMD_NB:])
+        print("AMD", amd_mean, amd_std)
+        print("Control", control_mean, control_std)
+        print("dummy_mean: ", np.mean(np.abs(gt)), "pred_mean: ", np.mean(error))
+        np.savetxt(pred_stat_dir,
+                   [amd_mean, amd_std, control_mean, control_std, np.mean(error), np.std(error), np.mean(np.abs(gt)),
+                    np.std(np.abs(gt))])
+
     #     # np.savetxt(pred_dir, pred, delimiter=',')
     # print("Test done!")
     # pred_l1_mean = np.mean(np.array(pred_l1))
