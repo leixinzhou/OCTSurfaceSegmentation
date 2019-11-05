@@ -288,8 +288,7 @@ def infer(model, hps):
         pred = np.argmax(pred, axis=1)
         gt = np.reshape(gt, (-1,W))
     error = np.abs(pred - gt)
-    # todo: this needs modification
-    if BeijingOCT:
+    if BeijingOCT and 'UNet'==hps['network']:
         (N,_) = gt.shape
         error_mean = [np.mean(error[i * SLICE_per_vol:(i + 1) * SLICE_per_vol, ]) for i in range(N//SLICE_per_vol)]
         error_std =  np.std(error_mean)
@@ -353,7 +352,6 @@ def main():
             checkpoint = torch.load(hps['unary_network']['resume_path'])
             model.load_state_dict(checkpoint['state_dict'])
             hps['learning']['epoch_start'] = checkpoint['epoch']+1
-
             print("=> loaded unary checkpoint (epoch {})"
                 .format(checkpoint['epoch']))
         else:

@@ -1,10 +1,15 @@
-CUDA_VISIBLE_DEVICES=3 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/UnetHPara_20191102.yml &
+# train pure Unet with gaussianalized ground truth, with KLD loss
+CUDA_VISIBLE_DEVICES=3 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/UNet_HPara_20191102.yml &
 
+# based on pretrained Unet, train Unet + SurfSegNSB modules together with standard groud truth, with L1 Loss;
+CUDA_VISIBLE_DEVICES=3 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/SurfSegNSBNet_HPara_20191105.yml &
+
+
+#### observe loss
 # launch tenrsorboard server
 tensorboard --host c-xwu000.iibi.uiowa.edu --logdir /home/hxie1/data/OCT_Beijing/netParameters/unet20191101
 
-
-# in terminal, launch chrome
+# in GPU server terminal, launch chrome
 google-chrome
 
 # web

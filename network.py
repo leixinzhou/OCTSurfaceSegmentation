@@ -235,7 +235,7 @@ class UNet(nn.Module):
             x = torch.nn.functional.log_softmax(x, dim=1)
         else:
             x = torch.nn.functional.softmax(x, dim=1)
-        return x
+        return x   # output size: (B, H, W)
 
 
 
@@ -378,6 +378,7 @@ class SurfSegNet(torch.nn.Module):
             print('loading surfnet checkpoint: {}'.format(self.hps['surf_net']['resume_path']))
             checkpoint = torch.load(self.hps['surf_net']['resume_path'])
             self.load_state_dict(checkpoint['state_dict'])
+            self.hps['learning']['epoch_start'] = checkpoint['epoch'] + 1
             print("=> loaded surfnet checkpoint (epoch {})"
                 .format(checkpoint['epoch']))
         else:
@@ -432,6 +433,7 @@ class SurfSegNSBNet(torch.nn.Module):
             print('loading surfNSBnet checkpoint: {}'.format(self.hps['surf_net']['resume_path']))
             checkpoint = torch.load(self.hps['surf_net']['resume_path'])
             self.load_state_dict(checkpoint['state_dict'])
+            self.hps['learning']['epoch_start'] = checkpoint['epoch'] + 1
             print("=> loaded surfnet checkpoint (epoch {})"
                 .format(checkpoint['epoch']))
         else:
@@ -439,16 +441,19 @@ class SurfSegNSBNet(torch.nn.Module):
                 print('loading unary network pretrain checkpoint: {}'.format(self.hps['surf_net']['unary_pretrain_path']))
                 checkpoint = torch.load(self.hps['surf_net']['unary_pretrain_path'])
                 self.unary.load_state_dict(checkpoint['state_dict'])
+                self.hps['learning']['epoch_start'] = checkpoint['epoch'] + 1
                 print("=> loaded unary network pretrain checkpoint (epoch {})"
                     .format(checkpoint['epoch']))
             else:
                 raise Exception("surf nsb network is not pretrained.")
         
     def forward(self, x):
-        logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)  
+        # unary output size: (B, H,W)
+        logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)
+        #after permute, logits size: (B, W,H)
         logits = normalize_prob(logits)
      
-        mean, _ = gaus_fit(logits, tr_flag=self.training)
+        mean, _ = gaus_fit(logits, tr_flag=self.training)  # return mu and sigma for
         return mean
 
 if __name__ == "__main__":
