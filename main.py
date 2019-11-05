@@ -285,7 +285,7 @@ def infer(model, hps):
 
     if 'UNet'==hps['network']:
         pred = np.reshape(pred, (-1,H,W)) # here pred is logsoftmax along height dimension
-        pred = np.argmin(pred, axis=1)
+        pred = np.argmax(pred, axis=1)
         gt = np.reshape(gt, (-1,W))
     error = np.abs(pred - gt)
     # todo: this needs modification
@@ -293,10 +293,12 @@ def infer(model, hps):
         (N,_) = gt.shape
         error_mean = [np.mean(error[i * SLICE_per_vol:(i + 1) * SLICE_per_vol, ]) for i in range(N//SLICE_per_vol)]
         error_std =  np.std(error_mean)
-        print(f"total {N} slices for test:")
-        print(f"error_mean: {error_mean}")
-        print(f"error_std: {error_std}")
-
+        yPixelSize = 0.003870 #mm
+        print(f"total {N} slices for test with uniform {yPixelSize}mm/pixel in y direction:")
+        print(f"error_mean in pixel size: {error_mean}")
+        print(f"error_std in pixels size: {error_std}")
+        print(f"error_mean in physical size(mm): {[err*yPixelSize for err in error_mean]}")
+        print(f"error_std in physical size(mm): {error_std*yPixelSize}")
 
     else:
         error_mean = [np.mean(error[i*SLICE_per_vol:(i+1)*SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
