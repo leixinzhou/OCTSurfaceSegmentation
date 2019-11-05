@@ -1,4 +1,13 @@
 CUDA_VISIBLE_DEVICES=3 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/UnetHPara_20191102.yml &
 
+# launch tenrsorboard server
+tensorboard --host c-xwu000.iibi.uiowa.edu --logdir /home/hxie1/data/OCT_Beijing/netParameters/unet20191101
+
+
+# in terminal, launch chrome
+google-chrome
+
+# web
+http://c-xwu000.iibi.uiowa.edu:6006/#scalars
 
 

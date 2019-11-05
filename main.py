@@ -274,10 +274,6 @@ def infer(model, hps):
     #     pred_dummy.append(np.mean(np.abs(batch_gt_d)))
     pred = np.concatenate(pred_list)
     gt = np.concatenate(gt_list)
-    if 'UNet'==hps['network']:
-        pred = np.reshape(pred, (-1,H,W)) # here pred is logsoftmax along height dimension
-        pred = np.argmin(pred, axis=1)
-        gt = np.reshape(gt, (-1,W))
 
     if not os.path.isdir(hps['test']['pred_dir']):
         os.mkdir(hps['test']['pred_dir'])
@@ -286,6 +282,11 @@ def infer(model, hps):
     pred_stat_dir = os.path.join(hps['test']['pred_dir'],"pred_stat.txt")
     np.save(pred_dir, pred)
     np.save(gt_dir, gt)
+
+    if 'UNet'==hps['network']:
+        pred = np.reshape(pred, (-1,H,W)) # here pred is logsoftmax along height dimension
+        pred = np.argmin(pred, axis=1)
+        gt = np.reshape(gt, (-1,W))
     error = np.abs(pred - gt)
     # todo: this needs modification
     if BeijingOCT:
