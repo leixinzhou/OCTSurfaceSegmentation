@@ -4,7 +4,7 @@ unary_network:
   depth: 5
   start_filters: 8
   up_mode: "bilinear"
-  resume_path: "/home/hxie1/data/OCT_Beijing/netParameters/unet20191101/model_best.pth.tar"
+  resume_path: ""
 pair_network:
   depth: 5
   start_filters: 8
@@ -18,7 +18,7 @@ surf_net:
   unary_pretrain_path: "/home/hxie1/data/OCT_Beijing/netParameters/unet20191101/model_best_UNetPure_20191102.pth.tar"
   unary_network: UNet
   pair_pretrain_path: ""
-  resume_path: "/home/hxie1/data/OCT_Beijing/netParameters/SurfSegNSBNet/model_best.pth.tar"
+  resume_path: ""
 surf: [1]
 learning: 
   checkpoint_path: "/home/hxie1/data/OCT_Beijing/netParameters/SurfSegNSBNet"

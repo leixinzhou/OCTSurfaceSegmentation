@@ -344,6 +344,8 @@ def main():
             hps = yaml.load(config_file)
     except IOError:
         print('Couldn\'t read hyperparameter setting file')
+
+    print(f"Current network: {hps['network']}")
     if hps['network'] == "UNet" or hps['network'] == "FCN":
         model = getattr(network, hps['network'])(num_classes=1, in_channels=1, depth=hps['unary_network']['depth'],
                  start_filts=hps['unary_network']['start_filters'], up_mode=hps['unary_network']['up_mode'])

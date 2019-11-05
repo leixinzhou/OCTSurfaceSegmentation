@@ -451,9 +451,10 @@ class SurfSegNSBNet(torch.nn.Module):
         # unary output size: (B, H,W)
         logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)
         #after permute, logits size: (B, W,H)
-        logits = normalize_prob(logits)
-     
-        mean, _ = gaus_fit(logits, tr_flag=self.training)  # return mu and sigma for
+        with torch.autograd.set_detect_anomaly(True):
+            logits = normalize_prob(logits)
+
+            mean, _ = gaus_fit(logits, tr_flag=self.training)  # return mu and sigma for predicted sofrmax output.
         return mean
 
 if __name__ == "__main__":
