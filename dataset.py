@@ -8,6 +8,7 @@ from AugSurfSeg import *
 from smooth1D import smooth
 
 SLICE_per_vol = 31 # 60 for leixin's data, 31 for Beijing OCT data.
+numSurfaces = 11
 
 class OCTDataset(Dataset):
     """convert 3d dataset to Dataset."""
@@ -65,6 +66,13 @@ class OCTDataset(Dataset):
                         "gt_g": torch.from_numpy(gt_g.astype(np.float32)),
                         "gt_d": torch.from_numpy(gt_d.astype(np.float32)),
                         "gt_d_ns": torch.from_numpy(gt_d_ns.astype(np.float32))}
+
+        # add gt_n1 and gt_p1 surfaces: gt-1, and gt+1 without transform
+        ts = self.sf[0]
+        gt_n1 =  np.swapaxes(self.label[real_idx,:, (ts-1)%numSurfaces], 0, 1)
+        gt_p1 =  np.swapaxes(self.label[real_idx,:, (ts+1)%numSurfaces], 0, 1)
+        image_gt_ts['gt_n1'] = gt_n1
+        image_gt_ts['gt_p1'] = gt_p1
         
         return image_gt_ts
        
