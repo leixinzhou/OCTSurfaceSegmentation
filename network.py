@@ -313,7 +313,7 @@ def newton_sol_pd(g_mean, g_sigma, w_comp, d_p):
 def normalize_prob(x):
     '''Normalize prob map to [0, 1]. Numerically, add 1e-6 to all. Assume the last dimension is prob map.'''
     x_norm = (x - x.min(-1, keepdim=True)
-              [0]) / (x.max(-1, keepdim=True)[0] - x.min(-1, keepdim=True)[0])
+               [0]) / (x.max(-1, keepdim=True)[0] - x.min(-1, keepdim=True)[0])
     x_norm += 1e-3
     return x_norm
 
@@ -321,6 +321,7 @@ def normalize_prob(x):
 def gaus_fit(x, tr_flag=True):
     '''This module is designed to regress Gaussian function. Weighted version is chosen. The input tensor should
     have the format: BN,  X_LEN, COL_LEN.'''
+
     bn,  x_len, col_len = tuple(x.size())
     col_ind_set = torch.arange(col_len).expand(
         bn,  x_len, col_len).double()
@@ -342,8 +343,7 @@ def gaus_fit(x, tr_flag=True):
              sum_y2*sum_x3y2*sum_x2y2lny - sum_x2y2*sum_x3y2*sum_y2lny - sum_xy2*sum_x2y2*sum_x2y2lny)
     c_num = (sum_x2y2lny*sum_xy2**2 - sum_xy2lny*sum_xy2*sum_x2y2 - sum_x3y2*sum_y2lny*sum_xy2 +
              sum_y2lny*sum_x2y2**2 - sum_y2*sum_x2y2lny*sum_x2y2 + sum_y2*sum_x3y2*sum_xy2lny)
-    c_num[(c_num < STAB_NB) & (c_num > -STAB_NB)
-          ] = torch.sign(c_num[(c_num < STAB_NB) & (c_num > -STAB_NB)]) * STAB_NB
+    c_num[(c_num < STAB_NB) & (c_num > -STAB_NB)] = torch.sign(c_num[(c_num < STAB_NB) & (c_num > -STAB_NB)]) * STAB_NB
     mu = -b_num / (2.*c_num)
 
     c_din = sum_x4y2*sum_xy2**2 - 2*sum_xy2*sum_x2y2*sum_x3y2 + \
@@ -451,10 +451,8 @@ class SurfSegNSBNet(torch.nn.Module):
         # unary output size: (B, H,W)
         logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)
         #after permute, logits size: (B, W,H)
-        with torch.autograd.set_detect_anomaly(True):
-            logits = normalize_prob(logits)
-
-            mean, _ = gaus_fit(logits, tr_flag=self.training)  # return mu and sigma for predicted sofrmax output.
+        logits = normalize_prob(logits)
+        mean, _ = gaus_fit(logits, tr_flag=self.training)  # return mu and sigma for predicted sofrmax output.
         return mean
 
 if __name__ == "__main__":

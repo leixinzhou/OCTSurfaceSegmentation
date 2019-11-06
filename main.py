@@ -41,25 +41,27 @@ def save_checkpoint(states,  path, filename='model_best.pth.tar'):
 
 def train(model, criterion, optimizer, input_img_gt, hps):
     model.train()
-    D = model(input_img_gt['img'])
-    
-    # print(D.size(), input_img_gt['gt_g'].size())
-    if hps['network'] == "UNet" or hps['network'] == "FCN":
-        loss = criterion(D, input_img_gt['gt_g'].squeeze(-1))
-    elif hps['network']=="PairNet":
-        loss =  criterion(D, input_img_gt['gt_d'])
-        criterion_l1 = nn.L1Loss()
-        loss_l1 = criterion_l1(D, input_img_gt['gt_d'])
-    elif hps['network']=="SurfNet" or hps['network']=="SurfSegNSBNet":
-        loss =  criterion(D, input_img_gt['gt'])
-    else:
-        raise AttributeError('Network not implemented!')
+    with torch.autograd.set_detect_anomaly(True):
+        D = model(input_img_gt['img'])
 
-    optimizer.zero_grad()
-    loss.backward()
-    optimizer.step()
-    if hps['network']=="PairNet":
-        return loss_l1.detach().cpu().numpy()
+        # print(D.size(), input_img_gt['gt_g'].size())
+        if hps['network'] == "UNet" or hps['network'] == "FCN":
+            loss = criterion(D, input_img_gt['gt_g'].squeeze(-1))
+        elif hps['network']=="PairNet":
+            loss =  criterion(D, input_img_gt['gt_d'])
+            criterion_l1 = nn.L1Loss()
+            loss_l1 = criterion_l1(D, input_img_gt['gt_d'])
+        elif hps['network']=="SurfNet" or hps['network']=="SurfSegNSBNet":
+            loss =  criterion(D, input_img_gt['gt'])
+        else:
+            raise AttributeError('Network not implemented!')
+
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        if hps['network']=="PairNet":
+            return loss_l1.detach().cpu().numpy()
     return loss.detach().cpu().numpy()
 # val
 
