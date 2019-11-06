@@ -240,6 +240,9 @@ def infer(model, hps):
     pred_list = []
     gt_list = []
     # pred_dummy = []
+    if not os.path.isdir(hps['test']['pred_dir']):
+        os.mkdir(hps['test']['pred_dir'])
+    outputPath =  hps['test']['pred_dir']
     for step, batch in enumerate(test_loader):
     #     pred = np.zeros(399, dtype=np.float32)
     #     batch_gt_d = batch['gt_d'].squeeze().detach().cpu().numpy()
@@ -255,6 +258,12 @@ def infer(model, hps):
         (_,_,H,W) = batch_img.shape
         pred_tmp = model(batch_img)
         pred = pred_tmp.squeeze().detach().cpu().numpy()
+        if BeijingOCT:
+            fileSuffix = f"{step//SLICE_per_vol:02d}_{step%SLICE_per_vol:02d}.npy"
+            np.save(os.path.join(outputPath, f"TestImage"+fileSuffix), batch['img'].squeeze().numpy())
+            np.save(os.path.join(outputPath, f"TestGT" + fileSuffix),  batch['gt'].squeeze().detach().cpu().numpy())
+            np.save(os.path.join(outputPath, f"TestPred" + fileSuffix), pred)
+
         pred_list.append(pred)
         gt_list.append(batch_gt)
     #     fig, axes = plt.subplots(4,1)
@@ -276,13 +285,12 @@ def infer(model, hps):
     pred = np.concatenate(pred_list)
     gt = np.concatenate(gt_list)
 
-    if not os.path.isdir(hps['test']['pred_dir']):
-        os.mkdir(hps['test']['pred_dir'])
-    pred_dir = os.path.join(hps['test']['pred_dir'],"pred.npy")
-    gt_dir = os.path.join(hps['test']['pred_dir'],"gt.npy")
-    pred_stat_dir = os.path.join(hps['test']['pred_dir'],"pred_stat.txt")
-    np.save(pred_dir, pred)
-    np.save(gt_dir, gt)
+    if not BeijingOCT:
+        pred_dir = os.path.join(hps['test']['pred_dir'],"pred.npy")
+        gt_dir = os.path.join(hps['test']['pred_dir'],"gt.npy")
+        pred_stat_dir = os.path.join(hps['test']['pred_dir'],"pred_stat.txt")
+        np.save(pred_dir, pred)
+        np.save(gt_dir, gt)
 
     if BeijingOCT:
         if 'UNet'==hps['network']:
