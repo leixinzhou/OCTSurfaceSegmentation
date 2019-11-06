@@ -92,23 +92,23 @@ if __name__ == "__main__":
                 "cropresize": RandomCropResize(crop_ratio=0.9), 
                 "circulateud": CirculateUD(),
                 "mirrorlr":MirrorLR()}
-    rand_aug = RandomApplyTrans(trans_seq=[aug_dict[key] for key, _ in aug_dict.items()],
+    rand_aug = RandomApplyTrans(trans_seq=[],
                                 trans_seq_post=[NormalizeSTD()],
                                 trans_seq_pre=[NormalizeSTD()])
 
-    vol_list = [15,3]
+    vol_list = [25]
     vol_index = 0
-    slice_index = 1
-    patch_dir = "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/test/patch.npy"
-    truth_dir = "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/test/truth.npy"
-    dataset = OCTDataset(img_np=patch_dir, label_np=truth_dir, surf=[1], vol_list=vol_list, transforms=rand_aug, Window_size=11)
+    slice_index = 50
+    patch_dir = "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/train/patch.npy"
+    truth_dir = "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/train/truth.npy"
+    dataset = OCTDataset(img_np=patch_dir, label_np=truth_dir, surf=[2], vol_list=vol_list, transforms=rand_aug, Window_size=151)
     loader = DataLoader(dataset, shuffle=False, batch_size=1)
     test_patch = np.load(patch_dir, mmap_mode='r')
     test_truth = np.load(truth_dir, mmap_mode='r')
     _, axes = plt.subplots(5,1)
     axes[0].imshow(np.transpose(test_patch[vol_list[vol_index]*SLICE_per_vol+slice_index,].astype(np.float32)), \
         cmap='gray', aspect='auto')
-    axes[0].plot(test_truth[vol_list[vol_index]*SLICE_per_vol+slice_index,:,1])
+    axes[0].plot(test_truth[vol_list[vol_index]*SLICE_per_vol+slice_index,:,2])
     for i, batch in enumerate(loader):
         if i == vol_index*SLICE_per_vol+slice_index:
             img = batch['img'].squeeze().numpy()
@@ -124,7 +124,8 @@ if __name__ == "__main__":
     axes[2].plot(gt[:400])
     axes[3].plot(gt_d)
     axes[4].plot(gt_d_ns)
-    
+    _, axes = plt.subplots(1,1)
+    axes.plot(gt_d[:400])
     plt.show()
     
 
