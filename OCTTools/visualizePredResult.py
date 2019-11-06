@@ -17,7 +17,7 @@ def main():
             gt = np.load(os.path.join(predictDir,f"TestGT"+fileSuffix))
             pred = np.load(os.path.join(predictDir, f"TestPred" + fileSuffix))
             (H,W) = image.shape
-        
+
             f = plt.figure()
             plt.imshow(image, cmap='gray')
             plt.plot(range(0, W), gt, 'g,',linewidth=10)
