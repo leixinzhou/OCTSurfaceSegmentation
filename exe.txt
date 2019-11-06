@@ -6,11 +6,12 @@ CUDA_VISIBLE_DEVICES=3 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfa
 
 
 #### observe loss
-# launch tenrsorboard server
-tensorboard --host c-xwu000.iibi.uiowa.edu --logdir /home/hxie1/data/OCT_Beijing/netParameters/unet20191101
-
 # in GPU server terminal, launch chrome
 google-chrome
+
+# launch tenrsorboard server
+tensorboard --host c-xwu000.iibi.uiowa.edu --logdir /home/hxie1/data/OCT_Beijing/netParameters/unet20191101
+tensorboard --host c-xwu000.iibi.uiowa.edu --logdir /home/hxie1/data/OCT_Beijing/netParameters/SurfSegNSBNet
 
 # web
 http://c-xwu000.iibi.uiowa.edu:6006/#scalars
