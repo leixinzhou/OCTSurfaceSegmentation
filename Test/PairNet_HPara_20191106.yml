@@ -1,6 +1,4 @@
-network: SurfSegNSBNet
-
-# it is better to run 100 epoch, after it, loss is possible to diverge.
+network: PairNet
 
 unary_network: 
   depth: 5
@@ -9,13 +7,13 @@ unary_network:
   resume_path: ""
 pair_network:
   depth: 5
-  start_filters: 8
-  up_mode: "bilinear"
+  start_filters: 32
+  up_mode: "transpose"
   col_len: 496
   fc_inter: 128
-  left_nbs: 50
-  resume_path: ""
-  window_size: 11
+  left_nbs: 49
+  resume_path: "/home/hxie1/data/OCT_Beijing/netParameters/pairNet/model_best.pth.tar"
+  window_size: 30
 surf_net:
   unary_pretrain_path: "/home/hxie1/data/OCT_Beijing/netParameters/unet20191101/model_best_UNetPure_20191102.pth.tar"
   unary_network: UNet
@@ -23,11 +21,11 @@ surf_net:
   resume_path: "/home/hxie1/data/OCT_Beijing/netParameters/SurfSegNSBNet/model_best.pth.tar"
 surf: [1]
 learning: 
-  checkpoint_path: "/home/hxie1/data/OCT_Beijing/netParameters/SurfSegNSBNet"
+  checkpoint_path: "/home/hxie1/data/OCT_Beijing/netParameters/pairNet"
   resume_path: ""
-  loss: L1Loss
+  loss: MSELoss
   best_loss: 99999
-  batch_size: 48
+  batch_size: 14
   optimizer: Adam
   lr: 0.0001
   epoch_start: 0
@@ -46,7 +44,7 @@ learning:
     val_gt: "/home/hxie1/data/OCT_Beijing/numpy/validation/surfaces_CV0.npy"
     tr_ratio: 1.
 test:
-  mode: True
+  mode: False
   data:
     img: "/home/hxie1/data/OCT_Beijing/numpy/test/images_CV0.npy"
     gt: "/home/hxie1/data/OCT_Beijing/numpy/test/surfaces_CV0.npy"
