@@ -451,12 +451,13 @@ class SurfSegNSBNet(torch.nn.Module):
                 raise Exception("surf nsb network is not pretrained.")
         
     def forward(self, x):
+        # x size: (B,1,H, W)
         # unary output size: (B, H,W)
         logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)
         #after permute, logits size: (B, W,H)
         logits = normalize_prob(logits)
         mean, _ = gaus_fit(logits, tr_flag=self.training)  # return mu and sigma for predicted sofrmax output.
-        return mean
+        return mean  # size: (B, W)
 
 if __name__ == "__main__":
     unary_model = FCN(num_classes=1, in_channels=1, depth=5, start_filts=1, up_mode="bilinear")
