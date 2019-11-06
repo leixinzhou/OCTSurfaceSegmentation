@@ -343,7 +343,10 @@ def gaus_fit(x, tr_flag=True):
              sum_y2*sum_x3y2*sum_x2y2lny - sum_x2y2*sum_x3y2*sum_y2lny - sum_xy2*sum_x2y2*sum_x2y2lny)
     c_num = (sum_x2y2lny*sum_xy2**2 - sum_xy2lny*sum_xy2*sum_x2y2 - sum_x3y2*sum_y2lny*sum_xy2 +
              sum_y2lny*sum_x2y2**2 - sum_y2*sum_x2y2lny*sum_x2y2 + sum_y2*sum_x3y2*sum_xy2lny)
-    c_num[(c_num < STAB_NB) & (c_num > -STAB_NB)] = torch.sign(c_num[(c_num < STAB_NB) & (c_num > -STAB_NB)]) * STAB_NB
+    # c_num[(c_num < STAB_NB) & (c_num > -STAB_NB)] = torch.sign(c_num[(c_num < STAB_NB) & (c_num > -STAB_NB)]) * STAB_NB
+    c_num_clone = c_num.clone()
+    c_num[(c_num < STAB_NB) & (c_num > -STAB_NB)] = torch.sign(c_num_clone[(c_num_clone < STAB_NB) & (c_num_clone > -STAB_NB)]) * STAB_NB
+
     mu = -b_num / (2.*c_num)
 
     c_din = sum_x4y2*sum_xy2**2 - 2*sum_xy2*sum_x2y2*sum_x3y2 + \
