@@ -69,8 +69,8 @@ class OCTDataset(Dataset):
 
         # add gt_n1 and gt_p1 surfaces: gt-1, and gt+1 without transform
         ts = self.sf[0]
-        gt_n1 =  np.swapaxes(self.label[real_idx,:, (ts-1)%numSurfaces], 0, 1)
-        gt_p1 =  np.swapaxes(self.label[real_idx,:, (ts+1)%numSurfaces], 0, 1)
+        gt_n1 =  self.label[real_idx,:, (ts-1)%numSurfaces]
+        gt_p1 =  self.label[real_idx,:, (ts+1)%numSurfaces]
         image_gt_ts['gt_n1'] = gt_n1
         image_gt_ts['gt_p1'] = gt_p1
         

@@ -259,10 +259,12 @@ def infer(model, hps):
         pred_tmp = model(batch_img)
         pred = pred_tmp.squeeze().detach().cpu().numpy()
         if BeijingOCT:
-            fileSuffix = f"{step//SLICE_per_vol:02d}_{step%SLICE_per_vol:02d}.npy"
+            fileSuffix = f"_p{step//SLICE_per_vol:02d}_s{step%SLICE_per_vol:02d}.npy"
             np.save(os.path.join(outputPath, f"TestImage"+fileSuffix), batch['img'].squeeze().numpy())
             np.save(os.path.join(outputPath, f"TestGT" + fileSuffix),  batch['gt'].squeeze().detach().cpu().numpy())
             np.save(os.path.join(outputPath, f"TestPred" + fileSuffix), pred)
+            np.save(os.path.join(outputPath, f"TestGT_n1" + fileSuffix), batch['gt_n1'].squeeze().numpy())
+            np.save(os.path.join(outputPath, f"TestGT_p1" + fileSuffix), batch['gt_n1'].squeeze().numpy())
 
         pred_list.append(pred)
         gt_list.append(batch_gt)
