@@ -264,7 +264,7 @@ def infer(model, hps):
             np.save(os.path.join(outputPath, f"TestGT" + fileSuffix),  batch['gt'].squeeze().detach().cpu().numpy())
             np.save(os.path.join(outputPath, f"TestPred" + fileSuffix), pred)
             np.save(os.path.join(outputPath, f"TestGT_n1" + fileSuffix), batch['gt_n1'].squeeze().numpy())
-            np.save(os.path.join(outputPath, f"TestGT_p1" + fileSuffix), batch['gt_n1'].squeeze().numpy())
+            np.save(os.path.join(outputPath, f"TestGT_p1" + fileSuffix), batch['gt_p1'].squeeze().numpy())
 
         pred_list.append(pred)
         gt_list.append(batch_gt)
