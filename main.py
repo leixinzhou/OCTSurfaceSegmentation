@@ -242,7 +242,7 @@ def infer(model, hps):
     model.eval()
     pred_list = []
     gt_list = []
-    patientID_set= set([])
+    patientID_list= []
     # pred_dummy = []
     if not os.path.isdir(hps['test']['pred_dir']):
         os.mkdir(hps['test']['pred_dir'])
@@ -264,7 +264,8 @@ def infer(model, hps):
         pred = pred_tmp.squeeze().detach().cpu().numpy()
         if BeijingOCT:
             patientID, sliceID = getPatientID_Slice(batch['patientID'][0])
-            patientID_set.add(patientID)
+            if patientID not in patientID_list:
+                patientID_list.append(patientID)
             patientIDSlice = patientID+'_'+sliceID
             targetSurface = batch['targetSurface'].item()
 
@@ -316,7 +317,7 @@ def infer(model, hps):
         error_std =  np.std(error_mean)
         print(f"For {hps['network']} in Beiing OCT:")
         print(f"total {N} slices for test with uniform {yPixelSize}mm/pixel in y direction:")
-        print(f"paitent ID: {patientID_set}")
+        print(f"paitent ID: {patientID_list}")
         print(f"error_mean in pixel size: {error_mean}")
         print(f"error_std in pixels size: {error_std}")
         print(f"error_mean in physical size(mm): {[err*yPixelSize for err in error_mean]}")
