@@ -2,8 +2,7 @@
 import glob as glob
 import os
 import sys
-sys.path.append('../OCTTools/')
-from FileUtilities import *
+from Tools.FileUtilities import *
 import random
 import numpy as np
 from imageio import imread

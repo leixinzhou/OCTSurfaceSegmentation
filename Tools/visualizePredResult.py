@@ -1,5 +1,6 @@
 
-predictDir = "/home/hxie1/data/OCT_Beijing/numpy/predict"
+predictNumpyDir = "/home/hxie1/data/OCT_Beijing/predictNumpy"
+predictImageDir = "/home/hxie1/data/OCT_Beijing/predictImages"
 
 numPatients = 8
 numSlices = 31
@@ -7,31 +8,51 @@ numSlices = 31
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+import glob
 
 
 def main():
-    for patientID in range(0, numPatients):
-        for sliceID in range(0, numSlices):
-            fileSuffix =  f"_p{patientID:02d}_s{sliceID:02d}.npy"
-            image = np.load(os.path.join(predictDir,f"TestImage"+fileSuffix))
-            gt = np.load(os.path.join(predictDir,f"TestGT"+fileSuffix))
-            gt_n1 = np.load(os.path.join(predictDir, f"TestGT_n1" + fileSuffix))
-            gt_p1 = np.load(os.path.join(predictDir, f"TestGT_p1" + fileSuffix))
-            pred = np.load(os.path.join(predictDir, f"TestPred" + fileSuffix))
-            (H,W) = image.shape
+    dataList = glob.glob(predictNumpyDir + f"/*.npy")
+    dataList.sort()
+    N = len(dataList)
+    for i in range(0, N, 5):
+        '''
+        example: 
+            4959_OD_28688_OCT31_Image.npy
+            4959_OD_28688_OCT31_sf00_GT.npy
+            4959_OD_28688_OCT31_sf01_GT.npy
+            4959_OD_28688_OCT31_sf01_Pred.npy
+            4959_OD_28688_OCT31_sf02_GT.npy
 
-            f = plt.figure()
-            plt.imshow(image, cmap='gray')
-            plt.plot(range(0, W), gt, 'g,')
-            plt.plot(range(0, W), gt_n1, 'b,')
-            plt.plot(range(0, W), gt_p1, 'y,')
-            plt.plot(range(0, W), pred, 'r,')
+        '''
+        imageFile = dataList[i]
+        gtn1File = dataList[i+1]
+        gtFile = dataList[i+2]
+        predFile = dataList[i+3]
+        gtp1File = dataList[i+4]
 
-            titleName = f"patient:{patientID:02d}, slice:{sliceID:02d}, Blue: GT-1, Green:GT, Yellow: GT+1, Red:Prediction"
-            plt.title(titleName)
+        s = os.path.basename(imageFile)
+        patientIDSlice = s[0:s.rfind('_')]
 
-            plt.savefig(os.path.join(predictDir, f"TestResult_{patientID:02d}_{sliceID:02d}" + ".png"))
-            plt.close()
+        image = np.load(imageFile)
+        gt = np.load(gtFile)
+        gt_n1 = np.load(gtn1File)
+        gt_p1 = np.load(gtp1File)
+        pred = np.load(predFile)
+        (H,W) = image.shape
+
+        f = plt.figure()
+        plt.imshow(image, cmap='gray')
+        plt.plot(range(0, W), gt, 'g,')
+        plt.plot(range(0, W), gt_n1, 'b,')
+        plt.plot(range(0, W), gt_p1, 'y,')
+        plt.plot(range(0, W), pred, 'r,')
+
+        titleName = f"{patientIDSlice}, B:GT-1, G:GT, Y:GT+1, R:Pred"
+        plt.title(titleName)
+
+        plt.savefig(os.path.join(predictImageDir, f"{patientIDSlice}.png"))
+        plt.close()
 
 if __name__ == "__main__":
     main()
