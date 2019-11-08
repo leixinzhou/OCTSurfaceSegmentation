@@ -40,8 +40,6 @@ def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile, goalPa
         Z,surfaces_num, X = surfacesArray.shape
         assert X == W and surfaces_num == NumSurfaces
         allPatientsSurfaceArray[s:s+Z,:,:] = surfacesArray
-        for ss in range(s,s+Z):
-            patientIDDict[ss] = {"volume":volume, "slice":ss-s+1}
 
         # read image data
         imagesList = glob.glob(volume + f"/*_OCT[0-3][0-9].jpg")
@@ -52,6 +50,7 @@ def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile, goalPa
 
         for z in range(0, Z):
             allPatientsImageArray[s,] = imread(imagesList[z])
+            patientIDDict[s] = imagesList[z]
             s +=1
 
     # remove the leftmost and rightmost 128 columns for each B-scans as the segmentation is not accurate
