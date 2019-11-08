@@ -243,6 +243,7 @@ def infer(model, hps):
     pred_list = []
     gt_list = []
     patientID_list= []
+    patientsPredDict = {}
     # pred_dummy = []
     if not os.path.isdir(hps['test']['pred_dir']):
         os.mkdir(hps['test']['pred_dir'])
@@ -269,11 +270,22 @@ def infer(model, hps):
             patientIDSlice = patientID+'_'+sliceID
             targetSurface = batch['targetSurface'].item()
 
+            s = sliceID
+            sliceIndex = s[-2:]
+            if patientID not in patientsPredDict.keys():
+                patientsPredDict[patientID] = {}
+            if str(targetSurface) not in patientsPredDict[patientID].keys():
+                patientsPredDict[patientID][str(targetSurface)] = {}
+            patientsPredDict[patientID][str(targetSurface)][sliceIndex] = pred
+
+
+
             np.save(os.path.join(outputPath, patientIDSlice+f"_Image.npy"), batch['img'].squeeze().numpy())
             np.save(os.path.join(outputPath, patientIDSlice+f"_sf{targetSurface:02d}_GT.npy" ),  batch['gt'].squeeze().detach().cpu().numpy())
             np.save(os.path.join(outputPath, patientIDSlice+f"_sf{targetSurface:02d}_Pred.npy" ), pred)
             np.save(os.path.join(outputPath, patientIDSlice+f"_sf{(targetSurface-1)%NumSurfaces:02d}_GT.npy"), batch['gt_n1'].squeeze().numpy())
             np.save(os.path.join(outputPath, patientIDSlice+f"_sf{(targetSurface+1)%NumSurfaces:02d}_GT.npy"), batch['gt_p1'].squeeze().numpy())
+
 
         pred_list.append(pred)
         gt_list.append(batch_gt)
@@ -309,8 +321,12 @@ def infer(model, hps):
             pred = np.argmax(pred, axis=1)
         pred = np.reshape(pred,(-1,W))
         gt = np.reshape(gt, (-1,W))
+
+
     error = np.abs(pred - gt)
     if BeijingOCT:
+        savePatientsPrediction(hps['test']['refXML_dir'], patientsPredDict, hps['test']['pred_dir'])
+
         yPixelSize = 0.003870  # mm
         (N,_) = gt.shape
         error_mean = [np.mean(error[i * SLICE_per_vol:(i + 1) * SLICE_per_vol, ]) for i in range(N//SLICE_per_vol)]

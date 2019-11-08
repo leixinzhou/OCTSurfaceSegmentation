@@ -58,7 +58,7 @@ def getPatientID_Slice(fileName):
     '''
 
     :param fileName: e.g. "/home/hxie1/data/OCT_Beijing/control/4162_OD_23992_Volume/20110616012458_OCT10.jpg"
-    :return: e.g. '4162_OD_23992_OCT10'
+    :return: e.g. '4162_OD_23992, OCT10'
     '''
     splitPath = os.path.split(fileName)
     s = os.path.basename(splitPath[0])
@@ -66,3 +66,39 @@ def getPatientID_Slice(fileName):
     s = splitPath[1]
     sliceID = s[s.rfind("_") + 1:s.rfind('.jpg')]
     return patientID, sliceID
+
+def savePatientsPrediction(referFileDir, patientsDict, outputDir):
+    for patientID in patientsDict.keys():
+        numSurface = len(patientsDict[patientID].keys())
+
+        #read reference file
+        refXMLFile = referFileDir+f"/{patientID}_Volume_Sequence_Surfaces_Iowa.xml"
+        xmlTree = ET.parse(refXMLFile)
+        xmlTreeRoot = xmlTree.getroot()
+        xmlTreeRoot.find('surface_num').text(numSurface)
+        for surface in xmlTreeRoot.findAll('surface'):
+            xmlTreeRoot.remove(surface)
+        for surf in patientsDict[patientID].keys():
+
+            ''' xml format:
+            <surface>
+                <label>10</label>
+                <name>ILM (ILM)</name>
+                <instance>NA</instance>
+                <bscan>
+                    <y>133</y>
+                    <y>134</y>
+
+            '''
+            surfaceElement =  xmlTreeRoot.makeelement('surface')
+            surfaceElement.makeelement('label').text=surf
+            surfaceElement.makeelement('name').text = 'ILM(ILM)'
+            surfaceElement.makeelement('instance').text = 'NA'
+            for bscan in patientsDict[patientID][surf].keys():
+                bscanElemeent = surfaceElement.makeelement('bscan')
+                for y in patientsDict[patientID][surf][bscan]:
+                    bscanElemeent.makeelement('y').text = y
+
+        outputXMLFilename =  outputDir + f"/{patientID}_Volume_Sequence_Surfaces_Prediction.xml"
+        xmlTree.write(outputXMLFilename)
+
