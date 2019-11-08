@@ -41,7 +41,7 @@ def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile, goalPa
         assert X == W and surfaces_num == NumSurfaces
         allPatientsSurfaceArray[s:s+Z,:,:] = surfacesArray
         for ss in range(s,s+Z):
-            patientIDDict[ss] = {"volume":volume, "slice":ss}
+            patientIDDict[ss] = {"volume":volume, "slice":ss-s+1}
 
         # read image data
         imagesList = glob.glob(volume + f"/*_OCT[0-3][0-9].jpg")
