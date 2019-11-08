@@ -2,6 +2,7 @@
 
 import numpy as np
 import xml.etree.ElementTree as ET
+import os
 
 def loadInputFilesList(filename):
     filesList = []
@@ -52,3 +53,16 @@ def getSurfacesArray(segFile):
                            x +=1
                            surfacesArray[z,s,x] = int(item.text)
     return surfacesArray
+
+def getPatientID_Slice(fileName):
+    '''
+
+    :param fileName: e.g. "/home/hxie1/data/OCT_Beijing/control/4162_OD_23992_Volume/20110616012458_OCT10.jpg"
+    :return: e.g. '4162_OD_23992_OCT10'
+    '''
+    splitPath = os.path.split(fileName)
+    s = os.path.basename(splitPath[0])
+    patientID = s[0:s.rfind("_")]
+    s = splitPath[1]
+    sliceID = s[s.rfind("_") + 1:s.rfind('.jpg')]
+    return patientID, sliceID

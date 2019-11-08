@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 import sys
 from AugSurfSeg import *
 from smooth1D import smooth
+import os
+import json
 
 SLICE_per_vol = 31 # 60 for leixin's data, 31 for Beijing OCT data.
 numSurfaces = 11
@@ -31,6 +33,13 @@ class OCTDataset(Dataset):
         self.sf = surf
         self.image = np.load(img_np)
         self.label = np.load(label_np)
+        patientIDPath = img_np.replace("images_CV", "patientID_CV").replace(".npy", ".json")
+        if os.path.isfile(patientIDPath):
+            with open(patientIDPath) as f:
+                self.patientIDs = json.load(f)
+        else:
+            print(f"program can not find patientIDs at {patientIDPath}")
+
         self.vol_list = vol_list
         self.trans = transforms
         self.LT = OCTDataset.LT_gen(col_len, sigma)
@@ -67,8 +76,11 @@ class OCTDataset(Dataset):
                         "gt_d": torch.from_numpy(gt_d.astype(np.float32)),
                         "gt_d_ns": torch.from_numpy(gt_d_ns.astype(np.float32))}
 
-        # add gt_n1 and gt_p1 surfaces: gt-1, and gt+1 without transform
         ts = self.sf[0]
+        image_gt_ts["patientID"] = self.patientIDs[str(real_idx)]
+        image_gt_ts['targetSurface'] = ts
+
+        # add gt_n1 and gt_p1 surfaces: gt-1, and gt+1 without transform
         gt_n1 =  self.label[real_idx,:, (ts-1)%numSurfaces]
         gt_p1 =  self.label[real_idx,:, (ts+1)%numSurfaces]
         image_gt_ts['gt_n1'] = gt_n1

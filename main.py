@@ -15,6 +15,8 @@ import sys
 sys.path.append('../')
 from AugSurfSeg import *
 # os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
+from Tools.FileUtilities import *
+
 
 BeijingOCT =True
 
@@ -28,6 +30,7 @@ SLICE_per_vol = 60
 
 if BeijingOCT:
     SLICE_per_vol =31
+    NumSurfaces = 11
 
 
 def save_checkpoint(states,  path, filename='model_best.pth.tar'):
@@ -239,6 +242,7 @@ def infer(model, hps):
     model.eval()
     pred_list = []
     gt_list = []
+    patientID_set= set([])
     # pred_dummy = []
     if not os.path.isdir(hps['test']['pred_dir']):
         os.mkdir(hps['test']['pred_dir'])
@@ -259,12 +263,16 @@ def infer(model, hps):
         pred_tmp = model(batch_img)
         pred = pred_tmp.squeeze().detach().cpu().numpy()
         if BeijingOCT:
-            fileSuffix = f"_p{step//SLICE_per_vol:02d}_s{step%SLICE_per_vol:02d}.npy"
-            np.save(os.path.join(outputPath, f"TestImage"+fileSuffix), batch['img'].squeeze().numpy())
-            np.save(os.path.join(outputPath, f"TestGT" + fileSuffix),  batch['gt'].squeeze().detach().cpu().numpy())
-            np.save(os.path.join(outputPath, f"TestPred" + fileSuffix), pred)
-            np.save(os.path.join(outputPath, f"TestGT_n1" + fileSuffix), batch['gt_n1'].squeeze().numpy())
-            np.save(os.path.join(outputPath, f"TestGT_p1" + fileSuffix), batch['gt_p1'].squeeze().numpy())
+            patientID, sliceID = getPatientID_Slice(batch['patientID'][0])
+            patientID_set.add(patientID)
+            patientIDSlice = patientID+'_'+sliceID
+            targetSurface = batch['targetSurface'].item()
+
+            np.save(os.path.join(outputPath, patientIDSlice+f"_Image.npy"), batch['img'].squeeze().numpy())
+            np.save(os.path.join(outputPath, patientIDSlice+f"_sf{targetSurface:02d}_GT.npy" ),  batch['gt'].squeeze().detach().cpu().numpy())
+            np.save(os.path.join(outputPath, patientIDSlice+f"_sf{targetSurface:02d}_Pred.npy" ), pred)
+            np.save(os.path.join(outputPath, patientIDSlice+f"_sf{(targetSurface-1)%NumSurfaces:02d}_GT.npy"), batch['gt_n1'].squeeze().numpy())
+            np.save(os.path.join(outputPath, patientIDSlice+f"_sf{(targetSurface+1)%NumSurfaces:02d}_GT.npy"), batch['gt_p1'].squeeze().numpy())
 
         pred_list.append(pred)
         gt_list.append(batch_gt)
@@ -308,6 +316,7 @@ def infer(model, hps):
         error_std =  np.std(error_mean)
         print(f"For {hps['network']} in Beiing OCT:")
         print(f"total {N} slices for test with uniform {yPixelSize}mm/pixel in y direction:")
+        print(f"paitent ID: {patientID_set}")
         print(f"error_mean in pixel size: {error_mean}")
         print(f"error_std in pixels size: {error_std}")
         print(f"error_mean in physical size(mm): {[err*yPixelSize for err in error_mean]}")
