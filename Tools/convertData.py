@@ -7,6 +7,7 @@ from FileUtilities import *
 import random
 import numpy as np
 from imageio import imread
+import json
 
 
 k = 0
@@ -23,11 +24,12 @@ segsDir = "/home/hxie1/data/OCT_Beijing/Correcting_Seg"
 outputDir = "/home/hxie1/data/OCT_Beijing/numpy"
 patientsListFile = os.path.join(outputDir, "patientsList.txt")
 
-def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile):
+def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile, goalPatientsIDFile):
     # image in slices, Heigh, Width axis order
     # label in slices, NumSurfaces, Width axis order
     allPatientsImageArray = np.empty((len(volumesList)*NumSlices,H, W), dtype=np.float)
     allPatientsSurfaceArray = np.empty((len(volumesList)*NumSlices, NumSurfaces, W),dtype=np.int)
+    patientIDDict = {}
 
     s = 0 # initial slice for each patient
     for volume in volumesList:
@@ -38,6 +40,8 @@ def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile):
         Z,surfaces_num, X = surfacesArray.shape
         assert X == W and surfaces_num == NumSurfaces
         allPatientsSurfaceArray[s:s+Z,:,:] = surfacesArray
+        for ss in range(s,s+Z):
+            patientIDDict[ss] = {"volume":volume, "slice":ss}
 
         # read image data
         imagesList = glob.glob(volume + f"/*_OCT[0-3][0-9].jpg")
@@ -54,13 +58,16 @@ def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile):
     allPatientsImageArray = allPatientsImageArray[:,:,128:640]
     allPatientsSurfaceArray = allPatientsSurfaceArray[:,:,128:640]
 
-    # flip axis order to fit with Leixin's network
+    # flip axis order to fit with Leixin's network with format(slices, Width, Height)
     allPatientsImageArray = np.swapaxes(allPatientsImageArray, 1,2)
     allPatientsSurfaceArray = np.swapaxes(allPatientsSurfaceArray, 1,2)
 
     # save
     np.save(goalImageFile, allPatientsImageArray)
     np.save(goalSurfaceFile, allPatientsSurfaceArray)
+    with open(goalPatientsIDFile, 'w') as fp:
+        json.dump(patientIDDict, fp)
+
 
 def main():
     # get files list
@@ -97,11 +104,14 @@ def main():
 
     # save to file
     saveVolumeSurfaceToNumpy(partitions["test"], os.path.join(outputDir, 'test', f"images_CV{k}.npy"),\
-                                                 os.path.join(outputDir, 'test', f"surfaces_CV{k}.npy"))
+                                                 os.path.join(outputDir, 'test', f"surfaces_CV{k}.npy"), \
+                                                 os.path.join(outputDir, 'test', f"patientID_CV{k}.json"))
     saveVolumeSurfaceToNumpy(partitions["validation"], os.path.join(outputDir, 'validation', f"images_CV{k}.npy"), \
-                                                       os.path.join(outputDir, 'validation', f"surfaces_CV{k}.npy"))
+                                                       os.path.join(outputDir, 'validation', f"surfaces_CV{k}.npy"), \
+                                                       os.path.join(outputDir, 'validation', f"patientID_CV{k}.json") )
     saveVolumeSurfaceToNumpy(partitions["training"], os.path.join(outputDir, 'training', f"images_CV{k}.npy"), \
-                                                     os.path.join(outputDir, 'training', f"surfaces_CV{k}.npy"))
+                                                     os.path.join(outputDir, 'training', f"surfaces_CV{k}.npy"), \
+                                                     os.path.join(outputDir, 'training', f"patientID_CV{k}.json") )
 
 
     print(f"test: {len(partitions['test'])} patients;  validation: {len(partitions['validation'])} patients;  training: {len(partitions['training'])} patients, ")
