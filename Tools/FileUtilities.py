@@ -1,8 +1,10 @@
 # utilities functions.
 
 import numpy as np
-import xml.etree.ElementTree as ET
+# import xml.etree.ElementTree as ET
+from lxml import etree as ET
 import os
+import datetime
 
 def loadInputFilesList(filename):
     filesList = []
@@ -68,19 +70,72 @@ def getPatientID_Slice(fileName):
     return patientID, sliceID
 
 def savePatientsPrediction(referFileDir, patientsDict, outputDir):
+    curTime = datetime.datetime.now()
+    dateStr = f"{curTime.month:02d}/{curTime.day:02d}/{curTime.year}"
+    timeStr = f"{curTime.hour:02d}:{curTime.minute:02d}:{curTime.second:02d}"
+
     for patientID in patientsDict.keys():
-        numSurface = len(patientsDict[patientID].keys())
 
         #read reference file
         refXMLFile = referFileDir+f"/{patientID}_Volume_Sequence_Surfaces_Iowa.xml"
-        xmlTree = ET.parse(refXMLFile)
+
+        # make print pretty
+        parser = ET.XMLParser(remove_blank_text=True)
+        xmlTree = ET.parse(refXMLFile, parser)
+        # old code for ETree
+        # xmlTree = ET.parse(refXMLFile)
         xmlTreeRoot = xmlTree.getroot()
-        xmlTreeRoot.find('surface_num').text(numSurface)
-        for surface in xmlTreeRoot.findAll('surface'):
+
+        '''
+        <modification>
+            <date>09/25/2019</date>
+            <time>14:40:54</time>
+            <modifier>NA</modifier>
+            <approval>N</approval>
+        </modification>    
+        '''
+        xmlTreeRoot.find('modification/date').text = dateStr
+        xmlTreeRoot.find('modification/time').text = timeStr
+        xmlTreeRoot.find('modification/modifier').text = "Xiaodong Wu, Leixin Zhou, Hui Xie"
+        ET.SubElement(xmlTreeRoot.find('modification'), 'content', {}).text = "Model-Based Deep Learning for Globally Optimal Surface Segmentation"
+
+        xmlTreeRoot.find('scan_characteristics/size/x').text = str(512)
+        xmlTreeRoot.find('surface_size/x').text = str(512)
+        numSurface = len(patientsDict[patientID].keys())
+        xmlTreeRoot.find('surface_num').text= str(numSurface)
+
+        for surface in xmlTreeRoot.findall('surface'):
             xmlTreeRoot.remove(surface)
+        for undefinedRegion in xmlTreeRoot.findall('undefined_region'):
+            xmlTreeRoot.remove(undefinedRegion)
+
         for surf in patientsDict[patientID].keys():
 
             ''' xml format:
+            <scan_characteristics>
+                <manufacturer>MetaImage</manufacturer>
+                <size>
+                    <unit>voxel</unit>
+                    <x>768</x>
+                    <y>496</y>
+                    <z>31</z>
+                </size>
+                <voxel_size>
+                    <unit>mm</unit>
+                    <x>0.013708</x>
+                    <y>0.003870</y>
+                    <z>0.292068</z>
+                </voxel_size>
+                <laterality>NA</laterality>
+                <center_type>macula</center_type>
+            </scan_characteristics>
+            <unit>voxel</unit>
+            <surface_size>
+                <x>768</x>
+                <z>31</z>
+            </surface_size>
+            <surface_num>11</surface_num>
+
             <surface>
                 <label>10</label>
                 <name>ILM (ILM)</name>
@@ -90,15 +145,16 @@ def savePatientsPrediction(referFileDir, patientsDict, outputDir):
                     <y>134</y>
 
             '''
-            surfaceElement =  xmlTreeRoot.makeelement('surface')
-            surfaceElement.makeelement('label').text=surf
-            surfaceElement.makeelement('name').text = 'ILM(ILM)'
-            surfaceElement.makeelement('instance').text = 'NA'
+            surfaceElement = ET.SubElement(xmlTreeRoot, 'surface',{})
+            ET.SubElement(surfaceElement, 'label',{}).text=str(surf)
+            ET.SubElement(surfaceElement, 'name',{}).text = 'ILM(ILM)'
+            ET.SubElement(surfaceElement, 'instance',{}).text = 'NA'
             for bscan in patientsDict[patientID][surf].keys():
-                bscanElemeent = surfaceElement.makeelement('bscan')
+                bscanElemeent = ET.SubElement(surfaceElement, 'bscan',{})
                 for y in patientsDict[patientID][surf][bscan]:
-                    bscanElemeent.makeelement('y').text = y
+                    ET.SubElement(bscanElemeent, 'y',{}).text = str(y)
 
         outputXMLFilename =  outputDir + f"/{patientID}_Volume_Sequence_Surfaces_Prediction.xml"
-        xmlTree.write(outputXMLFilename)
+        xmlTree.write(outputXMLFilename, pretty_print=True)
+    print(f"{len(patientsDict)} prediction XML surface files are outpted at {outputDir}\n")
 
