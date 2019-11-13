@@ -2,7 +2,7 @@
 import glob as glob
 import os
 import sys
-from Tools.FileUtilities import *
+from FileUtilities import *
 import random
 import numpy as np
 from imageio import imread
@@ -93,7 +93,7 @@ def main():
             break
 
     # partition for test, validation, and training
-    outputValidation = True
+    outputValidation = False
 
     for k in range(0,K):
         partitions = {}
