@@ -131,14 +131,16 @@ def learn(model, hps):
     print(f"training dataset length:{tr_dataset.__len__()}")
     tr_loader = DataLoader(tr_dataset, shuffle=True,
                            batch_size=hps['learning']['batch_size'], num_workers=0)
-    val_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['val_img'],
-                            label_np=hps['learning']['data']['val_gt'],
-                            transforms=val_aug,
-                            col_len=hps['pair_network']['col_len'],
-                            Window_size = hps['pair_network']['window_size']
-                            )
-    val_loader = DataLoader(val_dataset, shuffle=False,
-                            batch_size=hps['learning']['batch_size'], num_workers=0)
+
+    if hps['learning']['data']['val_img'] != "":
+        val_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['val_img'],
+                                label_np=hps['learning']['data']['val_gt'],
+                                transforms=val_aug,
+                                col_len=hps['pair_network']['col_len'],
+                                Window_size = hps['pair_network']['window_size']
+                                )
+        val_loader = DataLoader(val_dataset, shuffle=False,
+                                batch_size=hps['learning']['batch_size'], num_workers=0)
 
     optimizer = getattr(optim, hps['learning']['optimizer'])(
         [{'params': model.parameters(), 'lr': hps['learning']['lr']}
@@ -163,7 +165,8 @@ def learn(model, hps):
         tr_mb = 0 # count of minibatch
         print("Epoch: " + str(epoch))
         for step, batch in enumerate(tr_loader):
-            batch = {key: value.cuda() for (key, value) in batch.items() }
+            # batch = {key: value.cuda() for (key, value) in batch.items() }
+            batch = {key: value.cuda() if torch.is_tensor(value) else value for (key, value) in batch.items()}
             m_batch_loss = train(model, loss_func, optimizer, batch, hps)
             # tr_loss_g += m_batch_loss[0]
             tr_loss_d += m_batch_loss
@@ -177,26 +180,31 @@ def learn(model, hps):
         # print("     tr_loss_g: " + "%.5e" % epoch_tr_loss_g)
         print("     tr_loss_d: " + "%.5e" % epoch_tr_loss_d)
         # scheduler.step(epoch_tr_loss)
+        epoch_loss = epoch_tr_loss_d
 
-        # val_loss_g = 0
-        val_loss_d = 0
-        val_mb = 0
-        for step, batch in enumerate(val_loader):
-            batch = {key: value.cuda() for (key, value) in batch.items() }
-            m_batch_loss = val(model, loss_func, batch, hps)
-            # val_loss_g += m_batch_loss[0]
-            val_loss_d += m_batch_loss
-            val_mb += 1
-            print("         mini batch val loss: "+ "%.5e" % m_batch_loss)
-        # epoch_val_loss_g = val_loss_g / val_mb
-        epoch_val_loss_d = val_loss_d / val_mb
-        # writer.add_scalar('data/val_loss_g', epoch_val_loss_g, epoch)
-        writer.add_scalar('data/val_loss_d', epoch_val_loss_d, epoch)
-        # print("     val_loss_g: " + "%.5e" % epoch_val_loss_g)
-        print("     val_loss_d: " + "%.5e" % epoch_val_loss_d)
+        if hps['learning']['data']['val_img'] != "":
+            # val_loss_g = 0
+            val_loss_d = 0
+            val_mb = 0
+            for step, batch in enumerate(val_loader):
+                # batch = {key: value.cuda() for (key, value) in batch.items() }
+                batch = {key: value.cuda() if torch.is_tensor(value) else value for (key, value) in batch.items()}
+                m_batch_loss = val(model, loss_func, batch, hps)
+                # val_loss_g += m_batch_loss[0]
+                val_loss_d += m_batch_loss
+                val_mb += 1
+                print("         mini batch val loss: "+ "%.5e" % m_batch_loss)
+            # epoch_val_loss_g = val_loss_g / val_mb
+            epoch_val_loss_d = val_loss_d / val_mb
+            # writer.add_scalar('data/val_loss_g', epoch_val_loss_g, epoch)
+            writer.add_scalar('data/val_loss_d', epoch_val_loss_d, epoch)
+            # print("     val_loss_g: " + "%.5e" % epoch_val_loss_g)
+            print("     val_loss_d: " + "%.5e" % epoch_val_loss_d)
+            epoch_loss = epoch_val_loss_d
 
-        if epoch_val_loss_d < best_loss:
-            best_loss = epoch_val_loss_d
+
+        if epoch_loss < best_loss:
+            best_loss = epoch_loss
             save_checkpoint(
                 {
                     'epoch': epoch,

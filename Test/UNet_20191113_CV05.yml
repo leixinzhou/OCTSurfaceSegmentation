@@ -1,0 +1,52 @@
+network: UNet
+
+unary_network: 
+  depth: 5
+  start_filters: 8
+  up_mode: "bilinear"
+  resume_path: "/home/hxie1/data/OCT_Beijing/netParameters/Unet20191113/CV5/model_best.pth.tar"
+pair_network:
+  depth: 5
+  start_filters: 8
+  up_mode: "bilinear"
+  col_len: 496
+  fc_inter: 128
+  left_nbs: 50
+  resume_path: ""
+  window_size: 11
+surf_net:
+  unary_pretrain_path: ""
+  pair_pretrain_path: ""
+surf: [1]
+learning: 
+  checkpoint_path: "/home/hxie1/data/OCT_Beijing/netParameters/Unet20191113/CV5"
+  resume_path: ""
+  loss: KLDivLoss
+  best_loss: 99999
+  batch_size: 48
+  optimizer: Adam
+  lr: 0.0001
+  epoch_start: 0
+  total_iterations: 40000
+  augmentation: [
+                "saltpepper", 
+                "Gaussian",
+                "cropresize", 
+                "circulateud",
+                "mirrorlr"
+                ]
+  data:
+    tr_img: "/home/hxie1/data/OCT_Beijing/numpy/training/images_CV5.npy"
+    val_img: ""
+    tr_gt: "/home/hxie1/data/OCT_Beijing/numpy/training/surfaces_CV5.npy"
+    val_gt: ""
+    tr_ratio: 1.
+test:
+  mode: False
+  data:
+    img: "/home/hxie1/data/OCT_Beijing/numpy/test/images_CV5.npy"
+    gt: "/home/hxie1/data/OCT_Beijing/numpy/test/surfaces_CV5.npy"
+  resume_path: ""
+  loss: L1Loss
+  batch_size: 1
+  pred_dir: "/home/hxie1/data/OCT_Beijing/netParameters/Unet20191113/CV5/predict"
