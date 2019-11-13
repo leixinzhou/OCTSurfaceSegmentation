@@ -9,7 +9,6 @@ from imageio import imread
 import json
 
 
-k = 0
 K = 6  # K-fold Cross validation, the k-fold is for test, (k+1)%K is validation, others for training.
 
 W = 768
@@ -26,6 +25,9 @@ patientsListFile = os.path.join(outputDir, "patientsList.txt")
 def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile, goalPatientsIDFile):
     # image in slices, Heigh, Width axis order
     # label in slices, NumSurfaces, Width axis order
+    if len(volumesList) ==0:
+        return
+
     allPatientsImageArray = np.empty((len(volumesList)*NumSlices,H, W), dtype=np.float)
     allPatientsSurfaceArray = np.empty((len(volumesList)*NumSlices, NumSurfaces, W),dtype=np.int)
     patientIDDict = {}
@@ -90,29 +92,41 @@ def main():
         if nexti == N:
             break
 
-    # partition
-    partitions = {}
-    partitions["test"] = patientsSubList[k]
-    k1 = (k + 1) % K  # validation k
-    partitions["validation"] = patientsSubList[k1]
-    partitions["training"] = []
-    for i in range(K):
-        if i != k and i != k1:
-            partitions["training"] += patientsSubList[i]
+    # partition for test, validation, and training
+    outputValidation = True
 
-    # save to file
-    saveVolumeSurfaceToNumpy(partitions["test"], os.path.join(outputDir, 'test', f"images_CV{k}.npy"),\
-                                                 os.path.join(outputDir, 'test', f"surfaces_CV{k}.npy"), \
-                                                 os.path.join(outputDir, 'test', f"patientID_CV{k}.json"))
-    saveVolumeSurfaceToNumpy(partitions["validation"], os.path.join(outputDir, 'validation', f"images_CV{k}.npy"), \
-                                                       os.path.join(outputDir, 'validation', f"surfaces_CV{k}.npy"), \
-                                                       os.path.join(outputDir, 'validation', f"patientID_CV{k}.json") )
-    saveVolumeSurfaceToNumpy(partitions["training"], os.path.join(outputDir, 'training', f"images_CV{k}.npy"), \
-                                                     os.path.join(outputDir, 'training', f"surfaces_CV{k}.npy"), \
-                                                     os.path.join(outputDir, 'training', f"patientID_CV{k}.json") )
+    for k in range(0,K):
+        partitions = {}
+        partitions["test"] = patientsSubList[k]
+
+        if outputValidation:
+            k1 = (k + 1) % K  # validation k
+            partitions["validation"] = patientsSubList[k1]
+        else:
+            k1 = k
+            partitions["validation"] = []
+
+        partitions["training"] = []
+        for i in range(K):
+            if i != k and i != k1:
+                partitions["training"] += patientsSubList[i]
+
+        # save to file
+        saveVolumeSurfaceToNumpy(partitions["test"], os.path.join(outputDir, 'test', f"images_CV{k}.npy"),\
+                                                     os.path.join(outputDir, 'test', f"surfaces_CV{k}.npy"), \
+                                                     os.path.join(outputDir, 'test', f"patientID_CV{k}.json"))
+        if outputValidation:
+            saveVolumeSurfaceToNumpy(partitions["validation"], os.path.join(outputDir, 'validation', f"images_CV{k}.npy"), \
+                                                           os.path.join(outputDir, 'validation', f"surfaces_CV{k}.npy"), \
+                                                           os.path.join(outputDir, 'validation', f"patientID_CV{k}.json") )
+        saveVolumeSurfaceToNumpy(partitions["training"], os.path.join(outputDir, 'training', f"images_CV{k}.npy"), \
+                                                         os.path.join(outputDir, 'training', f"surfaces_CV{k}.npy"), \
+                                                         os.path.join(outputDir, 'training', f"patientID_CV{k}.json") )
 
 
-    print(f"test: {len(partitions['test'])} patients;  validation: {len(partitions['validation'])} patients;  training: {len(partitions['training'])} patients, ")
+        print(f"in CV: {k}/{K}: test: {len(partitions['test'])} patients;  validation: {len(partitions['validation'])} patients;  training: {len(partitions['training'])} patients, ")
+
+
     print("===End of prorgram=========")
 
 if __name__ == "__main__":
