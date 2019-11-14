@@ -1,4 +1,5 @@
 network: UNet
+# train pure Unet with gaussianalized ground truth, with KLD loss
 
 unary_network: 
   depth: 5
