@@ -341,16 +341,17 @@ def infer(model, hps):
         error_std =  np.std(error_mean)
         print(f"For {hps['network']} in Beiing OCT:")
         print(f"total {N} slices for test with uniform {yPixelSize}mm/pixel in y direction:")
+        print(f"error_std in pixels size in this fold: {error_std}")
+        print(f"error_std in physical size(mm) in this fold: {error_std * yPixelSize}")
         print("\n===================Table============================\n")
-        print("patientID\tErrorMeanPixel\tErrorStdPixel\tErrorMeanPhysical(mm)\tErrorStdPhysical(mm)\n")
+        print("patientID\tErrorMeanPixel\tErrorMeanPhysical(mm)")
         nPatients = len(patientID_list)
         for p in range(nPatients):
-            print(f"{patientID_list[p]}\t{error_mean[p]}\t{error_std[p]}\t{error_mean[p]*yPixelSize}\t{error_std[p]*yPixelSize}")
+            print(f"{patientID_list[p]}\t{error_mean[p]}\t{error_mean[p]*yPixelSize}")
         #print(f"paitent ID: {patientID_list}")
         #print(f"error_mean in pixel size: {error_mean}")
-        #print(f"error_std in pixels size: {error_std}")
         #print(f"error_mean in physical size(mm): {[err*yPixelSize for err in error_mean]}")
-        #print(f"error_std in physical size(mm): {error_std*yPixelSize}")
+        #
 
     else:
         error_mean = [np.mean(error[i*SLICE_per_vol:(i+1)*SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
