@@ -9,6 +9,9 @@ CUDA_VISIBLE_DEVICES=1 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfa
 # test on Unet + SurfSegNSB modules with test switch on in config file:
 CUDA_VISIBLE_DEVICES=0 python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/SurfSegNSBNet_20191113_CV0.yml
 
+# train Unet+SurfSeg, use main_sm.py
+
+
 
 #### observe loss
 # in GPU server terminal, launch chrome
@@ -22,7 +25,7 @@ tensorboard --host c-xwu000.iibi.uiowa.edu --logdir /home/hxie1/data/OCT_Beijing
 tensorboard  --logdir /home/sheen/c-xwu000/data/OCT_Beijing/netParameters/unet20191101
 tensorboard  --logdir /home/sheen/c-xwu000/data/OCT_Beijing/netParameters/SurfSegNSBNet
 tensorboard  --logdir /local/vol00/home/hxie1/c-xwu000/data/OCT_Beijing/netParameters/Unet20191113/CV0
-tensorboard  --logdir /local/vol00/home/hxie1/c-xwu000/data/OCT_Beijing/netParameters/SurfNet2019113/CV0
+tensorboard  --logdir /local/vol00/home/hxie1/c-xwu000/data/OCT_Beijing/netParameters/SurfNSBNet2019113/CV0
 
 # web
 http://c-xwu000.iibi.uiowa.edu:6006/#scalars

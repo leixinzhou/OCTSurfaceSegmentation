@@ -50,6 +50,7 @@ def saveVolumeSurfaceToNumpy(volumesList, goalImageFile, goalSurfaceFile, goalPa
            return
 
         for z in range(0, Z):
+            # todo: maybe we need to normalize input image with mean 0 and std 1.
             allPatientsImageArray[s,] = imread(imagesList[z])
             patientIDDict[str(s)] = imagesList[z]
             s +=1

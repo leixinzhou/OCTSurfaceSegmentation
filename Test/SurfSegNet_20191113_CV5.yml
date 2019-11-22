@@ -1,0 +1,58 @@
+network: SurfSegNet
+# train Unet + D2C + Optimization Module
+
+unary_network: 
+  depth: 5
+  start_filters: 8
+  up_mode: "bilinear"
+  resume_path: ""
+pair_network:
+  depth: 5
+  start_filters: 8
+  up_mode: "bilinear"
+  col_len: 496
+  fc_inter: 128
+  left_nbs: 50
+  resume_path: ""
+  window_size: 11
+surf_net:
+  unary_pretrain_path: "/home/hxie1/data/OCT_Beijing/netParameters/Unet20191113/CV5/model_best.pth.tar"
+  unary_network: UNet
+  pair_pretrain_path: ""
+  resume_path: "run/surf1/100percent/surf_zero_prior/model_best.pth.tar"
+  #resume_path: ""
+  wt_init: 0.02
+surf: [1]
+learning: 
+  checkpoint_path: "run/surf1/100percent/surf_zero_prior/"
+  resume_path: ""
+  loss: L1Loss
+  best_loss: 99999
+  batch_size: 48
+  optimizer: Adam
+  lr_unary: 0.00002
+  lr_pair: 0.01
+  total_iterations: 10
+  unary_iterations: 10
+  pair_iterations: 0
+  augmentation: [
+                "saltpepper", 
+                "Gaussian",
+                "cropresize", 
+                "circulateud",
+                "mirrorlr"
+                ]
+  data:
+    tr_img: "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/train/patch.npy"
+    val_img: "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/val/patch.npy"
+    tr_gt: "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/train/truth.npy"
+    val_gt: "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/val/truth.npy"
+    tr_ratio: 1.
+test:
+  mode: True
+  data:
+    img: "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/test/patch.npy"
+    gt: "/home/leizhou/Documents/OCT/60slice/split_data_2D_400/test/truth.npy"
+  loss: L1Loss
+  batch_size: 24
+  pred_dir: "run/surf1/100percent/surf_zero_prior/pred"
