@@ -28,7 +28,7 @@ learning:
   resume_path: ""
   loss: L1Loss
   best_loss: 99999
-  batch_size: 48
+  batch_size: 24  #48 is too big for Beijing data
   optimizer: Adam
   lr_unary: 0.00001
   lr_pair: 0.001
