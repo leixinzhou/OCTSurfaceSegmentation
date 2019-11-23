@@ -8,7 +8,7 @@ unary_network:
   resume_path: ""
 pair_network:
   depth: 5
-  start_filters: 8
+  start_filters: 32
   up_mode: "bilinear"
   col_len: 496
   fc_inter: 128
@@ -16,7 +16,8 @@ pair_network:
   resume_path: ""
   window_size: 11
 surf_net:
-  unary_pretrain_path: "/home/hxie1/data/OCT_Beijing/netParameters/Unet20191113/CV5/model_best.pth.tar"
+  unary_pretrain_path: "/home/hxie1/data/OCT_Beijing/netParameters/SurfNSBNet2019113/CV5/model_best.pth.tar"
+  unary_pretrain_sub: True    # use saved model trained by NSB module, it needs to strip state dict wrapper.
   unary_network: UNet
   pair_pretrain_path: ""
   resume_path: "/home/hxie1/data/OCT_Beijing/netParameters/SurfNet2019113/CV5/model_best.pth.tar"
@@ -29,12 +30,12 @@ learning:
   best_loss: 99999
   batch_size: 48
   optimizer: Adam
-  lr_unary: 0.00002
-  lr_pair: 0.01
+  lr_unary: 0.00001
+  lr_pair: 0.001
   epoch_start: 0
   total_iterations: 10
-  unary_iterations: 10
-  pair_iterations: 10  # use for smooth model optimization
+  unary_iterations: 100
+  pair_iterations: 20  # use for smooth model optimization
   augmentation: [
                 "saltpepper", 
                 "Gaussian",

@@ -45,7 +45,7 @@ for (key, value) in patientIDs.items():
         s2 += 1
     s +=1
 
-with open(os.path.join(output1Path,"patientIDs_CV5.json"), 'w') as f:
+with open(os.path.join(output1Path,"patientID_CV5.json"), 'w') as f:
     json.dump(patientID1, f)
-with open(os.path.join(output2Path, "patientIDs_CV5.json"), 'w') as f:
+with open(os.path.join(output2Path, "patientID_CV5.json"), 'w') as f:
     json.dump(patientID2, f)
