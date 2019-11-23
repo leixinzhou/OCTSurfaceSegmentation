@@ -26,7 +26,7 @@ tensorboard  --logdir /home/sheen/c-xwu000/data/OCT_Beijing/netParameters/unet20
 tensorboard  --logdir /home/sheen/c-xwu000/data/OCT_Beijing/netParameters/SurfSegNSBNet
 tensorboard  --logdir /local/vol00/home/hxie1/c-xwu000/data/OCT_Beijing/netParameters/Unet20191113/CV0
 tensorboard  --logdir /local/vol00/home/hxie1/c-xwu000/data/OCT_Beijing/netParameters/SurfNSBNet2019113/CV0
-tensorboard  --logdir /local/vol00/home/hxie1/data/OCT_Beijing/netParameters/SurfNet2019113/CV5
+tensorboard  --logdir /local/vol00/home/hxie1/c-xwu000/data/OCT_Beijing/netParameters/SurfNet2019113/CV5
 
 # web
 http://c-xwu000.iibi.uiowa.edu:6006/#scalars
