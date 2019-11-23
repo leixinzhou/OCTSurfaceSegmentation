@@ -1,6 +1,6 @@
 network: SurfSegNSBNet
 # based on pretrained Unet, train Unet + SurfSegNSB modules together with standard groud truth, with L1 Loss;
-# it is better to run 100 epoch, after it, loss is possible to diverge.
+# terminal condition: diverge of L1 loss.
 
 unary_network: 
   depth: 5
