@@ -9,8 +9,8 @@ CUDA_VISIBLE_DEVICES=1 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfa
 # test on Unet + SurfSegNSB modules with test switch on in config file:
 CUDA_VISIBLE_DEVICES=0 python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/SurfSegNSBNet_20191113_CV0.yml
 
-# train Unet+SurfSeg, use main_sm.py
-
+# train Unet+SurfSeg, use main_sm.py: Unet+D2C+SM with d=0
+CUDA_VISIBLE_DEVICES=1 nohup python3.7 main_sm.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/SurfSegNet_20191113_CV5.yml &
 
 
 #### observe loss
