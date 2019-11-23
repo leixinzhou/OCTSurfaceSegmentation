@@ -31,9 +31,10 @@ learning:
   optimizer: Adam
   lr_unary: 0.00002
   lr_pair: 0.01
+  epoch_start: 0
   total_iterations: 10
   unary_iterations: 10
-  pair_iterations: 0
+  pair_iterations: 10  # use for smooth model optimization
   augmentation: [
                 "saltpepper", 
                 "Gaussian",

@@ -16,14 +16,22 @@ import sys
 sys.path.append('../')
 from AugSurfSeg import *
 # os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
+from Tools.FileUtilities import *
+
+
+BeijingOCT =True
 
 # Sample training data. The npy starts with AMD and then Control.
-TR_AMD_NB = 187
+TR_AMD_NB = 187  # AMD: aged related eye disease.
 TR_Control_NB = 79
 TR_CASE_NB = TR_AMD_NB + TR_Control_NB
 TEST_AMD_NB = 41
 TEST_Control_NB = 18
 SLICE_per_vol = 60
+
+if BeijingOCT:
+    SLICE_per_vol =31
+    NumSurfaces = 11
 
 
 def save_checkpoint(states,  path, filename='model_best.pth.tar'):
@@ -36,6 +44,7 @@ def save_checkpoint(states,  path, filename='model_best.pth.tar'):
 
 
 def train(model, criterion, optimizer, input_img_gt, hps):
+    # Only support SurfSegNet.
     model.train()
     D = model(input_img_gt['img'])
     
@@ -85,7 +94,9 @@ def learn(model, hps):
     Control_vol_list = np.random.choice(range(TR_AMD_NB, TR_CASE_NB), 
                             int(TR_Control_NB*hps['learning']['data']['tr_ratio']), replace=False)
     vol_list = np.concatenate((AMD_vol_list, Control_vol_list))
-    print(vol_list)
+    if BeijingOCT:
+        vol_list = None
+    print(f"vol_list= {vol_list}")
     aug_dict = {"saltpepper": SaltPepperNoise(sp_ratio=0.05), 
                 "Gaussian": AddNoiseGaussian(loc=0, scale=0.1),
                 "cropresize": RandomCropResize(crop_ratio=0.9), 
@@ -102,18 +113,22 @@ def learn(model, hps):
     tr_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['tr_img'],
                             label_np=hps['learning']['data']['tr_gt'],
                             vol_list=vol_list, transforms=rand_aug,
+                            col_len=hps['pair_network']['col_len'],
                             Window_size = hps['pair_network']['window_size']
                             )
-    print(tr_dataset.__len__())
+    print(f"training dataset length:{tr_dataset.__len__()}")
     tr_loader = DataLoader(tr_dataset, shuffle=True,
                            batch_size=hps['learning']['batch_size'], num_workers=0)
-    val_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['val_img'],
-                            label_np=hps['learning']['data']['val_gt'],
-                            transforms=val_aug,
-                            Window_size = hps['pair_network']['window_size']
-                            )
-    val_loader = DataLoader(val_dataset, shuffle=False,
-                            batch_size=hps['learning']['batch_size'], num_workers=0)
+
+    if hps['learning']['data']['val_img'] != "":
+        val_dataset = OCTDataset(surf=hps['surf'], img_np=hps['learning']['data']['val_img'],
+                                label_np=hps['learning']['data']['val_gt'],
+                                transforms=val_aug,
+                                col_len=hps['pair_network']['col_len'],
+                                Window_size = hps['pair_network']['window_size']
+                                )
+        val_loader = DataLoader(val_dataset, shuffle=False,
+                                batch_size=hps['learning']['batch_size'], num_workers=0)
 
     optimizer_unary = getattr(optim, hps['learning']['optimizer'])(
         [{'params': model.unary.parameters(), 'lr': hps['learning']['lr_unary']}
@@ -140,7 +155,7 @@ def learn(model, hps):
             tr_loss = 0
             tr_mb = 0
             for step, batch in enumerate(val_loader):
-                batch = {key: value.float().cuda() for (key, value) in batch.items() }
+                batch = {key: value.float().cuda() if torch.is_tensor(value) else value for (key, value) in batch.items()}
                 m_batch_loss = train(model, loss_func, optimizer_pair, batch, hps)
                 tr_loss += m_batch_loss
                 tr_mb += 1
@@ -166,7 +181,7 @@ def learn(model, hps):
             tr_loss = 0
             tr_mb = 0
             for step, batch in enumerate(tr_loader):
-                batch = {key: value.float().cuda() for (key, value) in batch.items()}
+                batch = {key: value.float().cuda() if torch.is_tensor(value) else value for (key, value) in batch.items()}
                 m_batch_loss = train(model, loss_func, optimizer_unary, batch, hps)
                 tr_loss += m_batch_loss
                 tr_mb += 1
@@ -178,7 +193,7 @@ def learn(model, hps):
             val_loss = 0
             val_mb = 0
             for step, batch in enumerate(val_loader):
-                batch = {key: value.float().cuda() for (key, value) in batch.items() }
+                batch = {key: value.float().cuda() if torch.is_tensor(value) else value for (key, value) in batch.items()}
                 m_batch_loss = val(model, loss_func,  batch, hps)
                 val_loss += m_batch_loss
                 val_mb += 1
@@ -207,6 +222,7 @@ def learn(model, hps):
     print('Training complete in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
 
+
 def infer(model, hps):
     since = time.time()
     if torch.cuda.device_count() >= 1:
@@ -224,6 +240,7 @@ def infer(model, hps):
                                 trans_seq_pre=[NormalizeSTD()])
     test_dataset = OCTDataset(surf=hps['surf'], img_np=hps['test']['data']['img'],
                             label_np=hps['test']['data']['gt'], transforms=test_aug,
+                            col_len=hps['pair_network']['col_len'],
                             Window_size = hps['pair_network']['window_size']
                             )
     test_loader = DataLoader(test_dataset, shuffle=False,
@@ -232,7 +249,12 @@ def infer(model, hps):
     model.eval()
     pred_list = []
     gt_list = []
+    patientID_list= []
+    patientsPredDict = {}
     # pred_dummy = []
+    if not os.path.isdir(hps['test']['pred_dir']):
+        os.mkdir(hps['test']['pred_dir'])
+    outputPath =  hps['test']['pred_dir']
     for step, batch in enumerate(test_loader):
     #     pred = np.zeros(399, dtype=np.float32)
     #     batch_gt_d = batch['gt_d'].squeeze().detach().cpu().numpy()
@@ -242,8 +264,33 @@ def infer(model, hps):
     #     # print(batch_gt)
     #     # break
         batch_img = batch['img'].float().cuda()
+        (_,_,H,W) = batch_img.shape
         pred_tmp = model(batch_img)
         pred = pred_tmp.squeeze().detach().cpu().numpy()
+        if BeijingOCT:
+            patientID, sliceID = getPatientID_Slice(batch['patientID'][0])
+            if patientID not in patientID_list:
+                patientID_list.append(patientID)
+            patientIDSlice = patientID+'_'+sliceID
+            targetSurface = batch['targetSurface'].item()
+
+            s = sliceID
+            sliceIndex = s[-2:]
+            if patientID not in patientsPredDict.keys():
+                patientsPredDict[patientID] = {}
+            if str(targetSurface) not in patientsPredDict[patientID].keys():
+                patientsPredDict[patientID][str(targetSurface)] = {}
+            patientsPredDict[patientID][str(targetSurface)][sliceIndex] = pred
+
+
+
+            np.save(os.path.join(outputPath, patientIDSlice+f"_Image.npy"), batch['img'].squeeze().numpy())
+            np.save(os.path.join(outputPath, patientIDSlice+f"_sf{targetSurface:02d}_GT.npy" ),  batch['gt'].squeeze().detach().cpu().numpy())
+            np.save(os.path.join(outputPath, patientIDSlice+f"_sf{targetSurface:02d}_Pred.npy" ), pred)
+            np.save(os.path.join(outputPath, patientIDSlice+f"_sf{(targetSurface-1)%NumSurfaces:02d}_GT.npy"), batch['gt_n1'].squeeze().numpy())
+            np.save(os.path.join(outputPath, patientIDSlice+f"_sf{(targetSurface+1)%NumSurfaces:02d}_GT.npy"), batch['gt_p1'].squeeze().numpy())
+
+
         pred_list.append(pred)
         gt_list.append(batch_gt)
     #     fig, axes = plt.subplots(4,1)
@@ -264,20 +311,57 @@ def infer(model, hps):
     #     pred_dummy.append(np.mean(np.abs(batch_gt_d)))
     pred = np.concatenate(pred_list)
     gt = np.concatenate(gt_list)
-    if not os.path.isdir(hps['test']['pred_dir']):
-        os.mkdir(hps['test']['pred_dir'])
-    pred_dir = os.path.join(hps['test']['pred_dir'],"pred.npy")
-    pred_stat_dir = os.path.join(hps['test']['pred_dir'],"pred_stat.txt")
-    np.save(pred_dir, pred)
+
+    if not BeijingOCT:
+        pred_dir = os.path.join(hps['test']['pred_dir'],"pred.npy")
+        gt_dir = os.path.join(hps['test']['pred_dir'],"gt.npy")
+        pred_stat_dir = os.path.join(hps['test']['pred_dir'],"pred_stat.txt")
+        np.save(pred_dir, pred)
+        np.save(gt_dir, gt)
+
+    if BeijingOCT:
+        if 'UNet'==hps['network']:
+            pred = np.reshape(pred, (-1,H,W)) # here pred is logsoftmax along height dimension
+            pred = np.argmax(pred, axis=1)
+        pred = np.reshape(pred,(-1,W))
+        gt = np.reshape(gt, (-1,W))
+
+
     error = np.abs(pred - gt)
-    error_mean = [np.mean(error[i*SLICE_per_vol:(i+1)*SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
-    amd_mean = np.mean(error_mean[:TEST_AMD_NB])
-    amd_std = np.std(error_mean[:TEST_AMD_NB])
-    control_mean = np.mean(error_mean[TEST_AMD_NB:])
-    control_std = np.std(error_mean[TEST_AMD_NB:])
-    print("AMD", amd_mean, amd_std)
-    print("Control", control_mean, control_std)
-    np.savetxt(pred_stat_dir, [amd_mean, amd_std, control_mean, control_std])
+    if BeijingOCT:
+        savePatientsPrediction(hps['test']['refXML_dir'], patientsPredDict, hps['test']['pred_dir'])
+
+        yPixelSize = 0.003870  # mm
+        (N,_) = gt.shape
+        error_mean = [np.mean(error[i * SLICE_per_vol:(i + 1) * SLICE_per_vol, ]) for i in range(N//SLICE_per_vol)]
+        error_std =  np.std(error_mean)
+        print(f"For {hps['network']} in Beiing OCT:")
+        print(f"total {N} slices for test with uniform {yPixelSize}mm/pixel in y direction:")
+        print(f"error_std in pixels size in this fold: {error_std}")
+        print(f"error_std in physical size(mm) in this fold: {error_std * yPixelSize}")
+        print("\n===================Table============================\n")
+        print("patientID\tErrorMeanPixel\tErrorMeanPhysical(mm)")
+        nPatients = len(patientID_list)
+        for p in range(nPatients):
+            print(f"{patientID_list[p]}\t{error_mean[p]}\t{error_mean[p]*yPixelSize}")
+        #print(f"paitent ID: {patientID_list}")
+        #print(f"error_mean in pixel size: {error_mean}")
+        #print(f"error_mean in physical size(mm): {[err*yPixelSize for err in error_mean]}")
+        #
+
+    else:
+        error_mean = [np.mean(error[i*SLICE_per_vol:(i+1)*SLICE_per_vol,]) for i in range(TEST_AMD_NB+TEST_Control_NB)]
+        amd_mean = np.mean(error_mean[:TEST_AMD_NB])
+        amd_std = np.std(error_mean[:TEST_AMD_NB])
+        control_mean = np.mean(error_mean[TEST_AMD_NB:])
+        control_std = np.std(error_mean[TEST_AMD_NB:])
+        print("AMD", amd_mean, amd_std)
+        print("Control", control_mean, control_std)
+        print("dummy_mean: ", np.mean(np.abs(gt)), "pred_mean: ", np.mean(error))
+        np.savetxt(pred_stat_dir,
+                   [amd_mean, amd_std, control_mean, control_std, np.mean(error), np.std(error), np.mean(np.abs(gt)),
+                    np.std(np.abs(gt))])
+
     #     # np.savetxt(pred_dir, pred, delimiter=',')
     # print("Test done!")
     # pred_l1_mean = np.mean(np.array(pred_l1))
@@ -310,8 +394,8 @@ def main():
             hps = yaml.load(config_file)
     except IOError:
         print('Couldn\'t read hyperparameter setting file')
-    
 
+    print(f"Current network: {hps['network']}")
     if hps['network']=="SurfSegNet":
         model_u = getattr(network, hps['surf_net']['unary_network'])(num_classes=1, in_channels=1, depth=hps['unary_network']['depth'],
                  start_filts=hps['unary_network']['start_filters'], up_mode=hps['unary_network']['up_mode'])
