@@ -1,6 +1,6 @@
 
-predictNumpyDir = "/home/hxie1/data/OCT_Beijing/netParameters/SurfNet2019113/CV5/predict"
-predictImageDir = "/home/hxie1/data/OCT_Beijing/netParameters/SurfNet2019113/CV5/predict/predictImages"
+predictNumpyDir = "/home/hxie1/data/OCT_Beijing/netParameters/SurfNSBNet2019113/CV0/predict"
+predictImageDir = "/home/hxie1/data/OCT_Beijing/netParameters/SurfNSBNet2019113/CV0/predict/predictImages"
 
 numPatients = 8
 numSlices = 31
@@ -14,6 +14,10 @@ import glob
 def main():
     dataList = glob.glob(predictNumpyDir + f"/*.npy")
     dataList.sort()
+
+    if not os.path.isdir(predictImageDir):
+        os.mkdir(predictImageDir)
+
     N = len(dataList)
     for i in range(0, N, 5):
         '''
