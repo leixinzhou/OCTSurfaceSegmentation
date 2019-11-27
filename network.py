@@ -370,12 +370,12 @@ class SurfSegNet(torch.nn.Module):
     """
     ONly GPU version has been implemented!!!
     """
-    def __init__(self, unary_model, hps, wt_init=1e-5,  pair_model=None):
+    def __init__(self, unary_model, hps, wt_init=1e-5,  pair_model=None, updateW=True):
         super(SurfSegNet, self).__init__()
         self.unary = unary_model
         self.pair = pair_model
         self.hps = hps
-        self.w_comp = torch.nn.Parameter(torch.ones(1)*wt_init)
+        self.w_comp = torch.nn.Parameter(torch.ones(1)*wt_init, requires_grad=updateW)
     def load_wt(self):
         if os.path.isfile(self.hps['surf_net']['resume_path']):
             print('loading surfnet checkpoint: {}'.format(self.hps['surf_net']['resume_path']))
@@ -411,7 +411,7 @@ class SurfSegNet(torch.nn.Module):
         
     def forward(self, x, tr_flag=False):
         logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)  
-        logits = normalize_prob(logits)
+        logits = normalize_prob(logits)  # Todo: what is the benefit of this normalize
         if self.pair is None:
             d_p = torch.zeros((x.size(0), x.size(-1)-1), dtype=torch.float32, requires_grad=False).cuda()
         else:

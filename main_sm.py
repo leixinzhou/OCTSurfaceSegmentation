@@ -406,7 +406,7 @@ def main():
                             left_nbs=hps['pair_network']['left_nbs'])
         else:
             model_p = None
-        model = getattr(network, hps['network'])(unary_model=model_u, hps=hps, pair_model=model_p, wt_init=hps['surf_net']['wt_init'])
+        model = getattr(network, hps['network'])(unary_model=model_u, hps=hps, pair_model=model_p, wt_init=hps['surf_net']['wt_init'], updateW=hps['surf_net']['updateW'])
         model.load_wt()
 
 
