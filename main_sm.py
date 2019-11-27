@@ -162,7 +162,7 @@ def learn(model, hps):
             epoch_tr_loss = tr_loss / tr_mb
             writer.add_scalar('data/train_loss', epoch_tr_loss, epoch)
             w_comp = model.w_comp.detach().cpu().numpy()
-            writer.add_scalar('data/w_comp', w_comp)
+            writer.add_scalar('data/w_comp', w_comp, epoch)
             print("Epoch: " + str(epoch))
             print("     tr_loss pair: " + "%.5e" % epoch_tr_loss + " w_comp: " + "%.5e" % w_comp)
             epoch += 1
