@@ -278,6 +278,8 @@ def newton_sol_pd(g_mean, g_sigma, w_comp, d_p):
     '''
     This function solves the quadratic CRF: 1/2 xT H x + pT x. Assume g_mean has shape: bn,  x_len. w_comp is a torch parameter.
     The size of d_p is one less than g_mean, since we currently do not consider the head and tail difference.
+
+    here: g_sigma is sigma^2, variance.
     '''
     x_len = g_mean.size(1)
     # The Hessian is divided into two parts: pairwise and unary.
@@ -364,7 +366,7 @@ def gaus_fit(x, tr_flag=True):
     mu = mu.float()
     sigma = sigma.float()
 
-    return mu, sigma
+    return mu, sigma  # here sigma is variance, sigma^2
 
 class SurfSegNet(torch.nn.Module):
     """
