@@ -421,6 +421,9 @@ class SurfSegNet(torch.nn.Module):
             d_p = self.pair(x)
      
         mean, sigma = gaus_fit(logits, tr_flag=tr_flag)
+        #print(f"mean: {mean}")
+        #print(f"sigma2:{sigma}")
+        #print(f"\n next patient:")
         output = newton_sol_pd(mean, sigma, self.w_comp, d_p)
 
         return output
