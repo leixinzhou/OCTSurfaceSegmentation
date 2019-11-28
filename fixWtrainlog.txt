@@ -1,0 +1,3411 @@
+Current network: SurfSegNet
+loading unary network pretrain checkpoint: /home/hxie1/data/OCT_Beijing/netParameters/SurfNSBNet2019113/CV5/model_best.pth.tar
+=> loaded unary network pretrain checkpoint (epoch 5271)
+Zero prior is used.
+vol_list= None
+training dataset length:1240
+Epoch: 0
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 1
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 2
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 3
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 4
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 5
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 6
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 7
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 8
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 9
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 10
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 11
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 12
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 13
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 14
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 15
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 16
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 17
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 18
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 19
+     tr_loss pair: 8.96339e-01 w_comp: 2.00000e-01
+Epoch: 20
+     tr_loss: 6.50356e-01
+     val_loss: 8.07452e-01
+Epoch: 21
+     tr_loss: 5.92144e-01
+     val_loss: 8.19942e-01
+Epoch: 22
+     tr_loss: 5.74475e-01
+     val_loss: 8.42783e-01
+Epoch: 23
+     tr_loss: 5.54947e-01
+     val_loss: 8.00143e-01
+Epoch: 24
+     tr_loss: 5.51851e-01
+     val_loss: 8.04551e-01
+Epoch: 25
+     tr_loss: 5.40671e-01
+     val_loss: 8.28765e-01
+Epoch: 26
+     tr_loss: 5.45576e-01
+     val_loss: 8.21127e-01
+Epoch: 27
+     tr_loss: 5.41398e-01
+     val_loss: 8.18366e-01
+Epoch: 28
+     tr_loss: 5.37311e-01
+     val_loss: 8.42420e-01
+Epoch: 29
+     tr_loss: 5.30268e-01
+     val_loss: 8.21857e-01
+Epoch: 30
+     tr_loss: 5.23947e-01
+     val_loss: 8.23383e-01
+Epoch: 31
+     tr_loss: 5.23349e-01
+     val_loss: 8.18183e-01
+Epoch: 32
+     tr_loss: 5.21634e-01
+     val_loss: 8.40986e-01
+Epoch: 33
+     tr_loss: 5.19360e-01
+     val_loss: 8.21722e-01
+Epoch: 34
+     tr_loss: 5.20487e-01
+     val_loss: 8.18354e-01
+Epoch: 35
+     tr_loss: 5.19741e-01
+     val_loss: 7.95788e-01
+Epoch: 36
+     tr_loss: 5.17307e-01
+     val_loss: 7.95984e-01
+Epoch: 37
+     tr_loss: 5.21130e-01
+     val_loss: 8.08619e-01
+Epoch: 38
+     tr_loss: 5.18599e-01
+     val_loss: 8.13291e-01
+Epoch: 39
+     tr_loss: 5.11312e-01
+     val_loss: 8.29830e-01
+Epoch: 40
+     tr_loss: 5.09799e-01
+     val_loss: 8.16793e-01
+Epoch: 41
+     tr_loss: 5.10992e-01
+     val_loss: 7.99334e-01
+Epoch: 42
+     tr_loss: 5.10795e-01
+     val_loss: 7.99394e-01
+Epoch: 43
+     tr_loss: 5.09292e-01
+     val_loss: 8.03872e-01
+Epoch: 44
+     tr_loss: 5.07885e-01
+     val_loss: 8.11510e-01
+Epoch: 45
+     tr_loss: 5.06864e-01
+     val_loss: 8.13351e-01
+Epoch: 46
+     tr_loss: 5.15213e-01
+     val_loss: 8.04534e-01
+Epoch: 47
+     tr_loss: 5.12903e-01
+     val_loss: 8.26448e-01
+Epoch: 48
+     tr_loss: 5.14808e-01
+     val_loss: 8.01393e-01
+Epoch: 49
+     tr_loss: 5.13345e-01
+     val_loss: 8.12727e-01
+Epoch: 50
+     tr_loss: 5.02654e-01
+     val_loss: 8.03618e-01
+Epoch: 51
+     tr_loss: 5.05859e-01
+     val_loss: 7.93010e-01
+Epoch: 52
+     tr_loss: 5.09149e-01
+     val_loss: 7.88278e-01
+Epoch: 53
+     tr_loss: 4.98172e-01
+     val_loss: 8.05284e-01
+Epoch: 54
+     tr_loss: 5.05664e-01
+     val_loss: 7.94599e-01
+Epoch: 55
+     tr_loss: 5.00094e-01
+     val_loss: 8.17245e-01
+Epoch: 56
+     tr_loss: 5.06991e-01
+     val_loss: 7.90669e-01
+Epoch: 57
+     tr_loss: 4.97830e-01
+     val_loss: 8.00962e-01
+Epoch: 58
+     tr_loss: 4.97916e-01
+     val_loss: 8.05682e-01
+Epoch: 59
+     tr_loss: 5.04565e-01
+     val_loss: 8.13376e-01
+Epoch: 60
+     tr_loss: 4.91961e-01
+     val_loss: 8.06839e-01
+Epoch: 61
+     tr_loss: 5.04013e-01
+     val_loss: 7.98421e-01
+Epoch: 62
+     tr_loss: 4.97006e-01
+     val_loss: 8.18019e-01
+Epoch: 63
+     tr_loss: 5.07410e-01
+     val_loss: 8.19765e-01
+Epoch: 64
+     tr_loss: 4.93864e-01
+     val_loss: 8.41211e-01
+Epoch: 65
+     tr_loss: 4.97383e-01
+     val_loss: 7.96355e-01
+Epoch: 66
+     tr_loss: 4.94760e-01
+     val_loss: 8.02285e-01
+Epoch: 67
+     tr_loss: 5.00006e-01
+     val_loss: 7.92211e-01
+Epoch: 68
+     tr_loss: 4.99542e-01
+     val_loss: 8.11833e-01
+Epoch: 69
+     tr_loss: 4.99501e-01
+     val_loss: 8.05765e-01
+Epoch: 70
+     tr_loss: 4.98220e-01
+     val_loss: 7.99069e-01
+Epoch: 71
+     tr_loss: 4.95945e-01
+     val_loss: 7.97245e-01
+Epoch: 72
+     tr_loss: 4.99449e-01
+     val_loss: 8.14535e-01
+Epoch: 73
+     tr_loss: 4.97143e-01
+     val_loss: 8.18035e-01
+Epoch: 74
+     tr_loss: 4.98045e-01
+     val_loss: 8.02192e-01
+Epoch: 75
+     tr_loss: 4.97352e-01
+     val_loss: 7.89237e-01
+Epoch: 76
+     tr_loss: 5.00114e-01
+     val_loss: 8.06306e-01
+Epoch: 77
+     tr_loss: 4.92585e-01
+     val_loss: 8.07507e-01
+Epoch: 78
+     tr_loss: 4.96082e-01
+     val_loss: 7.86784e-01
+Epoch: 79
+     tr_loss: 4.93865e-01
+     val_loss: 7.93505e-01
+Epoch: 80
+     tr_loss: 4.97597e-01
+     val_loss: 7.95986e-01
+Epoch: 81
+     tr_loss: 4.90772e-01
+     val_loss: 8.07459e-01
+Epoch: 82
+     tr_loss: 4.92953e-01
+     val_loss: 7.79090e-01
+Epoch: 83
+     tr_loss: 4.90915e-01
+     val_loss: 8.12500e-01
+Epoch: 84
+     tr_loss: 4.89072e-01
+     val_loss: 8.00132e-01
+Epoch: 85
+     tr_loss: 4.91502e-01
+     val_loss: 7.86289e-01
+Epoch: 86
+     tr_loss: 4.95599e-01
+     val_loss: 8.27179e-01
+Epoch: 87
+     tr_loss: 4.90045e-01
+     val_loss: 7.91283e-01
+Epoch: 88
+     tr_loss: 4.87839e-01
+     val_loss: 8.08657e-01
+Epoch: 89
+     tr_loss: 4.87875e-01
+     val_loss: 7.87964e-01
+Epoch: 90
+     tr_loss: 4.91028e-01
+     val_loss: 8.08698e-01
+Epoch: 91
+     tr_loss: 4.90337e-01
+     val_loss: 7.97109e-01
+Epoch: 92
+     tr_loss: 4.87954e-01
+     val_loss: 7.99884e-01
+Epoch: 93
+     tr_loss: 4.91142e-01
+     val_loss: 8.05924e-01
+Epoch: 94
+     tr_loss: 4.89201e-01
+     val_loss: 7.89155e-01
+Epoch: 95
+     tr_loss: 4.94419e-01
+     val_loss: 8.20324e-01
+Epoch: 96
+     tr_loss: 4.89073e-01
+     val_loss: 8.01303e-01
+Epoch: 97
+     tr_loss: 4.90539e-01
+     val_loss: 8.11934e-01
+Epoch: 98
+     tr_loss: 4.86510e-01
+     val_loss: 7.99801e-01
+Epoch: 99
+     tr_loss: 4.86234e-01
+     val_loss: 8.02409e-01
+Epoch: 100
+     tr_loss: 4.91912e-01
+     val_loss: 7.89768e-01
+Epoch: 101
+     tr_loss: 4.89586e-01
+     val_loss: 7.96713e-01
+Epoch: 102
+     tr_loss: 4.91637e-01
+     val_loss: 8.06965e-01
+Epoch: 103
+     tr_loss: 4.85708e-01
+     val_loss: 8.03829e-01
+Epoch: 104
+     tr_loss: 4.90246e-01
+     val_loss: 7.95771e-01
+Epoch: 105
+     tr_loss: 4.85096e-01
+     val_loss: 7.87920e-01
+Epoch: 106
+     tr_loss: 4.90459e-01
+     val_loss: 8.15605e-01
+Epoch: 107
+     tr_loss: 4.88879e-01
+     val_loss: 7.97270e-01
+Epoch: 108
+     tr_loss: 4.87591e-01
+     val_loss: 8.12380e-01
+Epoch: 109
+     tr_loss: 4.87853e-01
+     val_loss: 8.22902e-01
+Epoch: 110
+     tr_loss: 4.92244e-01
+     val_loss: 7.89181e-01
+Epoch: 111
+     tr_loss: 4.91291e-01
+     val_loss: 8.01691e-01
+Epoch: 112
+     tr_loss: 4.86925e-01
+     val_loss: 7.95648e-01
+Epoch: 113
+     tr_loss: 4.87866e-01
+     val_loss: 7.90068e-01
+Epoch: 114
+     tr_loss: 4.90713e-01
+     val_loss: 7.88530e-01
+Epoch: 115
+     tr_loss: 4.87004e-01
+     val_loss: 7.78909e-01
+Epoch: 116
+     tr_loss: 4.84618e-01
+     val_loss: 7.95010e-01
+Epoch: 117
+     tr_loss: 4.90763e-01
+     val_loss: 7.96246e-01
+Epoch: 118
+     tr_loss: 4.89171e-01
+     val_loss: 8.00882e-01
+Epoch: 119
+     tr_loss: 4.84214e-01
+     val_loss: 8.12376e-01
+Epoch: 120
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 121
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 122
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 123
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 124
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 125
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 126
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 127
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 128
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 129
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 130
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 131
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 132
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 133
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 134
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 135
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 136
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 137
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 138
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 139
+     tr_loss pair: 8.12376e-01 w_comp: 2.00000e-01
+Epoch: 140
+     tr_loss: 4.80265e-01
+     val_loss: 7.99539e-01
+Epoch: 141
+     tr_loss: 4.85756e-01
+     val_loss: 8.15170e-01
+Epoch: 142
+     tr_loss: 4.84068e-01
+     val_loss: 7.93682e-01
+Epoch: 143
+     tr_loss: 4.87027e-01
+     val_loss: 8.02870e-01
+Epoch: 144
+     tr_loss: 4.85218e-01
+     val_loss: 8.08404e-01
+Epoch: 145
+     tr_loss: 4.86394e-01
+     val_loss: 8.19742e-01
+Epoch: 146
+     tr_loss: 4.86037e-01
+     val_loss: 8.07085e-01
+Epoch: 147
+     tr_loss: 4.84078e-01
+     val_loss: 8.21571e-01
+Epoch: 148
+     tr_loss: 4.87511e-01
+     val_loss: 7.88852e-01
+Epoch: 149
+     tr_loss: 4.84496e-01
+     val_loss: 7.98222e-01
+Epoch: 150
+     tr_loss: 4.85781e-01
+     val_loss: 7.86828e-01
+Epoch: 151
+     tr_loss: 4.83621e-01
+     val_loss: 8.01681e-01
+Epoch: 152
+     tr_loss: 4.82059e-01
+     val_loss: 8.16159e-01
+Epoch: 153
+     tr_loss: 4.87517e-01
+     val_loss: 7.82754e-01
+Epoch: 154
+     tr_loss: 4.90172e-01
+     val_loss: 8.16691e-01
+Epoch: 155
+     tr_loss: 4.88424e-01
+     val_loss: 7.93334e-01
+Epoch: 156
+     tr_loss: 4.84574e-01
+     val_loss: 7.84096e-01
+Epoch: 157
+     tr_loss: 4.85063e-01
+     val_loss: 7.79892e-01
+Epoch: 158
+     tr_loss: 4.82907e-01
+     val_loss: 8.15019e-01
+Epoch: 159
+     tr_loss: 4.83083e-01
+     val_loss: 8.01431e-01
+Epoch: 160
+     tr_loss: 4.83863e-01
+     val_loss: 7.95780e-01
+Epoch: 161
+     tr_loss: 4.82850e-01
+     val_loss: 8.09589e-01
+Epoch: 162
+     tr_loss: 4.77194e-01
+     val_loss: 7.93289e-01
+Epoch: 163
+     tr_loss: 4.84014e-01
+     val_loss: 8.06404e-01
+Epoch: 164
+     tr_loss: 4.83796e-01
+     val_loss: 8.10010e-01
+Epoch: 165
+     tr_loss: 4.85015e-01
+     val_loss: 7.86282e-01
+Epoch: 166
+     tr_loss: 4.83502e-01
+     val_loss: 8.04228e-01
+Epoch: 167
+     tr_loss: 4.83395e-01
+     val_loss: 7.92269e-01
+Epoch: 168
+     tr_loss: 4.87426e-01
+     val_loss: 8.27615e-01
+Epoch: 169
+     tr_loss: 4.85874e-01
+     val_loss: 7.99802e-01
+Epoch: 170
+     tr_loss: 4.86589e-01
+     val_loss: 7.91996e-01
+Epoch: 171
+     tr_loss: 4.82796e-01
+     val_loss: 7.93276e-01
+Epoch: 172
+     tr_loss: 4.79177e-01
+     val_loss: 7.92325e-01
+Epoch: 173
+     tr_loss: 4.80105e-01
+     val_loss: 7.89400e-01
+Epoch: 174
+     tr_loss: 4.84295e-01
+     val_loss: 7.93511e-01
+Epoch: 175
+     tr_loss: 4.78872e-01
+     val_loss: 8.11285e-01
+Epoch: 176
+     tr_loss: 4.86414e-01
+     val_loss: 7.77136e-01
+Epoch: 177
+     tr_loss: 4.80527e-01
+     val_loss: 8.00960e-01
+Epoch: 178
+     tr_loss: 4.82844e-01
+     val_loss: 8.13635e-01
+Epoch: 179
+     tr_loss: 4.86004e-01
+     val_loss: 7.86688e-01
+Epoch: 180
+     tr_loss: 4.86190e-01
+     val_loss: 7.94448e-01
+Epoch: 181
+     tr_loss: 4.78598e-01
+     val_loss: 8.07245e-01
+Epoch: 182
+     tr_loss: 4.82233e-01
+     val_loss: 8.32352e-01
+Epoch: 183
+     tr_loss: 4.80500e-01
+     val_loss: 7.88195e-01
+Epoch: 184
+     tr_loss: 4.83130e-01
+     val_loss: 7.89800e-01
+Epoch: 185
+     tr_loss: 4.84475e-01
+     val_loss: 7.83989e-01
+Epoch: 186
+     tr_loss: 4.79510e-01
+     val_loss: 7.90152e-01
+Epoch: 187
+     tr_loss: 4.82437e-01
+     val_loss: 7.89768e-01
+Epoch: 188
+     tr_loss: 4.80588e-01
+     val_loss: 8.08027e-01
+Epoch: 189
+     tr_loss: 4.80121e-01
+     val_loss: 7.79113e-01
+Epoch: 190
+     tr_loss: 4.77525e-01
+     val_loss: 7.89255e-01
+Epoch: 191
+     tr_loss: 4.80713e-01
+     val_loss: 7.87013e-01
+Epoch: 192
+     tr_loss: 4.84851e-01
+     val_loss: 7.96793e-01
+Epoch: 193
+     tr_loss: 4.79592e-01
+     val_loss: 7.94722e-01
+Epoch: 194
+     tr_loss: 4.81012e-01
+     val_loss: 7.87180e-01
+Epoch: 195
+     tr_loss: 4.80399e-01
+     val_loss: 8.11344e-01
+Epoch: 196
+     tr_loss: 4.76790e-01
+     val_loss: 7.75684e-01
+Epoch: 197
+     tr_loss: 4.79522e-01
+     val_loss: 7.84296e-01
+Epoch: 198
+     tr_loss: 4.80476e-01
+     val_loss: 7.98010e-01
+Epoch: 199
+     tr_loss: 4.75348e-01
+     val_loss: 8.05685e-01
+Epoch: 200
+     tr_loss: 4.80073e-01
+     val_loss: 7.81453e-01
+Epoch: 201
+     tr_loss: 4.85274e-01
+     val_loss: 8.00576e-01
+Epoch: 202
+     tr_loss: 4.82393e-01
+     val_loss: 7.98873e-01
+Epoch: 203
+     tr_loss: 4.81664e-01
+     val_loss: 7.70503e-01
+Epoch: 204
+     tr_loss: 4.79397e-01
+     val_loss: 8.03695e-01
+Epoch: 205
+     tr_loss: 4.73035e-01
+     val_loss: 7.91084e-01
+Epoch: 206
+     tr_loss: 4.74665e-01
+     val_loss: 7.88263e-01
+Epoch: 207
+     tr_loss: 4.79241e-01
+     val_loss: 8.05430e-01
+Epoch: 208
+     tr_loss: 4.77308e-01
+     val_loss: 7.91610e-01
+Epoch: 209
+     tr_loss: 4.76053e-01
+     val_loss: 7.77029e-01
+Epoch: 210
+     tr_loss: 4.80309e-01
+     val_loss: 7.93560e-01
+Epoch: 211
+     tr_loss: 4.79787e-01
+     val_loss: 7.97262e-01
+Epoch: 212
+     tr_loss: 4.77479e-01
+     val_loss: 7.87421e-01
+Epoch: 213
+     tr_loss: 4.83013e-01
+     val_loss: 7.75247e-01
+Epoch: 214
+     tr_loss: 4.77356e-01
+     val_loss: 8.01453e-01
+Epoch: 215
+     tr_loss: 4.78745e-01
+     val_loss: 7.83864e-01
+Epoch: 216
+     tr_loss: 4.76905e-01
+     val_loss: 8.07245e-01
+Epoch: 217
+     tr_loss: 4.79702e-01
+     val_loss: 7.94592e-01
+Epoch: 218
+     tr_loss: 4.80897e-01
+     val_loss: 7.91710e-01
+Epoch: 219
+     tr_loss: 4.76359e-01
+     val_loss: 7.76514e-01
+Epoch: 220
+     tr_loss: 4.79066e-01
+     val_loss: 7.96493e-01
+Epoch: 221
+     tr_loss: 4.78946e-01
+     val_loss: 7.90767e-01
+Epoch: 222
+     tr_loss: 4.82879e-01
+     val_loss: 7.86280e-01
+Epoch: 223
+     tr_loss: 4.84152e-01
+     val_loss: 7.95896e-01
+Epoch: 224
+     tr_loss: 4.77620e-01
+     val_loss: 7.88386e-01
+Epoch: 225
+     tr_loss: 4.79314e-01
+     val_loss: 7.83377e-01
+Epoch: 226
+     tr_loss: 4.81767e-01
+     val_loss: 7.94943e-01
+Epoch: 227
+     tr_loss: 4.77101e-01
+     val_loss: 7.87963e-01
+Epoch: 228
+     tr_loss: 4.74069e-01
+     val_loss: 8.03949e-01
+Epoch: 229
+     tr_loss: 4.77435e-01
+     val_loss: 8.07785e-01
+Epoch: 230
+     tr_loss: 4.71645e-01
+     val_loss: 7.83612e-01
+Epoch: 231
+     tr_loss: 4.81935e-01
+     val_loss: 7.90827e-01
+Epoch: 232
+     tr_loss: 4.71663e-01
+     val_loss: 7.87737e-01
+Epoch: 233
+     tr_loss: 4.82455e-01
+     val_loss: 7.77103e-01
+Epoch: 234
+     tr_loss: 4.78552e-01
+     val_loss: 7.88959e-01
+Epoch: 235
+     tr_loss: 4.78270e-01
+     val_loss: 7.82685e-01
+Epoch: 236
+     tr_loss: 4.83172e-01
+     val_loss: 7.94608e-01
+Epoch: 237
+     tr_loss: 4.72367e-01
+     val_loss: 7.89776e-01
+Epoch: 238
+     tr_loss: 4.75608e-01
+     val_loss: 7.97391e-01
+Epoch: 239
+     tr_loss: 4.75649e-01
+     val_loss: 7.80389e-01
+Epoch: 240
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 241
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 242
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 243
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 244
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 245
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 246
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 247
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 248
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 249
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 250
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 251
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 252
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 253
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 254
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 255
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 256
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 257
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 258
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 259
+     tr_loss pair: 7.80389e-01 w_comp: 2.00000e-01
+Epoch: 260
+     tr_loss: 4.77322e-01
+     val_loss: 7.93497e-01
+Epoch: 261
+     tr_loss: 4.78934e-01
+     val_loss: 7.75315e-01
+Epoch: 262
+     tr_loss: 4.75445e-01
+     val_loss: 8.07389e-01
+Epoch: 263
+     tr_loss: 4.67231e-01
+     val_loss: 8.02419e-01
+Epoch: 264
+     tr_loss: 4.74716e-01
+     val_loss: 7.80156e-01
+Epoch: 265
+     tr_loss: 4.79463e-01
+     val_loss: 7.82769e-01
+Epoch: 266
+     tr_loss: 4.77171e-01
+     val_loss: 7.75232e-01
+Epoch: 267
+     tr_loss: 4.80178e-01
+     val_loss: 7.77258e-01
+Epoch: 268
+     tr_loss: 4.78176e-01
+     val_loss: 7.78167e-01
+Epoch: 269
+     tr_loss: 4.72938e-01
+     val_loss: 7.89249e-01
+Epoch: 270
+     tr_loss: 4.75673e-01
+     val_loss: 8.00236e-01
+Epoch: 271
+     tr_loss: 4.79493e-01
+     val_loss: 7.97912e-01
+Epoch: 272
+     tr_loss: 4.79921e-01
+     val_loss: 7.91287e-01
+Epoch: 273
+     tr_loss: 4.73770e-01
+     val_loss: 7.92298e-01
+Epoch: 274
+     tr_loss: 4.70457e-01
+     val_loss: 7.86530e-01
+Epoch: 275
+     tr_loss: 4.71311e-01
+     val_loss: 7.71098e-01
+Epoch: 276
+     tr_loss: 4.78164e-01
+     val_loss: 7.88135e-01
+Epoch: 277
+     tr_loss: 4.70996e-01
+     val_loss: 7.90945e-01
+Epoch: 278
+     tr_loss: 4.76354e-01
+     val_loss: 7.95308e-01
+Epoch: 279
+     tr_loss: 4.74224e-01
+     val_loss: 8.06402e-01
+Epoch: 280
+     tr_loss: 4.76347e-01
+     val_loss: 7.87249e-01
+Epoch: 281
+     tr_loss: 4.75690e-01
+     val_loss: 8.03157e-01
+Epoch: 282
+     tr_loss: 4.78646e-01
+     val_loss: 8.07339e-01
+Epoch: 283
+     tr_loss: 4.75650e-01
+     val_loss: 7.97261e-01
+Epoch: 284
+     tr_loss: 4.78368e-01
+     val_loss: 7.84115e-01
+Epoch: 285
+     tr_loss: 4.76539e-01
+     val_loss: 8.22770e-01
+Epoch: 286
+     tr_loss: 4.74504e-01
+     val_loss: 7.96321e-01
+Epoch: 287
+     tr_loss: 4.67136e-01
+     val_loss: 7.94980e-01
+Epoch: 288
+     tr_loss: 4.73955e-01
+     val_loss: 7.86930e-01
+Epoch: 289
+     tr_loss: 4.83493e-01
+     val_loss: 7.95595e-01
+Epoch: 290
+     tr_loss: 4.72926e-01
+     val_loss: 7.82663e-01
+Epoch: 291
+     tr_loss: 4.73669e-01
+     val_loss: 8.00765e-01
+Epoch: 292
+     tr_loss: 4.74444e-01
+     val_loss: 8.12824e-01
+Epoch: 293
+     tr_loss: 4.71445e-01
+     val_loss: 8.01788e-01
+Epoch: 294
+     tr_loss: 4.72495e-01
+     val_loss: 7.98432e-01
+Epoch: 295
+     tr_loss: 4.67678e-01
+     val_loss: 7.89922e-01
+Epoch: 296
+     tr_loss: 4.79747e-01
+     val_loss: 7.80390e-01
+Epoch: 297
+     tr_loss: 4.74927e-01
+     val_loss: 7.90720e-01
+Epoch: 298
+     tr_loss: 4.70285e-01
+     val_loss: 8.03589e-01
+Epoch: 299
+     tr_loss: 4.73446e-01
+     val_loss: 7.89934e-01
+Epoch: 300
+     tr_loss: 4.74541e-01
+     val_loss: 7.90124e-01
+Epoch: 301
+     tr_loss: 4.73191e-01
+     val_loss: 7.93485e-01
+Epoch: 302
+     tr_loss: 4.80982e-01
+     val_loss: 7.88215e-01
+Epoch: 303
+     tr_loss: 4.72269e-01
+     val_loss: 7.95238e-01
+Epoch: 304
+     tr_loss: 4.76434e-01
+     val_loss: 7.90047e-01
+Epoch: 305
+     tr_loss: 4.73238e-01
+     val_loss: 7.85306e-01
+Epoch: 306
+     tr_loss: 4.69365e-01
+     val_loss: 7.77943e-01
+Epoch: 307
+     tr_loss: 4.72641e-01
+     val_loss: 7.90812e-01
+Epoch: 308
+     tr_loss: 4.75192e-01
+     val_loss: 7.97346e-01
+Epoch: 309
+     tr_loss: 4.78718e-01
+     val_loss: 8.03834e-01
+Epoch: 310
+     tr_loss: 4.73984e-01
+     val_loss: 7.78426e-01
+Epoch: 311
+     tr_loss: 4.69582e-01
+     val_loss: 7.91992e-01
+Epoch: 312
+     tr_loss: 4.71425e-01
+     val_loss: 7.84034e-01
+Epoch: 313
+     tr_loss: 4.73759e-01
+     val_loss: 8.04044e-01
+Epoch: 314
+     tr_loss: 4.70278e-01
+     val_loss: 8.01430e-01
+Epoch: 315
+     tr_loss: 4.69253e-01
+     val_loss: 8.06862e-01
+Epoch: 316
+     tr_loss: 4.73836e-01
+     val_loss: 8.08040e-01
+Epoch: 317
+     tr_loss: 4.80571e-01
+     val_loss: 7.95592e-01
+Epoch: 318
+     tr_loss: 4.79888e-01
+     val_loss: 7.78330e-01
+Epoch: 319
+     tr_loss: 4.72560e-01
+     val_loss: 7.74543e-01
+Epoch: 320
+     tr_loss: 4.73744e-01
+     val_loss: 7.90108e-01
+Epoch: 321
+     tr_loss: 4.73824e-01
+     val_loss: 8.08208e-01
+Epoch: 322
+     tr_loss: 4.74774e-01
+     val_loss: 8.10169e-01
+Epoch: 323
+     tr_loss: 4.67018e-01
+     val_loss: 8.31706e-01
+Epoch: 324
+     tr_loss: 4.77839e-01
+     val_loss: 8.13483e-01
+Epoch: 325
+     tr_loss: 4.75265e-01
+     val_loss: 8.23454e-01
+Epoch: 326
+     tr_loss: 4.71237e-01
+     val_loss: 7.92280e-01
+Epoch: 327
+     tr_loss: 4.73974e-01
+     val_loss: 7.87639e-01
+Epoch: 328
+     tr_loss: 4.72698e-01
+     val_loss: 7.96446e-01
+Epoch: 329
+     tr_loss: 4.71704e-01
+     val_loss: 7.89091e-01
+Epoch: 330
+     tr_loss: 4.72566e-01
+     val_loss: 8.02787e-01
+Epoch: 331
+     tr_loss: 4.73665e-01
+     val_loss: 7.88997e-01
+Epoch: 332
+     tr_loss: 4.66367e-01
+     val_loss: 7.95681e-01
+Epoch: 333
+     tr_loss: 4.71766e-01
+     val_loss: 8.05934e-01
+Epoch: 334
+     tr_loss: 4.79315e-01
+     val_loss: 8.12502e-01
+Epoch: 335
+     tr_loss: 4.75699e-01
+     val_loss: 7.99272e-01
+Epoch: 336
+     tr_loss: 4.74332e-01
+     val_loss: 7.94847e-01
+Epoch: 337
+     tr_loss: 4.64749e-01
+     val_loss: 7.87287e-01
+Epoch: 338
+     tr_loss: 4.75899e-01
+     val_loss: 7.89478e-01
+Epoch: 339
+     tr_loss: 4.70412e-01
+     val_loss: 7.93172e-01
+Epoch: 340
+     tr_loss: 4.72536e-01
+     val_loss: 7.88730e-01
+Epoch: 341
+     tr_loss: 4.74082e-01
+     val_loss: 8.06750e-01
+Epoch: 342
+     tr_loss: 4.74897e-01
+     val_loss: 7.83818e-01
+Epoch: 343
+     tr_loss: 4.71626e-01
+     val_loss: 8.00269e-01
+Epoch: 344
+     tr_loss: 4.66095e-01
+     val_loss: 7.89042e-01
+Epoch: 345
+     tr_loss: 4.70125e-01
+     val_loss: 7.94068e-01
+Epoch: 346
+     tr_loss: 4.71075e-01
+     val_loss: 8.01906e-01
+Epoch: 347
+     tr_loss: 4.73044e-01
+     val_loss: 7.78887e-01
+Epoch: 348
+     tr_loss: 4.70718e-01
+     val_loss: 7.85828e-01
+Epoch: 349
+     tr_loss: 4.76869e-01
+     val_loss: 7.99071e-01
+Epoch: 350
+     tr_loss: 4.68754e-01
+     val_loss: 7.84556e-01
+Epoch: 351
+     tr_loss: 4.68955e-01
+     val_loss: 7.78509e-01
+Epoch: 352
+     tr_loss: 4.72217e-01
+     val_loss: 7.95578e-01
+Epoch: 353
+     tr_loss: 4.72997e-01
+     val_loss: 7.93411e-01
+Epoch: 354
+     tr_loss: 4.93132e-01
+     val_loss: 7.89636e-01
+Epoch: 355
+     tr_loss: 4.64217e-01
+     val_loss: 7.79982e-01
+Epoch: 356
+     tr_loss: 4.67198e-01
+     val_loss: 7.99257e-01
+Epoch: 357
+     tr_loss: 4.70864e-01
+     val_loss: 7.81309e-01
+Epoch: 358
+     tr_loss: 4.71434e-01
+     val_loss: 7.81292e-01
+Epoch: 359
+     tr_loss: 4.77393e-01
+     val_loss: 8.04359e-01
+Epoch: 360
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 361
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 362
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 363
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 364
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 365
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 366
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 367
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 368
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 369
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 370
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 371
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 372
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 373
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 374
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 375
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 376
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 377
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 378
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 379
+     tr_loss pair: 8.04359e-01 w_comp: 2.00000e-01
+Epoch: 380
+     tr_loss: 4.79232e-01
+     val_loss: 7.98428e-01
+Epoch: 381
+     tr_loss: 4.74690e-01
+     val_loss: 7.94707e-01
+Epoch: 382
+     tr_loss: 4.73928e-01
+     val_loss: 7.95536e-01
+Epoch: 383
+     tr_loss: 4.68043e-01
+     val_loss: 7.82686e-01
+Epoch: 384
+     tr_loss: 4.72080e-01
+     val_loss: 7.97163e-01
+Epoch: 385
+     tr_loss: 4.67231e-01
+     val_loss: 7.78754e-01
+Epoch: 386
+     tr_loss: 4.68760e-01
+     val_loss: 7.79941e-01
+Epoch: 387
+     tr_loss: 4.72383e-01
+     val_loss: 7.82044e-01
+Epoch: 388
+     tr_loss: 4.73087e-01
+     val_loss: 7.87231e-01
+Epoch: 389
+     tr_loss: 4.84299e-01
+     val_loss: 8.03632e-01
+Epoch: 390
+     tr_loss: 1.78154e+01
+     val_loss: 1.46841e+01
+Epoch: 391
+     tr_loss: 9.34245e+00
+     val_loss: 4.67396e+00
+Epoch: 392
+     tr_loss: 5.68754e+00
+     val_loss: 3.24597e+00
+Epoch: 393
+     tr_loss: 4.57419e+00
+     val_loss: 2.97387e+00
+Epoch: 394
+     tr_loss: 4.03886e+00
+     val_loss: 2.68567e+00
+Epoch: 395
+     tr_loss: 3.74760e+00
+     val_loss: 2.57935e+00
+Epoch: 396
+     tr_loss: 3.43765e+00
+     val_loss: 2.42636e+00
+Epoch: 397
+     tr_loss: 3.30176e+00
+     val_loss: 2.31193e+00
+Epoch: 398
+     tr_loss: 3.16239e+00
+     val_loss: 2.23950e+00
+Epoch: 399
+     tr_loss: 3.02194e+00
+     val_loss: 2.21000e+00
+Epoch: 400
+     tr_loss: 2.93434e+00
+     val_loss: 2.14551e+00
+Epoch: 401
+     tr_loss: 2.81451e+00
+     val_loss: 2.08214e+00
+Epoch: 402
+     tr_loss: 2.76811e+00
+     val_loss: 2.04261e+00
+Epoch: 403
+     tr_loss: 2.68092e+00
+     val_loss: 1.99589e+00
+Epoch: 404
+     tr_loss: 2.63862e+00
+     val_loss: 1.98355e+00
+Epoch: 405
+     tr_loss: 2.55152e+00
+     val_loss: 1.91563e+00
+Epoch: 406
+     tr_loss: 2.48454e+00
+     val_loss: 1.87592e+00
+Epoch: 407
+     tr_loss: 2.42015e+00
+     val_loss: 1.84563e+00
+Epoch: 408
+     tr_loss: 2.40644e+00
+     val_loss: 1.82650e+00
+Epoch: 409
+     tr_loss: 2.33128e+00
+     val_loss: 1.80306e+00
+Epoch: 410
+     tr_loss: 2.29341e+00
+     val_loss: 1.77995e+00
+Epoch: 411
+     tr_loss: 2.25582e+00
+     val_loss: 1.75197e+00
+Epoch: 412
+     tr_loss: 2.23602e+00
+     val_loss: 1.73187e+00
+Epoch: 413
+     tr_loss: 2.17388e+00
+     val_loss: 1.74032e+00
+Epoch: 414
+     tr_loss: 2.15258e+00
+     val_loss: 1.70092e+00
+Epoch: 415
+     tr_loss: 2.11908e+00
+     val_loss: 1.68172e+00
+Epoch: 416
+     tr_loss: 2.07082e+00
+     val_loss: 1.66536e+00
+Epoch: 417
+     tr_loss: 2.02947e+00
+     val_loss: 1.64209e+00
+Epoch: 418
+     tr_loss: 2.03373e+00
+     val_loss: 1.62586e+00
+Epoch: 419
+     tr_loss: 1.98382e+00
+     val_loss: 1.63508e+00
+Epoch: 420
+     tr_loss: 1.98061e+00
+     val_loss: 1.60279e+00
+Epoch: 421
+     tr_loss: 1.95785e+00
+     val_loss: 1.56727e+00
+Epoch: 422
+     tr_loss: 1.92449e+00
+     val_loss: 1.55532e+00
+Epoch: 423
+     tr_loss: 1.87987e+00
+     val_loss: 1.54039e+00
+Epoch: 424
+     tr_loss: 1.86648e+00
+     val_loss: 1.53032e+00
+Epoch: 425
+     tr_loss: 1.85588e+00
+     val_loss: 1.51806e+00
+Epoch: 426
+     tr_loss: 1.83298e+00
+     val_loss: 1.50194e+00
+Epoch: 427
+     tr_loss: 1.79295e+00
+     val_loss: 1.48130e+00
+Epoch: 428
+     tr_loss: 1.80409e+00
+     val_loss: 1.45650e+00
+Epoch: 429
+     tr_loss: 1.76408e+00
+     val_loss: 1.44604e+00
+Epoch: 430
+     tr_loss: 1.73772e+00
+     val_loss: 1.42857e+00
+Epoch: 431
+     tr_loss: 1.71619e+00
+     val_loss: 1.41049e+00
+Epoch: 432
+     tr_loss: 1.71873e+00
+     val_loss: 1.40395e+00
+Epoch: 433
+     tr_loss: 1.68156e+00
+     val_loss: 1.37904e+00
+Epoch: 434
+     tr_loss: 1.66755e+00
+     val_loss: 1.37370e+00
+Epoch: 435
+     tr_loss: 1.64012e+00
+     val_loss: 1.35564e+00
+Epoch: 436
+     tr_loss: 1.62726e+00
+     val_loss: 1.33795e+00
+Epoch: 437
+     tr_loss: 1.63587e+00
+     val_loss: 1.32879e+00
+Epoch: 438
+     tr_loss: 1.60480e+00
+     val_loss: 1.31517e+00
+Epoch: 439
+     tr_loss: 1.58852e+00
+     val_loss: 1.29826e+00
+Epoch: 440
+     tr_loss: 1.57114e+00
+     val_loss: 1.28349e+00
+Epoch: 441
+     tr_loss: 1.56059e+00
+     val_loss: 1.29146e+00
+Epoch: 442
+     tr_loss: 1.56449e+00
+     val_loss: 1.26757e+00
+Epoch: 443
+     tr_loss: 1.52522e+00
+     val_loss: 1.25697e+00
+Epoch: 444
+     tr_loss: 1.51784e+00
+     val_loss: 1.24382e+00
+Epoch: 445
+     tr_loss: 1.50817e+00
+     val_loss: 1.24251e+00
+Epoch: 446
+     tr_loss: 1.49017e+00
+     val_loss: 1.23095e+00
+Epoch: 447
+     tr_loss: 1.47204e+00
+     val_loss: 1.21411e+00
+Epoch: 448
+     tr_loss: 1.48332e+00
+     val_loss: 1.21335e+00
+Epoch: 449
+     tr_loss: 1.45240e+00
+     val_loss: 1.20605e+00
+Epoch: 450
+     tr_loss: 1.44387e+00
+     val_loss: 1.19796e+00
+Epoch: 451
+     tr_loss: 1.44272e+00
+     val_loss: 1.18625e+00
+Epoch: 452
+     tr_loss: 1.41528e+00
+     val_loss: 1.18331e+00
+Epoch: 453
+     tr_loss: 1.40830e+00
+     val_loss: 1.18139e+00
+Epoch: 454
+     tr_loss: 1.39843e+00
+     val_loss: 1.17193e+00
+Epoch: 455
+     tr_loss: 1.40022e+00
+     val_loss: 1.16342e+00
+Epoch: 456
+     tr_loss: 1.37283e+00
+     val_loss: 1.16038e+00
+Epoch: 457
+     tr_loss: 1.37990e+00
+     val_loss: 1.15586e+00
+Epoch: 458
+     tr_loss: 1.35470e+00
+     val_loss: 1.14780e+00
+Epoch: 459
+     tr_loss: 1.35294e+00
+     val_loss: 1.13677e+00
+Epoch: 460
+     tr_loss: 1.34147e+00
+     val_loss: 1.12901e+00
+Epoch: 461
+     tr_loss: 1.32227e+00
+     val_loss: 1.12764e+00
+Epoch: 462
+     tr_loss: 1.31402e+00
+     val_loss: 1.11604e+00
+Epoch: 463
+     tr_loss: 1.29372e+00
+     val_loss: 1.09780e+00
+Epoch: 464
+     tr_loss: 1.33221e+00
+     val_loss: 1.14324e+00
+Epoch: 465
+     tr_loss: 1.31653e+00
+     val_loss: 1.12375e+00
+Epoch: 466
+     tr_loss: 1.28773e+00
+     val_loss: 1.10918e+00
+Epoch: 467
+     tr_loss: 1.28577e+00
+     val_loss: 1.10688e+00
+Epoch: 468
+     tr_loss: 1.26972e+00
+     val_loss: 1.09410e+00
+Epoch: 469
+     tr_loss: 1.26049e+00
+     val_loss: 1.09549e+00
+Epoch: 470
+     tr_loss: 1.26120e+00
+     val_loss: 1.07458e+00
+Epoch: 471
+     tr_loss: 1.25640e+00
+     val_loss: 1.06891e+00
+Epoch: 472
+     tr_loss: 1.24710e+00
+     val_loss: 1.07613e+00
+Epoch: 473
+     tr_loss: 1.23104e+00
+     val_loss: 1.08201e+00
+Epoch: 474
+     tr_loss: 1.23509e+00
+     val_loss: 1.05856e+00
+Epoch: 475
+     tr_loss: 1.20530e+00
+     val_loss: 1.05695e+00
+Epoch: 476
+     tr_loss: 1.20594e+00
+     val_loss: 1.06808e+00
+Epoch: 477
+     tr_loss: 1.19841e+00
+     val_loss: 1.05226e+00
+Epoch: 478
+     tr_loss: 1.21421e+00
+     val_loss: 1.05847e+00
+Epoch: 479
+     tr_loss: 1.20406e+00
+     val_loss: 1.04835e+00
+Epoch: 480
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 481
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 482
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 483
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 484
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 485
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 486
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 487
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 488
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 489
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 490
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 491
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 492
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 493
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 494
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 495
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 496
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 497
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 498
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 499
+     tr_loss pair: 1.04835e+00 w_comp: 2.00000e-01
+Epoch: 500
+     tr_loss: 1.19251e+00
+     val_loss: 1.04852e+00
+Epoch: 501
+     tr_loss: 1.16763e+00
+     val_loss: 1.04263e+00
+Epoch: 502
+     tr_loss: 1.16573e+00
+     val_loss: 1.03997e+00
+Epoch: 503
+     tr_loss: 1.17129e+00
+     val_loss: 1.02338e+00
+Epoch: 504
+     tr_loss: 1.14845e+00
+     val_loss: 1.02085e+00
+Epoch: 505
+     tr_loss: 1.14949e+00
+     val_loss: 1.01280e+00
+Epoch: 506
+     tr_loss: 1.13715e+00
+     val_loss: 1.01441e+00
+Epoch: 507
+     tr_loss: 1.13309e+00
+     val_loss: 1.00685e+00
+Epoch: 508
+     tr_loss: 1.12958e+00
+     val_loss: 1.00822e+00
+Epoch: 509
+     tr_loss: 1.13664e+00
+     val_loss: 1.00458e+00
+Epoch: 510
+     tr_loss: 1.12038e+00
+     val_loss: 1.00961e+00
+Epoch: 511
+     tr_loss: 1.11918e+00
+     val_loss: 1.00962e+00
+Epoch: 512
+     tr_loss: 1.10897e+00
+     val_loss: 1.03218e+00
+Epoch: 513
+     tr_loss: 1.10425e+00
+     val_loss: 9.85960e-01
+Epoch: 514
+     tr_loss: 1.09170e+00
+     val_loss: 9.93258e-01
+Epoch: 515
+     tr_loss: 1.17035e+00
+     val_loss: 1.02282e+00
+Epoch: 516
+     tr_loss: 1.12125e+00
+     val_loss: 9.98520e-01
+Epoch: 517
+     tr_loss: 1.10841e+00
+     val_loss: 9.81515e-01
+Epoch: 518
+     tr_loss: 1.09821e+00
+     val_loss: 9.85456e-01
+Epoch: 519
+     tr_loss: 1.07395e+00
+     val_loss: 9.95250e-01
+Epoch: 520
+     tr_loss: 1.07040e+00
+     val_loss: 1.00578e+00
+Epoch: 521
+     tr_loss: 1.06236e+00
+     val_loss: 9.97400e-01
+Epoch: 522
+     tr_loss: 1.05906e+00
+     val_loss: 9.85380e-01
+Epoch: 523
+     tr_loss: 1.05542e+00
+     val_loss: 9.94885e-01
+Epoch: 524
+     tr_loss: 1.04715e+00
+     val_loss: 9.72435e-01
+Epoch: 525
+     tr_loss: 1.02816e+00
+     val_loss: 9.85296e-01
+Epoch: 526
+     tr_loss: 1.03574e+00
+     val_loss: 9.73288e-01
+Epoch: 527
+     tr_loss: 1.03298e+00
+     val_loss: 9.98056e-01
+Epoch: 528
+     tr_loss: 1.02169e+00
+     val_loss: 9.70706e-01
+Epoch: 529
+     tr_loss: 1.02776e+00
+     val_loss: 9.67595e-01
+Epoch: 530
+     tr_loss: 1.01921e+00
+     val_loss: 9.66642e-01
+Epoch: 531
+     tr_loss: 1.01190e+00
+     val_loss: 9.87023e-01
+Epoch: 532
+     tr_loss: 1.01631e+00
+     val_loss: 9.72944e-01
+Epoch: 533
+     tr_loss: 1.00711e+00
+     val_loss: 9.70083e-01
+Epoch: 534
+     tr_loss: 1.00799e+00
+     val_loss: 9.66632e-01
+Epoch: 535
+     tr_loss: 1.00077e+00
+     val_loss: 9.68349e-01
+Epoch: 536
+     tr_loss: 9.97520e-01
+     val_loss: 9.58067e-01
+Epoch: 537
+     tr_loss: 9.86755e-01
+     val_loss: 9.62539e-01
+Epoch: 538
+     tr_loss: 9.88217e-01
+     val_loss: 9.57239e-01
+Epoch: 539
+     tr_loss: 9.82661e-01
+     val_loss: 9.41652e-01
+Epoch: 540
+     tr_loss: 9.89831e-01
+     val_loss: 9.83597e-01
+Epoch: 541
+     tr_loss: 9.81065e-01
+     val_loss: 9.40426e-01
+Epoch: 542
+     tr_loss: 9.73151e-01
+     val_loss: 9.45503e-01
+Epoch: 543
+     tr_loss: 9.63822e-01
+     val_loss: 9.53326e-01
+Epoch: 544
+     tr_loss: 9.60419e-01
+     val_loss: 9.47994e-01
+Epoch: 545
+     tr_loss: 9.66652e-01
+     val_loss: 9.40169e-01
+Epoch: 546
+     tr_loss: 9.53858e-01
+     val_loss: 9.36630e-01
+Epoch: 547
+     tr_loss: 9.63002e-01
+     val_loss: 9.49068e-01
+Epoch: 548
+     tr_loss: 9.45162e-01
+     val_loss: 9.45683e-01
+Epoch: 549
+     tr_loss: 9.42227e-01
+     val_loss: 9.44916e-01
+Epoch: 550
+     tr_loss: 9.30640e-01
+     val_loss: 9.40706e-01
+Epoch: 551
+     tr_loss: 9.30252e-01
+     val_loss: 9.28110e-01
+Epoch: 552
+     tr_loss: 9.30914e-01
+     val_loss: 9.33725e-01
+Epoch: 553
+     tr_loss: 9.25981e-01
+     val_loss: 9.27186e-01
+Epoch: 554
+     tr_loss: 9.23694e-01
+     val_loss: 9.24263e-01
+Epoch: 555
+     tr_loss: 9.16769e-01
+     val_loss: 9.30069e-01
+Epoch: 556
+     tr_loss: 9.08325e-01
+     val_loss: 9.27463e-01
+Epoch: 557
+     tr_loss: 9.11252e-01
+     val_loss: 9.40412e-01
+Epoch: 558
+     tr_loss: 8.98751e-01
+     val_loss: 9.11797e-01
+Epoch: 559
+     tr_loss: 9.06293e-01
+     val_loss: 9.37639e-01
+Epoch: 560
+     tr_loss: 9.48141e-01
+     val_loss: 9.38357e-01
+Epoch: 561
+     tr_loss: 9.19035e-01
+     val_loss: 9.54170e-01
+Epoch: 562
+     tr_loss: 9.04130e-01
+     val_loss: 9.53162e-01
+Epoch: 563
+     tr_loss: 8.91195e-01
+     val_loss: 9.24442e-01
+Epoch: 564
+     tr_loss: 8.88739e-01
+     val_loss: 9.48841e-01
+Epoch: 565
+     tr_loss: 8.87402e-01
+     val_loss: 9.20673e-01
+Epoch: 566
+     tr_loss: 8.82732e-01
+     val_loss: 9.13068e-01
+Epoch: 567
+     tr_loss: 8.76447e-01
+     val_loss: 9.12898e-01
+Epoch: 568
+     tr_loss: 8.73634e-01
+     val_loss: 9.19670e-01
+Epoch: 569
+     tr_loss: 8.75937e-01
+     val_loss: 9.33436e-01
+Epoch: 570
+     tr_loss: 8.71195e-01
+     val_loss: 9.23634e-01
+Epoch: 571
+     tr_loss: 8.68524e-01
+     val_loss: 9.08800e-01
+Epoch: 572
+     tr_loss: 8.63458e-01
+     val_loss: 9.35772e-01
+Epoch: 573
+     tr_loss: 8.54447e-01
+     val_loss: 9.23715e-01
+Epoch: 574
+     tr_loss: 8.56493e-01
+     val_loss: 9.12501e-01
+Epoch: 575
+     tr_loss: 8.46573e-01
+     val_loss: 9.11250e-01
+Epoch: 576
+     tr_loss: 8.40008e-01
+     val_loss: 9.09183e-01
+Epoch: 577
+     tr_loss: 8.46046e-01
+     val_loss: 9.05639e-01
+Epoch: 578
+     tr_loss: 8.45060e-01
+     val_loss: 8.97343e-01
+Epoch: 579
+     tr_loss: 8.38899e-01
+     val_loss: 9.09531e-01
+Epoch: 580
+     tr_loss: 8.30478e-01
+     val_loss: 9.22088e-01
+Epoch: 581
+     tr_loss: 8.44537e-01
+     val_loss: 9.30372e-01
+Epoch: 582
+     tr_loss: 8.37600e-01
+     val_loss: 8.93768e-01
+Epoch: 583
+     tr_loss: 8.33872e-01
+     val_loss: 9.13666e-01
+Epoch: 584
+     tr_loss: 8.31826e-01
+     val_loss: 9.07685e-01
+Epoch: 585
+     tr_loss: 8.24808e-01
+     val_loss: 9.24471e-01
+Epoch: 586
+     tr_loss: 8.27013e-01
+     val_loss: 9.11299e-01
+Epoch: 587
+     tr_loss: 8.18435e-01
+     val_loss: 9.11034e-01
+Epoch: 588
+     tr_loss: 8.13054e-01
+     val_loss: 9.18563e-01
+Epoch: 589
+     tr_loss: 8.09314e-01
+     val_loss: 8.95945e-01
+Epoch: 590
+     tr_loss: 8.14386e-01
+     val_loss: 8.98746e-01
+Epoch: 591
+     tr_loss: 8.09317e-01
+     val_loss: 9.12774e-01
+Epoch: 592
+     tr_loss: 8.10058e-01
+     val_loss: 9.31676e-01
+Epoch: 593
+     tr_loss: 7.98151e-01
+     val_loss: 9.02999e-01
+Epoch: 594
+     tr_loss: 7.98164e-01
+     val_loss: 9.18953e-01
+Epoch: 595
+     tr_loss: 7.97541e-01
+     val_loss: 9.21911e-01
+Epoch: 596
+     tr_loss: 7.91188e-01
+     val_loss: 8.88618e-01
+Epoch: 597
+     tr_loss: 7.90126e-01
+     val_loss: 9.23938e-01
+Epoch: 598
+     tr_loss: 7.86685e-01
+     val_loss: 9.05897e-01
+Epoch: 599
+     tr_loss: 7.92711e-01
+     val_loss: 8.94426e-01
+Epoch: 600
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 601
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 602
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 603
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 604
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 605
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 606
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 607
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 608
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 609
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 610
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 611
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 612
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 613
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 614
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 615
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 616
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 617
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 618
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 619
+     tr_loss pair: 8.94426e-01 w_comp: 2.00000e-01
+Epoch: 620
+     tr_loss: 7.78740e-01
+     val_loss: 8.89318e-01
+Epoch: 621
+     tr_loss: 7.79667e-01
+     val_loss: 8.94546e-01
+Epoch: 622
+     tr_loss: 7.84280e-01
+     val_loss: 8.82838e-01
+Epoch: 623
+     tr_loss: 7.74880e-01
+     val_loss: 8.96550e-01
+Epoch: 624
+     tr_loss: 7.70430e-01
+     val_loss: 9.05662e-01
+Epoch: 625
+     tr_loss: 7.72561e-01
+     val_loss: 9.08578e-01
+Epoch: 626
+     tr_loss: 7.72485e-01
+     val_loss: 8.91666e-01
+Epoch: 627
+     tr_loss: 7.64863e-01
+     val_loss: 8.88749e-01
+Epoch: 628
+     tr_loss: 7.62669e-01
+     val_loss: 8.99377e-01
+Epoch: 629
+     tr_loss: 7.63417e-01
+     val_loss: 8.99769e-01
+Epoch: 630
+     tr_loss: 7.63198e-01
+     val_loss: 9.07287e-01
+Epoch: 631
+     tr_loss: 7.58116e-01
+     val_loss: 9.04664e-01
+Epoch: 632
+     tr_loss: 7.61071e-01
+     val_loss: 8.85547e-01
+Epoch: 633
+     tr_loss: 7.46945e-01
+     val_loss: 9.06202e-01
+Epoch: 634
+     tr_loss: 7.49325e-01
+     val_loss: 9.04706e-01
+Epoch: 635
+     tr_loss: 7.49221e-01
+     val_loss: 8.93550e-01
+Epoch: 636
+     tr_loss: 7.48876e-01
+     val_loss: 8.98742e-01
+Epoch: 637
+     tr_loss: 7.49370e-01
+     val_loss: 8.84414e-01
+Epoch: 638
+     tr_loss: 7.41517e-01
+     val_loss: 8.83163e-01
+Epoch: 639
+     tr_loss: 7.41565e-01
+     val_loss: 8.92912e-01
+Epoch: 640
+     tr_loss: 7.39199e-01
+     val_loss: 8.74464e-01
+Epoch: 641
+     tr_loss: 7.35023e-01
+     val_loss: 8.99432e-01
+Epoch: 642
+     tr_loss: 7.32990e-01
+     val_loss: 9.11238e-01
+Epoch: 643
+     tr_loss: 7.33974e-01
+     val_loss: 8.93029e-01
+Epoch: 644
+     tr_loss: 7.29612e-01
+     val_loss: 9.00130e-01
+Epoch: 645
+     tr_loss: 7.30491e-01
+     val_loss: 9.13551e-01
+Epoch: 646
+     tr_loss: 7.27428e-01
+     val_loss: 9.01796e-01
+Epoch: 647
+     tr_loss: 7.27684e-01
+     val_loss: 9.02316e-01
+Epoch: 648
+     tr_loss: 7.25228e-01
+     val_loss: 8.92980e-01
+Epoch: 649
+     tr_loss: 7.19268e-01
+     val_loss: 8.79136e-01
+Epoch: 650
+     tr_loss: 7.28145e-01
+     val_loss: 8.93367e-01
+Epoch: 651
+     tr_loss: 7.17432e-01
+     val_loss: 8.78261e-01
+Epoch: 652
+     tr_loss: 7.16309e-01
+     val_loss: 8.85713e-01
+Epoch: 653
+     tr_loss: 7.15312e-01
+     val_loss: 9.09879e-01
+Epoch: 654
+     tr_loss: 7.21936e-01
+     val_loss: 8.74170e-01
+Epoch: 655
+     tr_loss: 7.17620e-01
+     val_loss: 9.15076e-01
+Epoch: 656
+     tr_loss: 7.08232e-01
+     val_loss: 8.85540e-01
+Epoch: 657
+     tr_loss: 7.05939e-01
+     val_loss: 8.88712e-01
+Epoch: 658
+     tr_loss: 7.13239e-01
+     val_loss: 8.91480e-01
+Epoch: 659
+     tr_loss: 7.11667e-01
+     val_loss: 8.88337e-01
+Epoch: 660
+     tr_loss: 7.06797e-01
+     val_loss: 8.79846e-01
+Epoch: 661
+     tr_loss: 7.05870e-01
+     val_loss: 8.73368e-01
+Epoch: 662
+     tr_loss: 7.09494e-01
+     val_loss: 8.96968e-01
+Epoch: 663
+     tr_loss: 7.07342e-01
+     val_loss: 9.07615e-01
+Epoch: 664
+     tr_loss: 7.05600e-01
+     val_loss: 8.88782e-01
+Epoch: 665
+     tr_loss: 7.00912e-01
+     val_loss: 8.95823e-01
+Epoch: 666
+     tr_loss: 6.92730e-01
+     val_loss: 8.93570e-01
+Epoch: 667
+     tr_loss: 6.98407e-01
+     val_loss: 8.77441e-01
+Epoch: 668
+     tr_loss: 7.02243e-01
+     val_loss: 8.90240e-01
+Epoch: 669
+     tr_loss: 6.91531e-01
+     val_loss: 8.80207e-01
+Epoch: 670
+     tr_loss: 6.91338e-01
+     val_loss: 8.96501e-01
+Epoch: 671
+     tr_loss: 6.92562e-01
+     val_loss: 8.84725e-01
+Epoch: 672
+     tr_loss: 6.88494e-01
+     val_loss: 8.81476e-01
+Epoch: 673
+     tr_loss: 6.87609e-01
+     val_loss: 9.02001e-01
+Epoch: 674
+     tr_loss: 6.97308e-01
+     val_loss: 8.88284e-01
+Epoch: 675
+     tr_loss: 6.92693e-01
+     val_loss: 8.99322e-01
+Epoch: 676
+     tr_loss: 6.79775e-01
+     val_loss: 8.92541e-01
+Epoch: 677
+     tr_loss: 6.86673e-01
+     val_loss: 8.86681e-01
+Epoch: 678
+     tr_loss: 6.90207e-01
+     val_loss: 8.80675e-01
+Epoch: 679
+     tr_loss: 6.79518e-01
+     val_loss: 9.09197e-01
+Epoch: 680
+     tr_loss: 6.88641e-01
+     val_loss: 9.01971e-01
+Epoch: 681
+     tr_loss: 6.82252e-01
+     val_loss: 8.77481e-01
+Epoch: 682
+     tr_loss: 6.77734e-01
+     val_loss: 8.79645e-01
+Epoch: 683
+     tr_loss: 6.80732e-01
+     val_loss: 8.81262e-01
+Epoch: 684
+     tr_loss: 6.78721e-01
+     val_loss: 8.92644e-01
+Epoch: 685
+     tr_loss: 6.75105e-01
+     val_loss: 8.85575e-01
+Epoch: 686
+     tr_loss: 6.72746e-01
+     val_loss: 8.78763e-01
+Epoch: 687
+     tr_loss: 6.77195e-01
+     val_loss: 9.03322e-01
+Epoch: 688
+     tr_loss: 6.73478e-01
+     val_loss: 9.16513e-01
+Epoch: 689
+     tr_loss: 6.65782e-01
+     val_loss: 9.00614e-01
+Epoch: 690
+     tr_loss: 6.73454e-01
+     val_loss: 9.25249e-01
+Epoch: 691
+     tr_loss: 6.75930e-01
+     val_loss: 8.87210e-01
+Epoch: 692
+     tr_loss: 6.65996e-01
+     val_loss: 8.83656e-01
+Epoch: 693
+     tr_loss: 6.66440e-01
+     val_loss: 9.24086e-01
+Epoch: 694
+     tr_loss: 6.68677e-01
+     val_loss: 8.89539e-01
+Epoch: 695
+     tr_loss: 6.68584e-01
+     val_loss: 9.07513e-01
+Epoch: 696
+     tr_loss: 6.69142e-01
+     val_loss: 8.79520e-01
+Epoch: 697
+     tr_loss: 6.59312e-01
+     val_loss: 8.96727e-01
+Epoch: 698
+     tr_loss: 6.69386e-01
+     val_loss: 8.95470e-01
+Epoch: 699
+     tr_loss: 6.63644e-01
+     val_loss: 8.78646e-01
+Epoch: 700
+     tr_loss: 6.72618e-01
+     val_loss: 8.83182e-01
+Epoch: 701
+     tr_loss: 6.63146e-01
+     val_loss: 8.74407e-01
+Epoch: 702
+     tr_loss: 6.62886e-01
+     val_loss: 9.00339e-01
+Epoch: 703
+     tr_loss: 6.60526e-01
+     val_loss: 8.75881e-01
+Epoch: 704
+     tr_loss: 6.59934e-01
+     val_loss: 8.88888e-01
+Epoch: 705
+     tr_loss: 6.60574e-01
+     val_loss: 9.09853e-01
+Epoch: 706
+     tr_loss: 6.54144e-01
+     val_loss: 8.98672e-01
+Epoch: 707
+     tr_loss: 6.56380e-01
+     val_loss: 8.75390e-01
+Epoch: 708
+     tr_loss: 6.58305e-01
+     val_loss: 8.82045e-01
+Epoch: 709
+     tr_loss: 6.56848e-01
+     val_loss: 8.86541e-01
+Epoch: 710
+     tr_loss: 6.58752e-01
+     val_loss: 9.02897e-01
+Epoch: 711
+     tr_loss: 6.59237e-01
+     val_loss: 9.09651e-01
+Epoch: 712
+     tr_loss: 6.53847e-01
+     val_loss: 8.71545e-01
+Epoch: 713
+     tr_loss: 6.53950e-01
+     val_loss: 8.72111e-01
+Epoch: 714
+     tr_loss: 6.51806e-01
+     val_loss: 9.13971e-01
+Epoch: 715
+     tr_loss: 6.59611e-01
+     val_loss: 8.81118e-01
+Epoch: 716
+     tr_loss: 6.48935e-01
+     val_loss: 9.07539e-01
+Epoch: 717
+     tr_loss: 6.52401e-01
+     val_loss: 8.73167e-01
+Epoch: 718
+     tr_loss: 6.55464e-01
+     val_loss: 8.75444e-01
+Epoch: 719
+     tr_loss: 6.45303e-01
+     val_loss: 8.91647e-01
+Epoch: 720
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 721
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 722
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 723
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 724
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 725
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 726
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 727
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 728
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 729
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 730
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 731
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 732
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 733
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 734
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 735
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 736
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 737
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 738
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 739
+     tr_loss pair: 8.91647e-01 w_comp: 2.00000e-01
+Epoch: 740
+     tr_loss: 6.45819e-01
+     val_loss: 8.84183e-01
+Epoch: 741
+     tr_loss: 6.45741e-01
+     val_loss: 8.89182e-01
+Epoch: 742
+     tr_loss: 6.51916e-01
+     val_loss: 8.66306e-01
+Epoch: 743
+     tr_loss: 6.49293e-01
+     val_loss: 8.83519e-01
+Epoch: 744
+     tr_loss: 6.42889e-01
+     val_loss: 8.81965e-01
+Epoch: 745
+     tr_loss: 6.45209e-01
+     val_loss: 8.74777e-01
+Epoch: 746
+     tr_loss: 6.42089e-01
+     val_loss: 8.78765e-01
+Epoch: 747
+     tr_loss: 6.42238e-01
+     val_loss: 8.94045e-01
+Epoch: 748
+     tr_loss: 6.38802e-01
+     val_loss: 8.80038e-01
+Epoch: 749
+     tr_loss: 6.48675e-01
+     val_loss: 8.81604e-01
+Epoch: 750
+     tr_loss: 6.38746e-01
+     val_loss: 8.93035e-01
+Epoch: 751
+     tr_loss: 6.33280e-01
+     val_loss: 8.79443e-01
+Epoch: 752
+     tr_loss: 6.36918e-01
+     val_loss: 8.84216e-01
+Epoch: 753
+     tr_loss: 6.33770e-01
+     val_loss: 8.74842e-01
+Epoch: 754
+     tr_loss: 6.36882e-01
+     val_loss: 8.59237e-01
+Epoch: 755
+     tr_loss: 6.37250e-01
+     val_loss: 8.69996e-01
+Epoch: 756
+     tr_loss: 6.38038e-01
+     val_loss: 8.74886e-01
+Epoch: 757
+     tr_loss: 6.37466e-01
+     val_loss: 8.84497e-01
+Epoch: 758
+     tr_loss: 6.34025e-01
+     val_loss: 8.77385e-01
+Epoch: 759
+     tr_loss: 6.35520e-01
+     val_loss: 8.74011e-01
+Epoch: 760
+     tr_loss: 6.33990e-01
+     val_loss: 8.76886e-01
+Epoch: 761
+     tr_loss: 6.29165e-01
+     val_loss: 8.90331e-01
+Epoch: 762
+     tr_loss: 6.21453e-01
+     val_loss: 8.73880e-01
+Epoch: 763
+     tr_loss: 6.34142e-01
+     val_loss: 9.09838e-01
+Epoch: 764
+     tr_loss: 6.32998e-01
+     val_loss: 9.01242e-01
+Epoch: 765
+     tr_loss: 6.32707e-01
+     val_loss: 8.69527e-01
+Epoch: 766
+     tr_loss: 6.27556e-01
+     val_loss: 8.94025e-01
+Epoch: 767
+     tr_loss: 6.33271e-01
+     val_loss: 8.83588e-01
+Epoch: 768
+     tr_loss: 6.28232e-01
+     val_loss: 8.73073e-01
+Epoch: 769
+     tr_loss: 6.30116e-01
+     val_loss: 9.06767e-01
+Epoch: 770
+     tr_loss: 6.41143e-01
+     val_loss: 9.07665e-01
+Epoch: 771
+     tr_loss: 6.31511e-01
+     val_loss: 8.73169e-01
+Epoch: 772
+     tr_loss: 6.27580e-01
+     val_loss: 8.70517e-01
+Epoch: 773
+     tr_loss: 6.28585e-01
+     val_loss: 8.81961e-01
+Epoch: 774
+     tr_loss: 6.19136e-01
+     val_loss: 8.75360e-01
+Epoch: 775
+     tr_loss: 6.24046e-01
+     val_loss: 8.70268e-01
+Epoch: 776
+     tr_loss: 6.25428e-01
+     val_loss: 8.75656e-01
+Epoch: 777
+     tr_loss: 6.30164e-01
+     val_loss: 8.73210e-01
+Epoch: 778
+     tr_loss: 6.29998e-01
+     val_loss: 8.78731e-01
+Epoch: 779
+     tr_loss: 6.34099e-01
+     val_loss: 8.56532e-01
+Epoch: 780
+     tr_loss: 6.25343e-01
+     val_loss: 8.76254e-01
+Epoch: 781
+     tr_loss: 6.26226e-01
+     val_loss: 8.76514e-01
+Epoch: 782
+     tr_loss: 6.24241e-01
+     val_loss: 8.58214e-01
+Epoch: 783
+     tr_loss: 6.22135e-01
+     val_loss: 9.04619e-01
+Epoch: 784
+     tr_loss: 6.24972e-01
+     val_loss: 8.62809e-01
+Epoch: 785
+     tr_loss: 6.19145e-01
+     val_loss: 8.61178e-01
+Epoch: 786
+     tr_loss: 6.21363e-01
+     val_loss: 8.54932e-01
+Epoch: 787
+     tr_loss: 6.19777e-01
+     val_loss: 8.71385e-01
+Epoch: 788
+     tr_loss: 6.16363e-01
+     val_loss: 8.79382e-01
+Epoch: 789
+     tr_loss: 6.14594e-01
+     val_loss: 8.74850e-01
+Epoch: 790
+     tr_loss: 6.21960e-01
+     val_loss: 8.70513e-01
+Epoch: 791
+     tr_loss: 6.22059e-01
+     val_loss: 8.62010e-01
+Epoch: 792
+     tr_loss: 6.19349e-01
+     val_loss: 9.29676e-01
+Epoch: 793
+     tr_loss: 6.21113e-01
+     val_loss: 8.95485e-01
+Epoch: 794
+     tr_loss: 6.19149e-01
+     val_loss: 8.96190e-01
+Epoch: 795
+     tr_loss: 6.17190e-01
+     val_loss: 8.67842e-01
+Epoch: 796
+     tr_loss: 6.16882e-01
+     val_loss: 8.63010e-01
+Epoch: 797
+     tr_loss: 6.14593e-01
+     val_loss: 8.57400e-01
+Epoch: 798
+     tr_loss: 6.18462e-01
+     val_loss: 8.58645e-01
+Epoch: 799
+     tr_loss: 6.14750e-01
+     val_loss: 8.73229e-01
+Epoch: 800
+     tr_loss: 6.15056e-01
+     val_loss: 8.88783e-01
+Epoch: 801
+     tr_loss: 6.17954e-01
+     val_loss: 8.72592e-01
+Epoch: 802
+     tr_loss: 6.09426e-01
+     val_loss: 8.71715e-01
+Epoch: 803
+     tr_loss: 6.10577e-01
+     val_loss: 8.70168e-01
+Epoch: 804
+     tr_loss: 6.10703e-01
+     val_loss: 8.90295e-01
+Epoch: 805
+     tr_loss: 6.12453e-01
+     val_loss: 8.72920e-01
+Epoch: 806
+     tr_loss: 6.12364e-01
+     val_loss: 8.65920e-01
+Epoch: 807
+     tr_loss: 6.12965e-01
+     val_loss: 8.61443e-01
+Epoch: 808
+     tr_loss: 6.18033e-01
+     val_loss: 8.61919e-01
+Epoch: 809
+     tr_loss: 6.13922e-01
+     val_loss: 8.45454e-01
+Epoch: 810
+     tr_loss: 6.12055e-01
+     val_loss: 8.86280e-01
+Epoch: 811
+     tr_loss: 6.15498e-01
+     val_loss: 8.81330e-01
+Epoch: 812
+     tr_loss: 6.12984e-01
+     val_loss: 8.51310e-01
+Epoch: 813
+     tr_loss: 6.07264e-01
+     val_loss: 8.82689e-01
+Epoch: 814
+     tr_loss: 6.11245e-01
+     val_loss: 8.90655e-01
+Epoch: 815
+     tr_loss: 6.11238e-01
+     val_loss: 8.86278e-01
+Epoch: 816
+     tr_loss: 6.09315e-01
+     val_loss: 8.73562e-01
+Epoch: 817
+     tr_loss: 6.05892e-01
+     val_loss: 8.57189e-01
+Epoch: 818
+     tr_loss: 6.07566e-01
+     val_loss: 9.03076e-01
+Epoch: 819
+     tr_loss: 6.08948e-01
+     val_loss: 8.68654e-01
+Epoch: 820
+     tr_loss: 6.10508e-01
+     val_loss: 8.72723e-01
+Epoch: 821
+     tr_loss: 6.11173e-01
+     val_loss: 8.83842e-01
+Epoch: 822
+     tr_loss: 6.09080e-01
+     val_loss: 8.70881e-01
+Epoch: 823
+     tr_loss: 6.05048e-01
+     val_loss: 8.49357e-01
+Epoch: 824
+     tr_loss: 6.08264e-01
+     val_loss: 8.61567e-01
+Epoch: 825
+     tr_loss: 6.05260e-01
+     val_loss: 8.76504e-01
+Epoch: 826
+     tr_loss: 6.11662e-01
+     val_loss: 8.63601e-01
+Epoch: 827
+     tr_loss: 6.03918e-01
+     val_loss: 8.86695e-01
+Epoch: 828
+     tr_loss: 6.07315e-01
+     val_loss: 8.61239e-01
+Epoch: 829
+     tr_loss: 6.03613e-01
+     val_loss: 8.68729e-01
+Epoch: 830
+     tr_loss: 6.11966e-01
+     val_loss: 8.75752e-01
+Epoch: 831
+     tr_loss: 5.97393e-01
+     val_loss: 8.45541e-01
+Epoch: 832
+     tr_loss: 5.99017e-01
+     val_loss: 8.57195e-01
+Epoch: 833
+     tr_loss: 6.10467e-01
+     val_loss: 8.74483e-01
+Epoch: 834
+     tr_loss: 6.04441e-01
+     val_loss: 8.70173e-01
+Epoch: 835
+     tr_loss: 6.01225e-01
+     val_loss: 8.59856e-01
+Epoch: 836
+     tr_loss: 6.00847e-01
+     val_loss: 8.77907e-01
+Epoch: 837
+     tr_loss: 6.09512e-01
+     val_loss: 8.39556e-01
+Epoch: 838
+     tr_loss: 6.02931e-01
+     val_loss: 8.63787e-01
+Epoch: 839
+     tr_loss: 6.03017e-01
+     val_loss: 8.56032e-01
+Epoch: 840
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 841
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 842
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 843
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 844
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 845
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 846
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 847
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 848
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 849
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 850
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 851
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 852
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 853
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 854
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 855
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 856
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 857
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 858
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 859
+     tr_loss pair: 8.56032e-01 w_comp: 2.00000e-01
+Epoch: 860
+     tr_loss: 5.98087e-01
+     val_loss: 8.75388e-01
+Epoch: 861
+     tr_loss: 5.95385e-01
+     val_loss: 8.59837e-01
+Epoch: 862
+     tr_loss: 5.99968e-01
+     val_loss: 8.64599e-01
+Epoch: 863
+     tr_loss: 6.05813e-01
+     val_loss: 8.73381e-01
+Epoch: 864
+     tr_loss: 5.99925e-01
+     val_loss: 8.54743e-01
+Epoch: 865
+     tr_loss: 5.94174e-01
+     val_loss: 8.67975e-01
+Epoch: 866
+     tr_loss: 5.99691e-01
+     val_loss: 8.63488e-01
+Epoch: 867
+     tr_loss: 5.94607e-01
+     val_loss: 8.56972e-01
+Epoch: 868
+     tr_loss: 6.05585e-01
+     val_loss: 8.78034e-01
+Epoch: 869
+     tr_loss: 5.98351e-01
+     val_loss: 8.84731e-01
+Epoch: 870
+     tr_loss: 5.96208e-01
+     val_loss: 8.78653e-01
+Epoch: 871
+     tr_loss: 5.91894e-01
+     val_loss: 8.80688e-01
+Epoch: 872
+     tr_loss: 5.97574e-01
+     val_loss: 8.66915e-01
+Epoch: 873
+     tr_loss: 5.98508e-01
+     val_loss: 8.99817e-01
+Epoch: 874
+     tr_loss: 5.92347e-01
+     val_loss: 8.86211e-01
+Epoch: 875
+     tr_loss: 5.93810e-01
+     val_loss: 8.73505e-01
+Epoch: 876
+     tr_loss: 6.00973e-01
+     val_loss: 8.80442e-01
+Epoch: 877
+     tr_loss: 5.94348e-01
+     val_loss: 8.72137e-01
+Epoch: 878
+     tr_loss: 5.99199e-01
+     val_loss: 8.52078e-01
+Epoch: 879
+     tr_loss: 5.94583e-01
+     val_loss: 8.97301e-01
+Epoch: 880
+     tr_loss: 5.97427e-01
+     val_loss: 8.76352e-01
+Epoch: 881
+     tr_loss: 5.98307e-01
+     val_loss: 8.71912e-01
+Epoch: 882
+     tr_loss: 6.03152e-01
+     val_loss: 8.90857e-01
+Epoch: 883
+     tr_loss: 5.95002e-01
+     val_loss: 8.72167e-01
+Epoch: 884
+     tr_loss: 5.85042e-01
+     val_loss: 8.61976e-01
+Epoch: 885
+     tr_loss: 5.94898e-01
+     val_loss: 8.51607e-01
+Epoch: 886
+     tr_loss: 6.00736e-01
+     val_loss: 8.60616e-01
+Epoch: 887
+     tr_loss: 6.06498e-01
+     val_loss: 8.87909e-01
+Epoch: 888
+     tr_loss: 5.87188e-01
+     val_loss: 8.90417e-01
+Epoch: 889
+     tr_loss: 5.95390e-01
+     val_loss: 8.56688e-01
+Epoch: 890
+     tr_loss: 5.92026e-01
+     val_loss: 8.46487e-01
+Epoch: 891
+     tr_loss: 5.96412e-01
+     val_loss: 8.47700e-01
+Epoch: 892
+     tr_loss: 5.82551e-01
+     val_loss: 8.76642e-01
+Epoch: 893
+     tr_loss: 5.92058e-01
+     val_loss: 8.44998e-01
+Epoch: 894
+     tr_loss: 5.89949e-01
+     val_loss: 8.68869e-01
+Epoch: 895
+     tr_loss: 5.87587e-01
+     val_loss: 8.51454e-01
+Epoch: 896
+     tr_loss: 5.90409e-01
+     val_loss: 8.52948e-01
+Epoch: 897
+     tr_loss: 5.85371e-01
+     val_loss: 8.59333e-01
+Epoch: 898
+     tr_loss: 6.00298e-01
+     val_loss: 8.63302e-01
+Epoch: 899
+     tr_loss: 5.88740e-01
+     val_loss: 8.76269e-01
+Epoch: 900
+     tr_loss: 5.93836e-01
+     val_loss: 8.39534e-01
+Epoch: 901
+     tr_loss: 5.91606e-01
+     val_loss: 8.78670e-01
+Epoch: 902
+     tr_loss: 5.92484e-01
+     val_loss: 8.41807e-01
+Epoch: 903
+     tr_loss: 5.98064e-01
+     val_loss: 8.50064e-01
+Epoch: 904
+     tr_loss: 5.86087e-01
+     val_loss: 8.88119e-01
+Epoch: 905
+     tr_loss: 5.95852e-01
+     val_loss: 8.76914e-01
+Epoch: 906
+     tr_loss: 5.96017e-01
+     val_loss: 8.36175e-01
+Epoch: 907
+     tr_loss: 5.79467e-01
+     val_loss: 8.70650e-01
+Epoch: 908
+     tr_loss: 5.90473e-01
+     val_loss: 8.63146e-01
+Epoch: 909
+     tr_loss: 5.86663e-01
+     val_loss: 8.56173e-01
+Epoch: 910
+     tr_loss: 5.84806e-01
+     val_loss: 8.78802e-01
+Epoch: 911
+     tr_loss: 5.87239e-01
+     val_loss: 8.65548e-01
+Epoch: 912
+     tr_loss: 5.89663e-01
+     val_loss: 8.66518e-01
+Epoch: 913
+     tr_loss: 5.86761e-01
+     val_loss: 8.47736e-01
+Epoch: 914
+     tr_loss: 5.83858e-01
+     val_loss: 8.55832e-01
+Epoch: 915
+     tr_loss: 5.82847e-01
+     val_loss: 8.69474e-01
+Epoch: 916
+     tr_loss: 5.88241e-01
+     val_loss: 8.64001e-01
+Epoch: 917
+     tr_loss: 5.90108e-01
+     val_loss: 8.53392e-01
+Epoch: 918
+     tr_loss: 5.81114e-01
+     val_loss: 8.66556e-01
+Epoch: 919
+     tr_loss: 5.85605e-01
+     val_loss: 8.60587e-01
+Epoch: 920
+     tr_loss: 5.90910e-01
+     val_loss: 8.84622e-01
+Epoch: 921
+     tr_loss: 5.79203e-01
+     val_loss: 8.77765e-01
+Epoch: 922
+     tr_loss: 5.93793e-01
+     val_loss: 8.69161e-01
+Epoch: 923
+     tr_loss: 5.82559e-01
+     val_loss: 8.59087e-01
+Epoch: 924
+     tr_loss: 5.84020e-01
+     val_loss: 8.56920e-01
+Epoch: 925
+     tr_loss: 5.83958e-01
+     val_loss: 8.66450e-01
+Epoch: 926
+     tr_loss: 5.86004e-01
+     val_loss: 8.56832e-01
+Epoch: 927
+     tr_loss: 5.85280e-01
+     val_loss: 8.74178e-01
+Epoch: 928
+     tr_loss: 5.88516e-01
+     val_loss: 8.75420e-01
+Epoch: 929
+     tr_loss: 5.88354e-01
+     val_loss: 8.76717e-01
+Epoch: 930
+     tr_loss: 5.82165e-01
+     val_loss: 8.72593e-01
+Epoch: 931
+     tr_loss: 5.85465e-01
+     val_loss: 8.40016e-01
+Epoch: 932
+     tr_loss: 5.80135e-01
+     val_loss: 8.66318e-01
+Epoch: 933
+     tr_loss: 5.82138e-01
+     val_loss: 8.48622e-01
+Epoch: 934
+     tr_loss: 5.84393e-01
+     val_loss: 8.62384e-01
+Epoch: 935
+     tr_loss: 5.88388e-01
+     val_loss: 8.44685e-01
+Epoch: 936
+     tr_loss: 5.80655e-01
+     val_loss: 8.66225e-01
+Epoch: 937
+     tr_loss: 5.76476e-01
+     val_loss: 8.57036e-01
+Epoch: 938
+     tr_loss: 5.82159e-01
+     val_loss: 8.88513e-01
+Epoch: 939
+     tr_loss: 5.86472e-01
+     val_loss: 8.53461e-01
+Epoch: 940
+     tr_loss: 5.82473e-01
+     val_loss: 8.51461e-01
+Epoch: 941
+     tr_loss: 5.82554e-01
+     val_loss: 8.60010e-01
+Epoch: 942
+     tr_loss: 5.80272e-01
+     val_loss: 8.45412e-01
+Epoch: 943
+     tr_loss: 5.81777e-01
+     val_loss: 8.47679e-01
+Epoch: 944
+     tr_loss: 5.81030e-01
+     val_loss: 8.65427e-01
+Epoch: 945
+     tr_loss: 5.74200e-01
+     val_loss: 8.59884e-01
+Epoch: 946
+     tr_loss: 5.83821e-01
+     val_loss: 8.74543e-01
+Epoch: 947
+     tr_loss: 5.85295e-01
+     val_loss: 8.62506e-01
+Epoch: 948
+     tr_loss: 5.72610e-01
+     val_loss: 8.69798e-01
+Epoch: 949
+     tr_loss: 5.78348e-01
+     val_loss: 8.66912e-01
+Epoch: 950
+     tr_loss: 5.76128e-01
+     val_loss: 8.51876e-01
+Epoch: 951
+     tr_loss: 5.81561e-01
+     val_loss: 8.63167e-01
+Epoch: 952
+     tr_loss: 5.82529e-01
+     val_loss: 8.72260e-01
+Epoch: 953
+     tr_loss: 5.76749e-01
+     val_loss: 8.57173e-01
+Epoch: 954
+     tr_loss: 5.76335e-01
+     val_loss: 8.42529e-01
+Epoch: 955
+     tr_loss: 5.84448e-01
+     val_loss: 8.48615e-01
+Epoch: 956
+     tr_loss: 5.81113e-01
+     val_loss: 8.63822e-01
+Epoch: 957
+     tr_loss: 5.84622e-01
+     val_loss: 8.58387e-01
+Epoch: 958
+     tr_loss: 5.84755e-01
+     val_loss: 8.53029e-01
+Epoch: 959
+     tr_loss: 5.82440e-01
+     val_loss: 8.54156e-01
+Epoch: 960
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 961
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 962
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 963
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 964
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 965
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 966
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 967
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 968
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 969
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 970
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 971
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 972
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 973
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 974
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 975
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 976
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 977
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 978
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 979
+     tr_loss pair: 8.54156e-01 w_comp: 2.00000e-01
+Epoch: 980
+     tr_loss: 5.83104e-01
+     val_loss: 8.72290e-01
+Epoch: 981
+     tr_loss: 5.77970e-01
+     val_loss: 8.70340e-01
+Epoch: 982
+     tr_loss: 5.71669e-01
+     val_loss: 8.95735e-01
+Epoch: 983
+     tr_loss: 5.79136e-01
+     val_loss: 8.56449e-01
+Epoch: 984
+     tr_loss: 5.78146e-01
+     val_loss: 8.48319e-01
+Epoch: 985
+     tr_loss: 5.74146e-01
+     val_loss: 8.71808e-01
+Epoch: 986
+     tr_loss: 5.83483e-01
+     val_loss: 8.55465e-01
+Epoch: 987
+     tr_loss: 5.79993e-01
+     val_loss: 8.68480e-01
+Epoch: 988
+     tr_loss: 5.71789e-01
+     val_loss: 8.67101e-01
+Epoch: 989
+     tr_loss: 5.79213e-01
+     val_loss: 8.57391e-01
+Epoch: 990
+     tr_loss: 5.79632e-01
+     val_loss: 9.00815e-01
+Epoch: 991
+     tr_loss: 5.71879e-01
+     val_loss: 8.57382e-01
+Epoch: 992
+     tr_loss: 5.73028e-01
+     val_loss: 8.60266e-01
+Epoch: 993
+     tr_loss: 5.72012e-01
+     val_loss: 8.52951e-01
+Epoch: 994
+     tr_loss: 5.72850e-01
+     val_loss: 8.41079e-01
+Epoch: 995
+     tr_loss: 5.69512e-01
+     val_loss: 8.53630e-01
+Epoch: 996
+     tr_loss: 5.74834e-01
+     val_loss: 8.94017e-01
+Epoch: 997
+     tr_loss: 5.73361e-01
+     val_loss: 8.45484e-01
+Epoch: 998
+     tr_loss: 5.72515e-01
+     val_loss: 8.43603e-01
+Epoch: 999
+     tr_loss: 5.77669e-01
+     val_loss: 8.68953e-01
+Epoch: 1000
+     tr_loss: 5.73904e-01
+     val_loss: 8.74606e-01
+Epoch: 1001
+     tr_loss: 5.69997e-01
+     val_loss: 8.63772e-01
+Epoch: 1002
+     tr_loss: 5.71273e-01
+     val_loss: 8.63033e-01
+Epoch: 1003
+     tr_loss: 5.73174e-01
+     val_loss: 8.54054e-01
+Epoch: 1004
+     tr_loss: 5.68314e-01
+     val_loss: 8.73461e-01
+Epoch: 1005
+     tr_loss: 5.66123e-01
+     val_loss: 8.66506e-01
+Epoch: 1006
+     tr_loss: 5.72711e-01
+     val_loss: 8.57371e-01
+Epoch: 1007
+     tr_loss: 5.72960e-01
+     val_loss: 8.93183e-01
+Epoch: 1008
+     tr_loss: 5.75894e-01
+     val_loss: 8.90576e-01
+Epoch: 1009
+     tr_loss: 5.70046e-01
+     val_loss: 8.62425e-01
+Epoch: 1010
+     tr_loss: 5.77658e-01
+     val_loss: 8.53704e-01
+Epoch: 1011
+     tr_loss: 5.68275e-01
+     val_loss: 8.71259e-01
+Epoch: 1012
+     tr_loss: 5.70734e-01
+     val_loss: 8.62448e-01
+Epoch: 1013
+     tr_loss: 5.70528e-01
+     val_loss: 8.95561e-01
+Epoch: 1014
+     tr_loss: 5.72629e-01
+     val_loss: 8.52486e-01
+Epoch: 1015
+     tr_loss: 5.74736e-01
+     val_loss: 8.92789e-01
+Epoch: 1016
+     tr_loss: 5.71056e-01
+     val_loss: 8.82275e-01
+Epoch: 1017
+     tr_loss: 5.62578e-01
+     val_loss: 8.66621e-01
+Epoch: 1018
+     tr_loss: 5.65535e-01
+     val_loss: 8.66988e-01
+Epoch: 1019
+     tr_loss: 5.68945e-01
+     val_loss: 8.53491e-01
+Epoch: 1020
+     tr_loss: 5.73273e-01
+     val_loss: 8.47467e-01
+Epoch: 1021
+     tr_loss: 5.75472e-01
+     val_loss: 8.47299e-01
+Epoch: 1022
+     tr_loss: 5.69955e-01
+     val_loss: 8.60262e-01
+Epoch: 1023
+     tr_loss: 5.67923e-01
+     val_loss: 8.68887e-01
+Epoch: 1024
+     tr_loss: 5.71069e-01
+     val_loss: 8.50742e-01
+Epoch: 1025
+     tr_loss: 5.76988e-01
+     val_loss: 8.60103e-01
+Epoch: 1026
+     tr_loss: 5.70326e-01
+     val_loss: 8.65456e-01
+Epoch: 1027
+     tr_loss: 5.78367e-01
+     val_loss: 8.57920e-01
+Epoch: 1028
+     tr_loss: 5.66924e-01
+     val_loss: 8.55520e-01
+Epoch: 1029
+     tr_loss: 5.67482e-01
+     val_loss: 8.58596e-01
+Epoch: 1030
+     tr_loss: 5.81395e-01
+     val_loss: 8.78765e-01
+Epoch: 1031
+     tr_loss: 5.70055e-01
+     val_loss: 8.67587e-01
+Epoch: 1032
+     tr_loss: 5.68511e-01
+     val_loss: 8.59977e-01
+Epoch: 1033
+     tr_loss: 5.71315e-01
+     val_loss: 8.58858e-01
+Epoch: 1034
+     tr_loss: 5.71739e-01
+     val_loss: 8.61415e-01
+Epoch: 1035
+     tr_loss: 5.64643e-01
+     val_loss: 8.72999e-01
+Epoch: 1036
+     tr_loss: 5.62615e-01
+     val_loss: 8.73507e-01
+Epoch: 1037
+     tr_loss: 5.72037e-01
+     val_loss: 8.72270e-01
+Epoch: 1038
+     tr_loss: 5.62807e-01
+     val_loss: 8.57851e-01
+Epoch: 1039
+     tr_loss: 5.64637e-01
+     val_loss: 8.52899e-01
+Epoch: 1040
+     tr_loss: 5.68824e-01
+     val_loss: 8.66272e-01
+Epoch: 1041
+     tr_loss: 5.67700e-01
+     val_loss: 8.38932e-01
+Epoch: 1042
+     tr_loss: 5.67662e-01
+     val_loss: 8.33880e-01
+Epoch: 1043
+     tr_loss: 5.66010e-01
+     val_loss: 8.56640e-01
+Epoch: 1044
+     tr_loss: 5.64516e-01
+     val_loss: 8.44387e-01
+Epoch: 1045
+     tr_loss: 5.64266e-01
+     val_loss: 8.56388e-01
+Epoch: 1046
+     tr_loss: 5.66959e-01
+     val_loss: 8.41045e-01
+Epoch: 1047
+     tr_loss: 5.67897e-01
+     val_loss: 8.51274e-01
+Epoch: 1048
+     tr_loss: 5.63708e-01
+     val_loss: 8.44945e-01
+Epoch: 1049
+     tr_loss: 5.63297e-01
+     val_loss: 8.70162e-01
+Epoch: 1050
+     tr_loss: 5.67761e-01
+     val_loss: 8.92831e-01
+Epoch: 1051
+     tr_loss: 5.67554e-01
+     val_loss: 8.91937e-01
+Epoch: 1052
+     tr_loss: 5.63165e-01
+     val_loss: 8.54356e-01
+Epoch: 1053
+     tr_loss: 5.63019e-01
+     val_loss: 8.79565e-01
+Epoch: 1054
+     tr_loss: 5.67246e-01
+     val_loss: 8.72166e-01
+Epoch: 1055
+     tr_loss: 5.69215e-01
+     val_loss: 8.52668e-01
+Epoch: 1056
+     tr_loss: 5.62948e-01
+     val_loss: 8.43178e-01
+Epoch: 1057
+     tr_loss: 5.70638e-01
+     val_loss: 8.43273e-01
+Epoch: 1058
+     tr_loss: 5.74869e-01
+     val_loss: 8.96509e-01
+Epoch: 1059
+     tr_loss: 5.79882e-01
+     val_loss: 8.61071e-01
+Epoch: 1060
+     tr_loss: 5.74746e-01
+     val_loss: 8.89129e-01
+Epoch: 1061
+     tr_loss: 5.72681e-01
+     val_loss: 8.76876e-01
+Epoch: 1062
+     tr_loss: 5.69854e-01
+     val_loss: 8.50779e-01
+Epoch: 1063
+     tr_loss: 5.66090e-01
+     val_loss: 8.50843e-01
+Epoch: 1064
+     tr_loss: 5.64197e-01
+     val_loss: 8.67232e-01
+Epoch: 1065
+     tr_loss: 5.70813e-01
+     val_loss: 8.77444e-01
+Epoch: 1066
+     tr_loss: 5.63879e-01
+     val_loss: 8.53191e-01
+Epoch: 1067
+     tr_loss: 5.64993e-01
+     val_loss: 8.58846e-01
+Epoch: 1068
+     tr_loss: 5.60835e-01
+     val_loss: 8.42544e-01
+Epoch: 1069
+     tr_loss: 5.68066e-01
+     val_loss: 8.65954e-01
+Epoch: 1070
+     tr_loss: 5.68993e-01
+     val_loss: 8.55122e-01
+Epoch: 1071
+     tr_loss: 5.59886e-01
+     val_loss: 8.46165e-01
+Epoch: 1072
+     tr_loss: 5.68176e-01
+     val_loss: 8.65037e-01
+Epoch: 1073
+     tr_loss: 5.59600e-01
+     val_loss: 8.55357e-01
+Epoch: 1074
+     tr_loss: 5.61890e-01
+     val_loss: 8.65593e-01
+Epoch: 1075
+     tr_loss: 5.59198e-01
+     val_loss: 8.52324e-01
+Epoch: 1076
+     tr_loss: 5.67802e-01
+     val_loss: 8.65878e-01
+Epoch: 1077
+     tr_loss: 5.64137e-01
+     val_loss: 8.54602e-01
+Epoch: 1078
+     tr_loss: 5.62304e-01
+     val_loss: 8.63410e-01
+Epoch: 1079
+     tr_loss: 5.59942e-01
+     val_loss: 8.56632e-01
+Epoch: 1080
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1081
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1082
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1083
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1084
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1085
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1086
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1087
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1088
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1089
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1090
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1091
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1092
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1093
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1094
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1095
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1096
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1097
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1098
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1099
+     tr_loss pair: 8.56632e-01 w_comp: 2.00000e-01
+Epoch: 1100
+     tr_loss: 5.62170e-01
+     val_loss: 9.03226e-01
+Epoch: 1101
+     tr_loss: 5.61021e-01
+     val_loss: 8.53013e-01
+Epoch: 1102
+     tr_loss: 5.58937e-01
+     val_loss: 8.82280e-01
+Epoch: 1103
+     tr_loss: 5.57510e-01
+     val_loss: 8.51908e-01
+Epoch: 1104
+     tr_loss: 5.66914e-01
+     val_loss: 8.51394e-01
+Epoch: 1105
+     tr_loss: 5.64326e-01
+     val_loss: 8.62889e-01
+Epoch: 1106
+     tr_loss: 5.64000e-01
+     val_loss: 8.50146e-01
+Epoch: 1107
+     tr_loss: 5.60264e-01
+     val_loss: 8.69652e-01
+Epoch: 1108
+     tr_loss: 5.68756e-01
+     val_loss: 8.38893e-01
+Epoch: 1109
+     tr_loss: 5.60798e-01
+     val_loss: 8.74236e-01
+Epoch: 1110
+     tr_loss: 5.55426e-01
+     val_loss: 8.39917e-01
+Epoch: 1111
+     tr_loss: 5.67988e-01
+     val_loss: 8.55192e-01
+Epoch: 1112
+     tr_loss: 5.67756e-01
+     val_loss: 8.77465e-01
+Epoch: 1113
+     tr_loss: 5.59710e-01
+     val_loss: 8.63162e-01
+Epoch: 1114
+     tr_loss: 5.58451e-01
+     val_loss: 8.54143e-01
+Epoch: 1115
+     tr_loss: 5.65116e-01
+     val_loss: 8.57499e-01
+Epoch: 1116
+     tr_loss: 5.60608e-01
+     val_loss: 8.49163e-01
+Epoch: 1117
+     tr_loss: 5.56671e-01
+     val_loss: 8.45549e-01
+Epoch: 1118
+     tr_loss: 5.63193e-01
+     val_loss: 8.58419e-01
+Epoch: 1119
+     tr_loss: 5.64712e-01
+     val_loss: 8.50543e-01
+Epoch: 1120
+     tr_loss: 5.59857e-01
+     val_loss: 8.50625e-01
+Epoch: 1121
+     tr_loss: 5.63309e-01
+     val_loss: 8.59876e-01
+Epoch: 1122
+     tr_loss: 5.56972e-01
+     val_loss: 8.47786e-01
+Epoch: 1123
+     tr_loss: 5.62698e-01
+     val_loss: 8.42269e-01
+Epoch: 1124
+     tr_loss: 5.68350e-01
+     val_loss: 8.53060e-01
+Epoch: 1125
+     tr_loss: 5.59890e-01
+     val_loss: 8.57116e-01
+Epoch: 1126
+     tr_loss: 5.60799e-01
+     val_loss: 8.39694e-01
+Epoch: 1127
+     tr_loss: 5.52498e-01
+     val_loss: 8.51017e-01
+Epoch: 1128
+     tr_loss: 5.63168e-01
+     val_loss: 8.47515e-01
+Epoch: 1129
+     tr_loss: 5.53107e-01
+     val_loss: 8.43359e-01
+Epoch: 1130
+     tr_loss: 5.55075e-01
+     val_loss: 8.48308e-01
+Epoch: 1131
+     tr_loss: 5.53379e-01
+     val_loss: 8.58710e-01
+Epoch: 1132
+     tr_loss: 5.53670e-01
+     val_loss: 8.82480e-01
+Epoch: 1133
+     tr_loss: 5.58910e-01
+     val_loss: 8.77872e-01
+Epoch: 1134
+     tr_loss: 5.63512e-01
+     val_loss: 8.72679e-01
+Epoch: 1135
+     tr_loss: 5.54973e-01
+     val_loss: 8.84208e-01
+Epoch: 1136
+     tr_loss: 5.58590e-01
+     val_loss: 8.52178e-01
+Epoch: 1137
+     tr_loss: 5.58126e-01
+     val_loss: 8.36245e-01
+Epoch: 1138
+     tr_loss: 5.57106e-01
+     val_loss: 8.56402e-01
+Epoch: 1139
+     tr_loss: 5.49389e-01
+     val_loss: 8.51981e-01
+Epoch: 1140
+     tr_loss: 5.52545e-01
+     val_loss: 8.59818e-01
+Epoch: 1141
+     tr_loss: 5.56556e-01
+     val_loss: 8.67243e-01
+Epoch: 1142
+     tr_loss: 5.51393e-01
+     val_loss: 8.66602e-01
+Epoch: 1143
+     tr_loss: 5.58627e-01
+     val_loss: 8.41466e-01
+Epoch: 1144
+     tr_loss: 5.62513e-01
+     val_loss: 8.51346e-01
+Epoch: 1145
+     tr_loss: 5.51210e-01
+     val_loss: 8.97445e-01
+Epoch: 1146
+     tr_loss: 5.63268e-01
+     val_loss: 8.63189e-01
+Epoch: 1147
+     tr_loss: 5.61895e-01
+     val_loss: 8.56341e-01
+Epoch: 1148
+     tr_loss: 5.49119e-01
+     val_loss: 8.72514e-01
+Epoch: 1149
+     tr_loss: 5.57572e-01
+     val_loss: 8.58576e-01
+Epoch: 1150
+     tr_loss: 5.58607e-01
+     val_loss: 8.57061e-01
+Epoch: 1151
+     tr_loss: 5.54530e-01
+     val_loss: 8.60197e-01
+Epoch: 1152
+     tr_loss: 5.54350e-01
+     val_loss: 8.54376e-01
+Epoch: 1153
+     tr_loss: 5.57535e-01
+     val_loss: 8.48180e-01
+Epoch: 1154
+     tr_loss: 5.53761e-01
+     val_loss: 8.53091e-01
+Epoch: 1155
+     tr_loss: 5.56720e-01
+     val_loss: 8.36261e-01main_sm.py:394: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  hps = yaml.load(config_file)
+/home/hxie1/anaconda3/lib/python3.7/site-packages/torch/nn/functional.py:2479: UserWarning: Default upsampling behavior when mode=bilinear is changed to align_corners=False since 0.4.0. Please specify align_corners=True if the old behavior is desired. See the documentation of nn.Upsample for details.
+  "See the documentation of nn.Upsample for details.".format(mode))
+
+Epoch: 1156
+     tr_loss: 5.53695e-01
+     val_loss: 8.64262e-01
+Epoch: 1157
+     tr_loss: 5.62411e-01
+     val_loss: 8.50915e-01
+Epoch: 1158
+     tr_loss: 5.59311e-01
+     val_loss: 9.01899e-01
+Epoch: 1159
+     tr_loss: 5.60879e-01
+     val_loss: 8.36419e-01
+Epoch: 1160
+     tr_loss: 5.59075e-01
+     val_loss: 8.66197e-01
+Epoch: 1161
+     tr_loss: 5.54206e-01
+     val_loss: 8.50988e-01
+Epoch: 1162
+     tr_loss: 5.56307e-01
+     val_loss: 8.52131e-01
+Epoch: 1163
+     tr_loss: 5.58179e-01
+     val_loss: 8.50953e-01
+Epoch: 1164
+     tr_loss: 5.55318e-01
+     val_loss: 8.49572e-01
+Epoch: 1165
+     tr_loss: 5.54421e-01
+     val_loss: 8.55320e-01
+Epoch: 1166
+     tr_loss: 5.63701e-01
+     val_loss: 8.32363e-01
+Epoch: 1167
+     tr_loss: 5.56916e-01
+     val_loss: 8.43198e-01
+Epoch: 1168
+     tr_loss: 5.50820e-01
+     val_loss: 8.52634e-01
+Epoch: 1169
+     tr_loss: 5.54265e-01
+     val_loss: 8.46656e-01
+Epoch: 1170
+     tr_loss: 5.45713e-01
+     val_loss: 8.32473e-01
+Epoch: 1171
+     tr_loss: 5.59802e-01
+     val_loss: 8.56906e-01
+Epoch: 1172
+     tr_loss: 5.52374e-01
+     val_loss: 8.68730e-01
+Epoch: 1173
+     tr_loss: 5.51630e-01
+     val_loss: 8.50749e-01
+Epoch: 1174
+     tr_loss: 5.52816e-01
+     val_loss: 8.58015e-01
+Epoch: 1175
+     tr_loss: 5.52886e-01
+     val_loss: 8.42665e-01
+Epoch: 1176
+     tr_loss: 5.53716e-01
+     val_loss: 8.53880e-01
+Epoch: 1177
+     tr_loss: 5.54165e-01
+     val_loss: 8.47736e-01
+Epoch: 1178
+     tr_loss: 5.55379e-01
+     val_loss: 8.57612e-01
+Epoch: 1179
+     tr_loss: 5.48344e-01
+     val_loss: 8.37778e-01
+Epoch: 1180
+     tr_loss: 5.58403e-01
+     val_loss: 8.44141e-01
+Epoch: 1181
+     tr_loss: 5.60755e-01
+     val_loss: 8.69854e-01
+Epoch: 1182
+     tr_loss: 5.47922e-01
+     val_loss: 8.40566e-01
+Epoch: 1183
+     tr_loss: 5.53693e-01
+     val_loss: 8.60949e-01
+Epoch: 1184
+     tr_loss: 5.45463e-01
+     val_loss: 8.58406e-01
+Epoch: 1185
+     tr_loss: 5.53064e-01
+     val_loss: 8.48245e-01
+Epoch: 1186
+     tr_loss: 5.52930e-01
+     val_loss: 8.60195e-01
+Epoch: 1187
+     tr_loss: 5.49324e-01
+     val_loss: 8.42785e-01
+Epoch: 1188
+     tr_loss: 5.49353e-01
+     val_loss: 8.64859e-01
+Epoch: 1189
+     tr_loss: 5.51813e-01
+     val_loss: 8.48596e-01
+Epoch: 1190
+     tr_loss: 5.55326e-01
+     val_loss: 8.43469e-01
+Epoch: 1191
+     tr_loss: 5.46952e-01
+     val_loss: 8.53328e-01
+Epoch: 1192
+     tr_loss: 5.48036e-01
+     val_loss: 8.53987e-01
+Epoch: 1193
+     tr_loss: 5.45917e-01
+     val_loss: 8.56588e-01
+Epoch: 1194
+     tr_loss: 5.56918e-01
+     val_loss: 8.55909e-01
+Epoch: 1195
+     tr_loss: 5.50938e-01
+     val_loss: 8.48173e-01
+Epoch: 1196
+     tr_loss: 5.54519e-01
+     val_loss: 8.74717e-01
+Epoch: 1197
+     tr_loss: 5.50381e-01
+     val_loss: 8.62094e-01
+Epoch: 1198
+     tr_loss: 5.47222e-01
+     val_loss: 8.53246e-01
+Epoch: 1199
+     tr_loss: 5.56426e-01
+     val_loss: 8.45344e-01
+Training complete in 963m 43s
