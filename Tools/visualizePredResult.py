@@ -1,6 +1,6 @@
 
 predictNumpyDir = "/home/hxie1/data/OCT_Beijing/netParameters/SurfNet2019113/CV5/predict"
-predictImageDir = "/home/hxie1/data/OCT_Beijing/netParameters/SurfNet2019113/CV5/predict/predictImages"
+predictImageDir = "/home/hxie1/data/OCT_Beijing/netParameters/SurfNet2019113/CV5/predict/visualImages"
 
 numPatients = 8
 numSlices = 31
