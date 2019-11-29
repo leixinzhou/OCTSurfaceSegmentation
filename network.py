@@ -330,7 +330,7 @@ def gaus_fit(x, tr_flag=True):
     if x.is_cuda:
         col_ind_set = col_ind_set.cuda()
     y = x.double()
-    lny = torch.log(y).double()
+    lny = torch.log(y).double()  # y = f(j) in paper, x=j
     y2 = torch.pow(y, 2).double()
     x2 = torch.pow(col_ind_set, 2).double()
     sum_y2 = torch.sum(y2, dim=-1)
@@ -352,21 +352,27 @@ def gaus_fit(x, tr_flag=True):
     mu = -b_num / (2.*c_num)
 
     c_din = sum_x4y2*sum_xy2**2 - 2*sum_xy2*sum_x2y2*sum_x3y2 + \
-        sum_x2y2**3 - sum_y2*sum_x4y2*sum_x2y2 + sum_y2*sum_x3y2**2
+        sum_x2y2**3 - sum_y2*sum_x4y2*sum_x2y2 + sum_y2*sum_x3y2**2    #todo: is this should be 1?
     sigma_b_sqrt = -0.5*c_din/c_num
-    sigma_b_sqrt[sigma_b_sqrt < 1] = 1
+    sigma_b_sqrt[sigma_b_sqrt < 1] = 1  # forcely let sigma2 ==1 if it is less than 1.
     sigma = sigma_b_sqrt
     #TODO May have better strategies to handle the failure of Gaussian fitting.
+    gaussFittingSuccess = True
     if not tr_flag:
-        mu[mu >= col_len-1] = col_len-1
-        mu[mu <= 0] = 0.
+        if torch.sum(mu >= col_len - 1) > 0:
+            mu[mu >= col_len-1] = col_len-1
+            gaussFittingSuccess = False
+        if torch.sum(mu <= 0) > 0:
+            mu[mu <= 0] = 0.
+            gaussFittingSuccess = False
+
     if torch.isnan(mu).any() or torch.isnan(sigma).any():
         raise Exception("mu or sigma gets NaN value.")
 
     mu = mu.float()
     sigma = sigma.float()
 
-    return mu, sigma  # here sigma is variance, sigma^2
+    return mu, sigma, gaussFittingSuccess  # here sigma is variance, sigma^2
 
 class SurfSegNet(torch.nn.Module):
     """
@@ -411,18 +417,31 @@ class SurfSegNet(torch.nn.Module):
             else:
                 raise Exception("Pair network can not be restored.")
         
-    def forward(self, x, tr_flag=False):
-        logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)  
+    def forward(self, x, tr_flag=False, patientID=None ):
+
+        '''
+        debugFlag = False
+        if patientID in ['/home/hxie1/data/OCT_Beijing/control/120006_OD_5723_Volume/20110504042138_OCT01.jpg',
+                         '/home/hxie1/data/OCT_Beijing/control/120006_OD_5723_Volume/20110504042138_OCT02.jpg',
+                         '/home/hxie1/data/OCT_Beijing/control/120006_OD_5723_Volume/20110504042138_OCT03.jpg']:
+            debugFlag = True
+        '''
+        logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)
+        # print(f"logits after UNet: \n{logits.detach().cpu().numpy()}")
+
         logits = normalize_prob(logits)  # Todo: what is the benefit of this normalize
+        # print(f"logits after Normalization:\n{logits.detach().cpu().numpy()}")
         if self.pair is None:
             d_p = torch.zeros((x.size(0), x.size(-1)-1), dtype=torch.float32, requires_grad=False).cuda()
         else:
             self.pair.eval()
             d_p = self.pair(x)
      
-        mean, sigma = gaus_fit(logits, tr_flag=tr_flag)
-        #print(f"mean: {mean}")
-        #print(f"sigma2:{sigma}")
+        mean, sigma, gaussFittingSuccess= gaus_fit(logits, tr_flag=tr_flag)
+        if not gaussFittingSuccess:
+            print (f"Gaussian Fitting failed in {patientID}")
+        #print(f"mean: \n{mean}")
+        #print(f"sigma2:\n{sigma}")
         #print(f"\n next patient:")
         output = newton_sol_pd(mean, sigma, self.w_comp, d_p)
 

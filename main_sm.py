@@ -264,17 +264,21 @@ def infer(model, hps):
     #     # print(batch_gt_d)
     #     # print(batch_gt)
     #     # break
+
+        patientID =  batch['patientID'][0]
         '''
-        if batch['patientID'][0] in ['/home/hxie1/data/OCT_Beijing/control/120006_OD_5723_Volume/20110504042138_OCT01.jpg',
+         if patientID in ['/home/hxie1/data/OCT_Beijing/control/120006_OD_5723_Volume/20110504042138_OCT01.jpg',
                                   '/home/hxie1/data/OCT_Beijing/control/120006_OD_5723_Volume/20110504042138_OCT02.jpg',
                                   '/home/hxie1/data/OCT_Beijing/control/120006_OD_5723_Volume/20110504042138_OCT03.jpg']:
             print(f"\n\n\nWe are here for {batch['patientID']}")
             print(f"Ground truth: {batch['gt']}")
         '''
 
+
+
         batch_img = batch['img'].float().cuda()
         (_,_,H,W) = batch_img.shape
-        pred_tmp = model(batch_img)
+        pred_tmp = model(batch_img, patientID= patientID)
         pred = pred_tmp.squeeze().detach().cpu().numpy()
         if BeijingOCT:
             patientID, sliceID = getPatientID_Slice(batch['patientID'][0])
