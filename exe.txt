@@ -6,6 +6,7 @@ CUDA_VISIBLE_DEVICES=1 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfa
 # based on pretrained Unet, train Unet + SurfSegNSB modules together with standard groud truth, with L1 Loss:
 CUDA_VISIBLE_DEVICES=3 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/SurfSegNSBNet_HPara_20191105.yml  > log_SurfSegNSBNet.txt &
 CUDA_VISIBLE_DEVICES=1 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/SurfSegNSBNet_20191113_CV0.yml &
+CUDA_VISIBLE_DEVICES=1 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/SurfSegNSBNet_20191129_CV3.yml &
 
 # test on Unet + SurfSegNSB modules with test switch on in config file:
 CUDA_VISIBLE_DEVICES=0 python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/SurfSegNSBNet_20191113_CV0.yml
