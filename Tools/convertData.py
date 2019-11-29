@@ -94,7 +94,7 @@ def main():
             break
 
     # partition for test, validation, and training
-    outputValidation = False
+    outputValidation = True
 
     for k in range(0,K):
         partitions = {}
