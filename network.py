@@ -332,12 +332,12 @@ def computeMuSigma2(x):
 
     # square probability to strengthen the big probability, and reduce variance
     # "The rich get richer and the poor get poorer"
-    P = torch.pow(x, 2).double()
+    P = torch.pow(x, 2).float()
     PColSum = torch.sum(P, dim=-1, keepdim=True).expand(P.size())
     P = P/PColSum
 
     # compute mu
-    Y = torch.arange(H).expand(P.size()).double()
+    Y = torch.arange(H).expand(P.size()).float().to(x.device)
     mu = torch.sum(P*Y, dim=-1, keepdim=True)
 
     # compute sigma2 (variance)
