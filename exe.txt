@@ -1,6 +1,7 @@
-# train pure Unet with gaussianalized ground truth, with KLD loss
+# train pure Unet with gaussian ground truth, with KLD loss
 CUDA_VISIBLE_DEVICES=3 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/UNet_HPara_20191102.yml > log_UNet.txt &
 CUDA_VISIBLE_DEVICES=1 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/UNet_20191113_CV0.yml &
+CUDA_VISIBLE_DEVICES=1 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/UNet_20191129_CV3.yml &
 
 # based on pretrained Unet, train Unet + SurfSegNSB modules together with standard groud truth, with L1 Loss:
 CUDA_VISIBLE_DEVICES=3 nohup python3.7 main.py -hp /home/hxie1/Projects/OCTSurfaceSegmentation/Test/SurfSegNSBNet_HPara_20191105.yml  > log_SurfSegNSBNet.txt &
