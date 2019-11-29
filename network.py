@@ -319,6 +319,30 @@ def normalize_prob(x):
     x_norm += 1e-3
     return x_norm
 
+def computeMuSigma2(x):
+    '''
+
+    :param x: in dimension(BatchSize, Width, Height), which is probability (after Softmax) along each Height direction
+    :return: mu:     mean
+             sigma2: variance
+    '''
+    N,W,H = x.size() # N is batchSize
+
+    # square probability to strengthen the big probability, and reduce variance
+    # "The rich get richer and the poor get poorer"
+    P = torch.pow(x, 2).double()
+    PColSum = torch.sum(P, dim=-1, keepdim=True).expand(P.size())
+    P = P/PColSum
+
+    # compute mu
+    Y = torch.arange(H).expand(P.size()).double()
+    mu = torch.sum(P*Y, dim=-1, keepdim=True)
+
+    # compute sigma2 (variance)
+    Mu = mu.expand(P.size())
+    sigma2 = torch.sum(P*torch.pow(Y-Mu,2), dim=-1,keepdim=True)
+
+    return mu,sigma2
 
 def gaus_fit(x, tr_flag=True):
     '''This module is designed to regress Gaussian function. Weighted version is chosen. The input tensor should
