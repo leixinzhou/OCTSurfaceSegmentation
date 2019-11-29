@@ -344,7 +344,7 @@ def computeMuSigma2(x):
     Mu = mu.expand(P.size())
     sigma2 = torch.sum(P*torch.pow(Y-Mu,2), dim=-1,keepdim=True)
 
-    return mu,sigma2
+    return mu.squeeze(dim=-1),sigma2
 
 def gaus_fit(x, tr_flag=True):
     '''This module is designed to regress Gaussian function. Weighted version is chosen. The input tensor should
