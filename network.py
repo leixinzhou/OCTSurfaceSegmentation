@@ -9,6 +9,8 @@ from torch.nn import init
 import numpy as np
 import os
 
+directMuSigma2Compute =True  # False for using Gaussian Fitting
+
 
 def conv3x3(in_channels, out_channels, stride=1,
             padding=1, bias=True):
@@ -453,21 +455,22 @@ class SurfSegNet(torch.nn.Module):
         logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)
         # print(f"logits after UNet: \n{logits.detach().cpu().numpy()}")
 
-        logits = normalize_prob(logits)  # Todo: what is the benefit of this normalize
-        # print(f"logits after Normalization:\n{logits.detach().cpu().numpy()}")
+        if directMuSigma2Compute:
+            mean, sigma2 = computeMuSigma2(logits)
+        else:
+            logits = normalize_prob(logits)  # Todo: what is the benefit of this normalize
+            # print(f"logits after Normalization:\n{logits.detach().cpu().numpy()}")
+            mean, sigma2, gaussFittingSuccess = gaus_fit(logits, tr_flag=tr_flag)
+            if not gaussFittingSuccess:
+                print(f"Gaussian Fitting failed in {patientID}")
+
         if self.pair is None:
             d_p = torch.zeros((x.size(0), x.size(-1)-1), dtype=torch.float32, requires_grad=False).cuda()
         else:
             self.pair.eval()
             d_p = self.pair(x)
-     
-        mean, sigma, gaussFittingSuccess= gaus_fit(logits, tr_flag=tr_flag)
-        if not gaussFittingSuccess:
-            print (f"Gaussian Fitting failed in {patientID}")
-        #print(f"mean: \n{mean}")
-        #print(f"sigma2:\n{sigma}")
-        #print(f"\n next patient:")
-        output = newton_sol_pd(mean, sigma, self.w_comp, d_p)
+
+        output = newton_sol_pd(mean, sigma2, self.w_comp, d_p)
 
         return output
 
@@ -498,13 +501,18 @@ class SurfSegNSBNet(torch.nn.Module):
             else:
                 raise Exception("surf nsb network is not pretrained.")
         
-    def forward(self, x):
+    def forward(self, x, patientID=None):
         # x size: (B,1,H, W)
         # unary output size: (B, H,W)
         logits = self.unary(x, logSoftmax=False).squeeze(1).permute(0, 2, 1)
         #after permute, logits size: (B, W,H)
-        logits = normalize_prob(logits)
-        mean, _ = gaus_fit(logits, tr_flag=self.training)  # return mu and sigma for predicted sofrmax output.
+        if directMuSigma2Compute:
+            mean, sigma2 = computeMuSigma2(logits)
+        else:
+            logits = normalize_prob(logits)
+            mean,sigma2, gaussFittingSuccess = gaus_fit(logits, tr_flag=self.training)  # return mu and sigma for predicted sofrmax output.
+            if not gaussFittingSuccess:
+                print(f"Gaussian Fitting failed in {patientID}")
         return mean  # size: (B, W)
 
 if __name__ == "__main__":
