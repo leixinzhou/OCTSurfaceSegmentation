@@ -1,0 +1,2769 @@
+Current network: SurfSegNSBNet
+loading unary network pretrain checkpoint: /home/hxie1/data/OCT_Beijing/netParameters/Unet20191129/CV4/model_best.pth.tar
+=> loaded unary network pretrain checkpoint (epoch 5118)
+vol_list= None
+training dataset length:992
+Epoch: 5119
+         mini batch train loss: 2.86665e+01
+         mini batch train loss: 2.01821e+01
+         mini batch train loss: 1.82859e+01
+         mini batch train loss: 1.24988e+01
+         mini batch train loss: 9.94225e+00
+         mini batch train loss: 9.41082e+00
+         mini batch train loss: 6.32386e+00
+         mini batch train loss: 6.40767e+00
+         mini batch train loss: 5.56921e+00
+         mini batch train loss: 4.93295e+00
+         mini batch train loss: 5.23607e+00
+         mini batch train loss: 4.20678e+00
+         mini batch train loss: 3.88051e+00
+         mini batch train loss: 4.16642e+00
+         mini batch train loss: 3.43903e+00
+         mini batch train loss: 3.12223e+00
+         mini batch train loss: 2.73395e+00
+         mini batch train loss: 2.62190e+00
+         mini batch train loss: 2.80842e+00
+         mini batch train loss: 2.27082e+00
+         mini batch train loss: 2.29844e+00
+     tr_loss_d: 7.57165e+00
+         mini batch val loss: 1.58951e+00
+         mini batch val loss: 2.65955e+00
+         mini batch val loss: 2.72304e+00
+         mini batch val loss: 2.24852e+00
+         mini batch val loss: 2.14255e+00
+         mini batch val loss: 2.38431e+00
+     val_loss_d: 2.29125e+00
+Epoch: 5120
+         mini batch train loss: 2.17579e+00
+         mini batch train loss: 1.81016e+00
+         mini batch train loss: 1.73509e+00
+         mini batch train loss: 1.77249e+00
+         mini batch train loss: 1.75474e+00
+         mini batch train loss: 1.79335e+00
+         mini batch train loss: 1.75506e+00
+         mini batch train loss: 1.81416e+00
+         mini batch train loss: 1.47783e+00
+         mini batch train loss: 1.57711e+00
+         mini batch train loss: 1.46490e+00
+         mini batch train loss: 1.49896e+00
+         mini batch train loss: 1.52797e+00
+         mini batch train loss: 1.43979e+00
+         mini batch train loss: 1.55518e+00
+         mini batch train loss: 1.38388e+00
+         mini batch train loss: 1.47786e+00
+         mini batch train loss: 1.39929e+00
+         mini batch train loss: 1.36378e+00
+         mini batch train loss: 1.28308e+00
+         mini batch train loss: 1.30890e+00
+     tr_loss_d: 1.58902e+00
+         mini batch val loss: 1.28206e+00
+         mini batch val loss: 1.35372e+00
+         mini batch val loss: 2.18612e+00
+         mini batch val loss: 1.38001e+00
+         mini batch val loss: 1.08091e+00
+         mini batch val loss: 1.21586e+00
+     val_loss_d: 1.41645e+00
+Epoch: 5121
+         mini batch train loss: 1.27228e+00
+         mini batch train loss: 1.27712e+00
+         mini batch train loss: 1.37785e+00
+         mini batch train loss: 1.31362e+00
+         mini batch train loss: 1.21610e+00
+         mini batch train loss: 1.35043e+00
+         mini batch train loss: 1.29419e+00
+         mini batch train loss: 1.30132e+00
+         mini batch train loss: 1.27029e+00
+         mini batch train loss: 1.20562e+00
+         mini batch train loss: 1.22106e+00
+         mini batch train loss: 1.11146e+00
+         mini batch train loss: 1.16760e+00
+         mini batch train loss: 1.29855e+00
+         mini batch train loss: 1.17326e+00
+         mini batch train loss: 1.14776e+00
+         mini batch train loss: 1.23316e+00
+         mini batch train loss: 1.10433e+00
+         mini batch train loss: 1.01179e+00
+         mini batch train loss: 1.11302e+00
+         mini batch train loss: 1.06589e+00
+     tr_loss_d: 1.21556e+00
+         mini batch val loss: 1.05234e+00
+         mini batch val loss: 9.82247e-01
+         mini batch val loss: 1.96392e+00
+         mini batch val loss: 1.11566e+00
+         mini batch val loss: 8.96475e-01
+         mini batch val loss: 9.37700e-01
+     val_loss_d: 1.15806e+00
+Epoch: 5122
+         mini batch train loss: 1.15385e+00
+         mini batch train loss: 1.07826e+00
+         mini batch train loss: 1.06681e+00
+         mini batch train loss: 9.98154e-01
+         mini batch train loss: 1.03678e+00
+         mini batch train loss: 1.11890e+00
+         mini batch train loss: 1.15758e+00
+         mini batch train loss: 1.06713e+00
+         mini batch train loss: 1.11268e+00
+         mini batch train loss: 1.04770e+00
+         mini batch train loss: 9.98015e-01
+         mini batch train loss: 1.01719e+00
+         mini batch train loss: 1.08925e+00
+         mini batch train loss: 1.16650e+00
+         mini batch train loss: 1.06230e+00
+         mini batch train loss: 1.06682e+00
+         mini batch train loss: 1.02432e+00
+         mini batch train loss: 1.09022e+00
+         mini batch train loss: 1.08803e+00
+         mini batch train loss: 1.08072e+00
+         mini batch train loss: 1.15994e+00
+     tr_loss_d: 1.08005e+00
+         mini batch val loss: 1.08017e+00
+         mini batch val loss: 9.40114e-01
+         mini batch val loss: 2.02106e+00
+         mini batch val loss: 1.02940e+00
+         mini batch val loss: 8.43539e-01
+         mini batch val loss: 9.16303e-01
+     val_loss_d: 1.13843e+00
+Epoch: 5123
+         mini batch train loss: 9.50764e-01
+         mini batch train loss: 1.13434e+00
+         mini batch train loss: 1.00908e+00
+         mini batch train loss: 1.00073e+00
+         mini batch train loss: 9.92108e-01
+         mini batch train loss: 9.94910e-01
+         mini batch train loss: 1.05501e+00
+         mini batch train loss: 9.25550e-01
+         mini batch train loss: 9.26302e-01
+         mini batch train loss: 1.10819e+00
+         mini batch train loss: 9.87577e-01
+         mini batch train loss: 1.05685e+00
+         mini batch train loss: 9.82019e-01
+         mini batch train loss: 1.00984e+00
+         mini batch train loss: 1.11026e+00
+         mini batch train loss: 9.63244e-01
+         mini batch train loss: 1.20271e+00
+         mini batch train loss: 1.05819e+00
+         mini batch train loss: 1.05964e+00
+         mini batch train loss: 9.76520e-01
+         mini batch train loss: 1.00027e+00
+     tr_loss_d: 1.02400e+00
+         mini batch val loss: 1.01883e+00
+         mini batch val loss: 9.26501e-01
+         mini batch val loss: 1.99118e+00
+         mini batch val loss: 9.53085e-01
+         mini batch val loss: 8.21714e-01
+         mini batch val loss: 8.92392e-01
+     val_loss_d: 1.10062e+00
+Epoch: 5124
+         mini batch train loss: 9.31709e-01
+         mini batch train loss: 9.56084e-01
+         mini batch train loss: 8.60223e-01
+         mini batch train loss: 8.76051e-01
+         mini batch train loss: 8.64759e-01
+         mini batch train loss: 1.08994e+00
+         mini batch train loss: 1.04606e+00
+         mini batch train loss: 1.00535e+00
+         mini batch train loss: 1.00327e+00
+         mini batch train loss: 9.76664e-01
+         mini batch train loss: 9.75447e-01
+         mini batch train loss: 1.04283e+00
+         mini batch train loss: 1.00725e+00
+         mini batch train loss: 9.65982e-01
+         mini batch train loss: 9.60839e-01
+         mini batch train loss: 1.04689e+00
+         mini batch train loss: 1.01218e+00
+         mini batch train loss: 1.03355e+00
+         mini batch train loss: 1.04241e+00
+         mini batch train loss: 9.84560e-01
+         mini batch train loss: 1.00371e+00
+     tr_loss_d: 9.85035e-01
+         mini batch val loss: 9.82262e-01
+         mini batch val loss: 9.09838e-01
+         mini batch val loss: 2.00387e+00
+         mini batch val loss: 9.08624e-01
+         mini batch val loss: 8.16159e-01
+         mini batch val loss: 8.42046e-01
+     val_loss_d: 1.07713e+00
+Epoch: 5125
+         mini batch train loss: 9.69597e-01
+         mini batch train loss: 9.65962e-01
+         mini batch train loss: 9.54399e-01
+         mini batch train loss: 9.94428e-01
+         mini batch train loss: 9.47111e-01
+         mini batch train loss: 8.46004e-01
+         mini batch train loss: 9.80714e-01
+         mini batch train loss: 9.39020e-01
+         mini batch train loss: 1.03319e+00
+         mini batch train loss: 8.85131e-01
+         mini batch train loss: 9.73851e-01Current network: SurfSegNSBNet
+loading unary network pretrain checkpoint: /home/hxie1/data/OCT_Beijing/netParameters/Unet20191129/CV5/model_best.pth.tar
+=> loaded unary network pretrain checkpoint (epoch 4960)
+vol_list= None
+training dataset length:992
+Epoch: 4961
+         mini batch train loss: 2.74552e+01
+         mini batch train loss: 2.37263e+01
+         mini batch train loss: 1.46668e+01
+         mini batch train loss: 1.21588e+01
+         mini batch train loss: 9.26550e+00
+         mini batch train loss: 8.50049e+00
+         mini batch train loss: 6.06812e+00
+         mini batch train loss: 4.93702e+00
+         mini batch train loss: 4.20605e+00
+         mini batch train loss: 4.35669e+00
+         mini batch train loss: 3.79712e+00
+         mini batch train loss: 3.83396e+00
+         mini batch train loss: 3.37735e+00
+         mini batch train loss: 3.18225e+00
+         mini batch train loss: 3.41273e+00
+         mini batch train loss: 3.08887e+00
+         mini batch train loss: 2.83326e+00
+         mini batch train loss: 2.53181e+00
+         mini batch train loss: 2.32176e+00
+         mini batch train loss: 2.21191e+00
+         mini batch train loss: 1.78773e+00
+     tr_loss_d: 7.03428e+00
+         mini batch val loss: 1.96851e+00
+         mini batch val loss: 1.52262e+00
+         mini batch val loss: 2.88452e+00
+         mini batch val loss: 1.56078e+00
+         mini batch val loss: 2.45126e+00
+         mini batch val loss: 1.23457e+00
+     val_loss_d: 1.93704e+00
+Epoch: 4962
+         mini batch train loss: 1.90153e+00
+         mini batch train loss: 1.92195e+00
+         mini batch train loss: 1.66802e+00
+         mini batch train loss: 1.67589e+00
+         mini batch train loss: 1.63496e+00
+         mini batch train loss: 1.84816e+00
+         mini batch train loss: 1.79145e+00
+         mini batch train loss: 1.44232e+00
+         mini batch train loss: 1.26956e+00
+         mini batch train loss: 1.45739e+00
+         mini batch train loss: 1.35306e+00
+         mini batch train loss: 1.35967e+00
+         mini batch train loss: 1.30665e+00
+         mini batch train loss: 1.37751e+00
+         mini batch train loss: 1.16875e+00
+         mini batch train loss: 1.25576e+00
+         mini batch train loss: 1.12940e+00
+         mini batch train loss: 1.16834e+00
+         mini batch train loss: 1.27370e+00
+         mini batch train loss: 1.33707e+00
+         mini batch train loss: 1.22493e+00
+     tr_loss_d: 1.45553e+00
+         mini batch val loss: 1.41897e+00
+         mini batch val loss: 1.29135e+00
+         mini batch val loss: 2.08162e+00
+         mini batch val loss: 9.72533e-01
+         mini batch val loss: 1.85031e+00
+         mini batch val loss: 1.68511e+00
+     val_loss_d: 1.54998e+00
+Epoch: 4963
+         mini batch train loss: 1.27803e+00
+         mini batch train loss: 1.20799e+00
+         mini batch train loss: 1.22418e+00
+         mini batch train loss: 1.15295e+00
+         mini batch train loss: 1.23342e+00
+         mini batch train loss: 1.24486e+00
+         mini batch train loss: 1.14408e+00
+         mini batch train loss: 1.05219e+00
+         mini batch train loss: 1.08735e+00
+         mini batch train loss: 1.23993e+00
+         mini batch train loss: 1.17640e+00
+         mini batch train loss: 1.16343e+00
+         mini batch train loss: 1.15656e+00
+         mini batch train loss: 1.16480e+00
+         mini batch train loss: 1.11417e+00
+         mini batch train loss: 9.82233e-01
+         mini batch train loss: 1.15061e+00
+         mini batch train loss: 1.20363e+00
+         mini batch train loss: 1.08083e+00
+         mini batch train loss: 1.17204e+00
+         mini batch train loss: 1.19082e+00
+     tr_loss_d: 1.16288e+00
+         mini batch val loss: 1.20943e+00
+         mini batch val loss: 1.10636e+00
+         mini batch val loss: 2.01655e+00
+         mini batch val loss: 8.77093e-01
+         mini batch val loss: 1.58543e+00
+         mini batch val loss: 1.38867e+00
+     val_loss_d: 1.36392e+00
+Epoch: 4964
+         mini batch train loss: 1.17268e+00
+         mini batch train loss: 1.23210e+00
+         mini batch train loss: 9.97623e-01
+         mini batch train loss: 1.17098e+00
+         mini batch train loss: 1.09062e+00
+         mini batch train loss: 1.18633e+00
+         mini batch train loss: 1.08758e+00
+         mini batch train loss: 1.04300e+00
+         mini batch train loss: 1.04220e+00
+         mini batch train loss: 1.16109e+00
+         mini batch train loss: 9.76609e-01
+         mini batch train loss: 1.05774e+00
+         mini batch train loss: 1.04392e+00
+         mini batch train loss: 9.66036e-01
+         mini batch train loss: 9.70442e-01
+         mini batch train loss: 1.01403e+00
+         mini batch train loss: 1.01725e+00
+         mini batch train loss: 1.10790e+00
+         mini batch train loss: 9.51731e-01
+         mini batch train loss: 9.17681e-01
+         mini batch train loss: 9.28395e-01
+     tr_loss_d: 1.05409e+00
+         mini batch val loss: 1.19092e+00
+         mini batch val loss: 1.12383e+00
+         mini batch val loss: 2.01240e+00
+         mini batch val loss: 8.49032e-01
+         mini batch val loss: 1.37572e+00
+         mini batch val loss: 1.23740e+00
+     val_loss_d: 1.29822e+00
+Epoch: 4965
+         mini batch train loss: 9.79062e-01
+         mini batch train loss: 8.87815e-01
+         mini batch train loss: 1.00683e+00
+         mini batch train loss: 9.11281e-01
+         mini batch train loss: 9.27846e-01
+         mini batch train loss: 1.05445e+00
+         mini batch train loss: 1.00874e+00
+         mini batch train loss: 9.44535e-01
+         mini batch train loss: 9.89359e-01
+         mini batch train loss: 1.00965e+00
+         mini batch train loss: 1.04640e+00
+         mini batch train loss: 9.51952e-01
+         mini batch train loss: 9.84498e-01
+         mini batch train loss: 9.85784e-01
+         mini batch train loss: 1.00112e+00
+         mini batch train loss: 9.83865e-01
+         mini batch train loss: 9.26628e-01
+         mini batch train loss: 9.05917e-01
+         mini batch train loss: 1.03060e+00
+         mini batch train loss: 1.01155e+00
+         mini batch train loss: 9.24465e-01
+     tr_loss_d: 9.74874e-01
+         mini batch val loss: 1.11593e+00
+         mini batch val loss: 1.07698e+00
+         mini batch val loss: 2.05913e+00
+         mini batch val loss: 8.85976e-01
+         mini batch val loss: 1.34610e+00
+         mini batch val loss: 1.12482e+00
+     val_loss_d: 1.26816e+00
+Epoch: 4966
+         mini batch train loss: 9.82446e-01
+         mini batch train loss: 9.45574e-01
+         mini batch train loss: 9.67984e-01
+         mini batch train loss: 9.38793e-01
+         mini batch train loss: 9.49520e-01
+         mini batch train loss: 9.55274e-01
+         mini batch train loss: 9.44716e-01
+         mini batch train loss: 1.00560e+00
+         mini batch train loss: 9.31107e-01
+         mini batch train loss: 9.97373e-01
+         mini batch train loss: 9.44824e-01
+         mini batch train loss: 9.97838e-01
+         mini batch train loss: 9.34391e-01
+         mini batch train loss: 9.37961e-01
+         mini batch train loss: 9.63050e-01
+         mini batch train loss: 9.34043e-01
+         mini batch train loss: 9.69142e-01
+         mini batch train loss: 9.36859e-01
+         mini batch train loss: 9.88951e-01
+         mini batch train loss: 8.74496e-01
+         mini batch train loss: 1.08800e+00
+     tr_loss_d: 9.61331e-01
+         mini batch val loss: 1.04415e+00
+         mini batch val loss: 1.10623e+00
+         mini batch val loss: 2.02148e+00
+         mini batch val loss: 8.53002e-01
+         mini batch val loss: 1.28411e+00
+         mini batch val loss: 1.02323e+00
+     val_loss_d: 1.22203e+00
+Epoch: 4967
+         mini batch train loss: 1.00829e+00
+         mini batch train loss: 9.28523e-01
+         mini batch train loss: 1.00864e+00
+         mini batch train loss: 1.01139e+00
+         mini batch train loss: 9.13890e-01
+         mini batch train loss: 8.44114e-01
+         mini batch train loss: 8.75831e-01
+         mini batch train loss: 9.75666e-01
+         mini batch train loss: 9.76561e-01
+         mini batch train loss: 8.71710e-01
+         mini batch train loss: 7.77172e-01
+         mini batch train loss: 9.62810e-01
+         mini batch train loss: 9.69543e-01
+         mini batch train loss: 1.03891e+00
+         mini batch train loss: 9.75938e-01
+         mini batch train loss: 1.00954e+00
+         mini batch train loss: 9.68763e-01
+         mini batch train loss: 1.12352e+00
+         mini batch train loss: 8.51121e-01
+         mini batch train loss: 1.00092e+00
+         mini batch train loss: 1.02253e+00
+     tr_loss_d: 9.72048e-01
+         mini batch val loss: 9.47284e-01
+         mini batch val loss: 9.02973e-01
+         mini batch val loss: 2.00578e+00
+         mini batch val loss: 9.00448e-01
+         mini batch val loss: 8.37619e-01
+         mini batch val loss: 8.32051e-01
+     val_loss_d: 1.07103e+00
+Epoch: 5126
+         mini batch train loss: 9.39323e-01
+         mini batch train loss: 1.13460e+00
+         mini batch train loss: 1.00264e+00
+         mini batch train loss: 9.08143e-01
+         mini batch train loss: 1.01757e+00
+         mini batch train loss: 9.11283e-01
+         mini batch train loss: 1.08854e+00
+         mini batch train loss: 9.85319e-01
+         mini batch train loss: 1.02799e+00
+         mini batch train loss: 9.82364e-01
+         mini batch train loss: 9.39976e-01
+         mini batch train loss: 9.26955e-01
+         mini batch train loss: 9.82958e-01
+         mini batch train loss: 9.57411e-01
+         mini batch train loss: 9.48934e-01
+         mini batch train loss: 9.46852e-01
+         mini batch train loss: 1.04218e+00
+         mini batch train loss: 9.12447e-01
+         mini batch train loss: 9.56769e-01
+         mini batch train loss: 9.44308e-01
+         mini batch train loss: 9.10114e-01
+     tr_loss_d: 9.74604e-01
+         mini batch val loss: 9.45107e-01
+         mini batch val loss: 8.89057e-01
+         mini batch val loss: 2.03418e+00
+         mini batch val loss: 8.96097e-01
+         mini batch val loss: 8.02831e-01
+         mini batch val loss: 8.03742e-01
+     val_loss_d: 1.06184e+00
+Epoch: 5127
+         mini batch train loss: 9.29926e-01
+         mini batch train loss: 9.45357e-01
+         mini batch train loss: 1.00344e+00
+         mini batch train loss: 8.88213e-01
+         mini batch train loss: 9.52672e-01
+         mini batch train loss: 9.05185e-01
+         mini batch train loss: 1.03652e+00
+         mini batch train loss: 8.89410e-01
+         mini batch train loss: 9.03506e-01
+         mini batch train loss: 8.63819e-01
+         mini batch train loss: 9.45538e-01
+         mini batch train loss: 8.84750e-01
+         mini batch train loss: 9.04721e-01
+         mini batch train loss: 9.58329e-01
+         mini batch train loss: 8.86872e-01
+         mini batch train loss: 9.52929e-01
+         mini batch train loss: 8.75833e-01
+         mini batch train loss: 9.43433e-01
+         mini batch train loss: 1.06631e+00
+         mini batch train loss: 8.89505e-01
+         mini batch train loss: 9.05652e-01
+     tr_loss_d: 9.30091e-01
+         mini batch val loss: 9.96551e-01
+         mini batch val loss: 9.11783e-01
+         mini batch val loss: 1.98155e+00
+         mini batch val loss: 9.13928e-01
+         mini batch val loss: 8.15219e-01
+         mini batch val loss: 8.37468e-01
+     val_loss_d: 1.07608e+00
+Epoch: 5128
+         mini batch train loss: 9.54483e-01
+         mini batch train loss: 8.69334e-01
+         mini batch train loss: 9.65237e-01
+         mini batch train loss: 1.06588e+00
+         mini batch train loss: 8.72745e-01
+         mini batch train loss: 9.67795e-01
+         mini batch train loss: 8.98572e-01
+         mini batch train loss: 9.62113e-01
+         mini batch train loss: 9.48099e-01
+         mini batch train loss: 9.90997e-01
+         mini batch train loss: 9.05312e-01
+         mini batch train loss: 9.15435e-01
+         mini batch train loss: 9.87429e-01
+         mini batch train loss: 9.36142e-01
+         mini batch train loss: 9.64582e-01
+         mini batch train loss: 9.83449e-01
+         mini batch train loss: 9.28963e-01
+         mini batch train loss: 1.02436e+00
+         mini batch train loss: 9.69256e-01
+         mini batch train loss: 1.04884e+00
+         mini batch train loss: 9.29323e-01
+     tr_loss_d: 9.56588e-01
+         mini batch val loss: 9.46122e-01
+         mini batch val loss: 9.12259e-01
+         mini batch val loss: 1.86739e+00
+         mini batch val loss: 8.70166e-01
+         mini batch val loss: 7.78786e-01
+         mini batch val loss: 8.23831e-01
+     val_loss_d: 1.03309e+00
+Epoch: 5129
+         mini batch train loss: 9.01086e-01
+         mini batch train loss: 8.67029e-01
+         mini batch train loss: 9.24394e-01
+         mini batch train loss: 9.70623e-01
+         mini batch train loss: 1.00811e+00
+         mini batch train loss: 9.97246e-01
+         mini batch train loss: 8.75353e-01
+         mini batch train loss: 1.02303e+00
+         mini batch train loss: 9.54090e-01
+         mini batch train loss: 8.92663e-01
+         mini batch train loss: 8.89868e-01
+         mini batch train loss: 9.45953e-01
+         mini batch train loss: 9.47669e-01
+         mini batch train loss: 8.80579e-01
+         mini batch train loss: 8.57299e-01
+         mini batch train loss: 9.06876e-01
+         mini batch train loss: 8.35533e-01
+         mini batch train loss: 9.76615e-01
+         mini batch train loss: 9.40144e-01
+         mini batch train loss: 9.56673e-01
+         mini batch train loss: 1.00113e+00
+     tr_loss_d: 9.31046e-01
+         mini batch val loss: 9.46401e-01
+         mini batch val loss: 8.74740e-01
+         mini batch val loss: 2.06901e+00
+         mini batch val loss: 8.73966e-01
+         mini batch val loss: 7.84820e-01
+         mini batch val loss: 8.04820e-01
+     val_loss_d: 1.05896e+00
+Epoch: 5130
+         mini batch train loss: 8.77913e-01
+         mini batch train loss: 8.62719e-01
+         mini batch train loss: 9.36729e-01
+         mini batch train loss: 8.15873e-01
+         mini batch train loss: 9.14331e-01
+         mini batch train loss: 8.71686e-01
+         mini batch train loss: 8.60443e-01
+         mini batch train loss: 8.97431e-01
+         mini batch train loss: 9.22042e-01
+         mini batch train loss: 9.53944e-01
+         mini batch train loss: 1.00989e+00
+         mini batch train loss: 8.99572e-01
+         mini batch train loss: 9.55432e-01
+         mini batch train loss: 8.85758e-01
+         mini batch train loss: 9.46553e-01
+         mini batch train loss: 9.37877e-01
+         mini batch train loss: 9.66670e-01
+         mini batch train loss: 9.14144e-01
+         mini batch train loss: 9.28573e-01
+         mini batch train loss: 9.03998e-01
+         mini batch train loss: 9.60056e-01
+     tr_loss_d: 9.15316e-01
+         mini batch val loss: 9.37701e-01
+         mini batch val loss: 8.79764e-01
+         mini batch val loss: 1.97391e+00
+         mini batch val loss: 8.77276e-01
+         mini batch val loss: 7.76982e-01
+         mini batch val loss: 8.15606e-01
+     val_loss_d: 1.04354e+00
+Epoch: 5131
+         mini batch train loss: 8.67908e-01
+         mini batch train loss: 8.11051e-01
+         mini batch train loss: 9.99159e-01
+         mini batch train loss: 8.75507e-01
+         mini batch train loss: 9.55580e-01
+         mini batch train loss: 9.10094e-01
+         mini batch train loss: 8.62556e-01
+         mini batch train loss: 9.39944e-01
+         mini batch train loss: 9.01058e-01
+         mini batch train loss: 8.81809e-01
+         mini batch train loss: 8.66638e-01
+         mini batch train loss: 8.76745e-01
+         mini batch train loss: 8.77197e-01
+         mini batch train loss: 9.95204e-01
+         mini batch train loss: 8.46831e-01
+         mini batch train loss: 1.00356e+00
+         mini batch train loss: 9.29562e-01
+         mini batch train loss: 8.82418e-01
+         mini batch train loss: 9.08812e-01
+         mini batch train loss: 8.80551e-01
+         mini batch train loss: 9.31143e-01
+     tr_loss_d: 9.04920e-01
+         mini batch val loss: 9.06714e-01
+         mini batch val loss: 8.53720e-01
+         mini batch val loss: 2.13792e+00
+         mini batch val loss: 8.76010e-01
+         mini batch val loss: 8.28846e-01
+         mini batch val loss: 7.89719e-01
+     val_loss_d: 1.06549e+00
+         mini batch train loss: 8.65547e-01
+         mini batch train loss: 8.78031e-01
+         mini batch train loss: 1.01909e+00
+         mini batch train loss: 9.94826e-01
+         mini batch train loss: 8.90176e-01
+         mini batch train loss: 8.65206e-01
+         mini batch train loss: 8.96255e-01
+         mini batch train loss: 9.95262e-01
+         mini batch train loss: 9.92876e-01
+         mini batch train loss: 9.81310e-01
+     tr_loss_d: 9.31922e-01
+         mini batch val loss: 1.05364e+00
+         mini batch val loss: 1.09585e+00
+         mini batch val loss: 2.07085e+00
+         mini batch val loss: 8.31371e-01
+         mini batch val loss: 1.21789e+00
+         mini batch val loss: 1.00330e+00
+     val_loss_d: 1.21215e+00
+Epoch: 4968
+         mini batch train loss: 9.62465e-01
+         mini batch train loss: 9.11034e-01
+         mini batch train loss: 8.82049e-01
+         mini batch train loss: 9.35513e-01
+         mini batch train loss: 9.72948e-01
+         mini batch train loss: 9.61621e-01
+         mini batch train loss: 9.91210e-01
+         mini batch train loss: 1.03628e+00
+         mini batch train loss: 1.00903e+00
+         mini batch train loss: 9.16171e-01
+         mini batch train loss: 1.01952e+00
+         mini batch train loss: 9.19853e-01
+         mini batch train loss: 9.44448e-01
+         mini batch train loss: 8.89329e-01
+         mini batch train loss: 9.81290e-01
+         mini batch train loss: 9.28348e-01
+         mini batch train loss: 8.77327e-01
+         mini batch train loss: 9.62823e-01
+         mini batch train loss: 9.51478e-01
+         mini batch train loss: 8.99503e-01
+         mini batch train loss: 8.40705e-01
+     tr_loss_d: 9.42521e-01
+         mini batch val loss: 9.77676e-01
+         mini batch val loss: 1.10753e+00
+         mini batch val loss: 2.06133e+00
+         mini batch val loss: 8.74898e-01
+         mini batch val loss: 1.25071e+00
+         mini batch val loss: 9.35094e-01
+     val_loss_d: 1.20121e+00
+Epoch: 4969
+         mini batch train loss: 9.40464e-01
+         mini batch train loss: 9.77597e-01
+         mini batch train loss: 8.96807e-01
+         mini batch train loss: 9.11264e-01
+         mini batch train loss: 9.56914e-01
+         mini batch train loss: 9.35211e-01
+         mini batch train loss: 9.12969e-01
+         mini batch train loss: 9.31434e-01
+         mini batch train loss: 9.02095e-01
+         mini batch train loss: 8.78875e-01
+         mini batch train loss: 8.55924e-01
+         mini batch train loss: 9.21418e-01
+         mini batch train loss: 8.89698e-01
+         mini batch train loss: 9.36524e-01
+         mini batch train loss: 9.39369e-01
+         mini batch train loss: 9.54883e-01
+         mini batch train loss: 8.78249e-01
+         mini batch train loss: 8.84799e-01
+         mini batch train loss: 8.70453e-01
+         mini batch train loss: 8.59382e-01
+         mini batch train loss: 9.89270e-01
+     tr_loss_d: 9.15410e-01
+         mini batch val loss: 9.45434e-01
+         mini batch val loss: 1.02527e+00
+         mini batch val loss: 2.00634e+00
+         mini batch val loss: 8.59060e-01
+         mini batch val loss: 1.23448e+00
+         mini batch val loss: 1.06123e+00
+     val_loss_d: 1.18864e+00
+Epoch: 4970
+         mini batch train loss: 8.86584e-01
+         mini batch train loss: 9.11920e-01
+         mini batch train loss: 8.93331e-01
+         mini batch train loss: 9.91916e-01
+         mini batch train loss: 9.22043e-01
+         mini batch train loss: 1.03229e+00
+         mini batch train loss: 8.25769e-01
+         mini batch train loss: 1.04884e+00
+         mini batch train loss: 9.65157e-01
+         mini batch train loss: 1.00858e+00
+         mini batch train loss: 9.41442e-01
+         mini batch train loss: 1.10266e+00
+         mini batch train loss: 8.85573e-01
+         mini batch train loss: 8.55600e-01
+         mini batch train loss: 9.14043e-01
+         mini batch train loss: 8.70610e-01
+         mini batch train loss: 9.06397e-01
+         mini batch train loss: 8.80079e-01
+         mini batch train loss: 9.27481e-01
+         mini batch train loss: 9.59021e-01
+         mini batch train loss: 8.47458e-01
+     tr_loss_d: 9.32229e-01
+         mini batch val loss: 1.10198e+00
+         mini batch val loss: 1.25981e+00
+         mini batch val loss: 2.20207e+00
+         mini batch val loss: 9.29724e-01
+         mini batch val loss: 1.24749e+00
+         mini batch val loss: 1.05441e+00
+     val_loss_d: 1.29925e+00
+Epoch: 4971
+         mini batch train loss: 1.07543e+00
+         mini batch train loss: 8.78514e-01
+         mini batch train loss: 9.10542e-01
+         mini batch train loss: 8.99905e-01
+         mini batch train loss: 9.51021e-01
+         mini batch train loss: 9.66083e-01
+         mini batch train loss: 8.42613e-01
+         mini batch train loss: 8.66318e-01
+         mini batch train loss: 9.03097e-01
+         mini batch train loss: 9.11862e-01
+         mini batch train loss: 9.08234e-01
+         mini batch train loss: 7.99351e-01
+         mini batch train loss: 9.14934e-01
+         mini batch train loss: 8.30663e-01
+         mini batch train loss: 9.22109e-01
+         mini batch train loss: 9.71071e-01
+         mini batch train loss: 9.38531e-01
+         mini batch train loss: 9.64695e-01
+         mini batch train loss: 8.93454e-01
+         mini batch train loss: 8.65636e-01
+         mini batch train loss: 9.35585e-01
+     tr_loss_d: 9.11888e-01
+         mini batch val loss: 1.00605e+00
+         mini batch val loss: 1.07481e+00
+         mini batch val loss: 2.03948e+00
+         mini batch val loss: 8.20980e-01
+         mini batch val loss: 1.12222e+00
+         mini batch val loss: 1.07535e+00
+     val_loss_d: 1.18982e+00
+Epoch: 4972
+         mini batch train loss: 9.39928e-01
+         mini batch train loss: 9.53643e-01
+         mini batch train loss: 9.25378e-01
+         mini batch train loss: 9.52149e-01
+         mini batch train loss: 9.37487e-01
+         mini batch train loss: 8.68431e-01
+         mini batch train loss: 8.40439e-01
+         mini batch train loss: 9.22290e-01
+         mini batch train loss: 9.33074e-01
+         mini batch train loss: 8.44400e-01
+         mini batch train loss: 9.59143e-01
+         mini batch train loss: 9.68986e-01
+         mini batch train loss: 8.55736e-01
+         mini batch train loss: 8.34780e-01
+         mini batch train loss: 9.05341e-01
+         mini batch train loss: 9.21767e-01
+         mini batch train loss: 9.20029e-01
+         mini batch train loss: 9.59436e-01
+         mini batch train loss: 9.06764e-01
+         mini batch train loss: 8.81411e-01
+         mini batch train loss: 8.05957e-01
+     tr_loss_d: 9.06503e-01
+         mini batch val loss: 9.81751e-01
+         mini batch val loss: 1.08984e+00
+         mini batch val loss: 2.03057e+00
+         mini batch val loss: 8.28308e-01
+         mini batch val loss: 1.08478e+00
+         mini batch val loss: 1.00412e+00
+     val_loss_d: 1.16989e+00
+Epoch: 4973
+         mini batch train loss: 8.51703e-01
+         mini batch train loss: 9.15951e-01
+         mini batch train loss: 8.23769e-01
+         mini batch train loss: 9.02360e-01
+         mini batch train loss: 8.80266e-01
+         mini batch train loss: 9.23016e-01
+         mini batch train loss: 9.50001e-01
+         mini batch train loss: 9.61883e-01
+         mini batch train loss: 8.59584e-01
+         mini batch train loss: 1.02371e+00
+         mini batch train loss: 1.05971e+00
+         mini batch train loss: 1.12593e+00
+         mini batch train loss: 9.25768e-01
+         mini batch train loss: 9.42987e-01
+         mini batch train loss: 1.08146e+00
+         mini batch train loss: 8.95976e-01
+         mini batch train loss: 9.41409e-01
+         mini batch train loss: 1.13660e+00
+         mini batch train loss: 9.25765e-01
+         mini batch train loss: 1.03260e+00
+         mini batch train loss: 1.07338e+00
+     tr_loss_d: 9.63516e-01
+         mini batch val loss: 9.02694e-01
+         mini batch val loss: 1.03218e+00
+         mini batch val loss: 1.98942e+00
+         mini batch val loss: 8.09766e-01
+         mini batch val loss: 1.18211e+00
+         mini batch val loss: 9.54037e-01
+     val_loss_d: 1.14503e+00
+Epoch: 5132
+         mini batch train loss: 9.79335e-01
+         mini batch train loss: 8.41017e-01
+         mini batch train loss: 9.91265e-01
+         mini batch train loss: 9.30882e-01
+         mini batch train loss: 9.25101e-01
+         mini batch train loss: 8.64174e-01
+         mini batch train loss: 8.71136e-01
+         mini batch train loss: 9.48428e-01
+         mini batch train loss: 9.21577e-01
+         mini batch train loss: 1.05107e+00
+         mini batch train loss: 8.88360e-01
+         mini batch train loss: 9.05686e-01
+         mini batch train loss: 8.67785e-01
+         mini batch train loss: 9.40119e-01
+         mini batch train loss: 9.17814e-01
+         mini batch train loss: 8.22932e-01
+         mini batch train loss: 9.61172e-01
+         mini batch train loss: 8.67101e-01
+         mini batch train loss: 9.38084e-01
+         mini batch train loss: 7.90640e-01
+         mini batch train loss: 8.88827e-01
+     tr_loss_d: 9.10119e-01
+         mini batch val loss: 9.41784e-01
+         mini batch val loss: 8.57540e-01
+         mini batch val loss: 1.97532e+00
+         mini batch val loss: 8.47929e-01
+         mini batch val loss: 7.73555e-01
+         mini batch val loss: 8.35788e-01
+     val_loss_d: 1.03865e+00
+Epoch: 5133
+         mini batch train loss: 8.08498e-01
+         mini batch train loss: 9.20765e-01
+         mini batch train loss: 9.66917e-01
+         mini batch train loss: 8.96993e-01
+         mini batch train loss: 9.25642e-01
+         mini batch train loss: 9.07118e-01
+         mini batch train loss: 9.39985e-01
+         mini batch train loss: 9.22728e-01
+         mini batch train loss: 8.31897e-01
+         mini batch train loss: 8.23088e-01
+         mini batch train loss: 8.93995e-01
+         mini batch train loss: 8.54222e-01
+         mini batch train loss: 8.89408e-01
+         mini batch train loss: 8.60059e-01
+         mini batch train loss: 8.31984e-01
+         mini batch train loss: 9.07490e-01
+         mini batch train loss: 9.14185e-01
+         mini batch train loss: 9.09508e-01
+         mini batch train loss: 9.69241e-01
+         mini batch train loss: 9.05583e-01
+         mini batch train loss: 9.16469e-01
+     tr_loss_d: 8.95037e-01
+         mini batch val loss: 8.83313e-01
+         mini batch val loss: 8.51556e-01
+         mini batch val loss: 2.10203e+00
+         mini batch val loss: 8.56592e-01
+         mini batch val loss: 7.89808e-01
+         mini batch val loss: 7.87670e-01
+     val_loss_d: 1.04516e+00
+Epoch: 5134
+         mini batch train loss: 7.93485e-01
+         mini batch train loss: 8.75261e-01
+         mini batch train loss: 9.03653e-01
+         mini batch train loss: 9.07174e-01
+         mini batch train loss: 9.43695e-01
+         mini batch train loss: 8.86812e-01
+         mini batch train loss: 9.29733e-01
+         mini batch train loss: 8.53974e-01
+         mini batch train loss: 9.38296e-01
+         mini batch train loss: 9.31166e-01
+         mini batch train loss: 8.72057e-01
+         mini batch train loss: 9.90088e-01
+         mini batch train loss: 8.89573e-01
+         mini batch train loss: 1.08794e+00
+         mini batch train loss: 8.78556e-01
+         mini batch train loss: 9.07522e-01
+         mini batch train loss: 8.59617e-01
+         mini batch train loss: 9.11417e-01
+         mini batch train loss: 9.14030e-01
+         mini batch train loss: 8.16360e-01
+         mini batch train loss: 1.04853e+00
+     tr_loss_d: 9.11378e-01
+         mini batch val loss: 9.43631e-01
+         mini batch val loss: 8.65513e-01
+         mini batch val loss: 1.99355e+00
+         mini batch val loss: 9.04818e-01
+         mini batch val loss: 8.05804e-01
+         mini batch val loss: 8.40184e-01
+     val_loss_d: 1.05892e+00
+Epoch: 5135
+         mini batch train loss: 9.84753e-01
+         mini batch train loss: 8.52290e-01
+         mini batch train loss: 9.12380e-01
+         mini batch train loss: 9.41884e-01
+         mini batch train loss: 8.60859e-01
+         mini batch train loss: 9.50556e-01
+         mini batch train loss: 1.07440e+00
+         mini batch train loss: 8.72898e-01
+         mini batch train loss: 9.15181e-01
+         mini batch train loss: 9.16995e-01
+         mini batch train loss: 1.00043e+00
+         mini batch train loss: 8.39861e-01
+         mini batch train loss: 9.03855e-01
+         mini batch train loss: 8.98085e-01
+         mini batch train loss: 9.29125e-01
+         mini batch train loss: 9.38019e-01
+         mini batch train loss: 8.32642e-01
+         mini batch train loss: 9.07412e-01
+         mini batch train loss: 8.92735e-01
+         mini batch train loss: 9.48617e-01
+         mini batch train loss: 9.71171e-01
+     tr_loss_d: 9.21150e-01
+         mini batch val loss: 9.07040e-01
+         mini batch val loss: 8.85202e-01
+         mini batch val loss: 2.27118e+00
+         mini batch val loss: 8.63868e-01
+         mini batch val loss: 7.78606e-01
+         mini batch val loss: 8.28081e-01
+     val_loss_d: 1.08900e+00
+Epoch: 5136
+         mini batch train loss: 8.74288e-01
+         mini batch train loss: 8.92632e-01
+         mini batch train loss: 1.00491e+00
+         mini batch train loss: 1.06868e+00
+         mini batch train loss: 8.56325e-01
+         mini batch train loss: 8.54626e-01
+         mini batch train loss: 9.78860e-01
+         mini batch train loss: 7.96172e-01
+         mini batch train loss: 9.06471e-01
+         mini batch train loss: 9.04751e-01
+         mini batch train loss: 8.55946e-01
+         mini batch train loss: 9.82498e-01
+         mini batch train loss: 8.71609e-01
+         mini batch train loss: 9.38256e-01
+         mini batch train loss: 9.65687e-01
+         mini batch train loss: 8.54872e-01
+         mini batch train loss: 8.87452e-01
+         mini batch train loss: 9.06962e-01
+         mini batch train loss: 8.90359e-01
+         mini batch train loss: 8.86881e-01
+         mini batch train loss: 8.60450e-01
+     tr_loss_d: 9.06604e-01
+         mini batch val loss: 9.09987e-01
+         mini batch val loss: 8.60738e-01
+         mini batch val loss: 2.02222e+00
+         mini batch val loss: 8.62155e-01
+         mini batch val loss: 7.61470e-01
+         mini batch val loss: 7.79013e-01
+     val_loss_d: 1.03260e+00
+Epoch: 5137
+         mini batch train loss: 9.30590e-01
+         mini batch train loss: 8.54521e-01
+         mini batch train loss: 9.51503e-01
+         mini batch train loss: 9.63809e-01
+         mini batch train loss: 9.22064e-01
+         mini batch train loss: 9.17050e-01
+         mini batch train loss: 8.99270e-01
+         mini batch train loss: 8.82873e-01
+         mini batch train loss: 8.33485e-01
+         mini batch train loss: 9.31906e-01
+         mini batch train loss: 9.01093e-01
+         mini batch train loss: 9.12546e-01
+         mini batch train loss: 8.73023e-01
+         mini batch train loss: 8.98905e-01
+         mini batch train loss: 8.77125e-01
+         mini batch train loss: 8.23319e-01
+         mini batch train loss: 9.22264e-01
+         mini batch train loss: 8.82206e-01
+         mini batch train loss: 8.97341e-01
+         mini batch train loss: 8.21666e-01
+         mini batch train loss: 9.44802e-01
+     tr_loss_d: 8.97208e-01
+         mini batch val loss: 8.84355e-01
+         mini batch val loss: 8.40088e-01
+         mini batch val loss: 1.94052e+00
+         mini batch val loss: 8.37475e-01
+         mini batch val loss: 7.62380e-01
+         mini batch val loss: 7.64058e-01
+     val_loss_d: 1.00481e+00
+Epoch: 5138
+         mini batch train loss: 8.43197e-01
+         mini batch train loss: 8.96160e-01
+         mini batch train loss: 8.61268e-01
+         mini batch train loss: 8.91316e-01
+         mini batch train loss: 8.21700e-01
+         mini batch train loss: 8.69611e-01
+         mini batch train loss: 9.36153e-01
+         mini batch train loss: 9.45801e-01
+         mini batch train loss: 7.75745e-01
+         mini batch train loss: 9.34489e-01
+         mini batch train loss: 9.72156e-01
+         mini batch train loss: 9.29599e-01
+         mini batch train loss: 8.60408e-01
+         mini batch train loss: 8.98525e-01
+         mini batch train loss: 8.50190e-01
+         mini batch train loss: 8.10190e-01
+         mini batch train loss: 8.41542e-01
+Epoch: 4974
+         mini batch train loss: 9.20259e-01
+         mini batch train loss: 1.06969e+00
+         mini batch train loss: 8.99974e-01
+         mini batch train loss: 9.16919e-01
+         mini batch train loss: 1.04713e+00
+         mini batch train loss: 8.85446e-01
+         mini batch train loss: 8.80842e-01
+         mini batch train loss: 9.51425e-01
+         mini batch train loss: 9.05993e-01
+         mini batch train loss: 8.95207e-01
+         mini batch train loss: 8.55752e-01
+         mini batch train loss: 8.96841e-01
+         mini batch train loss: 8.22625e-01
+         mini batch train loss: 8.31220e-01
+         mini batch train loss: 9.74477e-01
+         mini batch train loss: 8.69334e-01
+         mini batch train loss: 9.00210e-01
+         mini batch train loss: 8.68563e-01
+         mini batch train loss: 9.15039e-01
+         mini batch train loss: 8.64120e-01
+         mini batch train loss: 9.46165e-01
+     tr_loss_d: 9.10344e-01
+         mini batch val loss: 9.73055e-01
+         mini batch val loss: 1.08384e+00
+         mini batch val loss: 2.03017e+00
+         mini batch val loss: 8.13910e-01
+         mini batch val loss: 1.08300e+00
+         mini batch val loss: 9.75764e-01
+     val_loss_d: 1.15996e+00
+Epoch: 4975
+         mini batch train loss: 8.27218e-01
+         mini batch train loss: 8.50709e-01
+         mini batch train loss: 8.31439e-01
+         mini batch train loss: 9.52169e-01
+         mini batch train loss: 8.45942e-01
+         mini batch train loss: 8.02592e-01
+         mini batch train loss: 9.27082e-01
+         mini batch train loss: 8.78276e-01
+         mini batch train loss: 8.33876e-01
+         mini batch train loss: 9.37379e-01
+         mini batch train loss: 8.22286e-01
+         mini batch train loss: 8.53151e-01
+         mini batch train loss: 8.45746e-01
+         mini batch train loss: 9.24503e-01
+         mini batch train loss: 9.09248e-01
+         mini batch train loss: 9.21555e-01
+         mini batch train loss: 9.88261e-01
+         mini batch train loss: 8.33097e-01
+         mini batch train loss: 8.57567e-01
+         mini batch train loss: 9.13402e-01
+         mini batch train loss: 9.25633e-01
+     tr_loss_d: 8.80054e-01
+         mini batch val loss: 9.72835e-01
+         mini batch val loss: 1.11750e+00
+         mini batch val loss: 2.08845e+00
+         mini batch val loss: 8.43350e-01
+         mini batch val loss: 1.11390e+00
+         mini batch val loss: 1.00479e+00
+     val_loss_d: 1.19014e+00
+Epoch: 4976
+         mini batch train loss: 8.53126e-01
+         mini batch train loss: 8.73646e-01
+         mini batch train loss: 9.43704e-01
+         mini batch train loss: 8.37428e-01
+         mini batch train loss: 7.63192e-01
+         mini batch train loss: 9.08723e-01
+         mini batch train loss: 8.80103e-01
+         mini batch train loss: 8.88236e-01
+         mini batch train loss: 9.00436e-01
+         mini batch train loss: 8.64309e-01
+         mini batch train loss: 8.16581e-01
+         mini batch train loss: 8.99327e-01
+         mini batch train loss: 1.02202e+00
+         mini batch train loss: 8.05874e-01
+         mini batch train loss: 8.87572e-01
+         mini batch train loss: 9.59744e-01
+         mini batch train loss: 8.95624e-01
+         mini batch train loss: 9.53071e-01
+         mini batch train loss: 8.48482e-01
+         mini batch train loss: 9.15591e-01
+         mini batch train loss: 9.07590e-01
+     tr_loss_d: 8.86875e-01
+         mini batch val loss: 9.19023e-01
+         mini batch val loss: 1.01543e+00
+         mini batch val loss: 1.99911e+00
+         mini batch val loss: 8.16927e-01
+         mini batch val loss: 1.10668e+00
+         mini batch val loss: 9.34862e-01
+     val_loss_d: 1.13201e+00
+Epoch: 4977
+         mini batch train loss: 9.06401e-01
+         mini batch train loss: 8.88066e-01
+         mini batch train loss: 8.14259e-01
+         mini batch train loss: 8.83931e-01
+         mini batch train loss: 8.45672e-01
+         mini batch train loss: 8.62528e-01
+         mini batch train loss: 8.70516e-01
+         mini batch train loss: 8.35733e-01
+         mini batch train loss: 8.88614e-01
+         mini batch train loss: 9.05106e-01
+         mini batch train loss: 7.92944e-01
+         mini batch train loss: 9.29001e-01
+         mini batch train loss: 9.39383e-01
+         mini batch train loss: 8.38892e-01
+         mini batch train loss: 8.68401e-01
+         mini batch train loss: 8.09670e-01
+         mini batch train loss: 8.61286e-01
+         mini batch train loss: 9.12555e-01
+         mini batch train loss: 9.18367e-01
+         mini batch train loss: 8.89439e-01
+         mini batch train loss: 8.46597e-01
+     tr_loss_d: 8.71779e-01
+         mini batch val loss: 9.42456e-01
+         mini batch val loss: 1.03655e+00
+         mini batch val loss: 2.00250e+00
+         mini batch val loss: 8.45330e-01
+         mini batch val loss: 1.09000e+00
+         mini batch val loss: 9.61134e-01
+     val_loss_d: 1.14633e+00
+Epoch: 4978
+         mini batch train loss: 8.30618e-01
+         mini batch train loss: 9.05795e-01
+         mini batch train loss: 8.49539e-01
+         mini batch train loss: 8.70684e-01
+         mini batch train loss: 8.40903e-01
+         mini batch train loss: 8.21434e-01
+         mini batch train loss: 8.71652e-01
+         mini batch train loss: 8.29431e-01
+         mini batch train loss: 8.74925e-01
+         mini batch train loss: 8.41397e-01
+         mini batch train loss: 8.76981e-01
+         mini batch train loss: 8.47787e-01
+         mini batch train loss: 8.70205e-01
+         mini batch train loss: 7.83537e-01
+         mini batch train loss: 8.17827e-01
+         mini batch train loss: 8.96461e-01
+         mini batch train loss: 8.29239e-01
+         mini batch train loss: 9.35909e-01
+         mini batch train loss: 9.43041e-01
+         mini batch train loss: 8.87891e-01
+         mini batch train loss: 8.31681e-01
+     tr_loss_d: 8.59854e-01
+         mini batch val loss: 9.40084e-01
+         mini batch val loss: 1.05788e+00
+         mini batch val loss: 2.02618e+00
+         mini batch val loss: 8.37080e-01
+         mini batch val loss: 1.06549e+00
+         mini batch val loss: 9.17108e-01
+     val_loss_d: 1.14064e+00
+Epoch: 4979
+         mini batch train loss: 8.57775e-01
+         mini batch train loss: 8.59600e-01
+         mini batch train loss: 9.93797e-01
+         mini batch train loss: 8.27877e-01
+         mini batch train loss: 9.41484e-01
+         mini batch train loss: 8.21263e-01
+         mini batch train loss: 8.07718e-01
+         mini batch train loss: 8.48889e-01
+         mini batch train loss: 8.95370e-01
+         mini batch train loss: 8.31618e-01
+         mini batch train loss: 8.62660e-01
+         mini batch train loss: 7.87426e-01
+         mini batch train loss: 8.57754e-01
+         mini batch train loss: 7.89019e-01
+         mini batch train loss: 8.39272e-01
+         mini batch train loss: 8.66976e-01
+         mini batch train loss: 8.40755e-01
+         mini batch train loss: 8.63070e-01
+         mini batch train loss: 8.31064e-01
+         mini batch train loss: 8.81230e-01
+         mini batch train loss: 9.25069e-01
+     tr_loss_d: 8.58556e-01
+         mini batch val loss: 9.13350e-01
+         mini batch val loss: 1.07604e+00
+         mini batch val loss: 2.02001e+00
+         mini batch val loss: 8.33804e-01
+         mini batch val loss: 1.02414e+00
+         mini batch val loss: 9.55299e-01
+     val_loss_d: 1.13711e+00
+Epoch: 4980
+         mini batch train loss: 7.96176e-01
+         mini batch train loss: 8.51345e-01
+         mini batch train loss: 8.03503e-01
+         mini batch train loss: 8.25023e-01
+         mini batch train loss: 9.18405e-01
+         mini batch train loss: 7.82457e-01
+         mini batch train loss: 8.22546e-01
+         mini batch train loss: 8.38697e-01
+         mini batch train loss: 7.71999e-01
+         mini batch train loss: 9.09047e-01
+         mini batch train loss: 8.95479e-01
+         mini batch train loss: 9.22376e-01
+         mini batch train loss: 8.77283e-01
+         mini batch train loss: 8.89028e-01
+         mini batch train loss: 7.86689e-01
+         mini batch train loss: 9.15444e-01
+         mini batch train loss: 8.36255e-01
+         mini batch train loss: 9.00585e-01
+         mini batch train loss: 1.01435e+00
+         mini batch train loss: 8.32985e-01
+         mini batch train loss: 9.96373e-01
+     tr_loss_d: 8.89635e-01
+         mini batch val loss: 9.10902e-01
+         mini batch val loss: 8.57794e-01
+         mini batch val loss: 1.81435e+00
+         mini batch val loss: 8.40102e-01
+         mini batch val loss: 7.51469e-01
+         mini batch val loss: 8.13052e-01
+     val_loss_d: 9.97944e-01
+Epoch: 5139
+         mini batch train loss: 8.15323e-01
+         mini batch train loss: 9.49320e-01
+         mini batch train loss: 8.40707e-01
+         mini batch train loss: 8.56141e-01
+         mini batch train loss: 8.60968e-01
+         mini batch train loss: 9.43558e-01
+         mini batch train loss: 8.41000e-01
+         mini batch train loss: 9.29853e-01
+         mini batch train loss: 8.93874e-01
+         mini batch train loss: 9.04525e-01
+         mini batch train loss: 8.74517e-01
+         mini batch train loss: 9.57807e-01
+         mini batch train loss: 8.87040e-01
+         mini batch train loss: 8.33748e-01
+         mini batch train loss: 8.70334e-01
+         mini batch train loss: 8.69477e-01
+         mini batch train loss: 1.00015e+00
+         mini batch train loss: 8.92281e-01
+         mini batch train loss: 9.06986e-01
+         mini batch train loss: 8.80489e-01
+         mini batch train loss: 9.09068e-01
+     tr_loss_d: 8.91294e-01
+         mini batch val loss: 9.01250e-01
+         mini batch val loss: 9.34085e-01
+         mini batch val loss: 1.97294e+00
+         mini batch val loss: 8.84106e-01
+         mini batch val loss: 8.10891e-01
+         mini batch val loss: 8.66438e-01
+     val_loss_d: 1.06162e+00
+Epoch: 5140
+         mini batch train loss: 1.04393e+00
+         mini batch train loss: 8.29385e-01
+         mini batch train loss: 8.20725e-01
+         mini batch train loss: 9.80725e-01
+         mini batch train loss: 7.86650e-01
+         mini batch train loss: 8.76679e-01
+         mini batch train loss: 8.56557e-01
+         mini batch train loss: 1.00700e+00
+         mini batch train loss: 1.04891e+00
+         mini batch train loss: 8.31989e-01
+         mini batch train loss: 8.91730e-01
+         mini batch train loss: 9.52619e-01
+         mini batch train loss: 8.98024e-01
+         mini batch train loss: 8.81985e-01
+         mini batch train loss: 8.47986e-01
+         mini batch train loss: 9.62988e-01
+         mini batch train loss: 8.27594e-01
+         mini batch train loss: 9.15078e-01
+         mini batch train loss: 8.82473e-01
+         mini batch train loss: 9.24508e-01
+         mini batch train loss: 1.03825e+00
+     tr_loss_d: 9.09799e-01
+         mini batch val loss: 9.15517e-01
+         mini batch val loss: 8.81499e-01
+         mini batch val loss: 2.27814e+00
+         mini batch val loss: 8.95658e-01
+         mini batch val loss: 8.15280e-01
+         mini batch val loss: 8.30805e-01
+     val_loss_d: 1.10282e+00
+Epoch: 5141
+         mini batch train loss: 8.74603e-01
+         mini batch train loss: 8.98663e-01
+         mini batch train loss: 9.88589e-01
+         mini batch train loss: 8.27024e-01
+         mini batch train loss: 9.82278e-01
+         mini batch train loss: 9.21693e-01
+         mini batch train loss: 9.64349e-01
+         mini batch train loss: 9.58829e-01
+         mini batch train loss: 7.71338e-01
+         mini batch train loss: 1.06645e+00
+         mini batch train loss: 8.74114e-01
+         mini batch train loss: 8.85670e-01
+         mini batch train loss: 1.03217e+00
+         mini batch train loss: 9.94411e-01
+         mini batch train loss: 8.77150e-01
+         mini batch train loss: 8.77809e-01
+         mini batch train loss: 9.12871e-01
+         mini batch train loss: 8.81399e-01
+         mini batch train loss: 9.23346e-01
+         mini batch train loss: 1.09335e+00
+         mini batch train loss: 9.17439e-01
+     tr_loss_d: 9.29692e-01
+         mini batch val loss: 1.02005e+00
+         mini batch val loss: 9.28678e-01
+         mini batch val loss: 1.98161e+00
+         mini batch val loss: 1.03271e+00
+         mini batch val loss: 9.29327e-01
+         mini batch val loss: 9.49187e-01
+     val_loss_d: 1.14026e+00
+Epoch: 5142
+         mini batch train loss: 9.30875e-01
+         mini batch train loss: 1.09313e+00
+         mini batch train loss: 8.67406e-01
+         mini batch train loss: 1.05847e+00
+         mini batch train loss: 9.11253e-01
+         mini batch train loss: 9.08677e-01
+         mini batch train loss: 9.75619e-01
+         mini batch train loss: 7.86929e-01
+         mini batch train loss: 9.25011e-01
+         mini batch train loss: 8.09922e-01
+         mini batch train loss: 9.69777e-01
+         mini batch train loss: 9.63342e-01
+         mini batch train loss: 8.46156e-01
+         mini batch train loss: 9.06190e-01
+         mini batch train loss: 8.01942e-01
+         mini batch train loss: 9.08077e-01
+         mini batch train loss: 9.32729e-01
+         mini batch train loss: 7.98713e-01
+         mini batch train loss: 9.09568e-01
+         mini batch train loss: 9.38145e-01
+         mini batch train loss: 8.91566e-01
+     tr_loss_d: 9.11119e-01
+         mini batch val loss: 1.07865e+00
+         mini batch val loss: 9.62557e-01
+         mini batch val loss: 2.24838e+00
+         mini batch val loss: 1.04604e+00
+         mini batch val loss: 9.50126e-01
+         mini batch val loss: 9.78371e-01
+     val_loss_d: 1.21069e+00
+Epoch: 5143
+         mini batch train loss: 1.03794e+00
+         mini batch train loss: 1.13216e+00
+         mini batch train loss: 7.60960e-01
+         mini batch train loss: 9.78669e-01
+         mini batch train loss: 9.04671e-01
+         mini batch train loss: 8.70703e-01
+         mini batch train loss: 1.02748e+00
+         mini batch train loss: 8.39666e-01
+         mini batch train loss: 8.04317e-01
+         mini batch train loss: 8.60194e-01
+         mini batch train loss: 8.40794e-01
+         mini batch train loss: 9.26882e-01
+         mini batch train loss: 8.87710e-01
+         mini batch train loss: 8.30279e-01
+         mini batch train loss: 8.81959e-01
+         mini batch train loss: 8.59452e-01
+         mini batch train loss: 9.32798e-01
+         mini batch train loss: 9.01174e-01
+         mini batch train loss: 9.05246e-01
+         mini batch train loss: 9.63175e-01
+         mini batch train loss: 9.69412e-01
+     tr_loss_d: 9.10268e-01
+         mini batch val loss: 8.88252e-01
+         mini batch val loss: 8.16295e-01
+         mini batch val loss: 1.88730e+00
+         mini batch val loss: 8.61661e-01
+         mini batch val loss: 7.66521e-01
+         mini batch val loss: 7.75877e-01
+     val_loss_d: 9.99317e-01
+Epoch: 5144
+         mini batch train loss: 8.61683e-01
+         mini batch train loss: 9.00605e-01
+         mini batch train loss: 1.08316e+00
+         mini batch train loss: 9.03114e-01
+         mini batch train loss: 8.82235e-01
+         mini batch train loss: 9.18939e-01
+         mini batch train loss: 8.85448e-01
+         mini batch train loss: 9.79259e-01
+         mini batch train loss: 9.22352e-01
+         mini batch train loss: 8.32373e-01
+         mini batch train loss: 9.20709e-01
+         mini batch train loss: 9.19725e-01
+         mini batch train loss: 9.33010e-01
+         mini batch train loss: 8.71883e-01
+         mini batch train loss: 8.56476e-01
+         mini batch train loss: 9.19350e-01
+         mini batch train loss: 8.21040e-01
+         mini batch train loss: 8.16978e-01
+         mini batch train loss: 7.90970e-01
+         mini batch train loss: 8.62103e-01
+         mini batch train loss: 9.64978e-01
+     tr_loss_d: 8.97447e-01
+         mini batch val loss: 8.53350e-01
+         mini batch val loss: 8.11167e-01
+         mini batch val loss: 2.21350e+00
+         mini batch val loss: 8.57934e-01
+         mini batch val loss: 7.84483e-01
+         mini batch val loss: 7.62973e-01
+     val_loss_d: 1.04723e+00
+Epoch: 5145
+         mini batch train loss: 8.65544e-01
+         mini batch train loss: 9.19463e-01
+         mini batch train loss: 8.58912e-01
+         mini batch train loss: 8.61299e-01
+         mini batch train loss: 8.94743e-01
+         mini batch train loss: 8.67783e-01
+         mini batch train loss: 9.01327e-01
+         mini batch train loss: 8.70634e-01
+         mini batch train loss: 8.04023e-01
+         mini batch train loss: 8.22833e-01
+     tr_loss_d: 8.49551e-01
+         mini batch val loss: 8.77127e-01
+         mini batch val loss: 1.01968e+00
+         mini batch val loss: 2.00107e+00
+         mini batch val loss: 7.86994e-01
+         mini batch val loss: 1.06268e+00
+         mini batch val loss: 8.96120e-01
+     val_loss_d: 1.10728e+00
+Epoch: 4981
+         mini batch train loss: 7.92559e-01
+         mini batch train loss: 8.20604e-01
+         mini batch train loss: 8.32099e-01
+         mini batch train loss: 7.98313e-01
+         mini batch train loss: 8.70887e-01
+         mini batch train loss: 9.06277e-01
+         mini batch train loss: 8.54678e-01
+         mini batch train loss: 7.99882e-01
+         mini batch train loss: 8.20481e-01
+         mini batch train loss: 8.66328e-01
+         mini batch train loss: 9.53715e-01
+         mini batch train loss: 8.95826e-01
+         mini batch train loss: 7.87363e-01
+         mini batch train loss: 8.41731e-01
+         mini batch train loss: 7.91882e-01
+         mini batch train loss: 8.39730e-01
+         mini batch train loss: 9.02005e-01
+         mini batch train loss: 8.95623e-01
+         mini batch train loss: 8.18689e-01
+         mini batch train loss: 9.56759e-01
+         mini batch train loss: 8.64803e-01
+     tr_loss_d: 8.52868e-01
+         mini batch val loss: 9.40337e-01
+         mini batch val loss: 1.00839e+00
+         mini batch val loss: 1.97759e+00
+         mini batch val loss: 8.29418e-01
+         mini batch val loss: 1.14673e+00
+         mini batch val loss: 9.74228e-01
+     val_loss_d: 1.14611e+00
+Epoch: 4982
+         mini batch train loss: 9.50593e-01
+         mini batch train loss: 8.05883e-01
+         mini batch train loss: 8.89300e-01
+         mini batch train loss: 8.63910e-01
+         mini batch train loss: 9.24542e-01
+         mini batch train loss: 9.05013e-01
+         mini batch train loss: 8.03278e-01
+         mini batch train loss: 8.82251e-01
+         mini batch train loss: 8.10868e-01
+         mini batch train loss: 8.20408e-01
+         mini batch train loss: 8.77578e-01
+         mini batch train loss: 8.43414e-01
+         mini batch train loss: 8.15428e-01
+         mini batch train loss: 9.33501e-01
+         mini batch train loss: 8.87152e-01
+         mini batch train loss: 8.38674e-01
+         mini batch train loss: 7.99101e-01
+         mini batch train loss: 7.74843e-01
+         mini batch train loss: 8.61834e-01
+         mini batch train loss: 8.71924e-01
+         mini batch train loss: 8.44528e-01
+     tr_loss_d: 8.57334e-01
+         mini batch val loss: 9.19899e-01
+         mini batch val loss: 1.05480e+00
+         mini batch val loss: 2.01815e+00
+         mini batch val loss: 7.92418e-01
+         mini batch val loss: 1.07302e+00
+         mini batch val loss: 9.54954e-01
+     val_loss_d: 1.13554e+00
+Epoch: 4983
+         mini batch train loss: 8.85105e-01
+         mini batch train loss: 8.04727e-01
+         mini batch train loss: 8.06241e-01
+         mini batch train loss: 9.07874e-01
+         mini batch train loss: 7.74191e-01
+         mini batch train loss: 8.51881e-01
+         mini batch train loss: 9.24109e-01
+         mini batch train loss: 8.93443e-01
+         mini batch train loss: 7.94518e-01
+         mini batch train loss: 8.80083e-01
+         mini batch train loss: 8.27930e-01
+         mini batch train loss: 7.86204e-01
+         mini batch train loss: 8.21999e-01
+         mini batch train loss: 7.72658e-01
+         mini batch train loss: 8.57774e-01
+         mini batch train loss: 8.56305e-01
+         mini batch train loss: 8.93731e-01
+         mini batch train loss: 8.24030e-01
+         mini batch train loss: 8.69804e-01
+         mini batch train loss: 9.28353e-01
+         mini batch train loss: 8.17517e-01
+     tr_loss_d: 8.46594e-01
+         mini batch val loss: 9.76819e-01
+         mini batch val loss: 1.01203e+00
+         mini batch val loss: 2.00733e+00
+         mini batch val loss: 8.64447e-01
+         mini batch val loss: 1.20168e+00
+         mini batch val loss: 1.09824e+00
+     val_loss_d: 1.19342e+00
+Epoch: 4984
+         mini batch train loss: 9.45088e-01
+         mini batch train loss: 8.84395e-01
+         mini batch train loss: 9.85504e-01
+         mini batch train loss: 8.36570e-01
+         mini batch train loss: 9.35060e-01
+         mini batch train loss: 9.18638e-01
+         mini batch train loss: 8.84591e-01
+         mini batch train loss: 8.37502e-01
+         mini batch train loss: 9.18538e-01
+         mini batch train loss: 9.06398e-01
+         mini batch train loss: 8.87852e-01
+         mini batch train loss: 7.80513e-01
+         mini batch train loss: 8.77697e-01
+         mini batch train loss: 8.26256e-01
+         mini batch train loss: 9.81338e-01
+         mini batch train loss: 8.04497e-01
+         mini batch train loss: 8.70126e-01
+         mini batch train loss: 8.93128e-01
+         mini batch train loss: 8.26215e-01
+         mini batch train loss: 1.00338e+00
+         mini batch train loss: 8.04923e-01
+     tr_loss_d: 8.86105e-01
+         mini batch val loss: 1.08003e+00
+         mini batch val loss: 1.18151e+00
+         mini batch val loss: 2.14286e+00
+         mini batch val loss: 9.56772e-01
+         mini batch val loss: 1.17112e+00
+         mini batch val loss: 9.94462e-01
+     val_loss_d: 1.25446e+00
+Epoch: 4985
+         mini batch train loss: 9.94401e-01
+         mini batch train loss: 8.89410e-01
+         mini batch train loss: 8.41857e-01
+         mini batch train loss: 8.03347e-01
+         mini batch train loss: 7.82623e-01
+         mini batch train loss: 1.02881e+00
+         mini batch train loss: 7.79477e-01
+         mini batch train loss: 9.77083e-01
+         mini batch train loss: 8.74910e-01
+         mini batch train loss: 9.42338e-01
+         mini batch train loss: 9.41572e-01
+         mini batch train loss: 8.29450e-01
+         mini batch train loss: 8.83598e-01
+         mini batch train loss: 9.24261e-01
+         mini batch train loss: 8.01583e-01
+         mini batch train loss: 9.34316e-01
+         mini batch train loss: 8.90429e-01
+         mini batch train loss: 9.08989e-01
+         mini batch train loss: 8.63444e-01
+         mini batch train loss: 8.90548e-01
+         mini batch train loss: 9.54549e-01
+     tr_loss_d: 8.92238e-01
+         mini batch val loss: 9.85039e-01
+         mini batch val loss: 1.02618e+00
+         mini batch val loss: 1.99003e+00
+         mini batch val loss: 7.74227e-01
+         mini batch val loss: 1.08770e+00
+         mini batch val loss: 1.05091e+00
+     val_loss_d: 1.15235e+00
+Epoch: 4986
+         mini batch train loss: 8.26173e-01
+         mini batch train loss: 8.67109e-01
+         mini batch train loss: 9.24964e-01
+         mini batch train loss: 8.36171e-01
+         mini batch train loss: 9.52065e-01
+         mini batch train loss: 8.51526e-01
+         mini batch train loss: 8.44459e-01
+         mini batch train loss: 8.82664e-01
+         mini batch train loss: 8.84771e-01
+         mini batch train loss: 8.82878e-01
+         mini batch train loss: 8.11590e-01
+         mini batch train loss: 8.11911e-01
+         mini batch train loss: 8.46253e-01
+         mini batch train loss: 9.05779e-01
+         mini batch train loss: 8.48188e-01
+         mini batch train loss: 8.46803e-01
+         mini batch train loss: 8.49155e-01
+         mini batch train loss: 8.49468e-01
+         mini batch train loss: 8.56947e-01
+         mini batch train loss: 8.79575e-01
+         mini batch train loss: 9.51697e-01
+     tr_loss_d: 8.67150e-01
+         mini batch val loss: 9.56677e-01
+         mini batch val loss: 1.13108e+00
+         mini batch val loss: 2.06517e+00
+         mini batch val loss: 9.00249e-01
+         mini batch val loss: 1.13762e+00
+         mini batch val loss: 9.45687e-01
+     val_loss_d: 1.18941e+00
+Epoch: 4987
+         mini batch train loss: 8.07796e-01
+         mini batch train loss: 8.93929e-01
+         mini batch train loss: 8.99500e-01
+         mini batch train loss: 8.71255e-01
+         mini batch train loss: 9.00538e-01
+         mini batch train loss: 8.61056e-01
+         mini batch train loss: 8.32277e-01
+         mini batch train loss: 8.59204e-01
+         mini batch train loss: 7.97263e-01
+         mini batch train loss: 8.51015e-01
+         mini batch train loss: 8.75878e-01
+         mini batch train loss: 8.54140e-01
+         mini batch train loss: 7.73785e-01
+         mini batch train loss: 8.86867e-01
+         mini batch train loss: 9.20453e-01
+         mini batch train loss: 8.55774e-01
+         mini batch train loss: 8.66566e-01
+         mini batch train loss: 8.75250e-01
+         mini batch train loss: 8.88219e-01
+         mini batch train loss: 8.74276e-01
+         mini batch train loss: 7.99489e-01
+     tr_loss_d: 8.60867e-01
+         mini batch val loss: 9.25544e-01
+         mini batch val loss: 8.26789e-01
+         mini batch val loss: 1.83921e+00
+         mini batch val loss: 8.81979e-01
+         mini batch val loss: 8.05582e-01
+         mini batch val loss: 8.05597e-01
+     val_loss_d: 1.01412e+00
+Epoch: 5146
+         mini batch train loss: 8.92148e-01
+         mini batch train loss: 9.38708e-01
+         mini batch train loss: 8.59927e-01
+         mini batch train loss: 8.60018e-01
+         mini batch train loss: 8.14777e-01
+         mini batch train loss: 8.11877e-01
+         mini batch train loss: 8.30508e-01
+         mini batch train loss: 7.97796e-01
+         mini batch train loss: 8.50700e-01
+         mini batch train loss: 8.44552e-01
+         mini batch train loss: 8.96201e-01
+         mini batch train loss: 8.29636e-01
+         mini batch train loss: 8.20376e-01
+         mini batch train loss: 8.60998e-01
+         mini batch train loss: 8.27501e-01
+         mini batch train loss: 9.48997e-01
+         mini batch train loss: 9.49436e-01
+         mini batch train loss: 8.17963e-01
+         mini batch train loss: 8.69134e-01
+         mini batch train loss: 8.11335e-01
+         mini batch train loss: 8.54440e-01
+     tr_loss_d: 8.56525e-01
+         mini batch val loss: 9.01478e-01
+         mini batch val loss: 8.06222e-01
+         mini batch val loss: 1.82027e+00
+         mini batch val loss: 8.30379e-01
+         mini batch val loss: 7.55958e-01
+         mini batch val loss: 7.84629e-01
+     val_loss_d: 9.83156e-01
+Epoch: 5147
+         mini batch train loss: 1.01945e+00
+         mini batch train loss: 8.63260e-01
+         mini batch train loss: 8.41058e-01
+         mini batch train loss: 8.19311e-01
+         mini batch train loss: 8.48504e-01
+         mini batch train loss: 7.36960e-01
+         mini batch train loss: 9.09339e-01
+         mini batch train loss: 8.26215e-01
+         mini batch train loss: 8.05516e-01
+         mini batch train loss: 8.36537e-01
+         mini batch train loss: 8.05661e-01
+         mini batch train loss: 8.28558e-01
+         mini batch train loss: 8.76124e-01
+         mini batch train loss: 9.08060e-01
+         mini batch train loss: 9.08257e-01
+         mini batch train loss: 7.84788e-01
+         mini batch train loss: 9.09829e-01
+         mini batch train loss: 8.58971e-01
+         mini batch train loss: 9.74241e-01
+         mini batch train loss: 9.23491e-01
+         mini batch train loss: 8.86330e-01
+     tr_loss_d: 8.65260e-01
+         mini batch val loss: 9.29669e-01
+         mini batch val loss: 8.32189e-01
+         mini batch val loss: 1.89529e+00
+         mini batch val loss: 8.47611e-01
+         mini batch val loss: 7.75696e-01
+         mini batch val loss: 8.19173e-01
+     val_loss_d: 1.01660e+00
+Epoch: 5148
+         mini batch train loss: 8.34381e-01
+         mini batch train loss: 8.83520e-01
+         mini batch train loss: 9.12618e-01
+         mini batch train loss: 8.56538e-01
+         mini batch train loss: 9.57246e-01
+         mini batch train loss: 8.64058e-01
+         mini batch train loss: 9.37662e-01
+         mini batch train loss: 8.58493e-01
+         mini batch train loss: 7.82668e-01
+         mini batch train loss: 8.90525e-01
+         mini batch train loss: 8.89923e-01
+         mini batch train loss: 8.47905e-01
+         mini batch train loss: 9.70172e-01
+         mini batch train loss: 9.31049e-01
+         mini batch train loss: 8.20734e-01
+         mini batch train loss: 9.27709e-01
+         mini batch train loss: 8.26581e-01
+         mini batch train loss: 8.76404e-01
+         mini batch train loss: 8.81490e-01
+         mini batch train loss: 8.56529e-01
+         mini batch train loss: 8.77922e-01
+     tr_loss_d: 8.80196e-01
+         mini batch val loss: 8.73251e-01
+         mini batch val loss: 8.31981e-01
+         mini batch val loss: 2.19151e+00
+         mini batch val loss: 8.31983e-01
+         mini batch val loss: 7.50947e-01
+         mini batch val loss: 7.75550e-01
+     val_loss_d: 1.04254e+00
+Epoch: 5149
+         mini batch train loss: 8.04904e-01
+         mini batch train loss: 8.30382e-01
+         mini batch train loss: 8.51818e-01
+         mini batch train loss: 8.44376e-01
+         mini batch train loss: 8.79803e-01
+         mini batch train loss: 8.19104e-01
+         mini batch train loss: 8.36779e-01
+         mini batch train loss: 8.87287e-01
+         mini batch train loss: 8.34855e-01
+         mini batch train loss: 8.44684e-01
+         mini batch train loss: 8.93045e-01
+         mini batch train loss: 8.64567e-01
+         mini batch train loss: 9.38977e-01
+         mini batch train loss: 9.97009e-01
+         mini batch train loss: 7.67613e-01
+         mini batch train loss: 8.34150e-01
+         mini batch train loss: 8.56331e-01
+         mini batch train loss: 8.49603e-01
+         mini batch train loss: 8.83502e-01
+         mini batch train loss: 9.23479e-01
+         mini batch train loss: 8.87221e-01
+     tr_loss_d: 8.63309e-01
+         mini batch val loss: 8.61431e-01
+         mini batch val loss: 8.53702e-01
+         mini batch val loss: 2.19769e+00
+         mini batch val loss: 8.26545e-01
+         mini batch val loss: 7.42112e-01
+         mini batch val loss: 8.05208e-01
+     val_loss_d: 1.04778e+00
+Epoch: 5150
+         mini batch train loss: 8.97455e-01
+         mini batch train loss: 8.99170e-01
+         mini batch train loss: 9.52621e-01
+         mini batch train loss: 8.08644e-01
+         mini batch train loss: 7.80047e-01
+         mini batch train loss: 8.16670e-01
+         mini batch train loss: 8.57121e-01
+         mini batch train loss: 8.25649e-01
+         mini batch train loss: 8.24673e-01
+         mini batch train loss: 8.28641e-01
+         mini batch train loss: 8.74565e-01
+         mini batch train loss: 8.89883e-01
+         mini batch train loss: 7.98526e-01
+         mini batch train loss: 8.28387e-01
+         mini batch train loss: 8.92893e-01
+         mini batch train loss: 9.34653e-01
+         mini batch train loss: 8.12822e-01
+         mini batch train loss: 9.77253e-01
+         mini batch train loss: 7.85427e-01
+         mini batch train loss: 8.92266e-01
+         mini batch train loss: 1.03603e+00
+     tr_loss_d: 8.67304e-01
+         mini batch val loss: 8.68306e-01
+         mini batch val loss: 8.31458e-01
+         mini batch val loss: 1.88601e+00
+         mini batch val loss: 8.27519e-01
+         mini batch val loss: 7.28540e-01
+         mini batch val loss: 7.93285e-01
+     val_loss_d: 9.89187e-01
+Epoch: 5151
+         mini batch train loss: 8.05380e-01
+         mini batch train loss: 8.11291e-01
+         mini batch train loss: 8.97154e-01
+         mini batch train loss: 8.55367e-01
+         mini batch train loss: 8.12630e-01
+         mini batch train loss: 9.25405e-01
+         mini batch train loss: 8.40273e-01
+         mini batch train loss: 9.39351e-01
+         mini batch train loss: 8.46486e-01
+         mini batch train loss: 8.68606e-01
+         mini batch train loss: 9.64324e-01
+         mini batch train loss: 8.78547e-01
+         mini batch train loss: 9.61059e-01
+         mini batch train loss: 8.28804e-01
+         mini batch train loss: 1.05282e+00
+         mini batch train loss: 8.11764e-01
+         mini batch train loss: 8.37196e-01
+         mini batch train loss: 9.84764e-01
+         mini batch train loss: 9.08888e-01
+         mini batch train loss: 8.62436e-01
+         mini batch train loss: 8.29008e-01
+     tr_loss_d: 8.81979e-01
+         mini batch val loss: 9.07261e-01
+         mini batch train loss: 8.29066e-01
+         mini batch train loss: 8.81904e-01
+         mini batch train loss: 8.06478e-01
+         mini batch train loss: 8.06112e-01
+         mini batch train loss: 8.12810e-01
+         mini batch train loss: 8.48817e-01
+         mini batch train loss: 8.24632e-01
+         mini batch train loss: 9.01526e-01
+         mini batch train loss: 8.11767e-01
+         mini batch train loss: 8.38460e-01
+         mini batch train loss: 7.87358e-01
+         mini batch train loss: 8.10444e-01
+         mini batch train loss: 8.92698e-01
+         mini batch train loss: 8.08596e-01
+         mini batch train loss: 8.26166e-01
+     tr_loss_d: 8.43853e-01
+         mini batch val loss: 9.42671e-01
+         mini batch val loss: 1.04324e+00
+         mini batch val loss: 2.00575e+00
+         mini batch val loss: 8.53666e-01
+         mini batch val loss: 1.10700e+00
+         mini batch val loss: 8.91780e-01
+     val_loss_d: 1.14069e+00
+Epoch: 4988
+         mini batch train loss: 8.26938e-01
+         mini batch train loss: 8.92262e-01
+         mini batch train loss: 7.80357e-01
+         mini batch train loss: 8.58518e-01
+         mini batch train loss: 8.55055e-01
+         mini batch train loss: 7.52614e-01
+         mini batch train loss: 8.17152e-01
+         mini batch train loss: 8.08092e-01
+         mini batch train loss: 7.99379e-01
+         mini batch train loss: 8.84064e-01
+         mini batch train loss: 7.97026e-01
+         mini batch train loss: 7.93461e-01
+         mini batch train loss: 9.40790e-01
+         mini batch train loss: 9.08275e-01
+         mini batch train loss: 8.00574e-01
+         mini batch train loss: 8.63974e-01
+         mini batch train loss: 8.55198e-01
+         mini batch train loss: 8.15665e-01
+         mini batch train loss: 8.32488e-01
+         mini batch train loss: 8.77991e-01
+         mini batch train loss: 8.46235e-01
+     tr_loss_d: 8.38386e-01
+         mini batch val loss: 8.96919e-01
+         mini batch val loss: 1.00075e+00
+         mini batch val loss: 1.97119e+00
+         mini batch val loss: 7.82996e-01
+         mini batch val loss: 1.07289e+00
+         mini batch val loss: 9.29280e-01
+     val_loss_d: 1.10900e+00
+Epoch: 4989
+         mini batch train loss: 7.78886e-01
+         mini batch train loss: 9.08416e-01
+         mini batch train loss: 8.40928e-01
+         mini batch train loss: 7.82203e-01
+         mini batch train loss: 8.26936e-01
+         mini batch train loss: 9.64186e-01
+         mini batch train loss: 8.06935e-01
+         mini batch train loss: 9.05929e-01
+         mini batch train loss: 8.04344e-01
+         mini batch train loss: 9.25498e-01
+         mini batch train loss: 8.28535e-01
+         mini batch train loss: 9.81861e-01
+         mini batch train loss: 8.82867e-01
+         mini batch train loss: 8.53060e-01
+         mini batch train loss: 7.86340e-01
+         mini batch train loss: 8.48061e-01
+         mini batch train loss: 8.91495e-01
+         mini batch train loss: 8.76823e-01
+         mini batch train loss: 8.13953e-01
+         mini batch train loss: 9.10318e-01
+         mini batch train loss: 8.73427e-01
+     tr_loss_d: 8.61476e-01
+         mini batch val loss: 1.07012e+00
+         mini batch val loss: 1.26874e+00
+         mini batch val loss: 2.16526e+00
+         mini batch val loss: 8.71894e-01
+         mini batch val loss: 1.21245e+00
+         mini batch val loss: 1.03157e+00
+     val_loss_d: 1.27001e+00
+Epoch: 4990
+         mini batch train loss: 9.81218e-01
+         mini batch train loss: 8.99772e-01
+         mini batch train loss: 9.53773e-01
+         mini batch train loss: 9.41519e-01
+         mini batch train loss: 9.00356e-01
+         mini batch train loss: 8.43791e-01
+         mini batch train loss: 8.87243e-01
+         mini batch train loss: 8.62936e-01
+         mini batch train loss: 8.56880e-01
+         mini batch train loss: 8.74670e-01
+         mini batch train loss: 9.44173e-01
+         mini batch train loss: 8.96056e-01
+         mini batch train loss: 8.88925e-01
+         mini batch train loss: 8.78755e-01
+         mini batch train loss: 7.56647e-01
+         mini batch train loss: 8.56703e-01
+         mini batch train loss: 8.67750e-01
+         mini batch train loss: 8.54147e-01
+         mini batch train loss: 9.86329e-01
+         mini batch train loss: 8.04788e-01
+         mini batch train loss: 8.56760e-01
+     tr_loss_d: 8.85390e-01
+         mini batch val loss: 9.28968e-01
+         mini batch val loss: 1.03756e+00
+         mini batch val loss: 2.00177e+00
+         mini batch val loss: 7.99445e-01
+         mini batch val loss: 1.06021e+00
+         mini batch val loss: 9.36771e-01
+     val_loss_d: 1.12745e+00
+Epoch: 4991
+         mini batch train loss: 8.41321e-01
+         mini batch train loss: 8.32456e-01
+         mini batch train loss: 9.31585e-01
+         mini batch train loss: 8.55258e-01
+         mini batch train loss: 8.97793e-01
+         mini batch train loss: 7.84511e-01
+         mini batch train loss: 8.21646e-01
+         mini batch train loss: 8.00513e-01
+         mini batch train loss: 8.72649e-01
+         mini batch train loss: 8.00509e-01
+         mini batch train loss: 7.73240e-01
+         mini batch train loss: 8.25170e-01
+         mini batch train loss: 8.63153e-01
+         mini batch train loss: 9.00308e-01
+         mini batch train loss: 7.76317e-01
+         mini batch train loss: 8.71036e-01
+         mini batch train loss: 8.69591e-01
+         mini batch train loss: 8.64572e-01
+         mini batch train loss: 8.57673e-01
+         mini batch train loss: 8.49028e-01
+         mini batch train loss: 8.28030e-01
+     tr_loss_d: 8.43636e-01
+         mini batch val loss: 9.23416e-01
+         mini batch val loss: 1.08734e+00
+         mini batch val loss: 1.99063e+00
+         mini batch val loss: 7.63306e-01
+         mini batch val loss: 1.12876e+00
+         mini batch val loss: 9.25542e-01
+     val_loss_d: 1.13650e+00
+Epoch: 4992
+         mini batch train loss: 9.02369e-01
+         mini batch train loss: 8.58814e-01
+         mini batch train loss: 8.18328e-01
+         mini batch train loss: 8.93887e-01
+         mini batch train loss: 8.37748e-01
+         mini batch train loss: 8.53851e-01
+         mini batch train loss: 8.46528e-01
+         mini batch train loss: 7.88975e-01
+         mini batch train loss: 7.94340e-01
+         mini batch train loss: 8.03094e-01
+         mini batch train loss: 7.96575e-01
+         mini batch train loss: 8.05295e-01
+         mini batch train loss: 8.23071e-01
+         mini batch train loss: 7.98320e-01
+         mini batch train loss: 8.71788e-01
+         mini batch train loss: 8.39127e-01
+         mini batch train loss: 8.53171e-01
+         mini batch train loss: 7.98935e-01
+         mini batch train loss: 7.48205e-01
+         mini batch train loss: 8.85612e-01
+         mini batch train loss: 8.39134e-01
+     tr_loss_d: 8.31294e-01
+         mini batch val loss: 8.91010e-01
+         mini batch val loss: 1.01123e+00
+         mini batch val loss: 1.95221e+00
+         mini batch val loss: 7.96584e-01
+         mini batch val loss: 1.00897e+00
+         mini batch val loss: 9.94753e-01
+     val_loss_d: 1.10913e+00
+Epoch: 4993
+         mini batch train loss: 8.69485e-01
+         mini batch train loss: 8.27019e-01
+         mini batch train loss: 8.65298e-01
+         mini batch train loss: 7.84461e-01
+         mini batch train loss: 8.72249e-01
+         mini batch train loss: 8.95591e-01
+         mini batch train loss: 7.78797e-01
+         mini batch train loss: 7.84685e-01
+         mini batch train loss: 8.72777e-01
+         mini batch train loss: 8.79049e-01
+         mini batch train loss: 8.91873e-01
+         mini batch train loss: 8.63291e-01
+         mini batch train loss: 8.47575e-01
+         mini batch train loss: 8.85777e-01
+         mini batch train loss: 8.29926e-01
+         mini batch train loss: 8.50476e-01
+         mini batch train loss: 7.45128e-01
+         mini batch train loss: 8.05693e-01
+         mini batch train loss: 8.45488e-01
+         mini batch train loss: 8.02727e-01
+         mini batch train loss: 8.20381e-01
+     tr_loss_d: 8.38940e-01
+         mini batch val loss: 9.14196e-01
+         mini batch val loss: 8.24406e-01
+         mini batch val loss: 2.01749e+00
+         mini batch val loss: 8.92034e-01
+         mini batch val loss: 7.78884e-01
+         mini batch val loss: 7.76228e-01
+     val_loss_d: 1.03272e+00
+Epoch: 5152
+         mini batch train loss: 9.46303e-01
+         mini batch train loss: 8.98263e-01
+         mini batch train loss: 7.95620e-01
+         mini batch train loss: 9.21890e-01
+         mini batch train loss: 8.39957e-01
+         mini batch train loss: 8.53273e-01
+         mini batch train loss: 8.63822e-01
+         mini batch train loss: 9.02433e-01
+         mini batch train loss: 8.34444e-01
+         mini batch train loss: 9.12248e-01
+         mini batch train loss: 8.31931e-01
+         mini batch train loss: 8.49348e-01
+         mini batch train loss: 8.40692e-01
+         mini batch train loss: 9.36199e-01
+         mini batch train loss: 8.84889e-01
+         mini batch train loss: 9.16039e-01
+         mini batch train loss: 8.94578e-01
+         mini batch train loss: 8.20045e-01
+         mini batch train loss: 8.29387e-01
+         mini batch train loss: 8.24524e-01
+         mini batch train loss: 8.11306e-01
+     tr_loss_d: 8.67009e-01
+         mini batch val loss: 8.86653e-01
+         mini batch val loss: 8.16366e-01
+         mini batch val loss: 2.09424e+00
+         mini batch val loss: 8.83486e-01
+         mini batch val loss: 7.79726e-01
+         mini batch val loss: 7.62825e-01
+     val_loss_d: 1.03722e+00
+Epoch: 5153
+         mini batch train loss: 8.92893e-01
+         mini batch train loss: 9.21679e-01
+         mini batch train loss: 8.40592e-01
+         mini batch train loss: 8.12911e-01
+         mini batch train loss: 8.30469e-01
+         mini batch train loss: 8.47751e-01
+         mini batch train loss: 8.01838e-01
+         mini batch train loss: 8.38687e-01
+         mini batch train loss: 9.17575e-01
+         mini batch train loss: 8.51553e-01
+         mini batch train loss: 8.27374e-01
+         mini batch train loss: 8.65763e-01
+         mini batch train loss: 8.61178e-01
+         mini batch train loss: 8.21803e-01
+         mini batch train loss: 8.44466e-01
+         mini batch train loss: 8.93424e-01
+         mini batch train loss: 8.87412e-01
+         mini batch train loss: 8.50206e-01
+         mini batch train loss: 8.43826e-01
+         mini batch train loss: 8.62119e-01
+         mini batch train loss: 9.62815e-01
+     tr_loss_d: 8.60778e-01
+         mini batch val loss: 9.73648e-01
+         mini batch val loss: 8.54644e-01
+         mini batch val loss: 2.13534e+00
+         mini batch val loss: 9.46905e-01
+         mini batch val loss: 8.41566e-01
+         mini batch val loss: 8.43756e-01
+     val_loss_d: 1.09931e+00
+Epoch: 5154
+         mini batch train loss: 8.17092e-01
+         mini batch train loss: 8.53032e-01
+         mini batch train loss: 9.41167e-01
+         mini batch train loss: 8.94244e-01
+         mini batch train loss: 8.84877e-01
+         mini batch train loss: 9.49418e-01
+         mini batch train loss: 9.36544e-01
+         mini batch train loss: 9.65694e-01
+         mini batch train loss: 9.42599e-01
+         mini batch train loss: 8.55313e-01
+         mini batch train loss: 7.99414e-01
+         mini batch train loss: 1.00070e+00
+         mini batch train loss: 8.62522e-01
+         mini batch train loss: 9.14650e-01
+         mini batch train loss: 9.87130e-01
+         mini batch train loss: 8.31088e-01
+         mini batch train loss: 8.72710e-01
+         mini batch train loss: 8.95360e-01
+         mini batch train loss: 8.83115e-01
+         mini batch train loss: 9.43370e-01
+         mini batch train loss: 8.78599e-01
+     tr_loss_d: 9.00412e-01
+         mini batch val loss: 8.84441e-01
+         mini batch val loss: 8.13167e-01
+         mini batch val loss: 1.98371e+00
+         mini batch val loss: 8.51676e-01
+         mini batch val loss: 7.54684e-01
+         mini batch val loss: 7.39990e-01
+     val_loss_d: 1.00461e+00
+Epoch: 5155
+         mini batch train loss: 8.34428e-01
+         mini batch train loss: 8.68193e-01
+         mini batch train loss: 9.11582e-01
+         mini batch train loss: 9.03835e-01
+         mini batch train loss: 8.89572e-01
+         mini batch train loss: 9.07690e-01
+         mini batch train loss: 8.75589e-01
+         mini batch train loss: 8.64916e-01
+         mini batch train loss: 8.07598e-01
+         mini batch train loss: 8.79385e-01
+         mini batch train loss: 8.47719e-01
+         mini batch train loss: 8.42590e-01
+         mini batch train loss: 9.35384e-01
+         mini batch train loss: 9.13555e-01
+         mini batch train loss: 7.98022e-01
+         mini batch train loss: 8.91131e-01
+         mini batch train loss: 7.96629e-01
+         mini batch train loss: 8.00471e-01
+         mini batch train loss: 7.54551e-01
+         mini batch train loss: 8.15366e-01
+         mini batch train loss: 8.70628e-01
+     tr_loss_d: 8.57563e-01
+         mini batch val loss: 8.71744e-01
+         mini batch val loss: 8.24969e-01
+         mini batch val loss: 1.86001e+00
+         mini batch val loss: 8.12992e-01
+         mini batch val loss: 7.35184e-01
+         mini batch val loss: 7.79287e-01
+     val_loss_d: 9.80698e-01
+Epoch: 5156
+         mini batch train loss: 7.95337e-01
+         mini batch train loss: 8.56503e-01
+         mini batch train loss: 8.80396e-01
+         mini batch train loss: 9.34816e-01
+         mini batch train loss: 8.33706e-01
+         mini batch train loss: 8.02575e-01
+         mini batch train loss: 8.30267e-01
+         mini batch train loss: 9.01887e-01
+         mini batch train loss: 8.61841e-01
+         mini batch train loss: 8.49963e-01
+         mini batch train loss: 8.74280e-01
+         mini batch train loss: 8.20452e-01
+         mini batch train loss: 9.36139e-01
+         mini batch train loss: 9.52574e-01
+         mini batch train loss: 7.82814e-01
+         mini batch train loss: 7.98046e-01
+         mini batch train loss: 8.59670e-01
+         mini batch train loss: 9.24996e-01
+         mini batch train loss: 9.45846e-01
+         mini batch train loss: 7.99332e-01
+         mini batch train loss: 8.55712e-01
+     tr_loss_d: 8.61769e-01
+         mini batch val loss: 8.85239e-01
+         mini batch val loss: 8.03602e-01
+         mini batch val loss: 2.04323e+00
+         mini batch val loss: 8.51646e-01
+         mini batch val loss: 7.78293e-01
+         mini batch val loss: 7.55514e-01
+     val_loss_d: 1.01959e+00
+Epoch: 5157
+         mini batch train loss: 8.59738e-01
+         mini batch train loss: 8.78956e-01
+         mini batch train loss: 9.00669e-01
+         mini batch train loss: 8.02061e-01
+         mini batch train loss: 9.40599e-01
+         mini batch train loss: 9.15842e-01
+         mini batch train loss: 9.42837e-01
+         mini batch train loss: 1.02292e+00
+         mini batch train loss: 8.39173e-01
+         mini batch train loss: 9.42008e-01
+         mini batch train loss: 9.90720e-01
+         mini batch train loss: 8.58938e-01
+         mini batch train loss: 8.66456e-01
+         mini batch train loss: 8.68763e-01
+         mini batch train loss: 9.09538e-01
+         mini batch train loss: 9.98622e-01
+         mini batch train loss: 9.54757e-01
+         mini batch train loss: 8.48826e-01
+         mini batch train loss: 8.81556e-01
+         mini batch train loss: 9.97427e-01
+         mini batch train loss: 8.92510e-01
+     tr_loss_d: 9.10139e-01
+         mini batch val loss: 1.01584e+00
+         mini batch val loss: 8.93481e-01
+         mini batch val loss: 1.82126e+00
+         mini batch val loss: 1.03522e+00
+         mini batch val loss: 9.27462e-01
+         mini batch val loss: 8.96092e-01
+     val_loss_d: 1.09823e+00
+Epoch: 5158
+         mini batch train loss: 1.05397e+00
+         mini batch train loss: 8.28596e-01
+         mini batch train loss: 9.26187e-01
+         mini batch train loss: 9.09977e-01
+         mini batch train loss: 8.34863e-01
+         mini batch train loss: 7.71013e-01
+         mini batch train loss: 8.68488e-01
+         mini batch train loss: 8.91581e-01
+         mini batch train loss: 8.69131e-01
+         mini batch train loss: 8.85475e-01
+         mini batch train loss: 9.01110e-01
+         mini batch val loss: 1.03051e+00
+         mini batch val loss: 1.97607e+00
+         mini batch val loss: 7.65312e-01
+         mini batch val loss: 1.02067e+00
+         mini batch val loss: 9.06022e-01
+     val_loss_d: 1.10213e+00
+Epoch: 4994
+         mini batch train loss: 8.18217e-01
+         mini batch train loss: 8.65516e-01
+         mini batch train loss: 8.14090e-01
+         mini batch train loss: 8.66742e-01
+         mini batch train loss: 8.28103e-01
+         mini batch train loss: 8.32059e-01
+         mini batch train loss: 8.25262e-01
+         mini batch train loss: 7.88153e-01
+         mini batch train loss: 7.88728e-01
+         mini batch train loss: 9.38857e-01
+         mini batch train loss: 7.65579e-01
+         mini batch train loss: 7.51398e-01
+         mini batch train loss: 7.98210e-01
+         mini batch train loss: 7.44197e-01
+         mini batch train loss: 8.80455e-01
+         mini batch train loss: 8.36694e-01
+         mini batch train loss: 8.48703e-01
+         mini batch train loss: 9.06016e-01
+         mini batch train loss: 8.64047e-01
+         mini batch train loss: 8.07470e-01
+         mini batch train loss: 8.57464e-01
+     tr_loss_d: 8.29808e-01
+         mini batch val loss: 9.06222e-01
+         mini batch val loss: 9.74749e-01
+         mini batch val loss: 1.93461e+00
+         mini batch val loss: 7.79575e-01
+         mini batch val loss: 1.08576e+00
+         mini batch val loss: 9.02788e-01
+     val_loss_d: 1.09728e+00
+Epoch: 4995
+         mini batch train loss: 8.05577e-01
+         mini batch train loss: 7.91337e-01
+         mini batch train loss: 8.47827e-01
+         mini batch train loss: 7.92453e-01
+         mini batch train loss: 8.53978e-01
+         mini batch train loss: 8.20434e-01
+         mini batch train loss: 8.18845e-01
+         mini batch train loss: 8.02884e-01
+         mini batch train loss: 7.65642e-01
+         mini batch train loss: 8.90448e-01
+         mini batch train loss: 8.23795e-01
+         mini batch train loss: 8.25538e-01
+         mini batch train loss: 7.63995e-01
+         mini batch train loss: 9.23014e-01
+         mini batch train loss: 7.84725e-01
+         mini batch train loss: 9.41988e-01
+         mini batch train loss: 8.96375e-01
+         mini batch train loss: 8.19637e-01
+         mini batch train loss: 9.13694e-01
+         mini batch train loss: 8.75999e-01
+         mini batch train loss: 8.41297e-01
+     tr_loss_d: 8.38070e-01
+         mini batch val loss: 9.59950e-01
+         mini batch val loss: 1.06893e+00
+         mini batch val loss: 1.97920e+00
+         mini batch val loss: 8.04041e-01
+         mini batch val loss: 1.06612e+00
+         mini batch val loss: 9.26402e-01
+     val_loss_d: 1.13411e+00
+Epoch: 4996
+         mini batch train loss: 7.89333e-01
+         mini batch train loss: 9.07317e-01
+         mini batch train loss: 8.18109e-01
+         mini batch train loss: 8.20584e-01
+         mini batch train loss: 8.15797e-01
+         mini batch train loss: 7.99108e-01
+         mini batch train loss: 8.57915e-01
+         mini batch train loss: 8.51633e-01
+         mini batch train loss: 8.81746e-01
+         mini batch train loss: 8.21890e-01
+         mini batch train loss: 8.31483e-01
+         mini batch train loss: 8.14095e-01
+         mini batch train loss: 8.91918e-01
+         mini batch train loss: 8.45622e-01
+         mini batch train loss: 9.00916e-01
+         mini batch train loss: 7.94809e-01
+         mini batch train loss: 8.16104e-01
+         mini batch train loss: 8.33662e-01
+         mini batch train loss: 7.22413e-01
+         mini batch train loss: 8.86964e-01
+         mini batch train loss: 8.19750e-01
+     tr_loss_d: 8.34341e-01
+         mini batch val loss: 9.24048e-01
+         mini batch val loss: 1.01393e+00
+         mini batch val loss: 1.97122e+00
+         mini batch val loss: 8.18378e-01
+         mini batch val loss: 1.07547e+00
+         mini batch val loss: 9.16186e-01
+     val_loss_d: 1.11987e+00
+Epoch: 4997
+         mini batch train loss: 7.79190e-01
+         mini batch train loss: 8.77849e-01
+         mini batch train loss: 8.54206e-01
+         mini batch train loss: 8.49121e-01
+         mini batch train loss: 8.39830e-01
+         mini batch train loss: 7.56859e-01
+         mini batch train loss: 8.29071e-01
+         mini batch train loss: 8.63623e-01
+         mini batch train loss: 8.14915e-01
+         mini batch train loss: 8.25901e-01
+         mini batch train loss: 8.89704e-01
+         mini batch train loss: 9.06270e-01
+         mini batch train loss: 8.40784e-01
+         mini batch train loss: 8.24303e-01
+         mini batch train loss: 8.34318e-01
+         mini batch train loss: 8.57915e-01
+         mini batch train loss: 7.84037e-01
+         mini batch train loss: 8.01797e-01
+         mini batch train loss: 8.18257e-01
+         mini batch train loss: 8.60099e-01
+         mini batch train loss: 8.84135e-01
+     tr_loss_d: 8.37723e-01
+         mini batch val loss: 1.09930e+00
+         mini batch val loss: 1.21046e+00
+         mini batch val loss: 2.08282e+00
+         mini batch val loss: 8.63463e-01
+         mini batch val loss: 1.17183e+00
+         mini batch val loss: 9.88331e-01
+     val_loss_d: 1.23604e+00
+Epoch: 4998
+         mini batch train loss: 9.68318e-01
+         mini batch train loss: 8.97039e-01
+         mini batch train loss: 8.58746e-01
+         mini batch train loss: 8.35790e-01
+         mini batch train loss: 8.63557e-01
+         mini batch train loss: 1.02664e+00
+         mini batch train loss: 8.35311e-01
+         mini batch train loss: 9.21341e-01
+         mini batch train loss: 9.53311e-01
+         mini batch train loss: 7.57743e-01
+         mini batch train loss: 8.86077e-01
+         mini batch train loss: 8.23584e-01
+         mini batch train loss: 7.86305e-01
+         mini batch train loss: 8.58568e-01
+         mini batch train loss: 8.21835e-01
+         mini batch train loss: 7.53607e-01
+         mini batch train loss: 8.14517e-01
+         mini batch train loss: 8.90655e-01
+         mini batch train loss: 7.95539e-01
+         mini batch train loss: 8.11647e-01
+         mini batch train loss: 8.17891e-01
+     tr_loss_d: 8.56096e-01
+         mini batch val loss: 9.08922e-01
+         mini batch val loss: 1.06179e+00
+         mini batch val loss: 1.96000e+00
+         mini batch val loss: 8.61712e-01
+         mini batch val loss: 1.02655e+00
+         mini batch val loss: 8.95851e-01
+     val_loss_d: 1.11914e+00
+Epoch: 4999
+         mini batch train loss: 7.65319e-01
+         mini batch train loss: 8.56853e-01
+         mini batch train loss: 7.83569e-01
+         mini batch train loss: 8.34213e-01
+         mini batch train loss: 8.63480e-01
+         mini batch train loss: 7.96823e-01
+         mini batch train loss: 8.41454e-01
+         mini batch train loss: 8.68419e-01
+         mini batch train loss: 8.29958e-01
+         mini batch train loss: 8.52994e-01
+         mini batch train loss: 8.31376e-01
+         mini batch train loss: 8.32312e-01
+         mini batch train loss: 8.21529e-01
+         mini batch train loss: 8.02777e-01
+         mini batch train loss: 7.60975e-01
+         mini batch train loss: 8.27198e-01
+         mini batch train loss: 7.88922e-01
+         mini batch train loss: 8.08777e-01
+         mini batch train loss: 8.18813e-01
+         mini batch train loss: 8.88966e-01
+         mini batch train loss: 7.61440e-01
+     tr_loss_d: 8.20770e-01
+         mini batch val loss: 9.40426e-01
+         mini batch val loss: 1.06511e+00
+         mini batch val loss: 2.02266e+00
+         mini batch val loss: 8.51765e-01
+         mini batch val loss: 1.10440e+00
+         mini batch val loss: 8.55691e-01
+     val_loss_d: 1.14001e+00
+Epoch: 5000
+         mini batch train loss: 7.95569e-01
+         mini batch train loss: 8.62298e-01
+         mini batch train loss: 8.66336e-01
+         mini batch train loss: 9.04302e-01
+         mini batch train loss: 9.00802e-01
+         mini batch train loss: 8.67360e-01
+         mini batch train loss: 7.75719e-01
+         mini batch train loss: 8.28407e-01
+         mini batch train loss: 8.27868e-01
+         mini batch train loss: 8.24974e-01
+         mini batch train loss: 8.35753e-01
+         mini batch train loss: 8.33824e-01
+         mini batch train loss: 8.94657e-01
+         mini batch train loss: 9.08905e-01
+         mini batch train loss: 8.63200e-01
+         mini batch train loss: 9.14392e-01
+         mini batch train loss: 8.09719e-01
+         mini batch train loss: 8.03450e-01
+         mini batch train loss: 9.61725e-01
+         mini batch train loss: 9.04903e-01
+         mini batch train loss: 7.83400e-01
+     tr_loss_d: 8.77074e-01
+         mini batch val loss: 9.11125e-01
+         mini batch val loss: 8.36827e-01
+         mini batch val loss: 1.91514e+00
+         mini batch val loss: 8.44645e-01
+         mini batch val loss: 7.75930e-01
+         mini batch val loss: 7.66228e-01
+     val_loss_d: 1.00832e+00
+Epoch: 5159
+         mini batch train loss: 8.71495e-01
+         mini batch train loss: 7.86874e-01
+         mini batch train loss: 7.90329e-01
+         mini batch train loss: 8.01823e-01
+         mini batch train loss: 8.17936e-01
+         mini batch train loss: 9.03632e-01
+         mini batch train loss: 9.10592e-01
+         mini batch train loss: 9.28542e-01
+         mini batch train loss: 8.01886e-01
+         mini batch train loss: 9.27156e-01
+         mini batch train loss: 8.20946e-01
+         mini batch train loss: 8.64658e-01
+         mini batch train loss: 8.05117e-01
+         mini batch train loss: 8.36374e-01
+         mini batch train loss: 8.54242e-01
+         mini batch train loss: 8.84836e-01
+         mini batch train loss: 8.10565e-01
+         mini batch train loss: 8.00938e-01
+         mini batch train loss: 8.32286e-01
+         mini batch train loss: 8.05047e-01
+         mini batch train loss: 9.19956e-01
+     tr_loss_d: 8.46440e-01
+         mini batch val loss: 8.60243e-01
+         mini batch val loss: 8.23017e-01
+         mini batch val loss: 1.62283e+00
+         mini batch val loss: 8.25451e-01
+         mini batch val loss: 7.34722e-01
+         mini batch val loss: 7.53413e-01
+     val_loss_d: 9.36613e-01
+Epoch: 5160
+         mini batch train loss: 7.93969e-01
+         mini batch train loss: 8.57320e-01
+         mini batch train loss: 8.71657e-01
+         mini batch train loss: 8.89024e-01
+         mini batch train loss: 7.75644e-01
+         mini batch train loss: 8.86822e-01
+         mini batch train loss: 8.22478e-01
+         mini batch train loss: 9.15062e-01
+         mini batch train loss: 7.66891e-01
+         mini batch train loss: 8.63908e-01
+         mini batch train loss: 8.04625e-01
+         mini batch train loss: 8.61935e-01
+         mini batch train loss: 8.19431e-01
+         mini batch train loss: 8.64457e-01
+         mini batch train loss: 8.57266e-01
+         mini batch train loss: 8.08178e-01
+         mini batch train loss: 8.94001e-01
+         mini batch train loss: 8.00749e-01
+         mini batch train loss: 8.33451e-01
+         mini batch train loss: 8.51576e-01
+         mini batch train loss: 9.43471e-01
+     tr_loss_d: 8.46758e-01
+         mini batch val loss: 8.77413e-01
+         mini batch val loss: 8.33686e-01
+         mini batch val loss: 1.77779e+00
+         mini batch val loss: 8.18740e-01
+         mini batch val loss: 7.28608e-01
+         mini batch val loss: 7.76042e-01
+     val_loss_d: 9.68712e-01
+Epoch: 5161
+         mini batch train loss: 8.63390e-01
+         mini batch train loss: 7.52909e-01
+         mini batch train loss: 8.38928e-01
+         mini batch train loss: 8.42385e-01
+         mini batch train loss: 8.17024e-01
+         mini batch train loss: 9.36270e-01
+         mini batch train loss: 8.75085e-01
+         mini batch train loss: 8.38586e-01
+         mini batch train loss: 8.37971e-01
+         mini batch train loss: 8.25391e-01
+         mini batch train loss: 8.23417e-01
+         mini batch train loss: 8.30286e-01
+         mini batch train loss: 9.01255e-01
+         mini batch train loss: 9.04802e-01
+         mini batch train loss: 9.22645e-01
+         mini batch train loss: 8.59872e-01
+         mini batch train loss: 8.09499e-01
+         mini batch train loss: 8.32090e-01
+         mini batch train loss: 8.60564e-01
+         mini batch train loss: 8.08950e-01
+         mini batch train loss: 7.83934e-01
+     tr_loss_d: 8.45964e-01
+         mini batch val loss: 8.53452e-01
+         mini batch val loss: 8.33212e-01
+         mini batch val loss: 1.82054e+00
+         mini batch val loss: 8.12767e-01
+         mini batch val loss: 7.25906e-01
+         mini batch val loss: 7.44434e-01
+     val_loss_d: 9.65052e-01
+Epoch: 5162
+         mini batch train loss: 8.37908e-01
+         mini batch train loss: 8.43206e-01
+         mini batch train loss: 8.67238e-01
+         mini batch train loss: 7.90531e-01
+         mini batch train loss: 8.94381e-01
+         mini batch train loss: 8.41347e-01
+         mini batch train loss: 8.56350e-01
+         mini batch train loss: 7.71203e-01
+         mini batch train loss: 8.07503e-01
+         mini batch train loss: 7.79999e-01
+         mini batch train loss: 8.68882e-01
+         mini batch train loss: 7.84248e-01
+         mini batch train loss: 9.01825e-01
+         mini batch train loss: 8.26569e-01
+         mini batch train loss: 7.98679e-01
+         mini batch train loss: 8.35615e-01
+         mini batch train loss: 7.69016e-01
+         mini batch train loss: 8.80455e-01
+         mini batch train loss: 8.38555e-01
+         mini batch train loss: 8.77218e-01
+         mini batch train loss: 9.74979e-01
+     tr_loss_d: 8.40272e-01
+         mini batch val loss: 8.56331e-01
+         mini batch val loss: 7.97906e-01
+         mini batch val loss: 2.11808e+00
+         mini batch val loss: 8.27974e-01
+         mini batch val loss: 7.61614e-01
+         mini batch val loss: 7.53062e-01
+     val_loss_d: 1.01916e+00
+Epoch: 5163
+         mini batch train loss: 8.43903e-01
+         mini batch train loss: 7.91336e-01
+         mini batch train loss: 8.24311e-01
+         mini batch train loss: 7.79629e-01
+         mini batch train loss: 8.15270e-01
+         mini batch train loss: 8.27659e-01
+         mini batch train loss: 8.70825e-01
+         mini batch train loss: 8.27841e-01
+         mini batch train loss: 7.71059e-01
+         mini batch train loss: 9.24997e-01
+         mini batch train loss: 7.51960e-01
+         mini batch train loss: 8.04831e-01
+         mini batch train loss: 8.71922e-01
+         mini batch train loss: 8.74605e-01
+         mini batch train loss: 8.29046e-01
+         mini batch train loss: 9.35271e-01
+         mini batch train loss: 8.86994e-01
+         mini batch train loss: 8.54983e-01
+         mini batch train loss: 8.65853e-01
+         mini batch train loss: 6.98877e-01
+         mini batch train loss: 8.26740e-01
+     tr_loss_d: 8.32282e-01
+         mini batch val loss: 9.26707e-01
+         mini batch val loss: 8.11258e-01
+         mini batch val loss: 1.72617e+00
+         mini batch val loss: 8.59175e-01
+         mini batch val loss: 7.53007e-01
+         mini batch val loss: 7.80937e-01
+     val_loss_d: 9.76209e-01
+Epoch: 5164
+         mini batch train loss: 7.53880e-01
+         mini batch train loss: 7.89335e-01
+         mini batch train loss: 8.52013e-01
+         mini batch train loss: 7.88528e-01
+         mini batch train loss: 8.51595e-01
+         mini batch train loss: 8.58248e-01
+         mini batch train loss: 8.20362e-01
+         mini batch train loss: 9.46527e-01
+         mini batch train loss: 8.83745e-01
+         mini batch train loss: 8.19508e-01
+         mini batch train loss: 8.62444e-01
+         mini batch train loss: 9.42647e-01
+         mini batch train loss: 7.69945e-01
+         mini batch train loss: 8.83978e-01
+         mini batch train loss: 9.42910e-01
+         mini batch train loss: 7.95765e-01
+         mini batch train loss: 9.25606e-01
+         mini batch train loss: 8.37708e-01
+         mini batch train loss: 8.78759e-01
+         mini batch train loss: 7.97303e-01
+         mini batch train loss: 9.07843e-01
+     tr_loss_d: 8.52793e-01
+         mini batch val loss: 8.86445e-01
+         mini batch val loss: 8.03200e-01
+         mini batch val loss: 2.00827e+00
+         mini batch val loss: 8.38949e-01
+         mini batch val loss: 7.50387e-01
+         mini batch val loss: 7.68439e-01
+     val_loss_d: 1.00928e+00
+         mini batch train loss: 8.34481e-01
+         mini batch train loss: 7.66866e-01
+         mini batch train loss: 8.14316e-01
+         mini batch train loss: 8.61656e-01
+         mini batch train loss: 8.55881e-01
+         mini batch train loss: 8.71665e-01
+         mini batch train loss: 8.03173e-01
+         mini batch train loss: 8.39823e-01
+         mini batch train loss: 7.98812e-01
+         mini batch train loss: 7.48255e-01
+     tr_loss_d: 8.32586e-01
+         mini batch val loss: 9.35985e-01
+         mini batch val loss: 9.99362e-01
+         mini batch val loss: 1.96508e+00
+         mini batch val loss: 7.90882e-01
+         mini batch val loss: 1.08757e+00
+         mini batch val loss: 9.14450e-01
+     val_loss_d: 1.11555e+00
+Epoch: 5001
+         mini batch train loss: 7.63535e-01
+         mini batch train loss: 7.17144e-01
+         mini batch train loss: 8.75790e-01
+         mini batch train loss: 8.23064e-01
+         mini batch train loss: 8.43472e-01
+         mini batch train loss: 8.96967e-01
+         mini batch train loss: 7.12869e-01
+         mini batch train loss: 8.89272e-01
+         mini batch train loss: 8.62223e-01
+         mini batch train loss: 7.97904e-01
+         mini batch train loss: 7.74502e-01
+         mini batch train loss: 7.96339e-01
+         mini batch train loss: 8.90221e-01
+         mini batch train loss: 8.06367e-01
+         mini batch train loss: 8.48305e-01
+         mini batch train loss: 8.64795e-01
+         mini batch train loss: 8.26361e-01
+         mini batch train loss: 8.99784e-01
+         mini batch train loss: 8.15198e-01
+         mini batch train loss: 7.90610e-01
+         mini batch train loss: 8.53135e-01
+     tr_loss_d: 8.26088e-01
+         mini batch val loss: 8.89021e-01
+         mini batch val loss: 1.00650e+00
+         mini batch val loss: 1.92126e+00
+         mini batch val loss: 8.33147e-01
+         mini batch val loss: 1.16396e+00
+         mini batch val loss: 9.06867e-01
+     val_loss_d: 1.12013e+00
+Epoch: 5002
+         mini batch train loss: 9.12054e-01
+         mini batch train loss: 8.59730e-01
+         mini batch train loss: 8.31963e-01
+         mini batch train loss: 8.10743e-01
+         mini batch train loss: 8.45859e-01
+         mini batch train loss: 8.97404e-01
+         mini batch train loss: 8.03708e-01
+         mini batch train loss: 8.25550e-01
+         mini batch train loss: 8.18742e-01
+         mini batch train loss: 8.02806e-01
+         mini batch train loss: 8.32338e-01
+         mini batch train loss: 8.07182e-01
+         mini batch train loss: 7.87624e-01
+         mini batch train loss: 7.95035e-01
+         mini batch train loss: 7.98261e-01
+         mini batch train loss: 8.14362e-01
+         mini batch train loss: 7.97431e-01
+         mini batch train loss: 8.50591e-01
+         mini batch train loss: 8.66226e-01
+         mini batch train loss: 8.06157e-01
+         mini batch train loss: 7.90487e-01
+     tr_loss_d: 8.26393e-01
+         mini batch val loss: 9.22612e-01
+         mini batch val loss: 1.02835e+00
+         mini batch val loss: 1.95404e+00
+         mini batch val loss: 7.97442e-01
+         mini batch val loss: 9.94394e-01
+         mini batch val loss: 1.04411e+00
+     val_loss_d: 1.12349e+00
+Epoch: 5003
+         mini batch train loss: 8.97313e-01
+         mini batch train loss: 8.56022e-01
+         mini batch train loss: 8.68457e-01
+         mini batch train loss: 7.72730e-01
+         mini batch train loss: 8.06045e-01
+         mini batch train loss: 7.44594e-01
+         mini batch train loss: 8.76184e-01
+         mini batch train loss: 8.45987e-01
+         mini batch train loss: 9.07071e-01
+         mini batch train loss: 7.99753e-01
+         mini batch train loss: 8.09565e-01
+         mini batch train loss: 8.30208e-01
+         mini batch train loss: 8.43684e-01
+         mini batch train loss: 9.72654e-01
+         mini batch train loss: 8.44134e-01
+         mini batch train loss: 9.37924e-01
+         mini batch train loss: 8.13242e-01
+         mini batch train loss: 8.10656e-01
+         mini batch train loss: 8.76675e-01
+         mini batch train loss: 8.22517e-01
+         mini batch train loss: 9.94993e-01
+     tr_loss_d: 8.53829e-01
+         mini batch val loss: 9.76251e-01
+         mini batch val loss: 1.11011e+00
+         mini batch val loss: 2.02380e+00
+         mini batch val loss: 8.54388e-01
+         mini batch val loss: 1.07882e+00
+         mini batch val loss: 9.34786e-01
+     val_loss_d: 1.16303e+00
+Epoch: 5004
+         mini batch train loss: 8.52616e-01
+         mini batch train loss: 7.86825e-01
+         mini batch train loss: 9.38811e-01
+         mini batch train loss: 8.12000e-01
+         mini batch train loss: 8.58274e-01
+         mini batch train loss: 8.40081e-01
+         mini batch train loss: 8.04840e-01
+         mini batch train loss: 8.61666e-01
+         mini batch train loss: 8.37179e-01
+         mini batch train loss: 8.03352e-01
+         mini batch train loss: 9.54092e-01
+         mini batch train loss: 8.13432e-01
+         mini batch train loss: 7.98831e-01
+         mini batch train loss: 8.83373e-01
+         mini batch train loss: 8.20965e-01
+         mini batch train loss: 9.55671e-01
+         mini batch train loss: 8.20787e-01
+         mini batch train loss: 8.36346e-01
+         mini batch train loss: 8.36587e-01
+         mini batch train loss: 7.66847e-01
+         mini batch train loss: 9.26044e-01
+     tr_loss_d: 8.48029e-01
+         mini batch val loss: 9.40699e-01
+         mini batch val loss: 1.12213e+00
+         mini batch val loss: 2.02913e+00
+         mini batch val loss: 8.80268e-01
+         mini batch val loss: 1.07453e+00
+         mini batch val loss: 9.39209e-01
+     val_loss_d: 1.16433e+00
+Epoch: 5005
+         mini batch train loss: 7.84373e-01
+         mini batch train loss: 8.69856e-01
+         mini batch train loss: 8.70835e-01
+         mini batch train loss: 8.11033e-01
+         mini batch train loss: 8.29693e-01
+         mini batch train loss: 7.36789e-01
+         mini batch train loss: 8.09023e-01
+         mini batch train loss: 7.39782e-01
+         mini batch train loss: 7.91507e-01
+         mini batch train loss: 8.41589e-01
+         mini batch train loss: 7.41689e-01
+         mini batch train loss: 8.71703e-01
+         mini batch train loss: 8.10592e-01
+         mini batch train loss: 8.07763e-01
+         mini batch train loss: 8.51473e-01
+         mini batch train loss: 8.90325e-01
+         mini batch train loss: 7.96973e-01
+         mini batch train loss: 7.99454e-01
+         mini batch train loss: 8.28532e-01
+         mini batch train loss: 7.80795e-01
+         mini batch train loss: 8.15738e-01
+     tr_loss_d: 8.13310e-01
+         mini batch val loss: 9.26236e-01
+         mini batch val loss: 1.01186e+00
+         mini batch val loss: 1.94598e+00
+         mini batch val loss: 7.97058e-01
+         mini batch val loss: 9.87485e-01
+         mini batch val loss: 9.52660e-01
+     val_loss_d: 1.10355e+00
+Epoch: 5006
+         mini batch train loss: 7.94573e-01
+         mini batch train loss: 7.73724e-01
+         mini batch train loss: 8.54640e-01
+         mini batch train loss: 7.58423e-01
+         mini batch train loss: 7.89477e-01
+         mini batch train loss: 8.42042e-01
+         mini batch train loss: 7.82053e-01
+         mini batch train loss: 8.06241e-01
+         mini batch train loss: 7.90834e-01
+         mini batch train loss: 8.14759e-01
+         mini batch train loss: 8.65022e-01
+         mini batch train loss: 8.41615e-01
+         mini batch train loss: 8.61347e-01
+         mini batch train loss: 8.50706e-01
+         mini batch train loss: 8.04458e-01
+         mini batch train loss: 9.47423e-01
+         mini batch train loss: 8.56212e-01
+         mini batch train loss: 8.74183e-01
+         mini batch train loss: 8.52274e-01
+         mini batch train loss: 7.89027e-01
+         mini batch train loss: 7.57605e-01
+     tr_loss_d: 8.24126e-01
+         mini batch val loss: 9.26917e-01
+         mini batch val loss: 9.54346e-01
+         mini batch val loss: 1.90933e+00
+         mini batch val loss: 7.98226e-01
+         mini batch val loss: 1.05323e+00
+         mini batch val loss: 9.51734e-01
+     val_loss_d: 1.09896e+00
